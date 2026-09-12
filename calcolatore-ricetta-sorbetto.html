@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Calcolatore ricetta sorbetto alla frutta — Confronta Prodotti per Gelateria</title>
+<meta name="description" content="Calcolatore gratuito di bilanciamento PAC/POD per sorbetti alla frutta: inserisci frutta e saccarosio, destrosio e acqua si calcolano da soli per centrare il target.">
+<style>
+:root{
+  --ink:#2b2320; --ink-soft:#6b5f58; --paper:#fffaf3; --line:#e7dccd;
+  --brand:#c0392b; --brand-soft:#f7e9df; --ok:#2e7d32; --warn:#b8860b; --bad:#c0392b;
+}
+*{box-sizing:border-box;}
+body{margin:0; font-family:"Segoe UI", system-ui, -apple-system, sans-serif; background:var(--paper); color:var(--ink); line-height:1.5;}
+.wrap{max-width:900px; margin:0 auto; padding:20px 16px 60px;}
+.top-link{display:inline-block; margin-bottom:18px; color:var(--brand); text-decoration:none; font-weight:600; font-size:0.95rem;}
+.top-link:hover{text-decoration:underline;}
+h1{font-size:1.4rem; margin:0 0 6px;}
+.card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; box-shadow:0 2px 10px rgba(0,0,0,0.04); margin-bottom:20px;}
+.hint{font-size:0.82rem; color:var(--ink-soft); margin-top:10px; line-height:1.45;}
+.form-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px 18px; margin-top:16px;}
+@media (max-width:640px){ .form-grid{grid-template-columns:1fr;} }
+.field label{display:block; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; color:var(--ink-soft); margin-bottom:5px;}
+.field input, .field select, .field textarea{width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:9px; font-size:0.95rem; background:#fffdfa; color:var(--ink);}
+.field input:focus, .field select:focus{outline:2px solid var(--brand); outline-offset:1px;}
+.btn{display:inline-block; background:var(--brand); color:#fff; border:none; border-radius:9px; padding:10px 18px; font-size:0.9rem; font-weight:700; cursor:pointer;}
+.btn.small{padding:6px 12px; font-size:0.8rem;}
+.btn.outline{background:transparent; color:var(--brand); border:1px solid var(--brand);}
+.result-panel{border-radius:12px; padding:16px 18px; margin-top:14px; border:1px solid var(--line); background:var(--brand-soft);}
+.result-panel.ok{border-color:#bfe3c2; background:#f1f9f1;}
+.result-panel.high{border-color:#f0d9a6; background:#fdf6e8;}
+.result-panel.low{border-color:#f0b8b0; background:#fdecea;}
+.result-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px 14px;}
+@media (max-width:640px){ .result-grid{grid-template-columns:1fr 1fr;} }
+.result-tile{background:#fff; border-radius:9px; padding:10px 12px; border:1px solid rgba(0,0,0,0.06);}
+.rt-label{font-size:0.72rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.02em;}
+.rt-value{font-size:1.25rem; font-weight:800; margin-top:2px;}
+.rt-sub{font-size:0.72rem; color:var(--ink-soft); margin-top:2px;}
+.verdict{margin-top:12px; font-weight:700; font-size:0.9rem;}
+footer{font-size:0.8rem; color:var(--ink-soft); text-align:center; margin-top:30px;}
+footer a{color:var(--brand);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="top-link" href="/">← Torna al confronto prodotti</a>
+  <h1>🍓 Calcolatore ricetta sorbetto alla frutta</h1>
+  <p class="hint" style="margin-top:0;">Questo strumento è stato spostato qui in una pagina dedicata. Se stai cercando come farti ottimizzare la ricetta gratuitamente da noi, <a href="/#ottimizzaRicettaCard">torna alla home e usa il modulo "Ottimizziamo la tua ricetta gratis"</a>.</p>
+
+  <section class="card" id="provaRicettaCard">
+    <h2 style="margin-top:0;">Calcolatore di bilanciamento (fai-da-te)</h2>
+    <p style="font-size:0.85rem; color:var(--ink-soft);">
+      Calcolatore di bilanciamento per sorbetti alla frutta — indipendente dalla temperatura vetrina. Inserisci Frutta e Saccarosio: Destrosio e Acqua si calcolano da soli per centrare il Target PAC. Puoi scegliere tra Neutro frutta (stabilizzante, dose fissa ~5 g/kg, senza zuccheri) oppure Base frutta (pasta zuccherina, dose tipica 50-100 g/kg secondo il prodotto): con la Base i valori PAC/POD non sono più 0 e vanno inseriti dalla scheda tecnica del tuo prodotto — una dose troppo alta rende il gelato opaco e poco vendibile, resta nel range dichiarato dal produttore. Il POD che risulta è comunque una conseguenza della ricetta, non sempre centrabile insieme al PAC.
+    </p>
+
+    <div class="form-grid">
+      <div class="field"><label>Totale ricetta (g)</label><input type="number" step="1" min="1" id="prTotale" value="1000"></div>
+      <div class="field"><label>Frutta scelta</label><select id="prFruttaScelta"></select></div>
+      <div class="field"><label>Frutta (g)</label><input type="number" step="1" min="0" id="prFruttaG" value="300"></div>
+      <div class="field"><label>Saccarosio (g)</label><input type="number" step="1" min="0" id="prSaccarosio" value="260"></div>
+      <div class="field"><label>Glucosio DE32 (g) — facoltativo</label><input type="number" step="1" min="0" id="prGlucosio" value="0"></div>
+      <div class="field"><label>Inulina (g) — facoltativo</label><input type="number" step="1" min="0" id="prInulina" value="0"></div>
+      <div class="field"><label>Prodotto di supporto</label>
+        <select id="prTipoSupporto">
+          <option value="neutro">Neutro frutta (stabilizzante, ~5 g/kg)</option>
+          <option value="base">Base frutta (pasta zuccherina, 50-100 g/kg)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label id="prDoseNeutroLabel">Dose neutro frutta (g per kg di miscela)</label>
+        <input type="number" step="0.1" min="0" id="prDoseNeutro" value="5">
+        <div id="prDosePresetWrap" style="display:none; gap:6px; margin-top:6px;">
+          <button type="button" class="btn small outline" id="prDose50">50 g/kg</button>
+          <button type="button" class="btn small outline" id="prDose100">100 g/kg</button>
+        </div>
+      </div>
+      <div class="field" id="prBasePacWrap" style="display:none;"><label>PAC base frutta (per 100g)</label><input type="number" step="0.1" id="prBasePac" value="30"></div>
+      <div class="field" id="prBasePodWrap" style="display:none;"><label>POD base frutta (per 100g)</label><input type="number" step="0.1" id="prBasePod" value="55"></div>
+      <div class="field"><label>Target PAC (%)</label><input type="number" step="0.1" id="prTargetPac" value="30"></div>
+    </div>
+    <div class="hint">I valori PAC/POD usati sono valori medi da tabelle nutrizionali — se il tuo frutto non è elencato, i coefficienti restano a 0 (approssimazione grezza): usa un rifrattometro per un valore reale.</div>
+    <div class="hint" id="prBaseHint" style="display:none;">30/55 sono valori di esempio: sostituiscili con il PAC/POD dichiarati nella scheda tecnica della tua base frutta. La dose (50 o 100 g/kg) dipende dalla concentrazione del prodotto — verifica sempre l'etichetta: una dose troppo alta rispetto a quella dichiarata rende il gelato opaco e invendibile.</div>
+
+    <div id="prRisultatoBox" style="margin-top:14px;"></div>
+  </section>
+
+  <footer>
+    Confronta Prodotti per Gelateria — piattaforma indipendente, senza sponsorizzazioni. <a href="/">Torna alla home</a>
+  </footer>
+</div>
+
+<script>
+const STR = {
+  prDoseNeutro: "Dose neutro frutta (g per kg di miscela)",
+  prDoseBase: "Dose base frutta (g per kg di miscela)",
+  verdictNessunIngrediente: "Aggiungi ingredienti alla ricetta per vedere il risultato.",
+  prResDestrosio: "Destrosio calcolato (g)",
+  prResAcqua: "Acqua calcolata (g)",
+  prResNeutro: "Neutro frutta (g)",
+  prResBase: "Base frutta (g)",
+  prResPac: "PAC assoluto ottenuto (%)",
+  prResPod: "POD assoluto ottenuto (%)",
+  targetPrefix: "target",
+  prResPodNote: "conseguenza della ricetta, non impostabile a piacere",
+  prResBrix: "Brix stimato (°Bx)",
+  prResBrixNote: "stima approssimativa — per il valore reale usa un rifrattometro",
+  prPodOk: "✅ dentro il range consigliato per il sorbetto alla frutta (28–35)",
+  prPodOut: "⚠️ fuori dal range consigliato (28–35) — prova ad aumentare il Saccarosio (farà scendere il Destrosio necessario) o cambia frutta",
+  prFeasibleWarn: "⚠️ Attenzione: quantità negativa — riduci frutta/saccarosio/glucosio/inulina oppure aumenta il totale ricetta",
+};
+function t(k){ return STR[k] || k; }
+
+const FRUTTA_DB = [
+  { nome: "Fragola", pac: 10.1, pod: 6.4 },
+  { nome: "Lampone", pac: 12.4, pod: 7.8 },
+  { nome: "Mirtillo", pac: 9.7, pod: 6.1 },
+  { nome: "Limone", pac: 4.4, pod: 2.8 },
+  { nome: "Arancia", pac: 14.8, pod: 9.4 },
+  { nome: "Mandarino", pac: 33.4, pod: 21.1 },
+  { nome: "Mela", pac: 19.0, pod: 12.0 },
+  { nome: "Pera", pac: 16.7, pod: 10.6 },
+  { nome: "Pesca", pac: 11.0, pod: 7.0 },
+  { nome: "Albicocca", pac: 12.9, pod: 8.2 },
+  { nome: "Banana", pac: 24.3, pod: 15.4 },
+  { nome: "Mango", pac: 23.9, pod: 15.1 },
+  { nome: "Ananas", pac: 19.0, pod: 12.0 },
+  { nome: "Uva", pac: 29.6, pod: 18.7 },
+  { nome: "Melone", pac: 14.1, pod: 8.9 },
+  { nome: "Anguria / Cocomero", pac: 7.0, pod: 4.4 },
+  { nome: "Cocco fresco", pac: 17.9, pod: 11.3 },
+  { nome: "Succo di frutta 100% (media generica — varia per frutto, verifica col tuo)", pac: 27.6, pod: 17.4 },
+  { nome: "Altro frutto non elencato (inserisci tu i valori)", pac: 0, pod: 0 },
+];
+
+const TARGET_RANGES = {
+  crema:    { pacMin: 25, pacMax: 27, podMin: 15, podMax: 19, label: "Gelato alla crema" },
+  sorbetto: { pacMin: 29, pacMax: 31, podMin: 28, podMax: 35, label: "Sorbetto alla frutta" },
+};
+
+const PR_GLUCOSIO_PAC = 54.15, PR_GLUCOSIO_POD = 22.5;
+const PR_INULINA_PAC = 25, PR_INULINA_POD = 10;
+const PR_NEUTRO_PAC = 0, PR_NEUTRO_POD = 0;
+
+function prPopolaFruttaSelect(){
+  const sel = document.getElementById('prFruttaScelta');
+  if(!sel) return;
+  const current = sel.value;
+  sel.innerHTML = FRUTTA_DB.map(f => `<option value="${f.nome}">${f.nome}</option>`).join('');
+  if(current && FRUTTA_DB.some(f => f.nome === current)) sel.value = current;
+}
+
+function prSyncTipoSupporto(){
+  const tipo = document.getElementById('prTipoSupporto').value;
+  const isBase = tipo === 'base';
+  document.getElementById('prBasePacWrap').style.display = isBase ? '' : 'none';
+  document.getElementById('prBasePodWrap').style.display = isBase ? '' : 'none';
+  document.getElementById('prDosePresetWrap').style.display = isBase ? 'flex' : 'none';
+  document.getElementById('prBaseHint').style.display = isBase ? '' : 'none';
+  document.getElementById('prDoseNeutroLabel').textContent = t(isBase ? 'prDoseBase' : 'prDoseNeutro');
+  const doseInput = document.getElementById('prDoseNeutro');
+  if(doseInput.dataset.lastTipo !== tipo){
+    doseInput.value = isBase ? 50 : 5;
+    doseInput.dataset.lastTipo = tipo;
+  }
+}
+
+function prCalcola(){
+  const box = document.getElementById('prRisultatoBox');
+  if(!box) return;
+  const totale = parseFloat(document.getElementById('prTotale').value) || 0;
+  const fruttaNome = document.getElementById('prFruttaScelta').value;
+  const frutta = FRUTTA_DB.find(f => f.nome === fruttaNome) || { pac: 0, pod: 0 };
+  const fruttaG = parseFloat(document.getElementById('prFruttaG').value) || 0;
+  const saccG = parseFloat(document.getElementById('prSaccarosio').value) || 0;
+  const glucG = parseFloat(document.getElementById('prGlucosio').value) || 0;
+  const inulinaG = parseFloat(document.getElementById('prInulina').value) || 0;
+  const doseNeutro = parseFloat(document.getElementById('prDoseNeutro').value) || 0;
+  const targetPac = parseFloat(document.getElementById('prTargetPac').value) || 0;
+  const tipoSupporto = document.getElementById('prTipoSupporto').value;
+  const isBase = tipoSupporto === 'base';
+  const neutroPac = isBase ? (parseFloat(document.getElementById('prBasePac').value) || 0) : PR_NEUTRO_PAC;
+  const neutroPod = isBase ? (parseFloat(document.getElementById('prBasePod').value) || 0) : PR_NEUTRO_POD;
+
+  if(totale <= 0){
+    box.innerHTML = `<div class="result-panel"><div class="verdict">${t('verdictNessunIngrediente')}</div></div>`;
+    return;
+  }
+
+  const neutroG = doseNeutro * totale / 1000;
+  const destrosioG = (targetPac*totale - fruttaG*frutta.pac - saccG*100 - glucG*PR_GLUCOSIO_PAC - inulinaG*PR_INULINA_PAC - neutroG*neutroPac) / 190;
+  const acquaG = totale - fruttaG - saccG - glucG - inulinaG - destrosioG - neutroG;
+
+  const pacCalc = (fruttaG*frutta.pac + saccG*100 + glucG*PR_GLUCOSIO_PAC + inulinaG*PR_INULINA_PAC + destrosioG*190 + neutroG*neutroPac) / totale;
+  const podCalc = (fruttaG*frutta.pod + saccG*100 + glucG*PR_GLUCOSIO_POD + inulinaG*PR_INULINA_POD + destrosioG*70 + neutroG*neutroPod) / totale;
+  const brix = (saccG + glucG + inulinaG + destrosioG + fruttaG*frutta.pod/120 + neutroG*neutroPod/120) / totale * 100;
+
+  const target = TARGET_RANGES.sorbetto;
+  const podOk = podCalc >= target.podMin && podCalc <= target.podMax;
+  const feasible = destrosioG >= 0 && acquaG >= 0;
+  const stato = !feasible ? 'low' : (podOk ? 'ok' : 'high');
+
+  box.innerHTML = `
+    <div class="result-panel ${stato}">
+      <div class="result-grid">
+        <div class="result-tile"><div class="rt-label">${t('prResDestrosio')}</div><div class="rt-value">${destrosioG.toFixed(0)} g</div></div>
+        <div class="result-tile"><div class="rt-label">${t('prResAcqua')}</div><div class="rt-value">${acquaG.toFixed(0)} g</div></div>
+        <div class="result-tile"><div class="rt-label">${t(isBase ? 'prResBase' : 'prResNeutro')}</div><div class="rt-value">${neutroG.toFixed(0)} g</div></div>
+        <div class="result-tile"><div class="rt-label">${t('prResPac')}</div><div class="rt-value">${pacCalc.toFixed(2)}</div><div class="rt-sub">${t('targetPrefix')}: ${targetPac.toFixed(1)}</div></div>
+        <div class="result-tile"><div class="rt-label">${t('prResPod')}</div><div class="rt-value">${podCalc.toFixed(2)}</div><div class="rt-sub">${t('prResPodNote')} (${target.podMin}–${target.podMax})</div></div>
+        <div class="result-tile"><div class="rt-label">${t('prResBrix')}</div><div class="rt-value">${brix.toFixed(1)}</div><div class="rt-sub">${t('prResBrixNote')}</div></div>
+      </div>
+      <div class="verdict">${feasible ? (podOk ? t('prPodOk') : t('prPodOut')) : t('prFeasibleWarn')}</div>
+    </div>`;
+}
+
+prPopolaFruttaSelect();
+prSyncTipoSupporto();
+prCalcola();
+document.getElementById('prTipoSupporto').addEventListener('change', () => { prSyncTipoSupporto(); prCalcola(); });
+document.getElementById('prDose50').addEventListener('click', () => { document.getElementById('prDoseNeutro').value = 50; prCalcola(); });
+document.getElementById('prDose100').addEventListener('click', () => { document.getElementById('prDoseNeutro').value = 100; prCalcola(); });
+['prTotale','prFruttaScelta','prFruttaG','prSaccarosio','prGlucosio','prInulina','prDoseNeutro','prTargetPac','prBasePac','prBasePod'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', prCalcola);
+  el.addEventListener('change', prCalcola);
+});
+</script>
+</body>
+</html>
