@@ -428,6 +428,16 @@
   select.stato-select.st-rifornire{ background:#FBEAE7; color:var(--amarena-dark); border-color:var(--amarena); }
   select.stato-select.st-esaurito{ background:#EFEAE0; color:var(--ink-soft); border-color:var(--line); }
   .header-ctas{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .btn-cta-main{
+    margin-top:14px; display:inline-flex; align-items:center; gap:8px;
+    background: var(--amarena); color: var(--white);
+    border:2px solid rgba(255,255,255,0.85); padding:12px 22px; border-radius:12px;
+    font-weight:800; font-size:0.95rem; cursor:pointer; text-decoration:none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    animation: ctaPulse 2.4s ease-in-out infinite;
+  }
+  .btn-cta-main:hover{ background: var(--amarena-dark); }
+  @keyframes ctaPulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.035); } }
   .btn-join{
     margin-top:14px; display:inline-flex; align-items:center; gap:8px;
     background: rgba(255,255,255,0.95); color: var(--amarena-dark);
@@ -531,6 +541,7 @@
     <div class="stat-pill"><b id="statCategorie">–</b><span data-i18n="statCategorieLabel">categorie</span></div>
   </div>
   <div class="header-ctas">
+    <a href="#ottimizzaRicettaCard" class="btn-cta-main" data-i18n="ctaOptimizeFree">🎯 Ottimizza gratis la tua ricetta</a>
     <button id="btnJoinUs" class="btn-join" type="button" data-i18n="btnJoinUs">🤝 Unisciti a noi</button>
     <button id="btnInstall" class="btn-install" style="display:none;" data-i18n="btnInstall">📲 Installa come app</button>
   </div>
@@ -1050,7 +1061,7 @@
     <button type="button" class="modal-close" id="joinModalClose" aria-label="Chiudi">✕</button>
     <h2 data-i18n="joinTitle">🤝 Unisciti a noi</h2>
     <p class="modal-sub" data-i18n="joinSubtitle">Sei un'azienda produttrice o un grossista? Inserisci i tuoi prodotti nel portale — è gratuito e richiede due minuti.</p>
-    <form id='joinForm' method='POST' name='unisciti-a-noi'>
+    <form id='joinForm' method='POST' name='unisciti-a-noi' data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="unisciti-a-noi" />
       <p style="position:absolute; left:-9999px;" aria-hidden="true">
         <label>Non compilare questo campo: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
@@ -1089,7 +1100,7 @@
     <button type="button" class="modal-close" id="feedbackModalClose" aria-label="Chiudi">✕</button>
     <h2 data-i18n="feedbackTitle">💬 Lascia un feedback</h2>
     <p class="modal-sub" data-i18n="feedbackSubtitle">Cosa ne pensi del portale? Segnalaci un problema, un'idea o semplicemente dicci cosa ti piace — ci aiuta a migliorare.</p>
-    <form id='feedbackForm' method='POST' name='feedback'>
+    <form id='feedbackForm' method='POST' name='feedback' data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="feedback" />
       <p style="position:absolute; left:-9999px;" aria-hidden="true">
         <label>Non compilare questo campo: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
@@ -1124,7 +1135,7 @@
       <strong data-i18n="colAzienda">Azienda</strong>: <span id="sampleAziendaDisplay"></span><br>
       <strong data-i18n="rowProdotto">Prodotto</strong>: <span id="sampleProdottoDisplay"></span>
     </p>
-    <form id='sampleForm' method='POST' name='richiesta-campione'>
+    <form id='sampleForm' method='POST' name='richiesta-campione' data-netlify="true" netlify-honeypot="bot-field-campione">
       <input type="hidden" name="form-name" value="richiesta-campione" />
       <input type="hidden" name="azienda" id="sampleAziendaInput" />
       <input type="hidden" name="prodotto" id="sampleProdottoInput" />
@@ -1529,6 +1540,7 @@ const I18N = {
     prPodOut: "⚠️ fuori dal range consigliato (28–35) — prova ad aumentare il Saccarosio (farà scendere il Destrosio necessario) o cambia frutta",
     prFeasibleWarn: "⚠️ Attenzione: quantità negativa — riduci frutta/saccarosio/glucosio/inulina oppure aumenta il totale ricetta",
     rcTitle: "🎯 Ottimizziamo la tua ricetta gratis",
+    ctaOptimizeFree: "🎯 Ottimizza gratis la tua ricetta",
     rcIntro: "Scrivici quale base usi (marca e tipo) e ti aiutiamo a ottimizzare la ricetta per il tuo prodotto — senza nessun costo. Se vuoi, indicaci anche quali altri ingredienti usi: ci aiuta a darti un consiglio più preciso, ma non è obbligatorio — per noi conta soprattutto sapere la base.",
     rcAltText: "Puoi anche inviarci solo i dati della base o del neutro che usi: ti suggeriamo noi una ricetta completa.",
     rcLabelBase: "Marca e tipo di base *",
@@ -1911,6 +1923,7 @@ const I18N = {
     prPodOut: "⚠️ Außerhalb des empfohlenen Bereichs (28–35) — erhöhen Sie die Saccharose (senkt die benötigte Dextrose) oder wechseln Sie die Frucht",
     prFeasibleWarn: "⚠️ Achtung: negative Menge — reduzieren Sie Frucht/Saccharose/Glukose/Inulin oder erhöhen Sie die Gesamtmenge",
     rcTitle: "🎯 Wir optimieren Ihr Rezept kostenlos",
+    ctaOptimizeFree: "🎯 Optimieren Sie kostenlos Ihr Rezept",
     rcIntro: "Schreiben Sie uns, welche Basis Sie verwenden (Marke und Typ), und wir helfen Ihnen, das Rezept für Ihr Produkt zu optimieren — völlig kostenlos. Wenn Sie möchten, teilen Sie uns auch mit, welche weiteren Zutaten Sie verwenden: das hilft uns, einen genaueren Rat zu geben, ist aber nicht Pflicht — für uns zählt vor allem die Basis.",
     rcAltText: "Sie können uns auch nur die Daten zur Basis oder zum Neutralstoff (Neutro) schicken: wir schlagen Ihnen dann selbst ein komplettes Rezept vor.",
     rcLabelBase: "Marke und Typ der Basis *",
@@ -2293,6 +2306,7 @@ const I18N = {
     prPodOut: "⚠️ Outside the recommended range (28–35) — try increasing the Sucrose (it will lower the Dextrose needed) or change the fruit",
     prFeasibleWarn: "⚠️ Warning: negative quantity — reduce fruit/sucrose/glucose/inulin or increase the total recipe",
     rcTitle: "🎯 We'll optimize your recipe for free",
+    ctaOptimizeFree: "🎯 Optimize your recipe for free",
     rcIntro: "Tell us which base you use (brand and type) and we'll help you optimize the recipe for your product — at no cost. If you like, also let us know which other ingredients you use: it helps us give more precise advice, but it's not required — what matters most to us is the base.",
     rcAltText: "You can also just send us the base or neutro (stabilizer) data alone: we'll suggest a complete recipe for you.",
     rcLabelBase: "Base brand and type *",
@@ -2675,6 +2689,7 @@ const I18N = {
     prPodOut: "⚠️ Fuera del rango recomendado (28–35) — prueba a aumentar la Sacarosa (bajará la Dextrosa necesaria) o cambia de fruta",
     prFeasibleWarn: "⚠️ Atención: cantidad negativa — reduce fruta/sacarosa/glucosa/inulina o aumenta el total de la receta",
     rcTitle: "🎯 Optimizamos tu receta gratis",
+    ctaOptimizeFree: "🎯 Optimiza gratis tu receta",
     rcIntro: "Escríbenos qué base usas (marca y tipo) y te ayudamos a optimizar la receta para tu producto — sin ningún coste. Si quieres, indícanos también qué otros ingredientes usas: nos ayuda a darte un consejo más preciso, pero no es obligatorio — lo que más nos importa es la base.",
     rcAltText: "También puedes enviarnos solo los datos de la base o del neutro que usas: te sugerimos nosotros una receta completa.",
     rcLabelBase: "Marca y tipo de base *",
@@ -2759,6 +2774,7 @@ function translateStatic(){
 let currentYear = 2026;
 function setLang(lang){
   LANG = (lang === 'de' || lang === 'en' || lang === 'es') ? lang : 'it';
+  try { localStorage.setItem('preferredLang', LANG); } catch (e) {}
   document.getElementById('btnLangIT').classList.toggle('active', LANG === 'it');
   document.getElementById('btnLangDE').classList.toggle('active', LANG === 'de');
   document.getElementById('btnLangEN').classList.toggle('active', LANG === 'en');
@@ -3830,7 +3846,22 @@ refreshPickerColumns();
 renderArchiveTable();
 renderAziende();
 refreshStats();
-setLang('de');
+(function initLang(){
+  const supported = ['it','de','en','es'];
+  let fromUrl = null;
+  try { fromUrl = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+  let stored = null;
+  try { stored = localStorage.getItem('preferredLang'); } catch (e) {}
+  const rawBrowserLangs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+  const browserLangs = rawBrowserLangs.map(l => (l || '').slice(0,2).toLowerCase());
+  const fromBrowser = browserLangs.find(l => supported.includes(l));
+  const domainDefault = 'it'; // gelateriaingredienti.com: lingua di riferimento del brand
+  const initial = (fromUrl && supported.includes(fromUrl)) ? fromUrl
+    : (stored && supported.includes(stored)) ? stored
+    : fromBrowser ? fromBrowser
+    : domainDefault;
+  setLang(initial);
+})();
 
 // ---------- PWA: service worker + installazione ----------
 if ('serviceWorker' in navigator) {
