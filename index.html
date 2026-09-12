@@ -542,7 +542,7 @@
     <a class="nav-confronta" href="#confrontaSection" data-i18n="navConfronta">⚖️ Confronta</a>
     <a class="nav-archivio" href="#archiveSection" data-i18n="navArchivio">📚 Archivio</a>
     <a class="nav-taratura" href="#taraturaCard" onclick="openExtraToolsIfNeeded('taraturaCard')" data-i18n="navTaratura">🧊 Taratura vetrina</a>
-    <a class="nav-prova-ricetta" href="#provaRicettaCard" data-i18n="navProvaRicetta">🍓 Prova ricetta</a>
+    <a class="nav-prova-ricetta" href="/calcolatore-ricetta-sorbetto" data-i18n="navProvaRicetta">🍓 Prova ricetta</a>
   </div>
   <div class="nav-secondary">
     <a class="nav-documenti" href="#documentiCard" onclick="openExtraToolsIfNeeded('documentiCard')" data-i18n="navDocumenti">📄 Documenti</a>
@@ -664,42 +664,67 @@
 
   </section>
 
-  <!-- PROVA UNA TUA RICETTA -->
-  <section class="card" id="provaRicettaCard">
-    <h2 data-i18n="provaRicettaTitle">🍓 Prova una tua ricetta (sorbetto alla frutta)</h2>
-    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:-6px;" data-i18n-html="provaRicettaIntro">
-      Calcolatore di bilanciamento per sorbetti alla frutta — indipendente dalla temperatura vetrina qui sotto. Inserisci Frutta e Saccarosio: Destrosio e Acqua si calcolano da soli per centrare il Target PAC. Puoi scegliere tra Neutro frutta (stabilizzante, dose fissa ~5 g/kg, senza zuccheri) oppure Base frutta (pasta zuccherina, dose tipica 50-100 g/kg secondo il prodotto): con la Base i valori PAC/POD non sono più 0 e vanno inseriti dalla scheda tecnica del tuo prodotto — una dose troppo alta rende il gelato opaco e poco vendibile, resta nel range dichiarato dal produttore. Il POD che risulta è comunque una conseguenza della ricetta, non sempre centrabile insieme al PAC.
+  <!-- OTTIMIZZA LA TUA RICETTA GRATIS -->
+  <section class="card" id="ottimizzaRicettaCard">
+    <h2 data-i18n="rcTitle">🎯 Ottimizziamo la tua ricetta gratis</h2>
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:-6px;" data-i18n="rcIntro">
+      Scrivici quale base usi (marca e tipo) e ti aiutiamo a ottimizzare la ricetta per il tuo prodotto — senza nessun costo. Se vuoi, indicaci anche quali altri ingredienti usi: ci aiuta a darti un consiglio più preciso, ma non è obbligatorio — per noi conta soprattutto sapere la base.
+    </p>
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:4px;" data-i18n="rcAltText">
+      Puoi anche inviarci solo i dati della base o del neutro che usi: ti suggeriamo noi una ricetta completa.
     </p>
 
-    <div class="form-grid">
-      <div class="field"><label data-i18n="prTotale">Totale ricetta (g)</label><input type="number" step="1" min="1" id="prTotale" value="1000"></div>
-      <div class="field"><label data-i18n="prFruttaScelta">Frutta scelta</label><select id="prFruttaScelta"></select></div>
-      <div class="field"><label data-i18n="prFruttaG">Frutta (g)</label><input type="number" step="1" min="0" id="prFruttaG" value="300"></div>
-      <div class="field"><label data-i18n="prSaccarosio">Saccarosio (g)</label><input type="number" step="1" min="0" id="prSaccarosio" value="260"></div>
-      <div class="field"><label data-i18n="prGlucosio">Glucosio DE32 (g) — facoltativo</label><input type="number" step="1" min="0" id="prGlucosio" value="0"></div>
-      <div class="field"><label data-i18n="prInulina">Inulina (g) — facoltativo</label><input type="number" step="1" min="0" id="prInulina" value="0"></div>
-      <div class="field"><label data-i18n="prTipoSupporto">Prodotto di supporto</label>
-        <select id="prTipoSupporto">
-          <option value="neutro" data-i18n="prTipoNeutro">Neutro frutta (stabilizzante, ~5 g/kg)</option>
-          <option value="base" data-i18n="prTipoBase">Base frutta (pasta zuccherina, 50-100 g/kg)</option>
-        </select>
-      </div>
-      <div class="field">
-        <label id="prDoseNeutroLabel" data-i18n="prDoseNeutro">Dose neutro frutta (g per kg di miscela)</label>
-        <input type="number" step="0.1" min="0" id="prDoseNeutro" value="5">
-        <div id="prDosePresetWrap" style="display:none; gap:6px; margin-top:6px;">
-          <button type="button" class="btn small outline" id="prDose50" data-i18n="prDose50">50 g/kg</button>
-          <button type="button" class="btn small outline" id="prDose100" data-i18n="prDose100">100 g/kg</button>
+    <form id="rcForm" method="POST" name="ottimizza-ricetta" data-netlify="true" netlify-honeypot="rc-bot-field">
+      <input type="hidden" name="form-name" value="ottimizza-ricetta" />
+      <p style="position:absolute; left:-9999px;" aria-hidden="true">
+        <label>Non compilare questo campo: <input name="rc-bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
+      <div class="form-grid">
+        <div class="field" style="grid-column:1/-1;">
+          <label for="rcBase" data-i18n="rcLabelBase">Marca e tipo di base *</label>
+          <input type="text" id="rcBase" name="base" required data-i18n-ph="rcBasePh" placeholder="Es. Aromitalia DBF Master 50 classic tuttovegetale C/F" />
+        </div>
+        <div class="field">
+          <label for="rcEmail" data-i18n="rcLabelEmail">Email di contatto *</label>
+          <input type="email" id="rcEmail" name="email" required />
+        </div>
+        <div class="field">
+          <label for="rcNome" data-i18n="rcLabelNome">Nome (facoltativo)</label>
+          <input type="text" id="rcNome" name="nome" />
         </div>
       </div>
-      <div class="field" id="prBasePacWrap" style="display:none;"><label data-i18n="prBasePac">PAC base frutta (per 100g)</label><input type="number" step="0.1" id="prBasePac" value="30"></div>
-      <div class="field" id="prBasePodWrap" style="display:none;"><label data-i18n="prBasePod">POD base frutta (per 100g)</label><input type="number" step="0.1" id="prBasePod" value="55"></div>
-      <div class="field"><label data-i18n="prTargetPac">Target PAC (%)</label><input type="number" step="0.1" id="prTargetPac" value="30"></div>
-    </div>
-    <div class="hint" data-i18n="prHint">I valori PAC/POD usati sono gli stessi della taratura vetrina qui sotto — se il tuo frutto non è elencato, i coefficienti restano a 0 (approssimazione grezza): usa un rifrattometro per un valore reale.</div>
-    <div class="hint" id="prBaseHint" style="display:none;" data-i18n="prBaseHint">30/55 sono valori di esempio: sostituiscili con il PAC/POD dichiarati nella scheda tecnica della tua base frutta. La dose (50 o 100 g/kg) dipende dalla concentrazione del prodotto — verifica sempre l'etichetta: una dose troppo alta rispetto a quella dichiarata rende il gelato opaco e invendibile.</div>
 
-    <div id="prRisultatoBox" style="margin-top:14px;"></div>
+      <div class="field" style="margin-top:14px;">
+        <label data-i18n="rcIngredientiLabel">Quali di questi usi? (facoltativo — il resto è indifferente)</label>
+        <div class="extra-filters-grid">
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Destrosio"> <span data-i18n="rcIngDestrosio">Destrosio</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Glucosio"> <span data-i18n="rcIngGlucosio">Glucosio</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Zucchero invertito"> <span data-i18n="rcIngZuccheroInvertito">Zucchero invertito</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Maltodestrine"> <span data-i18n="rcIngMaltodestrine">Maltodestrine</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Emulsionanti"> <span data-i18n="rcIngEmulsionanti">Emulsionanti</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Fruttosio"> <span data-i18n="rcIngFruttosio">Fruttosio</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Latte fresco pastorizzato o latte intero"> <span data-i18n="rcIngLatte">Latte fresco pastorizzato o latte intero</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Latte grasso in polvere"> <span data-i18n="rcIngLatteGrassoPolvere">Latte grasso in polvere</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Latte magro in polvere"> <span data-i18n="rcIngLatteMagroPolvere">Latte magro in polvere</span></label>
+          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Panna spray in polvere (aggiustatore di cremosità)"> <span data-i18n="rcIngPannaSpray">Panna spray in polvere (aggiustatore di cremosità)</span></label>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:10px;">
+        <label for="rcNote" data-i18n="rcLabelNote">Note aggiuntive (facoltativo)</label>
+        <textarea id="rcNote" name="note" rows="2" data-i18n-ph="rcNotePh" placeholder="Altri dettagli utili sulla tua ricetta o produzione…"></textarea>
+      </div>
+
+      <div class="field" style="display:flex; align-items:flex-start; gap:8px; margin-top:10px;">
+        <input type="checkbox" id="rcPrivacy" name="privacy_accettata" required style="width:auto; margin-top:3px;" />
+        <label for="rcPrivacy" style="text-transform:none; font-weight:400; font-size:0.8rem; margin:0;" data-i18n-html="rcPrivacyLabel">Ho letto e accetto l'<a href="#" class="privacy-link">informativa privacy</a> (obbligatorio) *</label>
+      </div>
+
+      <div class="actions-row"><button type="submit" class="btn" data-i18n="rcSubmit">Invia richiesta</button></div>
+    </form>
+
+    <p class="hint" data-i18n-html="rcOrEmail">Preferisci scriverci direttamente? Scrivici a <a href="mailto:marcolestan@gelateriaingredienti.com">marcolestan@gelateriaingredienti.com</a>.</p>
+    <p class="hint" data-i18n-html="rcOrCalc">Vuoi comunque provare tu stesso il calcolatore di bilanciamento sorbetti? <a href="/calcolatore-ricetta-sorbetto">Aprilo in una pagina dedicata →</a></p>
   </section>
 
   <!-- TOGGLE STRUMENTI AGGIUNTIVI -->
@@ -1503,6 +1528,33 @@ const I18N = {
     prPodOk: "✅ dentro il range consigliato per il sorbetto alla frutta (28–35)",
     prPodOut: "⚠️ fuori dal range consigliato (28–35) — prova ad aumentare il Saccarosio (farà scendere il Destrosio necessario) o cambia frutta",
     prFeasibleWarn: "⚠️ Attenzione: quantità negativa — riduci frutta/saccarosio/glucosio/inulina oppure aumenta il totale ricetta",
+    rcTitle: "🎯 Ottimizziamo la tua ricetta gratis",
+    rcIntro: "Scrivici quale base usi (marca e tipo) e ti aiutiamo a ottimizzare la ricetta per il tuo prodotto — senza nessun costo. Se vuoi, indicaci anche quali altri ingredienti usi: ci aiuta a darti un consiglio più preciso, ma non è obbligatorio — per noi conta soprattutto sapere la base.",
+    rcAltText: "Puoi anche inviarci solo i dati della base o del neutro che usi: ti suggeriamo noi una ricetta completa.",
+    rcLabelBase: "Marca e tipo di base *",
+    rcBasePh: "Es. Aromitalia DBF Master 50 classic tuttovegetale C/F",
+    rcLabelEmail: "Email di contatto *",
+    rcLabelNome: "Nome (facoltativo)",
+    rcIngredientiLabel: "Quali di questi usi? (facoltativo — il resto è indifferente)",
+    rcIngDestrosio: "Destrosio",
+    rcIngGlucosio: "Glucosio",
+    rcIngZuccheroInvertito: "Zucchero invertito",
+    rcIngMaltodestrine: "Maltodestrine",
+    rcIngEmulsionanti: "Emulsionanti",
+    rcIngFruttosio: "Fruttosio",
+    rcIngLatte: "Latte fresco pastorizzato o latte intero",
+    rcIngLatteGrassoPolvere: "Latte grasso in polvere",
+    rcIngLatteMagroPolvere: "Latte magro in polvere",
+    rcIngPannaSpray: "Panna spray in polvere (aggiustatore di cremosità)",
+    rcLabelNote: "Note aggiuntive (facoltativo)",
+    rcNotePh: "Altri dettagli utili sulla tua ricetta o produzione…",
+    rcPrivacyLabel: "Ho letto e accetto l'<a href=\"#\" class=\"privacy-link\">informativa privacy</a> (obbligatorio) *",
+    rcSubmit: "Invia richiesta",
+    rcSubmitting: "Invio in corso…",
+    rcOrEmail: "Preferisci scriverci direttamente? Scrivici a <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.",
+    rcOrCalc: "Vuoi comunque provare tu stesso il calcolatore di bilanciamento sorbetti? <a href=\"/calcolatore-ricetta-sorbetto\">Aprilo in una pagina dedicata →</a>",
+    toastRicettaCtaSuccess: "Richiesta inviata! Ti risponderemo appena possibile con i consigli per la tua ricetta.",
+    toastRicettaCtaError: "Invio non riuscito. Riprova o scrivici direttamente via email.",
     verdictOk: "✓ Nel target",
     verdictNessunIngrediente: "Aggiungi ingredienti alla ricetta per vedere il risultato.",
     verdictPacBassoPre: "⚠ PAC basso: rischia di risultare troppo duro/ghiacciato in vetrina (mancano",
@@ -1858,6 +1910,33 @@ const I18N = {
     prPodOk: "✅ Im empfohlenen Bereich für Fruchtsorbet (28–35)",
     prPodOut: "⚠️ Außerhalb des empfohlenen Bereichs (28–35) — erhöhen Sie die Saccharose (senkt die benötigte Dextrose) oder wechseln Sie die Frucht",
     prFeasibleWarn: "⚠️ Achtung: negative Menge — reduzieren Sie Frucht/Saccharose/Glukose/Inulin oder erhöhen Sie die Gesamtmenge",
+    rcTitle: "🎯 Wir optimieren Ihr Rezept kostenlos",
+    rcIntro: "Schreiben Sie uns, welche Basis Sie verwenden (Marke und Typ), und wir helfen Ihnen, das Rezept für Ihr Produkt zu optimieren — völlig kostenlos. Wenn Sie möchten, teilen Sie uns auch mit, welche weiteren Zutaten Sie verwenden: das hilft uns, einen genaueren Rat zu geben, ist aber nicht Pflicht — für uns zählt vor allem die Basis.",
+    rcAltText: "Sie können uns auch nur die Daten zur Basis oder zum Neutralstoff (Neutro) schicken: wir schlagen Ihnen dann selbst ein komplettes Rezept vor.",
+    rcLabelBase: "Marke und Typ der Basis *",
+    rcBasePh: "Z. B. Aromitalia DBF Master 50 classic tuttovegetale C/F",
+    rcLabelEmail: "Kontakt-E-Mail *",
+    rcLabelNome: "Name (optional)",
+    rcIngredientiLabel: "Welche davon verwenden Sie? (optional — der Rest ist unwichtig)",
+    rcIngDestrosio: "Traubenzucker (Dextrose)",
+    rcIngGlucosio: "Glukose",
+    rcIngZuccheroInvertito: "Invertzucker",
+    rcIngMaltodestrine: "Maltodextrine",
+    rcIngEmulsionanti: "Emulgatoren",
+    rcIngFruttosio: "Fruktose",
+    rcIngLatte: "Frische pasteurisierte Milch oder Vollmilch",
+    rcIngLatteGrassoPolvere: "Vollmilchpulver",
+    rcIngLatteMagroPolvere: "Magermilchpulver",
+    rcIngPannaSpray: "Sahnepulver (Cremigkeits-Regulator)",
+    rcLabelNote: "Zusätzliche Anmerkungen (optional)",
+    rcNotePh: "Weitere nützliche Details zu Ihrem Rezept oder Ihrer Produktion…",
+    rcPrivacyLabel: "Ich habe die <a href=\"#\" class=\"privacy-link\">Datenschutzerklärung</a> gelesen und akzeptiere sie (Pflichtfeld) *",
+    rcSubmit: "Anfrage senden",
+    rcSubmitting: "Wird gesendet…",
+    rcOrEmail: "Möchten Sie uns lieber direkt schreiben? Schreiben Sie an <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.",
+    rcOrCalc: "Möchten Sie den Sorbet-Bilanzierungsrechner trotzdem selbst ausprobieren? <a href=\"/calcolatore-ricetta-sorbetto\">Auf einer eigenen Seite öffnen →</a>",
+    toastRicettaCtaSuccess: "Anfrage gesendet! Wir antworten Ihnen so schnell wie möglich mit Empfehlungen für Ihr Rezept.",
+    toastRicettaCtaError: "Senden fehlgeschlagen. Versuchen Sie es erneut oder schreiben Sie uns direkt per E-Mail.",
     verdictOk: "✓ Im Zielbereich",
     verdictNessunIngrediente: "Füge Zutaten zum Rezept hinzu, um das Ergebnis zu sehen.",
     verdictPacBassoPre: "⚠ PAC niedrig: riskiert, in der Vitrine zu hart/vereist zu werden (es fehlen",
@@ -2213,6 +2292,33 @@ const I18N = {
     prPodOk: "✅ Within the recommended range for fruit sorbet (28–35)",
     prPodOut: "⚠️ Outside the recommended range (28–35) — try increasing the Sucrose (it will lower the Dextrose needed) or change the fruit",
     prFeasibleWarn: "⚠️ Warning: negative quantity — reduce fruit/sucrose/glucose/inulin or increase the total recipe",
+    rcTitle: "🎯 We'll optimize your recipe for free",
+    rcIntro: "Tell us which base you use (brand and type) and we'll help you optimize the recipe for your product — at no cost. If you like, also let us know which other ingredients you use: it helps us give more precise advice, but it's not required — what matters most to us is the base.",
+    rcAltText: "You can also just send us the base or neutro (stabilizer) data alone: we'll suggest a complete recipe for you.",
+    rcLabelBase: "Base brand and type *",
+    rcBasePh: "E.g. Aromitalia DBF Master 50 classic tuttovegetale C/F",
+    rcLabelEmail: "Contact email *",
+    rcLabelNome: "Name (optional)",
+    rcIngredientiLabel: "Which of these do you use? (optional — the rest doesn't matter)",
+    rcIngDestrosio: "Dextrose",
+    rcIngGlucosio: "Glucose",
+    rcIngZuccheroInvertito: "Invert sugar",
+    rcIngMaltodestrine: "Maltodextrins",
+    rcIngEmulsionanti: "Emulsifiers",
+    rcIngFruttosio: "Fructose",
+    rcIngLatte: "Fresh pasteurized milk or whole milk",
+    rcIngLatteGrassoPolvere: "Whole milk powder",
+    rcIngLatteMagroPolvere: "Skimmed milk powder",
+    rcIngPannaSpray: "Spray cream powder (creaminess adjuster)",
+    rcLabelNote: "Additional notes (optional)",
+    rcNotePh: "Other useful details about your recipe or production…",
+    rcPrivacyLabel: "I have read and accept the <a href=\"#\" class=\"privacy-link\">privacy notice</a> (required) *",
+    rcSubmit: "Send request",
+    rcSubmitting: "Sending…",
+    rcOrEmail: "Prefer to write to us directly? Email us at <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.",
+    rcOrCalc: "Want to try the sorbet balancing calculator yourself anyway? <a href=\"/calcolatore-ricetta-sorbetto\">Open it on its own page →</a>",
+    toastRicettaCtaSuccess: "Request sent! We'll get back to you as soon as possible with advice for your recipe.",
+    toastRicettaCtaError: "Sending failed. Try again or email us directly.",
     verdictOk: "✓ Within target",
     verdictNessunIngrediente: "Add ingredients to the recipe to see the result.",
     verdictPacBassoPre: "⚠ Low PAC: risk of being too hard/icy in the display case (missing",
@@ -2568,6 +2674,33 @@ const I18N = {
     prPodOk: "✅ Dentro del rango recomendado para sorbete de fruta (28–35)",
     prPodOut: "⚠️ Fuera del rango recomendado (28–35) — prueba a aumentar la Sacarosa (bajará la Dextrosa necesaria) o cambia de fruta",
     prFeasibleWarn: "⚠️ Atención: cantidad negativa — reduce fruta/sacarosa/glucosa/inulina o aumenta el total de la receta",
+    rcTitle: "🎯 Optimizamos tu receta gratis",
+    rcIntro: "Escríbenos qué base usas (marca y tipo) y te ayudamos a optimizar la receta para tu producto — sin ningún coste. Si quieres, indícanos también qué otros ingredientes usas: nos ayuda a darte un consejo más preciso, pero no es obligatorio — lo que más nos importa es la base.",
+    rcAltText: "También puedes enviarnos solo los datos de la base o del neutro que usas: te sugerimos nosotros una receta completa.",
+    rcLabelBase: "Marca y tipo de base *",
+    rcBasePh: "Ej. Aromitalia DBF Master 50 classic tuttovegetale C/F",
+    rcLabelEmail: "Email de contacto *",
+    rcLabelNome: "Nombre (opcional)",
+    rcIngredientiLabel: "¿Cuáles de estos usas? (opcional — el resto es indiferente)",
+    rcIngDestrosio: "Dextrosa",
+    rcIngGlucosio: "Glucosa",
+    rcIngZuccheroInvertito: "Azúcar invertido",
+    rcIngMaltodestrine: "Maltodextrinas",
+    rcIngEmulsionanti: "Emulsionantes",
+    rcIngFruttosio: "Fructosa",
+    rcIngLatte: "Leche fresca pasteurizada o leche entera",
+    rcIngLatteGrassoPolvere: "Leche entera en polvo",
+    rcIngLatteMagroPolvere: "Leche desnatada en polvo",
+    rcIngPannaSpray: "Nata en polvo (ajustador de cremosidad)",
+    rcLabelNote: "Notas adicionales (opcional)",
+    rcNotePh: "Otros detalles útiles sobre tu receta o producción…",
+    rcPrivacyLabel: "He leído y acepto la <a href=\"#\" class=\"privacy-link\">política de privacidad</a> (obligatorio) *",
+    rcSubmit: "Enviar solicitud",
+    rcSubmitting: "Enviando…",
+    rcOrEmail: "¿Prefieres escribirnos directamente? Escríbenos a <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.",
+    rcOrCalc: "¿Quieres probar tú mismo el calculador de balance de sorbetes de todos modos? <a href=\"/calcolatore-ricetta-sorbetto\">Ábrelo en una página dedicada →</a>",
+    toastRicettaCtaSuccess: "¡Solicitud enviada! Te responderemos lo antes posible con consejos para tu receta.",
+    toastRicettaCtaError: "Error al enviar. Inténtalo de nuevo o escríbenos directamente por email.",
     verdictOk: "✓ Dentro del objetivo",
     verdictNessunIngrediente: "Añade ingredientes a la receta para ver el resultado.",
     verdictPacBassoPre: "⚠ PAC bajo: riesgo de resultar demasiado duro/helado en vitrina (faltan",
@@ -2640,8 +2773,6 @@ function setLang(lang){
   if (typeof refreshRicettaAddSelect === 'function') refreshRicettaAddSelect();
   if (typeof renderRicettaTable === 'function') renderRicettaTable();
   if (typeof renderCurvaTable === 'function') renderCurvaTable();
-  if (typeof prSyncTipoSupporto === 'function') prSyncTipoSupporto();
-  if (typeof prCalcola === 'function') prCalcola();
   if (typeof renderPostazioniTable === 'function') renderPostazioniTable();
   if (wasCompareVisible && typeof buildCompareTable === 'function') buildCompareTable();
   if (typeof refreshExtraToolsButtonLabel === 'function') refreshExtraToolsButtonLabel();
@@ -3587,108 +3718,6 @@ renderCurvaTable();
 // foglio Excel scaricabile "Ricetta_sorbetto_frutta.xlsx".
 // =====================================================================
 
-// Coefficienti fissi Glucosio DE32 / Inulina / Neutro frutta — stessa
-// fonte/incertezza del foglio Excel (gelatoperpassione.it per Glucosio e
-// Inulina; il Neutro è uno stabilizzante senza zuccheri, PAC/POD 0 nei
-// sistemi di bilanciamento semplificati, fonte cucina.li).
-const PR_GLUCOSIO_PAC = 54.15, PR_GLUCOSIO_POD = 22.5;
-const PR_INULINA_PAC = 25, PR_INULINA_POD = 10;
-const PR_NEUTRO_PAC = 0, PR_NEUTRO_POD = 0;
-
-function prPopolaFruttaSelect(){
-  const sel = document.getElementById('prFruttaScelta');
-  if(!sel) return;
-  const current = sel.value;
-  sel.innerHTML = FRUTTA_DB.map(f => `<option value="${f.nome}">${f.nome}</option>`).join('');
-  if(current && FRUTTA_DB.some(f => f.nome === current)) sel.value = current;
-}
-
-// Mostra/nasconde i campi PAC/POD/preset-dose in base al prodotto di
-// supporto scelto (Neutro = dose fissa piccola, senza zuccheri; Base
-// frutta = dose maggiore, con zuccheri veri da dichiarare tu) e aggiorna
-// l'etichetta e il valore di default della dose.
-function prSyncTipoSupporto(){
-  const tipo = document.getElementById('prTipoSupporto').value;
-  const isBase = tipo === 'base';
-  document.getElementById('prBasePacWrap').style.display = isBase ? '' : 'none';
-  document.getElementById('prBasePodWrap').style.display = isBase ? '' : 'none';
-  document.getElementById('prDosePresetWrap').style.display = isBase ? 'flex' : 'none';
-  document.getElementById('prBaseHint').style.display = isBase ? '' : 'none';
-  document.getElementById('prDoseNeutroLabel').textContent = t(isBase ? 'prDoseBase' : 'prDoseNeutro');
-  const doseInput = document.getElementById('prDoseNeutro');
-  // Cambio tipo: riporta la dose al default tipico di quel prodotto (5 per
-  // il Neutro, 50 per la Base), solo quando si passa da un tipo all'altro.
-  if(doseInput.dataset.lastTipo !== tipo){
-    doseInput.value = isBase ? 50 : 5;
-    doseInput.dataset.lastTipo = tipo;
-  }
-}
-
-function prCalcola(){
-  const box = document.getElementById('prRisultatoBox');
-  if(!box) return;
-  const totale = parseFloat(document.getElementById('prTotale').value) || 0;
-  const fruttaNome = document.getElementById('prFruttaScelta').value;
-  const frutta = FRUTTA_DB.find(f => f.nome === fruttaNome) || { pac: 0, pod: 0 };
-  const fruttaG = parseFloat(document.getElementById('prFruttaG').value) || 0;
-  const saccG = parseFloat(document.getElementById('prSaccarosio').value) || 0;
-  const glucG = parseFloat(document.getElementById('prGlucosio').value) || 0;
-  const inulinaG = parseFloat(document.getElementById('prInulina').value) || 0;
-  const doseNeutro = parseFloat(document.getElementById('prDoseNeutro').value) || 0;
-  const targetPac = parseFloat(document.getElementById('prTargetPac').value) || 0;
-  const tipoSupporto = document.getElementById('prTipoSupporto').value;
-  const isBase = tipoSupporto === 'base';
-  const neutroPac = isBase ? (parseFloat(document.getElementById('prBasePac').value) || 0) : PR_NEUTRO_PAC;
-  const neutroPod = isBase ? (parseFloat(document.getElementById('prBasePod').value) || 0) : PR_NEUTRO_POD;
-
-  if(totale <= 0){
-    box.innerHTML = `<div class="result-panel"><div class="verdict">${t('verdictNessunIngrediente')}</div></div>`;
-    return;
-  }
-
-  const neutroG = doseNeutro * totale / 1000;
-
-  // Destrosio = unica incognita che centra esattamente il Target PAC, una
-  // volta fissati Frutta, Saccarosio, Glucosio, Inulina e Neutro/Base.
-  const destrosioG = (targetPac*totale - fruttaG*frutta.pac - saccG*100 - glucG*PR_GLUCOSIO_PAC - inulinaG*PR_INULINA_PAC - neutroG*neutroPac) / 190;
-  // Acqua = il resto del totale (non contribuisce a PAC/POD).
-  const acquaG = totale - fruttaG - saccG - glucG - inulinaG - destrosioG - neutroG;
-
-  const pacCalc = (fruttaG*frutta.pac + saccG*100 + glucG*PR_GLUCOSIO_PAC + inulinaG*PR_INULINA_PAC + destrosioG*190 + neutroG*neutroPac) / totale;
-  const podCalc = (fruttaG*frutta.pod + saccG*100 + glucG*PR_GLUCOSIO_POD + inulinaG*PR_INULINA_POD + destrosioG*70 + neutroG*neutroPod) / totale;
-  const brix = (saccG + glucG + inulinaG + destrosioG + fruttaG*frutta.pod/120 + neutroG*neutroPod/120) / totale * 100;
-
-  const target = TARGET_RANGES.sorbetto;
-  const podOk = podCalc >= target.podMin && podCalc <= target.podMax;
-  const feasible = destrosioG >= 0 && acquaG >= 0;
-  const stato = !feasible ? 'low' : (podOk ? 'ok' : 'high');
-
-  box.innerHTML = `
-    <div class="result-panel ${stato}">
-      <div class="result-grid">
-        <div class="result-tile"><div class="rt-label">${t('prResDestrosio')}</div><div class="rt-value">${destrosioG.toFixed(0)} g</div></div>
-        <div class="result-tile"><div class="rt-label">${t('prResAcqua')}</div><div class="rt-value">${acquaG.toFixed(0)} g</div></div>
-        <div class="result-tile"><div class="rt-label">${t(isBase ? 'prResBase' : 'prResNeutro')}</div><div class="rt-value">${neutroG.toFixed(0)} g</div></div>
-        <div class="result-tile"><div class="rt-label">${t('prResPac')}</div><div class="rt-value">${pacCalc.toFixed(2)}</div><div class="rt-sub">${t('targetPrefix')}: ${targetPac.toFixed(1)}</div></div>
-        <div class="result-tile"><div class="rt-label">${t('prResPod')}</div><div class="rt-value">${podCalc.toFixed(2)}</div><div class="rt-sub">${t('prResPodNote')} (${target.podMin}–${target.podMax})</div></div>
-        <div class="result-tile"><div class="rt-label">${t('prResBrix')}</div><div class="rt-value">${brix.toFixed(1)}</div><div class="rt-sub">${t('prResBrixNote')}</div></div>
-      </div>
-      <div class="verdict">${feasible ? (podOk ? t('prPodOk') : t('prPodOut')) : t('prFeasibleWarn')}</div>
-    </div>`;
-}
-
-prPopolaFruttaSelect();
-prSyncTipoSupporto();
-document.getElementById('prTipoSupporto').addEventListener('change', () => { prSyncTipoSupporto(); prCalcola(); });
-document.getElementById('prDose50').addEventListener('click', () => { document.getElementById('prDoseNeutro').value = 50; prCalcola(); });
-document.getElementById('prDose100').addEventListener('click', () => { document.getElementById('prDoseNeutro').value = 100; prCalcola(); });
-['prTotale','prFruttaScelta','prFruttaG','prSaccarosio','prGlucosio','prInulina','prDoseNeutro','prTargetPac','prBasePac','prBasePod'].forEach(id => {
-  const el = document.getElementById(id);
-  el.addEventListener('input', prCalcola);
-  el.addEventListener('change', prCalcola);
-});
-prCalcola();
-
 // =====================================================================
 // GESTIONE MANTECATORI & VETRINE — ispirata a bilanciamentovetrina.com
 // =====================================================================
@@ -3877,6 +3906,37 @@ window.addEventListener('appinstalled', () => {
       })
       .catch(() => {
         showToast(t('toastJoinError'));
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      });
+  });
+})();
+
+// ------- Modulo "Ottimizza la tua ricetta" (Netlify Forms, senza backend) -------
+(function () {
+  const form = document.getElementById('rcForm');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = t('rcSubmitting');
+    const body = new URLSearchParams(new FormData(form)).toString();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('Invio non riuscito: ' + response.status);
+        showToast(t('toastRicettaCtaSuccess'));
+        form.reset();
+      })
+      .catch(() => {
+        showToast(t('toastRicettaCtaError'));
       })
       .finally(() => {
         submitBtn.disabled = false;
