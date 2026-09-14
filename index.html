@@ -113,10 +113,10 @@
     },
     {
       "@type": "Question",
-      "name": "Kann ich über die Website kostenlose Muster bei den Herstellern anfordern?",
+      "name": "Kann ich über die Website Informationen bei den Herstellern anfordern?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja: Im Archiv finden Sie neben jedem Produkt die Schaltfläche „Muster anfordern\": Sie füllen ein Formular mit Ihren Daten aus, und die Anfrage wird direkt an das Herstellerunternehmen des ausgewählten Produkts weitergeleitet."
+        "text": "Ja: Im Archiv finden Sie neben jedem Produkt die Schaltfläche „Informationen anfordern\": Sie füllen ein Formular mit Ihren Daten aus, und die Anfrage wird direkt an das Herstellerunternehmen des ausgewählten Produkts weitergeleitet."
       }
     },
     {
@@ -1026,8 +1026,8 @@
         <p data-i18n="faq5A">Il numero indica il dosaggio consigliato in grammi per litro di liquido. Una base 50 richiede più integrazione da parte del gelatiere (zuccheri, solidi del latte) e offre più controllo sulla ricetta finale; una base 100 è più strutturata e già bilanciata, quindi più semplice da usare ma con meno margine di personalizzazione.</p>
       </div>
       <div class="faq-item">
-        <h3 data-i18n="faq6Q">È possibile richiedere un campione gratuito ai produttori tramite il sito?</h3>
-        <p data-i18n-html="faq6A">Sì: nell'Archivio, accanto a ogni prodotto, trovi il tasto "Richiedi campione": si compila un modulo con i propri dati e la richiesta viene inoltrata direttamente all'azienda produttrice del prodotto selezionato.</p>
+        <h3 data-i18n="faq6Q">È possibile richiedere informazioni ai produttori tramite il sito?</h3>
+        <p data-i18n-html="faq6A">Sì: nell'Archivio, accanto a ogni prodotto, trovi il tasto "Richiedi informazioni": si compila un modulo con i propri dati e la richiesta viene inoltrata direttamente all'azienda produttrice del prodotto selezionato.</p>
       </div>
       <div class="faq-item">
         <h3 data-i18n="faq7Q">Il sito e gli strumenti di confronto sono gratuiti?</h3>
@@ -1129,7 +1129,7 @@
 <div class="modal-overlay" id="sampleModalOverlay">
   <div class="modal-box">
     <button type="button" class="modal-close" id="sampleModalClose" aria-label="Chiudi">✕</button>
-    <h2 data-i18n="sampleTitle">📦 Richiedi un campione</h2>
+    <h2 data-i18n="sampleTitle">ℹ️ Richiedi informazioni</h2>
     <p class="modal-sub" data-i18n="sampleSubtitle">Compila i tuoi dati: giriamo la richiesta all'azienda produttrice del prodotto scelto.</p>
     <p style="font-size:0.85rem; background:var(--cream-2); border-radius:8px; padding:8px 10px; margin:0 0 14px; line-height:1.5;">
       <strong data-i18n="colAzienda">Azienda</strong>: <span id="sampleAziendaDisplay"></span><br>
@@ -1157,7 +1157,7 @@
       </div>
       <div class="field">
         <label for="sampleNote" data-i18n="sampleLabelNote">Note (facoltativo)</label>
-        <textarea id="sampleNote" name="note" rows="2" data-i18n-ph="sampleNotePh" placeholder="Indirizzo di spedizione, quantità richiesta…"></textarea>
+        <textarea id="sampleNote" name="note" rows="2" data-i18n-ph="sampleNotePh" placeholder="Dettagli della richiesta, quantità di interesse…"></textarea>
       </div>
       <div class="field" style="display:flex; align-items:flex-start; gap:8px;">
         <input type="checkbox" id="samplePrivacy" name="privacy_accettata" required style="width:auto; margin-top:3px;" />
@@ -1241,8 +1241,8 @@ const I18N = {
     faqGuidaLink: "📖 Approfondisci PAC, POD e solidi totali nella guida completa →",
     faq5Q: "Qual è la differenza tra una base 50 e una base 100?",
     faq5A: "Il numero indica il dosaggio consigliato in grammi per litro di liquido. Una base 50 richiede più integrazione da parte del gelatiere (zuccheri, solidi del latte) e offre più controllo sulla ricetta finale; una base 100 è più strutturata e già bilanciata, quindi più semplice da usare ma con meno margine di personalizzazione.",
-    faq6Q: "È possibile richiedere un campione gratuito ai produttori tramite il sito?",
-    faq6A: "Sì: nell'Archivio, accanto a ogni prodotto, trovi il tasto \"Richiedi campione\": si compila un modulo con i propri dati e la richiesta viene inoltrata direttamente all'azienda produttrice del prodotto selezionato.",
+    faq6Q: "È possibile richiedere informazioni ai produttori tramite il sito?",
+    faq6A: "Sì: nell'Archivio, accanto a ogni prodotto, trovi il tasto \"Richiedi informazioni\": si compila un modulo con i propri dati e la richiesta viene inoltrata direttamente all'azienda produttrice del prodotto selezionato.",
     faq7Q: "Il sito e gli strumenti di confronto sono gratuiti?",
     faq7A: "Sì, l'accesso al database, al confronto tra prodotti e agli strumenti di taratura è completamente gratuito e senza registrazione: il sito è pensato come una piattaforma indipendente e neutrale, che non vende materie prime ma mette a disposizione dati tecnici.",
     faq8Q: "Posso salvare le mie valutazioni e note personali?",
@@ -1448,16 +1448,16 @@ const I18N = {
     feedbackSubmitting: "Invio in corso…",
     toastFeedbackSuccess: "Grazie mille per il tuo feedback!",
     toastFeedbackError: "Problema nell'invio. Scrivici direttamente a marcolestan@gelateriaingredienti.com",
-    colCampione: "Campione",
+    colCampione: "Info",
     colClick: "Click",
-    btnRichiediCampione: "Richiedi campione",
-    sampleTitle: "📦 Richiedi un campione",
+    btnRichiediCampione: "Richiedi informazioni",
+    sampleTitle: "ℹ️ Richiedi informazioni",
     sampleSubtitle: "Compila i tuoi dati: giriamo la richiesta all'azienda produttrice del prodotto scelto.",
     sampleLabelGelateria: "Nome gelateria *",
     sampleLabelEmail: "Email di contatto *",
     sampleLabelTelefono: "Telefono (facoltativo)",
     sampleLabelNote: "Note (facoltativo)",
-    sampleNotePh: "Indirizzo di spedizione, quantità richiesta…",
+    sampleNotePh: "Dettagli della richiesta, quantità di interesse…",
     samplePrivacyLabel: "Ho letto e accetto l'<a href=\"#\" class=\"privacy-link\">informativa privacy</a> (obbligatorio) *",
     sampleSubmit: "Invia richiesta",
     sampleSubmitting: "Invio in corso…",
@@ -1484,7 +1484,7 @@ const I18N = {
     joinPrivacyLabel: "Ho letto e accetto l'<a href=\"#\" class=\"privacy-link\">informativa privacy</a> (obbligatorio) *",
     footerPrivacyLink: "Informativa privacy",
     privacyTitle: "🔒 Informativa sulla privacy",
-    privacyBody: "<p><strong>Titolare del trattamento:</strong> Marco Lestan, contattabile all'indirizzo <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.</p><p><strong>Dati raccolti:</strong> nome dell'azienda, indirizzo email di contatto, tipo di attività e messaggio facoltativo, inseriti volontariamente tramite il modulo \"Unisciti a noi\".</p><p><strong>Richiesta campione:</strong> se utilizzate il modulo \"Richiedi campione\" su un prodotto, raccogliamo nome della gelateria, email di contatto, telefono e note facoltative (es. indirizzo di spedizione), insieme al prodotto e all'azienda produttrice selezionati. Questi dati vengono comunicati all'azienda produttrice indicata, al solo scopo di gestire l'invio del campione richiesto.</p><p><strong>Feedback:</strong> se utilizzate il modulo \"Lascia un feedback\", raccogliamo il messaggio inserito e, solo se li fornite volontariamente, nome, azienda/gelateria ed email di contatto.</p><p><strong>Finalità:</strong> rispondere alla richiesta di inserimento dei prodotti nel portale e gestire le comunicazioni necessarie a tale scopo.</p><p><strong>Base giuridica:</strong> esecuzione di misure precontrattuali richieste dall'interessato (art. 6, par. 1, lett. b, GDPR), attivate volontariamente con l'invio del modulo.</p><p><strong>Destinatari e trasferimento dei dati:</strong> il modulo è gestito tecnicamente tramite Netlify, Inc., fornitore del servizio di hosting del sito, che agisce come responsabile del trattamento. Il trattamento può avvenire anche su server situati negli Stati Uniti, nel rispetto delle clausole contrattuali standard approvate dalla Commissione Europea. I dati non vengono ceduti a terzi per finalità commerciali o di marketing.</p><p><strong>Conservazione:</strong> i dati sono conservati per il tempo necessario a gestire la richiesta e l'eventuale rapporto successivo con la vostra azienda.</p><p><strong>Diritti dell'interessato:</strong> potete richiedere in ogni momento accesso, rettifica, cancellazione o limitazione del trattamento dei vostri dati scrivendo all'indirizzo sopra indicato, e avete diritto di proporre reclamo al Garante per la protezione dei dati personali.</p><p><strong>Cookie di analisi (Google Analytics e Microsoft Clarity):</strong> se date il consenso tramite il banner dei cookie, il portale utilizza Google Analytics e Microsoft Clarity per raccogliere statistiche anonime e aggregate sulla navigazione (pagine visitate, provenienza del traffico, durata delle visite, mappe di calore e registrazioni anonime delle sessioni), al fine di migliorare il servizio. Questi dati sono trattati da Google Ireland Limited e da Microsoft Ireland Operations Limited, anche su server negli Stati Uniti, nel rispetto delle clausole contrattuali standard approvate dalla Commissione Europea. Potete revocare il consenso in qualsiasi momento tramite le impostazioni del browser o cancellando i cookie; se rifiutate o revocate il consenso, il portale continua a funzionare normalmente senza alcuna limitazione.</p>",
+    privacyBody: "<p><strong>Titolare del trattamento:</strong> Marco Lestan, contattabile all'indirizzo <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.</p><p><strong>Dati raccolti:</strong> nome dell'azienda, indirizzo email di contatto, tipo di attività e messaggio facoltativo, inseriti volontariamente tramite il modulo \"Unisciti a noi\".</p><p><strong>Richiesta informazioni:</strong> se utilizzate il modulo \"Richiedi informazioni\" su un prodotto, raccogliamo nome della gelateria, email di contatto, telefono e note facoltative (es. dettagli della richiesta), insieme al prodotto e all'azienda produttrice selezionati. Questi dati vengono comunicati all'azienda produttrice indicata, al solo scopo di gestire la richiesta di informazioni.</p><p><strong>Feedback:</strong> se utilizzate il modulo \"Lascia un feedback\", raccogliamo il messaggio inserito e, solo se li fornite volontariamente, nome, azienda/gelateria ed email di contatto.</p><p><strong>Finalità:</strong> rispondere alla richiesta di inserimento dei prodotti nel portale e gestire le comunicazioni necessarie a tale scopo.</p><p><strong>Base giuridica:</strong> esecuzione di misure precontrattuali richieste dall'interessato (art. 6, par. 1, lett. b, GDPR), attivate volontariamente con l'invio del modulo.</p><p><strong>Destinatari e trasferimento dei dati:</strong> il modulo è gestito tecnicamente tramite Netlify, Inc., fornitore del servizio di hosting del sito, che agisce come responsabile del trattamento. Il trattamento può avvenire anche su server situati negli Stati Uniti, nel rispetto delle clausole contrattuali standard approvate dalla Commissione Europea. I dati non vengono ceduti a terzi per finalità commerciali o di marketing.</p><p><strong>Conservazione:</strong> i dati sono conservati per il tempo necessario a gestire la richiesta e l'eventuale rapporto successivo con la vostra azienda.</p><p><strong>Diritti dell'interessato:</strong> potete richiedere in ogni momento accesso, rettifica, cancellazione o limitazione del trattamento dei vostri dati scrivendo all'indirizzo sopra indicato, e avete diritto di proporre reclamo al Garante per la protezione dei dati personali.</p><p><strong>Cookie di analisi (Google Analytics e Microsoft Clarity):</strong> se date il consenso tramite il banner dei cookie, il portale utilizza Google Analytics e Microsoft Clarity per raccogliere statistiche anonime e aggregate sulla navigazione (pagine visitate, provenienza del traffico, durata delle visite, mappe di calore e registrazioni anonime delle sessioni), al fine di migliorare il servizio. Questi dati sono trattati da Google Ireland Limited e da Microsoft Ireland Operations Limited, anche su server negli Stati Uniti, nel rispetto delle clausole contrattuali standard approvate dalla Commissione Europea. Potete revocare il consenso in qualsiasi momento tramite le impostazioni del browser o cancellando i cookie; se rifiutate o revocate il consenso, il portale continua a funzionare normalmente senza alcuna limitazione.</p>",
     archiveVoci: "voci",
     archiveDi: "di",
     archiveTotali: "totali",
@@ -1625,8 +1625,8 @@ const I18N = {
     faqGuidaLink: "📖 Mehr zu PAC, POD und Trockenmasse im vollständigen Leitfaden →",
     faq5Q: "Was ist der technische Unterschied zwischen einer Basis 50 und einer Basis 100?",
     faq5A: "Die Zahl gibt die empfohlene Dosierung in Gramm pro Liter Flüssigkeit an. Eine Basis 50 erfordert mehr Zugabe durch den Eismacher (Zucker, Milchtrockenmasse) und bietet mehr Kontrolle über das endgültige Rezept; eine Basis 100 ist strukturierter und bereits bilanziert, also einfacher in der Anwendung, bietet aber weniger Spielraum für Anpassungen.",
-    faq6Q: "Kann ich über die Website kostenlose Muster bei den Herstellern anfordern?",
-    faq6A: "Ja: Im Archiv finden Sie neben jedem Produkt die Schaltfläche „Muster anfordern\": Sie füllen ein Formular mit Ihren Daten aus, und die Anfrage wird direkt an das Herstellerunternehmen des ausgewählten Produkts weitergeleitet.",
+    faq6Q: "Kann ich über die Website Informationen bei den Herstellern anfordern?",
+    faq6A: "Ja: Im Archiv finden Sie neben jedem Produkt die Schaltfläche „Informationen anfordern\": Sie füllen ein Formular mit Ihren Daten aus, und die Anfrage wird direkt an das Herstellerunternehmen des ausgewählten Produkts weitergeleitet.",
     faq7Q: "Sind die Website und die Vergleichstools kostenlos?",
     faq7A: "Ja, der Zugang zur Datenbank, zum Produktvergleich und zu den Kalibrierungstools ist vollständig kostenlos und ohne Registrierung: Die Website versteht sich als unabhängige, neutrale Plattform, die keine Rohstoffe verkauft, sondern technische Daten zur Verfügung stellt.",
     faq8Q: "Kann ich meine Bewertungen und persönlichen Notizen speichern?",
@@ -1831,16 +1831,16 @@ const I18N = {
     feedbackSubmitting: "Wird gesendet…",
     toastFeedbackSuccess: "Vielen Dank für Ihr Feedback!",
     toastFeedbackError: "Problem beim Senden. Bitte schreiben Sie uns direkt an marcolestan@gelateriaingredienti.com",
-    colCampione: "Muster",
+    colCampione: "Info",
     colClick: "Klicks",
-    btnRichiediCampione: "Muster anfordern",
-    sampleTitle: "📦 Muster anfordern",
+    btnRichiediCampione: "Informationen anfordern",
+    sampleTitle: "ℹ️ Informationen anfordern",
     sampleSubtitle: "Geben Sie Ihre Daten ein: wir leiten die Anfrage an den Hersteller des gewählten Produkts weiter.",
     sampleLabelGelateria: "Name der Eisdiele *",
     sampleLabelEmail: "Kontakt-E-Mail *",
     sampleLabelTelefono: "Telefon (optional)",
     sampleLabelNote: "Notizen (optional)",
-    sampleNotePh: "Lieferadresse, gewünschte Menge…",
+    sampleNotePh: "Details zur Anfrage, gewünschte Menge…",
     samplePrivacyLabel: "Ich habe die <a href=\"#\" class=\"privacy-link\">Datenschutzerklärung</a> gelesen und akzeptiere sie (Pflichtfeld) *",
     sampleSubmit: "Anfrage senden",
     sampleSubmitting: "Wird gesendet…",
@@ -1867,7 +1867,7 @@ const I18N = {
     joinPrivacyLabel: "Ich habe die <a href=\"#\" class=\"privacy-link\">Datenschutzerklärung</a> gelesen und akzeptiere sie (Pflichtfeld) *",
     footerPrivacyLink: "Datenschutzerklärung",
     privacyTitle: "🔒 Datenschutzerklärung",
-    privacyBody: "<p><strong>Verantwortlicher für die Verarbeitung:</strong> Marco Lestan, erreichbar unter <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.</p><p><strong>Erhobene Daten:</strong> Firmenname, Kontakt-E-Mail-Adresse, Art der Tätigkeit und optionale Nachricht, die freiwillig über das Formular „Werden Sie Partner\" eingegeben werden.</p><p><strong>Musteranfrage:</strong> wenn Sie das Formular „Muster anfordern\" für ein Produkt nutzen, erheben wir den Namen der Eisdiele, die Kontakt-E-Mail, die Telefonnummer und optionale Notizen (z. B. Lieferadresse), zusammen mit dem gewählten Produkt und Hersteller. Diese Daten werden an den angegebenen Hersteller weitergegeben, ausschließlich zum Zweck der Bearbeitung der Musteranfrage.</p><p><strong>Feedback:</strong> wenn Sie das Formular „Feedback geben\" nutzen, erheben wir die eingegebene Nachricht sowie, nur wenn Sie diese freiwillig angeben, Name, Unternehmen/Eisdiele und Kontakt-E-Mail.</p><p><strong>Zweck:</strong> Beantwortung der Anfrage zur Aufnahme Ihrer Produkte in das Portal und die dafür notwendige Kommunikation.</p><p><strong>Rechtsgrundlage:</strong> Durchführung vorvertraglicher Maßnahmen auf Anfrage der betroffenen Person (Art. 6 Abs. 1 lit. b DSGVO), die durch das freiwillige Absenden des Formulars ausgelöst werden.</p><p><strong>Empfänger und Datenübermittlung:</strong> Das Formular wird technisch über Netlify, Inc. abgewickelt, den Hosting-Anbieter der Website, der als Auftragsverarbeiter fungiert. Die Verarbeitung kann auch auf Servern in den USA erfolgen, unter Einhaltung der von der Europäischen Kommission genehmigten Standardvertragsklauseln. Die Daten werden nicht zu Werbe- oder Marketingzwecken an Dritte weitergegeben.</p><p><strong>Speicherdauer:</strong> Die Daten werden so lange gespeichert, wie es zur Bearbeitung der Anfrage und einer eventuellen anschließenden Zusammenarbeit erforderlich ist.</p><p><strong>Rechte der betroffenen Person:</strong> Sie können jederzeit Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer Daten verlangen, indem Sie an die oben genannte Adresse schreiben. Zudem haben Sie das Recht, Beschwerde bei der zuständigen Datenschutzaufsichtsbehörde einzureichen.</p><p><strong>Analyse-Cookies (Google Analytics und Microsoft Clarity):</strong> Wenn Sie über das Cookie-Banner Ihre Zustimmung erteilen, verwendet das Portal Google Analytics und Microsoft Clarity, um anonyme und aggregierte Nutzungsstatistiken zu erheben (besuchte Seiten, Herkunft des Traffics, Verweildauer, Heatmaps und anonyme Sitzungsaufzeichnungen), um den Dienst zu verbessern. Diese Daten werden von Google Ireland Limited und von Microsoft Ireland Operations Limited verarbeitet, auch auf Servern in den USA, unter Einhaltung der von der Europäischen Kommission genehmigten Standardvertragsklauseln. Sie können Ihre Zustimmung jederzeit über die Browsereinstellungen oder durch Löschen der Cookies widerrufen; bei Ablehnung oder Widerruf funktioniert das Portal weiterhin uneingeschränkt.</p>",
+    privacyBody: "<p><strong>Verantwortlicher für die Verarbeitung:</strong> Marco Lestan, erreichbar unter <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.</p><p><strong>Erhobene Daten:</strong> Firmenname, Kontakt-E-Mail-Adresse, Art der Tätigkeit und optionale Nachricht, die freiwillig über das Formular „Werden Sie Partner\" eingegeben werden.</p><p><strong>Informationsanfrage:</strong> wenn Sie das Formular „Informationen anfordern\" für ein Produkt nutzen, erheben wir den Namen der Eisdiele, die Kontakt-E-Mail, die Telefonnummer und optionale Notizen (z. B. Details zur Anfrage), zusammen mit dem gewählten Produkt und Hersteller. Diese Daten werden an den angegebenen Hersteller weitergegeben, ausschließlich zum Zweck der Bearbeitung der Informationsanfrage.</p><p><strong>Feedback:</strong> wenn Sie das Formular „Feedback geben\" nutzen, erheben wir die eingegebene Nachricht sowie, nur wenn Sie diese freiwillig angeben, Name, Unternehmen/Eisdiele und Kontakt-E-Mail.</p><p><strong>Zweck:</strong> Beantwortung der Anfrage zur Aufnahme Ihrer Produkte in das Portal und die dafür notwendige Kommunikation.</p><p><strong>Rechtsgrundlage:</strong> Durchführung vorvertraglicher Maßnahmen auf Anfrage der betroffenen Person (Art. 6 Abs. 1 lit. b DSGVO), die durch das freiwillige Absenden des Formulars ausgelöst werden.</p><p><strong>Empfänger und Datenübermittlung:</strong> Das Formular wird technisch über Netlify, Inc. abgewickelt, den Hosting-Anbieter der Website, der als Auftragsverarbeiter fungiert. Die Verarbeitung kann auch auf Servern in den USA erfolgen, unter Einhaltung der von der Europäischen Kommission genehmigten Standardvertragsklauseln. Die Daten werden nicht zu Werbe- oder Marketingzwecken an Dritte weitergegeben.</p><p><strong>Speicherdauer:</strong> Die Daten werden so lange gespeichert, wie es zur Bearbeitung der Anfrage und einer eventuellen anschließenden Zusammenarbeit erforderlich ist.</p><p><strong>Rechte der betroffenen Person:</strong> Sie können jederzeit Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer Daten verlangen, indem Sie an die oben genannte Adresse schreiben. Zudem haben Sie das Recht, Beschwerde bei der zuständigen Datenschutzaufsichtsbehörde einzureichen.</p><p><strong>Analyse-Cookies (Google Analytics und Microsoft Clarity):</strong> Wenn Sie über das Cookie-Banner Ihre Zustimmung erteilen, verwendet das Portal Google Analytics und Microsoft Clarity, um anonyme und aggregierte Nutzungsstatistiken zu erheben (besuchte Seiten, Herkunft des Traffics, Verweildauer, Heatmaps und anonyme Sitzungsaufzeichnungen), um den Dienst zu verbessern. Diese Daten werden von Google Ireland Limited und von Microsoft Ireland Operations Limited verarbeitet, auch auf Servern in den USA, unter Einhaltung der von der Europäischen Kommission genehmigten Standardvertragsklauseln. Sie können Ihre Zustimmung jederzeit über die Browsereinstellungen oder durch Löschen der Cookies widerrufen; bei Ablehnung oder Widerruf funktioniert das Portal weiterhin uneingeschränkt.</p>",
     archiveVoci: "Einträge",
     archiveDi: "von",
     archiveTotali: "insgesamt",
@@ -2008,8 +2008,8 @@ const I18N = {
     faqGuidaLink: "📖 Learn more about PAC, POD and total solids in the full guide →",
     faq5Q: "What's the technical difference between a base 50 and a base 100?",
     faq5A: "The number indicates the recommended dosage in grams per liter of liquid. A base 50 requires more input from the gelato maker (sugars, milk solids) and offers more control over the final recipe; a base 100 is more structured and already balanced, so simpler to use but with less room for customization.",
-    faq6Q: "Can I request a free sample from manufacturers through the site?",
-    faq6A: "Yes: in the Archive, next to each product, you'll find the \"Request sample\" button: you fill in a form with your details and the request is forwarded directly to the manufacturer of the selected product.",
+    faq6Q: "Can I request information from manufacturers through the site?",
+    faq6A: "Yes: in the Archive, next to each product, you'll find the \"Request information\" button: you fill in a form with your details and the request is forwarded directly to the manufacturer of the selected product.",
     faq7Q: "Is the site and its comparison tools free?",
     faq7A: "Yes, access to the database, product comparison and calibration tools is completely free and requires no registration: the site is designed as an independent, neutral platform that doesn't sell raw materials but provides technical data.",
     faq8Q: "Can I save my ratings and personal notes?",
@@ -2214,16 +2214,16 @@ const I18N = {
     feedbackSubmitting: "Sending…",
     toastFeedbackSuccess: "Thank you so much for your feedback!",
     toastFeedbackError: "There was a problem sending your feedback. Please write to us directly at marcolestan@gelateriaingredienti.com",
-    colCampione: "Sample",
+    colCampione: "Info",
     colClick: "Clicks",
-    btnRichiediCampione: "Request sample",
-    sampleTitle: "📦 Request a sample",
+    btnRichiediCampione: "Request information",
+    sampleTitle: "ℹ️ Request information",
     sampleSubtitle: "Fill in your details: we'll forward the request to the manufacturer of the chosen product.",
     sampleLabelGelateria: "Gelato shop name *",
     sampleLabelEmail: "Contact email *",
     sampleLabelTelefono: "Phone (optional)",
     sampleLabelNote: "Notes (optional)",
-    sampleNotePh: "Shipping address, quantity requested…",
+    sampleNotePh: "Request details, quantity of interest…",
     samplePrivacyLabel: "I have read and accept the <a href=\"#\" class=\"privacy-link\">privacy notice</a> (required) *",
     sampleSubmit: "Send request",
     sampleSubmitting: "Sending…",
@@ -2250,7 +2250,7 @@ const I18N = {
     joinPrivacyLabel: "I have read and accept the <a href=\"#\" class=\"privacy-link\">privacy notice</a> (required) *",
     footerPrivacyLink: "Privacy notice",
     privacyTitle: "🔒 Privacy notice",
-    privacyBody: "<p><strong>Data controller:</strong> Marco Lestan, reachable at <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.</p><p><strong>Data collected:</strong> company name, contact email address, type of business and optional message, entered voluntarily through the \"Join us\" form.</p><p><strong>Sample request:</strong> if you use the \"Request sample\" form on a product, we collect the gelato shop name, contact email, phone number and optional notes (e.g. shipping address), together with the selected product and manufacturer. This data is shared with the indicated manufacturer, solely to handle the requested sample shipment.</p><p><strong>Feedback:</strong> if you use the \"Leave feedback\" form, we collect the message entered and, only if you voluntarily provide them, your name, company/gelato shop and contact email.</p><p><strong>Purpose:</strong> responding to the request to add products to the portal and managing the communications necessary for that purpose.</p><p><strong>Legal basis:</strong> performance of pre-contractual measures requested by the data subject (Art. 6(1)(b) GDPR), triggered voluntarily by submitting the form.</p><p><strong>Recipients and data transfer:</strong> the form is technically handled through Netlify, Inc., the website's hosting provider, which acts as data processor. Processing may also take place on servers located in the United States, in compliance with the standard contractual clauses approved by the European Commission. The data is not shared with third parties for commercial or marketing purposes.</p><p><strong>Retention:</strong> the data is kept for as long as necessary to handle the request and any subsequent relationship with your company.</p><p><strong>Data subject rights:</strong> you may at any time request access, rectification, erasure or restriction of the processing of your data by writing to the address above, and you have the right to lodge a complaint with the competent data protection authority.</p><p><strong>Analytics cookies (Google Analytics and Microsoft Clarity):</strong> if you give consent via the cookie banner, the portal uses Google Analytics and Microsoft Clarity to collect anonymous, aggregated usage statistics (pages visited, traffic source, visit duration, heatmaps and anonymous session recordings) in order to improve the service. This data is processed by Google Ireland Limited and by Microsoft Ireland Operations Limited, also on servers located in the United States, in compliance with the standard contractual clauses approved by the European Commission. You can withdraw consent at any time via your browser settings or by deleting cookies; if you decline or withdraw consent, the portal continues to work normally without any limitation.</p>",
+    privacyBody: "<p><strong>Data controller:</strong> Marco Lestan, reachable at <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.</p><p><strong>Data collected:</strong> company name, contact email address, type of business and optional message, entered voluntarily through the \"Join us\" form.</p><p><strong>Information request:</strong> if you use the \"Request information\" form on a product, we collect the gelato shop name, contact email, phone number and optional notes (e.g. request details), together with the selected product and manufacturer. This data is shared with the indicated manufacturer, solely to handle the information request.</p><p><strong>Feedback:</strong> if you use the \"Leave feedback\" form, we collect the message entered and, only if you voluntarily provide them, your name, company/gelato shop and contact email.</p><p><strong>Purpose:</strong> responding to the request to add products to the portal and managing the communications necessary for that purpose.</p><p><strong>Legal basis:</strong> performance of pre-contractual measures requested by the data subject (Art. 6(1)(b) GDPR), triggered voluntarily by submitting the form.</p><p><strong>Recipients and data transfer:</strong> the form is technically handled through Netlify, Inc., the website's hosting provider, which acts as data processor. Processing may also take place on servers located in the United States, in compliance with the standard contractual clauses approved by the European Commission. The data is not shared with third parties for commercial or marketing purposes.</p><p><strong>Retention:</strong> the data is kept for as long as necessary to handle the request and any subsequent relationship with your company.</p><p><strong>Data subject rights:</strong> you may at any time request access, rectification, erasure or restriction of the processing of your data by writing to the address above, and you have the right to lodge a complaint with the competent data protection authority.</p><p><strong>Analytics cookies (Google Analytics and Microsoft Clarity):</strong> if you give consent via the cookie banner, the portal uses Google Analytics and Microsoft Clarity to collect anonymous, aggregated usage statistics (pages visited, traffic source, visit duration, heatmaps and anonymous session recordings) in order to improve the service. This data is processed by Google Ireland Limited and by Microsoft Ireland Operations Limited, also on servers located in the United States, in compliance with the standard contractual clauses approved by the European Commission. You can withdraw consent at any time via your browser settings or by deleting cookies; if you decline or withdraw consent, the portal continues to work normally without any limitation.</p>",
     archiveVoci: "entries",
     archiveDi: "of",
     archiveTotali: "total",
@@ -2391,8 +2391,8 @@ const I18N = {
     faqGuidaLink: "📖 Profundiza en el PAC, POD y sólidos totales en la guía completa →",
     faq5Q: "¿Cuál es la diferencia técnica entre una base 50 y una base 100?",
     faq5A: "El número indica la dosis recomendada en gramos por litro de líquido. Una base 50 requiere más aportación por parte del heladero (azúcares, sólidos lácteos) y ofrece más control sobre la receta final; una base 100 está más estructurada y ya equilibrada, por lo que es más sencilla de usar pero con menos margen de personalización.",
-    faq6Q: "¿Es posible solicitar una muestra gratuita a los fabricantes a través del sitio?",
-    faq6A: "Sí: en el Archivo, junto a cada producto, encontrarás el botón \"Solicitar muestra\": rellenas un formulario con tus datos y la solicitud se envía directamente a la empresa fabricante del producto seleccionado.",
+    faq6Q: "¿Es posible solicitar información a los fabricantes a través del sitio?",
+    faq6A: "Sí: en el Archivo, junto a cada producto, encontrarás el botón \"Solicitar información\": rellenas un formulario con tus datos y la solicitud se envía directamente a la empresa fabricante del producto seleccionado.",
     faq7Q: "¿El sitio y las herramientas de comparación son gratuitos?",
     faq7A: "Sí, el acceso a la base de datos, a la comparación de productos y a las herramientas de calibración es completamente gratuito y sin necesidad de registro: el sitio está pensado como una plataforma independiente y neutral, que no vende materias primas sino que ofrece datos técnicos.",
     faq8Q: "¿Puedo guardar mis valoraciones y notas personales?",
@@ -2597,16 +2597,16 @@ const I18N = {
     feedbackSubmitting: "Enviando…",
     toastFeedbackSuccess: "¡Muchas gracias por tu feedback!",
     toastFeedbackError: "Problema al enviar. Escríbenos directamente a marcolestan@gelateriaingredienti.com",
-    colCampione: "Muestra",
+    colCampione: "Info",
     colClick: "Clics",
-    btnRichiediCampione: "Solicitar muestra",
-    sampleTitle: "📦 Solicitar una muestra",
+    btnRichiediCampione: "Solicitar información",
+    sampleTitle: "ℹ️ Solicitar información",
     sampleSubtitle: "Completa tus datos: reenviamos la solicitud a la empresa fabricante del producto elegido.",
     sampleLabelGelateria: "Nombre de la heladería *",
     sampleLabelEmail: "Email de contacto *",
     sampleLabelTelefono: "Teléfono (opcional)",
     sampleLabelNote: "Notas (opcional)",
-    sampleNotePh: "Dirección de envío, cantidad solicitada…",
+    sampleNotePh: "Detalles de la solicitud, cantidad de interés…",
     samplePrivacyLabel: "He leído y acepto la <a href=\"#\" class=\"privacy-link\">política de privacidad</a> (obligatorio) *",
     sampleSubmit: "Enviar solicitud",
     sampleSubmitting: "Enviando…",
@@ -2633,7 +2633,7 @@ const I18N = {
     joinPrivacyLabel: "He leído y acepto la <a href=\"#\" class=\"privacy-link\">política de privacidad</a> (obligatorio) *",
     footerPrivacyLink: "Política de privacidad",
     privacyTitle: "🔒 Política de privacidad",
-    privacyBody: "<p><strong>Responsable del tratamiento:</strong> Marco Lestan, contactable en la dirección <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.</p><p><strong>Datos recopilados:</strong> nombre de la empresa, dirección de email de contacto, tipo de actividad y mensaje opcional, introducidos voluntariamente a través del formulario \"Únete a nosotros\".</p><p><strong>Solicitud de muestra:</strong> si utilizas el formulario \"Solicitar muestra\" en un producto, recopilamos el nombre de la heladería, email de contacto, teléfono y notas opcionales (p. ej. dirección de envío), junto con el producto y la empresa fabricante seleccionados. Estos datos se comunican a la empresa fabricante indicada, únicamente con el fin de gestionar el envío de la muestra solicitada.</p><p><strong>Feedback:</strong> si utilizas el formulario \"Déjanos tu feedback\", recopilamos el mensaje introducido y, solo si los proporcionas voluntariamente, nombre, empresa/heladería y email de contacto.</p><p><strong>Finalidad:</strong> responder a la solicitud de inclusión de productos en el portal y gestionar las comunicaciones necesarias para dicho fin.</p><p><strong>Base jurídica:</strong> ejecución de medidas precontractuales solicitadas por el interesado (art. 6, apdo. 1, letra b, RGPD), activadas voluntariamente con el envío del formulario.</p><p><strong>Destinatarios y transferencia de datos:</strong> el formulario se gestiona técnicamente a través de Netlify, Inc., proveedor del servicio de alojamiento del sitio, que actúa como encargado del tratamiento. El tratamiento puede realizarse también en servidores ubicados en Estados Unidos, conforme a las cláusulas contractuales tipo aprobadas por la Comisión Europea. Los datos no se ceden a terceros con fines comerciales o de marketing.</p><p><strong>Conservación:</strong> los datos se conservan durante el tiempo necesario para gestionar la solicitud y la eventual relación posterior con vuestra empresa.</p><p><strong>Derechos del interesado:</strong> puedes solicitar en cualquier momento el acceso, rectificación, cancelación o limitación del tratamiento de tus datos escribiendo a la dirección indicada arriba, y tienes derecho a presentar una reclamación ante la autoridad de protección de datos personales.</p><p><strong>Cookies de análisis (Google Analytics y Microsoft Clarity):</strong> si das tu consentimiento a través del banner de cookies, el portal utiliza Google Analytics y Microsoft Clarity para recopilar estadísticas anónimas y agregadas sobre la navegación (páginas visitadas, procedencia del tráfico, duración de las visitas, mapas de calor y grabaciones anónimas de sesiones), con el fin de mejorar el servicio. Estos datos son tratados por Google Ireland Limited y por Microsoft Ireland Operations Limited, también en servidores en Estados Unidos, conforme a las cláusulas contractuales tipo aprobadas por la Comisión Europea. Puedes revocar el consentimiento en cualquier momento a través de la configuración del navegador o eliminando las cookies; si rechazas o revocas el consentimiento, el portal sigue funcionando con normalidad sin ninguna limitación.</p>",
+    privacyBody: "<p><strong>Responsable del tratamiento:</strong> Marco Lestan, contactable en la dirección <a href=\"mailto:marcolestan@gelateriaingredienti.com\">marcolestan@gelateriaingredienti.com</a>.</p><p><strong>Datos recopilados:</strong> nombre de la empresa, dirección de email de contacto, tipo de actividad y mensaje opcional, introducidos voluntariamente a través del formulario \"Únete a nosotros\".</p><p><strong>Solicitud de información:</strong> si utilizas el formulario \"Solicitar información\" en un producto, recopilamos el nombre de la heladería, email de contacto, teléfono y notas opcionales (p. ej. detalles de la solicitud), junto con el producto y la empresa fabricante seleccionados. Estos datos se comunican a la empresa fabricante indicada, únicamente con el fin de gestionar la solicitud de información.</p><p><strong>Feedback:</strong> si utilizas el formulario \"Déjanos tu feedback\", recopilamos el mensaje introducido y, solo si los proporcionas voluntariamente, nombre, empresa/heladería y email de contacto.</p><p><strong>Finalidad:</strong> responder a la solicitud de inclusión de productos en el portal y gestionar las comunicaciones necesarias para dicho fin.</p><p><strong>Base jurídica:</strong> ejecución de medidas precontractuales solicitadas por el interesado (art. 6, apdo. 1, letra b, RGPD), activadas voluntariamente con el envío del formulario.</p><p><strong>Destinatarios y transferencia de datos:</strong> el formulario se gestiona técnicamente a través de Netlify, Inc., proveedor del servicio de alojamiento del sitio, que actúa como encargado del tratamiento. El tratamiento puede realizarse también en servidores ubicados en Estados Unidos, conforme a las cláusulas contractuales tipo aprobadas por la Comisión Europea. Los datos no se ceden a terceros con fines comerciales o de marketing.</p><p><strong>Conservación:</strong> los datos se conservan durante el tiempo necesario para gestionar la solicitud y la eventual relación posterior con vuestra empresa.</p><p><strong>Derechos del interesado:</strong> puedes solicitar en cualquier momento el acceso, rectificación, cancelación o limitación del tratamiento de tus datos escribiendo a la dirección indicada arriba, y tienes derecho a presentar una reclamación ante la autoridad de protección de datos personales.</p><p><strong>Cookies de análisis (Google Analytics y Microsoft Clarity):</strong> si das tu consentimiento a través del banner de cookies, el portal utiliza Google Analytics y Microsoft Clarity para recopilar estadísticas anónimas y agregadas sobre la navegación (páginas visitadas, procedencia del tráfico, duración de las visitas, mapas de calor y grabaciones anónimas de sesiones), con el fin de mejorar el servicio. Estos datos son tratados por Google Ireland Limited y por Microsoft Ireland Operations Limited, también en servidores en Estados Unidos, conforme a las cláusulas contractuales tipo aprobadas por la Comisión Europea. Puedes revocar el consentimiento en cualquier momento a través de la configuración del navegador o eliminando las cookies; si rechazas o revocas el consentimiento, el portal sigue funcionando con normalidad sin ninguna limitación.</p>",
     archiveVoci: "entradas",
     archiveDi: "de",
     archiveTotali: "totales",
@@ -3265,7 +3265,7 @@ function renderArchiveTable(){
       const val = catFilter ? e.fields[c] : Object.entries(e.fields).map(([k,v])=>v?`${k}: ${v}`:null).filter(Boolean).join(' · ');
       return `<td>${val || '<span class="empty-val">—</span>'}</td>`;
     }).join('');
-    const campioneCell = `<button type="button" class="btn small btn-campione" data-azienda="${escAttr(e.azienda)}" data-prodotto="${escAttr(e.prodotto)}" data-categoria="${escAttr(e.categoria)}">📦 ${t('btnRichiediCampione')}</button>`;
+    const campioneCell = `<button type="button" class="btn small btn-campione" data-azienda="${escAttr(e.azienda)}" data-prodotto="${escAttr(e.prodotto)}" data-categoria="${escAttr(e.categoria)}">ℹ️ ${t('btnRichiediCampione')}</button>`;
     const clickKey = slugKey(e.azienda, e.categoria, e.prodotto);
     const clickCell = `<button type="button" class="btn small btn-clickcounter" data-key="${clickKey}" aria-label="${t('colClick')}"><span class="click-count" data-key="${clickKey}">…</span> 👆</button>`;
     return `<tr>
@@ -4019,7 +4019,7 @@ window.addEventListener('appinstalled', () => {
   });
 })();
 
-// ------- Modulo "Richiedi campione" (Netlify Forms, senza backend) -------
+// ------- Modulo "Richiedi informazioni" (Netlify Forms, senza backend) -------
 (function () {
   const overlay = document.getElementById('sampleModalOverlay');
   const form = document.getElementById('sampleForm');
@@ -4040,7 +4040,7 @@ window.addEventListener('appinstalled', () => {
   overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
 
-  // Delegazione: i pulsanti "Richiedi campione" vengono ricreati ad ogni renderArchiveTable().
+  // Delegazione: i pulsanti "Richiedi informazioni" vengono ricreati ad ogni renderArchiveTable().
   document.addEventListener('click', function (e) {
     const btn = e.target.closest('.btn-campione');
     if (!btn) return;
@@ -4220,7 +4220,7 @@ window.addEventListener('appinstalled', () => {
       <source src="video-demo.mp4" type="video/mp4">
     </video>
     <div style="padding:14px 18px;color:#EAF1F5;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;">
-      Muster anfordern und Hersteller direkt kontaktieren &mdash; aufgenommen von der echten Website (italienische Oberfläche).
+      Informationen anfordern und Hersteller direkt kontaktieren &mdash; aufgenommen von der echten Website (italienische Oberfläche).
     </div>
   </div>
 </div>
