@@ -361,6 +361,8 @@
   table.archive-table th, table.archive-table td{ padding:7px 8px; border-bottom:1px solid var(--line); text-align:left; }
   table.archive-table th{ background:var(--cream-2); font-size:0.66rem; text-transform:uppercase; color:var(--ink-soft); position:sticky; top:0; }
   table.archive-table tbody tr:hover{ background: var(--cream); }
+  table.archive-table tbody tr[data-clickkey]{ cursor:pointer; }
+  table.archive-table tbody tr[data-clickkey].row-hit{ background: rgba(138,163,91,0.28) !important; transition: background 0.15s ease; }
   table.archive-table select, table.archive-table input{ padding:5px 6px; font-size:0.78rem; }
   details.archive-details summary{ cursor:pointer; font-weight:700; color: var(--hazelnut-dark); padding:4px 0; }
   .extra-filters-details{ margin-bottom:16px; }
@@ -3172,6 +3174,22 @@ document.addEventListener('click', function(e){
     document.querySelectorAll(`.click-count[data-key="${key}"]`).forEach(el=>{ el.dataset.loaded='1'; el.textContent = v; });
   });
 });
+// Clic sul prodotto stesso (riga dell'archivio): conta come il tasto 👆 dedicato,
+// così l'interesse per un prodotto viene registrato anche senza dover trovare il bottoncino.
+// Condiviso con eisdieleinfo.com (stessa chiave/stesso namespace Abacus).
+document.addEventListener('click', function(e){
+  const row = e.target.closest('tr[data-clickkey]');
+  if(!row) return;
+  if(e.target.closest('a, button, textarea, select, input, label')) return; // non contare i click sui controlli già interattivi della riga
+  const key = row.dataset.clickkey;
+  if(!key) return;
+  hitClickCounter(key).then(v=>{
+    if(v === null) return;
+    row.querySelectorAll(`.click-count[data-key="${key}"]`).forEach(el=>{ el.dataset.loaded='1'; el.textContent = v; });
+    row.classList.add('row-hit');
+    setTimeout(()=> row.classList.remove('row-hit'), 700);
+  });
+});
 function updateEntryField(id, field, value){
   const e = archivio.find(x=>x.id===id);
   if(!e) return;
@@ -3268,7 +3286,7 @@ function renderArchiveTable(){
     const campioneCell = `<button type="button" class="btn small btn-campione" data-azienda="${escAttr(e.azienda)}" data-prodotto="${escAttr(e.prodotto)}" data-categoria="${escAttr(e.categoria)}">ℹ️ ${t('btnRichiediCampione')}</button>`;
     const clickKey = slugKey(e.azienda, e.categoria, e.prodotto);
     const clickCell = `<button type="button" class="btn small btn-clickcounter" data-key="${clickKey}" aria-label="${t('colClick')}"><span class="click-count" data-key="${clickKey}">…</span> 👆</button>`;
-    return `<tr>
+    return `<tr data-clickkey="${clickKey}" title="${t('colClick')} +1">
       <td>${aziendaCellHtml(e.azienda)}</td>
       <td>${catIcon(e.categoria)} ${e.categoria}</td>
       <td>${e.prodotto}</td>
