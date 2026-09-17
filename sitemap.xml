@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://gelateriaingredienti.com/</loc>
     <changefreq>weekly</changefreq>
@@ -19,6 +19,122 @@
     <loc>https://gelateriaingredienti.com/torte-gelato.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torte-gelato-copertina.jpg</image:loc>
+      <image:title>Le mie torte di gelato — collage di quattro creazioni artigianali</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-01.jpg</image:loc>
+      <image:title>Cuore rosso, fiori e nastri di cioccolato decorato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-02.jpg</image:loc>
+      <image:title>Cuore bianco con fiori e riccioli di cioccolato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-03.jpg</image:loc>
+      <image:title>Cuore rosso con fiori pastello e cuoricini</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-04.jpg</image:loc>
+      <image:title>Glassa gialla con rose in pasta e fragole fresche</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-05.jpg</image:loc>
+      <image:title>Glassa arancione con decori di cioccolato disegnato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-06.jpg</image:loc>
+      <image:title>Finitura con pesche e uva fresca</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-07.jpg</image:loc>
+      <image:title>Spirale di cioccolato e macaron colorati</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-08.jpg</image:loc>
+      <image:title>Glassa marmorizzata rosa/arancio con fiori e macaron</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-09.jpg</image:loc>
+      <image:title>Glassa arancione con farfalle e fiori decorativi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-10.jpg</image:loc>
+      <image:title>Glassa bianca con macaron rosa e cioccolato decorato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-11.jpg</image:loc>
+      <image:title>Torte verde e rosa con monoporzioni su cialda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-12.jpg</image:loc>
+      <image:title>Monoporzioni rosa con decoro a farfalla</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-13.jpg</image:loc>
+      <image:title>Variegature colorate, fiori e cannucce di cioccolato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-fragole-fiori-nastri-cioccolato.jpg</image:loc>
+      <image:title>Marmorizzata rosa con fragole, fiori e nastri di cioccolato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-farfalle-rose-gialle.jpg</image:loc>
+      <image:title>Farfalle decorative, rose gialle e fiore azzurro</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-rose-frutta-fragole.jpg</image:loc>
+      <image:title>Glassa gialla con rose di frutta e fragole fresche</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-rose-rosa-pasta-zucchero.jpg</image:loc>
+      <image:title>Rose rosa in pasta di zucchero e fiore centrale</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-cioccolato-paisley.jpg</image:loc>
+      <image:title>Dischi di cioccolato decorato a motivi paisley</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-frutti-bosco-macaron.jpg</image:loc>
+      <image:title>Coulis di frutti rossi, macaron e frutti di bosco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-macaron-viola.jpg</image:loc>
+      <image:title>Macaron viola e righe di cioccolato decorato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-spirale-cioccolato-macaron.jpg</image:loc>
+      <image:title>Spirale di cioccolato e macaron gialli/turchesi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-farfalla-cioccolato.jpg</image:loc>
+      <image:title>Farfalla di cioccolato fondente decorato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-marmorizzata-fiori-pastello.jpg</image:loc>
+      <image:title>Marmorizzata giallo/rosa con fiori pastello</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-cuori-rose-rosa.jpg</image:loc>
+      <image:title>Cuoricini rossi e rose rosa in pasta di zucchero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-azzurra-macaron-colorati.jpg</image:loc>
+      <image:title>Glassa azzurra con macaron colorati e cioccolato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-farfalle-fiori-lilla.jpg</image:loc>
+      <image:title>Farfalle decorative e fiori lilla</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-rose-cioccolato-bianco.jpg</image:loc>
+      <image:title>Rose di cioccolato bianco e stecchi decorativi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/decorazione-torta-gelato-rose-cioccolato-dettaglio.jpg</image:loc>
+      <image:title>Dettaglio: rose di cioccolato e fiori decorativi</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://gelateriaingredienti.com/aziende.html</loc>
