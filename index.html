@@ -1465,7 +1465,7 @@ const I18N = {
     archiveVoci: "voci",
     archiveDi: "di",
     archiveTotali: "totali",
-    archiveMostrate400: "— mostrate le prime 400, affina la ricerca",
+    archiveMostrate400: "— mostrate le prime 5000, affina la ricerca",
     toastProdottoAggiunto: "Prodotto aggiunto all'archivio ✓",
     optZuccheri: "Zuccheri (PAC/POD già compilati)",
     optAcqua: "Acqua (per ogni tipo di ricetta)",
@@ -1845,7 +1845,7 @@ const I18N = {
     archiveVoci: "Einträge",
     archiveDi: "von",
     archiveTotali: "insgesamt",
-    archiveMostrate400: "— die ersten 400 angezeigt, verfeinere die Suche",
+    archiveMostrate400: "— die ersten 5000 angezeigt, verfeinere die Suche",
     toastProdottoAggiunto: "Produkt zum Archiv hinzugefügt ✓",
     optZuccheri: "Zucker (PAC/POD bereits ausgefüllt)",
     optAcqua: "Wasser (für jede Rezeptart)",
@@ -2225,7 +2225,7 @@ const I18N = {
     archiveVoci: "entries",
     archiveDi: "of",
     archiveTotali: "total",
-    archiveMostrate400: "— showing the first 400, refine your search",
+    archiveMostrate400: "— showing the first 5000, refine your search",
     toastProdottoAggiunto: "Product added to the archive ✓",
     optZuccheri: "Sugars (PAC/POD already filled in)",
     optAcqua: "Water (for any recipe type)",
@@ -2605,7 +2605,7 @@ const I18N = {
     archiveVoci: "entradas",
     archiveDi: "de",
     archiveTotali: "totales",
-    archiveMostrate400: "— mostradas las primeras 400, afina la búsqueda",
+    archiveMostrate400: "— mostradas las primeras 5000, afina la búsqueda",
     toastProdottoAggiunto: "Producto añadido al archivo ✓",
     optZuccheri: "Azúcares (PAC/POD ya completados)",
     optAcqua: "Agua (para cualquier tipo de receta)",
@@ -3183,7 +3183,7 @@ function renderArchiveTable(){
     `<th>${t('colAttributiExtra')}</th><th>${t('rowFonte')}</th><th>${t('colNote')}</th><th>${t('colCampione')}</th>`;
 
   const tbody = document.getElementById('archiveTbody');
-  tbody.innerHTML = rows.slice(0, 400).map(e=>{
+  tbody.innerHTML = rows.slice(0, 5000).map(e=>{
     const fieldCells = cols.map(c=>{
       const val = catFilter ? e.fields[c] : Object.entries(e.fields).map(([k,v])=>v?`${k}: ${v}`:null).filter(Boolean).join(' · ');
       return `<td>${val || '<span class="empty-val">—</span>'}</td>`;
@@ -3200,7 +3200,7 @@ function renderArchiveTable(){
       <td>${campioneCell}</td>
     </tr>`;
   }).join('');
-  document.getElementById('archiveCount').textContent = rows.length + ' ' + t('archiveVoci') + ' (' + t('archiveDi') + ' ' + archivio.length + ' ' + t('archiveTotali') + ')' + (rows.length>400 ? ' ' + t('archiveMostrate400') : '');
+  document.getElementById('archiveCount').textContent = rows.length + ' ' + t('archiveVoci') + ' (' + t('archiveDi') + ' ' + archivio.length + ' ' + t('archiveTotali') + ')' + (rows.length>5000 ? ' ' + t('archiveMostrate400') : '');
 
   const badge = document.getElementById('extraFiltersActiveBadge');
   if(badge) badge.textContent = extraFilters.length ? extraFilters.length : '';
