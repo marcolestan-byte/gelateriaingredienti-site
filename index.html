@@ -1396,7 +1396,7 @@ const I18N = {
     colCategoria: "Categoria",
     colValutazione: "Valutazione",
     colDettagli: "Dettagli",
-    doppioClicSito: "Doppio clic per aprire il sito ufficiale dell'azienda",
+    doppioClicSito: "Apri il sito ufficiale dell'azienda",
     videoAziendale: "▶ Guarda il video dell'azienda (social)",
     btnJoinUs: "🤝 Unisciti a noi",
     joinTitle: "🤝 Unisciti a noi",
@@ -1776,7 +1776,7 @@ const I18N = {
     colCategoria: "Kategorie",
     colValutazione: "Bewertung",
     colDettagli: "Details",
-    doppioClicSito: "Doppelklick öffnet die offizielle Website des Unternehmens",
+    doppioClicSito: "Öffnet die offizielle Website des Unternehmens",
     videoAziendale: "▶ Firmenvideo ansehen (Social Media)",
     btnJoinUs: "🤝 Werden Sie Partner",
     joinTitle: "🤝 Werden Sie Partner",
@@ -2156,7 +2156,7 @@ const I18N = {
     colCategoria: "Category",
     colValutazione: "Rating",
     colDettagli: "Details",
-    doppioClicSito: "Double-click to open the company's official website",
+    doppioClicSito: "Open the company's official website",
     videoAziendale: "▶ Watch the company video (social media)",
     btnJoinUs: "🤝 Join us",
     joinTitle: "🤝 Join us",
@@ -2536,7 +2536,7 @@ const I18N = {
     colCategoria: "Categoría",
     colValutazione: "Valoración",
     colDettagli: "Detalles",
-    doppioClicSito: "Doble clic para abrir el sitio web oficial de la empresa",
+    doppioClicSito: "Abre el sitio web oficial de la empresa",
     videoAziendale: "▶ Ver el vídeo de la empresa (redes sociales)",
     btnJoinUs: "🤝 Únete a nosotros",
     joinTitle: "🤝 Únete a nosotros",
@@ -2985,7 +2985,7 @@ function aziendaCellHtml(azienda){
   const avatarImg = `<span class="azienda-avatar" style="background:${color}"></span>`;
   const videoIcon = videoIconHtml(azienda);
   if(url){
-    return `${avatarImg}<span class="azienda-name azienda-link" style="color:${color}" title="${t('doppioClicSito')}" ondblclick="window.open('${url}','_blank','noopener')">${azienda}</span>${videoIcon}`;
+    return `${avatarImg}<a class="azienda-name azienda-link" style="color:${color}" href="${escAttr(url)}" target="_blank" rel="noopener" title="${t('doppioClicSito')}">${azienda}</a>${videoIcon}`;
   }
   return `${avatarImg}<span class="azienda-name" style="color:${color}">${azienda}</span>${videoIcon}`;
 }
