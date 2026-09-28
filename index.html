@@ -3170,7 +3170,6 @@ function buildCompareTable(){
   schemaFields.forEach(f=>{
     row(f, base.fields[f], a.fields[f]);
   });
-  row(t('rowFonte'), fmtFonte(base.fonte) || null, fmtFonte(a.fonte) || null);
   row(t('rowCittaPaese'), cBase ? `${cBase.citta}, ${cBase.paese}` : null, cA ? `${cA.citta}, ${cA.paese}` : null);
   row(t('rowFondazione'), cBase && cBase.fondazione, cA && cA.fondazione);
   row(t('rowCertificazioni'), cBase && cBase.certificazioni, cA && cA.certificazioni);
@@ -3180,8 +3179,6 @@ function buildCompareTable(){
   // Righe editabili
   html += `<tr class="editable-row"><td class="label-cell">${t('rowValutazioneQualita')}</td>
     <td data-label="${escAttr(base.azienda)}">${editableCell(base,'valutazione')}</td><td data-label="${escAttr(a.azienda)}">${editableCell(a,'valutazione')}</td></tr>`;
-  html += `<tr class="editable-row"><td class="label-cell">${t('rowNotePersonali')}</td>
-    <td data-label="${escAttr(base.azienda)}">${editableCell(base,'note')}</td><td data-label="${escAttr(a.azienda)}">${editableCell(a,'note')}</td></tr>`;
 
   html += '</tbody>';
   document.getElementById('compareTable').innerHTML = html;
@@ -3223,7 +3220,7 @@ function renderArchiveTable(){
   document.getElementById('archiveHeadRow').innerHTML =
     `<th>${t('rowAzienda')}</th><th>${t('colCategoria')}</th><th>${t('rowProdotto')}</th>` +
     cols.map(c=>`<th>${c}</th>`).join('') +
-    `<th>${t('colAttributiExtra')}</th><th>${t('rowFonte')}</th><th>${t('colNote')}</th><th>${t('colCampione')}</th>`;
+    `<th>${t('colAttributiExtra')}</th><th>${t('colCampione')}</th>`;
 
   const tbody = document.getElementById('archiveTbody');
   tbody.innerHTML = rows.slice(0, 5000).map(e=>{
@@ -3238,8 +3235,6 @@ function renderArchiveTable(){
       <td>${e.prodotto}</td>
       ${fieldCells}
       <td>${attributiPillsHtml(e)}</td>
-      <td>${fmtFonte(e.fonte) || '<span class="empty-val">—</span>'}</td>
-      <td>${editableCell(e,'note')}</td>
       <td>${campioneCell}</td>
     </tr>`;
   }).join('');
