@@ -48,7 +48,10 @@ footer a{color:var(--brand);}
 .torte-search-bar select{padding:10px 12px; border:1px solid var(--line); border-radius:10px; font-size:0.92rem; font-family:inherit; background:#fff;}
 .torte-count{font-size:0.8rem; color:var(--ink-soft); margin-top:10px; font-weight:700;}
 .torte-results{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:12px; margin-top:12px;}
-.torte-result-card{border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fffdfa;}
+.torte-result-card{border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fffdfa; transition:transform 0.15s ease, box-shadow 0.15s ease;}
+.torte-result-card:hover{transform:translateY(-3px); box-shadow:0 8px 18px rgba(90,60,20,0.14);}
+.torte-pulse-dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--amarena,#B23A2E); margin-right:5px; vertical-align:middle; animation:tortePulseDot 1.5s ease-in-out infinite;}
+@keyframes tortePulseDot{0%,100%{opacity:1;} 50%{opacity:0.35;}}
 .torte-result-head{display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;}
 .torte-azienda{font-weight:800; font-size:0.9rem; color:var(--brand);}
 .torte-cat-tag{display:inline-block; background:var(--brand-soft); color:var(--brand); border-radius:6px; padding:2px 8px; font-size:0.68rem; font-weight:700; white-space:nowrap;}
@@ -285,7 +288,7 @@ footer a{color:var(--brand);}
         var hay = (p.azienda+' '+p.prodotto+' '+p.categoria).toLowerCase();
         return hay.indexOf(q) !== -1;
       });
-      count.textContent = filtered.length + ' prodotti trovati';
+      count.innerHTML = (q ? '<span class="torte-pulse-dot" aria-hidden="true"></span>' : '') + filtered.length + ' prodotti trovati';
       results.innerHTML = filtered.map(function(p){
         var fieldsHtml = Object.keys(p.fields||{}).map(function(k){
           return '<div class="torte-field"><strong>'+escapeHtml(k)+':</strong> '+escapeHtml(p.fields[k])+'</div>';
