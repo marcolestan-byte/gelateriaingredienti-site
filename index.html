@@ -517,6 +517,7 @@
     <button id="btnInstall" class="btn-install" style="display:none;" data-i18n="btnInstall">📲 Installa come app</button>
   </div>
   <p id="iosInstallHint" class="ios-hint" style="display:none;" data-i18n-html="iosHint">Su iPhone/iPad: tocca l'icona <strong>Condividi</strong> nel browser, poi <strong>"Aggiungi a Home"</strong> per installarla come app.</p>
+  <p id="androidInstallHint" class="ios-hint" style="display:none;" data-i18n-html="androidHint">Non vedi il bottone? Apri il menu <strong>⋮</strong> del browser e scegli <strong>"Installa app"</strong> o <strong>"Aggiungi a schermata Home"</strong>.</p>
 </header>
 
 <nav class="quick-nav" id="quickNav" aria-label="Navigazione rapida">
@@ -1211,6 +1212,7 @@ const I18N = {
     statValutatiLabel: "già valutati da te",
     btnInstall: "📲 Installa come app",
     iosHint: 'Su iPhone/iPad: tocca l\'icona <strong>Condividi</strong> nel browser, poi <strong>"Aggiungi a Home"</strong> per installarla come app.',
+    androidHint: 'Non vedi il bottone? Apri il menu <strong>⋮</strong> del browser e scegli <strong>"Installa app"</strong> o <strong>"Aggiungi a schermata Home"</strong>.',
     docTitle: "📄 Regole di igiene per la produzione di gelato",
     docHint: "Regole per la prevenzione dei batteri nella produzione di gelato artigianale — disponibile in italiano e in tedesco.",
     testimonialsTitle: "📬 Cosa ci scrivono i gelatieri",
@@ -1593,6 +1595,7 @@ const I18N = {
     statValutatiLabel: "von dir bereits bewertet",
     btnInstall: "📲 Als App installieren",
     iosHint: 'Auf iPhone/iPad: Tippe im Browser auf das Symbol <strong>Teilen</strong>, dann auf <strong>"Zum Home-Bildschirm"</strong>, um sie als App zu installieren.',
+    androidHint: 'Siehst du den Button nicht? Öffne das Menü <strong>⋮</strong> des Browsers und wähle <strong>"App installieren"</strong> oder <strong>"Zum Startbildschirm hinzufügen"</strong>.',
     docTitle: "📄 Hygieneregeln für die Speiseeisherstellung",
     docHint: "Regeln zur Vermeidung von Bakterien bei der handwerklichen Speiseeisherstellung — verfügbar auf Italienisch und Deutsch.",
     testimonialsTitle: "📬 Was uns Eisdielen-Betreiber schreiben",
@@ -1974,6 +1977,7 @@ const I18N = {
     statValutatiLabel: "already rated by you",
     btnInstall: "📲 Install as app",
     iosHint: 'On iPhone/iPad: tap the <strong>Share</strong> icon in the browser, then <strong>"Add to Home Screen"</strong> to install it as an app.',
+    androidHint: 'Don\'t see the button? Open the browser\'s <strong>⋮</strong> menu and choose <strong>"Install app"</strong> or <strong>"Add to Home screen"</strong>.',
     docTitle: "📄 Hygiene rules for gelato production",
     docHint: "Rules for preventing bacteria in artisan gelato production — available in Italian and German.",
     testimonialsTitle: "📬 What gelato makers write to us",
@@ -2355,6 +2359,7 @@ const I18N = {
     statValutatiLabel: "ya valorados por ti",
     btnInstall: "📲 Instalar como app",
     iosHint: 'En iPhone/iPad: toca el icono <strong>Compartir</strong> en el navegador, luego <strong>"Añadir a inicio"</strong> para instalarla como app.',
+    androidHint: '¿No ves el botón? Abre el menú <strong>⋮</strong> del navegador y elige <strong>"Instalar aplicación"</strong> o <strong>"Añadir a pantalla de inicio"</strong>.',
     docTitle: "📄 Normas de higiene para la producción de helado",
     docHint: "Normas para la prevención de bacterias en la producción de helado artesanal — disponible en italiano y en alemán.",
     testimonialsTitle: "📬 Lo que nos escriben los heladeros",
@@ -3862,6 +3867,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredInstallPrompt = e;
   btnInstall.style.display = 'inline-flex';
+  const androidHintEl = document.getElementById('androidInstallHint');
+  if (androidHintEl) androidHintEl.style.display = 'none';
 });
 
 btnInstall.addEventListener('click', async () => {
@@ -3880,10 +3887,24 @@ window.addEventListener('appinstalled', () => {
 // iOS/Safari non supporta beforeinstallprompt: mostra istruzioni manuali
 // se sembra iOS e l'app non è già in modalità standalone.
 (function () {
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const ua = navigator.userAgent;
+  const isIOS = /iphone|ipad|ipod/i.test(ua);
+  const isAndroid = /android/i.test(ua);
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-  if (isIOS && !isStandalone) {
+  if (isStandalone) return;
+  if (isIOS) {
     document.getElementById('iosInstallHint').style.display = 'block';
+    return;
+  }
+  // Android: Chrome a volte ritarda/non mostra 'beforeinstallprompt' (criteri di engagement)
+  // e i browser non Chromium (Samsung Internet, Firefox...) non lo supportano affatto.
+  // Se dopo un breve attimo non è ancora apparso il bottone nativo, mostriamo istruzioni manuali.
+  if (isAndroid) {
+    setTimeout(() => {
+      if (!deferredInstallPrompt && btnInstall.style.display === 'none') {
+        document.getElementById('androidInstallHint').style.display = 'block';
+      }
+    }, 2500);
   }
 })();
 
