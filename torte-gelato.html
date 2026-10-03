@@ -299,6 +299,11 @@ footer a{color:var(--brand);}
       var q = input.value.trim().toLowerCase();
       var cat = filter.value;
       var azienda = aziendaFilter.value;
+      if(!q && !cat && !azienda){
+        count.innerHTML = '';
+        results.innerHTML = '<p class="hint">Scrivi un nome nella ricerca, oppure scegli una categoria o un\'azienda dal menu a tendina, per vedere i prodotti.</p>';
+        return;
+      }
       var filtered = data.filter(function(p){
         if(cat && p.categoria !== cat) return false;
         if(azienda && p.azienda !== azienda) return false;
@@ -368,15 +373,19 @@ footer a{color:var(--brand);}
   <section class="card">
     <h2>Variante: glassa a specchio al cioccolato bianco, colorata</h2>
     <p>Da una semplice forma in silicone vuota a una torta gelato finita, pronta da vetrina: con il procedimento a strati descritto sopra, il passaggio in più è nella finitura. Si parte dalla forma in silicone (base grezza), si passa per l'abbattimento strato dopo strato e si arriva a una torta finita con una <strong>glassa a specchio a base di cioccolato bianco, colorata</strong>, abbinata a decorazioni alimentari scelte liberamente.</p>
-    <p class="hint"><strong>Dal semplice stampo in silicone alla torta gelato completata:</strong></p>
+    <p class="hint"><strong>Dal semplice stampo in silicone alla torta gelato completata, il processo in foto:</strong></p>
     <div class="gallery">
       <figure>
-        <img src="torta-gelato-10.jpg" alt="Torta gelato con glassa a specchio bianca, macaron rosa e dischi di cioccolato decorato" loading="lazy">
-        <figcaption>Esempio di glassa a specchio bianca, con macaron e decorazioni di cioccolato</figcaption>
+        <img src="torta-gelato-processo-01-base-grezza.jpg" alt="Base grezza a forma di cuore appena estratta dallo stampo in silicone, prima dell'abbattimento e della glassatura" loading="lazy">
+        <figcaption>1. Base grezza: appena estratta dallo stampo in silicone</figcaption>
       </figure>
       <figure>
-        <img src="torta-gelato-02.jpg" alt="Torta gelato a cuore bianca con fiori in pasta di zucchero, riccioli di cioccolato e glassa colorata a righe" loading="lazy">
-        <figcaption>Base bianca con glassa colorata, fiori e decorazioni alimentari a piacere</figcaption>
+        <img src="torta-gelato-processo-02-abbattimento.jpg" alt="Diverse basi a cuore in abbattitore a -35°C durante la fase di abbattimento" loading="lazy">
+        <figcaption>2. Abbattimento: raffreddamento rapido a -35°C</figcaption>
+      </figure>
+      <figure>
+        <img src="torta-gelato-processo-03-finita.jpg" alt="Torta gelato finita a forma di cuore con glassa a specchio rossa, fiori di zucchero e decorazioni" loading="lazy">
+        <figcaption>3. Prodotto finito: glassa a specchio colorata e decorazioni a piacere</figcaption>
       </figure>
     </div>
     <ul>
