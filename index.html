@@ -513,7 +513,6 @@
     <div class="stat-pill"><b id="statCategorie">–</b><span data-i18n="statCategorieLabel">categorie</span></div>
   </div>
   <div class="header-ctas">
-    <a href="#ottimizzaRicettaCard" class="btn-cta-main" data-i18n="ctaOptimizeFree">🎯 Ottimizza gratis la tua ricetta</a>
     <button id="btnJoinUs" class="btn-join" type="button" data-i18n="btnJoinUs">🤝 Unisciti a noi</button>
     <button id="btnInstall" class="btn-install" style="display:none;" data-i18n="btnInstall">📲 Installa come app</button>
   </div>
@@ -526,6 +525,7 @@
     <a class="nav-archivio" href="#archiveSection" data-i18n="navArchivio">📚 Archivio</a>
     <a class="nav-taratura" href="#taraturaCard" onclick="openExtraToolsIfNeeded('taraturaCard')" data-i18n="navTaratura">🧊 Taratura vetrina</a>
     <a class="nav-prova-ricetta" href="/calcolatore-ricetta-sorbetto" data-i18n="navProvaRicetta">🍓 Prova ricetta</a>
+    <a class="nav-ricette-gelato" href="/ricette-gelato.html" data-i18n="navRicetteGelato">🍨 Ricette gelato</a>
   </div>
   <div class="nav-secondary">
     <a class="nav-documenti" href="#documentiCard" onclick="openExtraToolsIfNeeded('documentiCard')" data-i18n="navDocumenti">📄 Documenti</a>
@@ -667,6 +667,10 @@
   <section class="card" id="ottimizzaRicettaCard">
     <img class="rc-img" src="ottimizza-ricetta-banner.jpg" alt="Scrivici la marca e il tipo di base o neutro che usi: ti aiutiamo gratuitamente a ottimizzare la tua ricetta con un consiglio su misura">
     <h2 data-i18n="rcTitle">🎯 Ottimizziamo la tua ricetta gratis</h2>
+    <div class="actions-row" style="margin-bottom:12px;">
+      <a href="#taraturaCard" class="btn secondary" onclick="openExtraToolsIfNeeded('taraturaCard')" data-i18n="navTaratura">🧊 Taratura vetrina</a>
+      <a href="/calcolatore-ricetta-sorbetto" class="btn" data-i18n="navProvaRicetta">🍓 Prova ricetta</a>
+    </div>
     <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:-6px;" data-i18n="rcIntro">
       Scrivici quale base usi (marca e tipo) e ti aiutiamo a ottimizzare la ricetta per il tuo prodotto — senza nessun costo. Se vuoi, indicaci anche quali altri ingredienti usi: ci aiuta a darti un consiglio più preciso, ma non è obbligatorio — per noi conta soprattutto sapere la base.
     </p>
@@ -1228,6 +1232,7 @@ const I18N = {
     navConfronta: "⚖️ Confronta",
     navTaratura: "🧊 Taratura vetrina",
     navProvaRicetta: "🍓 Prova ricetta",
+    navRicetteGelato: "🍨 Ricette gelato",
     navArchivio: "📚 Archivio",
     navDocumenti: "📄 Documenti",
     navChiSiamo: "👤 Chi sono",
@@ -1609,6 +1614,7 @@ const I18N = {
     navConfronta: "⚖️ Vergleichen",
     navTaratura: "🧊 Vitrinen-Abstimmung",
     navProvaRicetta: "🍓 Rezept testen",
+    navRicetteGelato: "🍨 Eisrezepte",
     navArchivio: "📚 Archiv",
     navDocumenti: "📄 Dokumente",
     navChiSiamo: "👤 Über mich",
@@ -1989,6 +1995,7 @@ const I18N = {
     navConfronta: "⚖️ Compare",
     navTaratura: "🧊 Showcase calibration",
     navProvaRicetta: "🍓 Try a recipe",
+    navRicetteGelato: "🍨 Gelato recipes",
     navArchivio: "📚 Archive",
     navDocumenti: "📄 Documents",
     navChiSiamo: "👤 About me",
@@ -2369,6 +2376,7 @@ const I18N = {
     navConfronta: "⚖️ Comparar",
     navTaratura: "🧊 Calibración vitrina",
     navProvaRicetta: "🍓 Prueba tu receta",
+    navRicetteGelato: "🍨 Recetas de gelato",
     navArchivio: "📚 Archivo",
     navDocumenti: "📄 Documentos",
     navChiSiamo: "👤 Sobre mí",
