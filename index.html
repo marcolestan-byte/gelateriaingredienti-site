@@ -3889,23 +3889,21 @@ window.addEventListener('appinstalled', () => {
 (function () {
   const ua = navigator.userAgent;
   const isIOS = /iphone|ipad|ipod/i.test(ua);
-  const isAndroid = /android/i.test(ua);
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
   if (isStandalone) return;
   if (isIOS) {
     document.getElementById('iosInstallHint').style.display = 'block';
     return;
   }
-  // Android: Chrome a volte ritarda/non mostra 'beforeinstallprompt' (criteri di engagement)
-  // e i browser non Chromium (Samsung Internet, Firefox...) non lo supportano affatto.
-  // Se dopo un breve attimo non è ancora apparso il bottone nativo, mostriamo istruzioni manuali.
-  if (isAndroid) {
-    setTimeout(() => {
-      if (!deferredInstallPrompt && btnInstall.style.display === 'none') {
-        document.getElementById('androidInstallHint').style.display = 'block';
-      }
-    }, 2500);
-  }
+  // Android e desktop: Chrome a volte ritarda/non mostra 'beforeinstallprompt' (criteri di engagement,
+  // tempo trascorso sul sito) e i browser non Chromium (Samsung Internet, Firefox, Edge in alcuni casi...)
+  // non lo supportano affatto. Se dopo un breve attimo non è ancora apparso il bottone nativo,
+  // mostriamo istruzioni manuali valide sia su telefono che su computer.
+  setTimeout(() => {
+    if (!deferredInstallPrompt && btnInstall.style.display === 'none') {
+      document.getElementById('androidInstallHint').style.display = 'block';
+    }
+  }, 2500);
 })();
 
 // ------- Modulo "Unisciti a noi" (Netlify Forms, senza backend) -------

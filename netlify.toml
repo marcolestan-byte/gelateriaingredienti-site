@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://www.gelateriaingredienti.com/*"
+  to = "https://gelateriaingredienti.com/:splat"
+  status = 301
+  force = true
