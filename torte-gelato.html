@@ -254,7 +254,7 @@ footer a{color:var(--brand);}
 
   <section class="card" id="torteSearchSection">
     <h2>🔎 Cerca tra basi semifreddo, decorazioni e glasse</h2>
-    <p>Archivio dedicato con <strong>130 prodotti</strong> di 27 aziende per basi semifreddo, decorazioni e glasse per torte gelato — stessa logica del confronto prodotti principale, ma solo per questa categoria.</p>
+    <p>Archivio dedicato con <strong>137 prodotti</strong> di 27 aziende per basi semifreddo, decorazioni e glasse per torte gelato — stessa logica del confronto prodotti principale, ma solo per questa categoria.</p>
     <div class="torte-search-bar">
       <input type="text" id="torteSearchInput" placeholder="Cerca per azienda o prodotto...">
       <select id="torteCategoryFilter">
@@ -264,6 +264,9 @@ footer a{color:var(--brand);}
         <option value="Decorazione Torte">Decorazione Torte</option>
         <option value="Contenitori per Torte">Contenitori per Torte</option>
         <option value="Preparati da Forno">Preparati da Forno</option>
+      </select>
+      <select id="torteAziendaFilter">
+        <option value="">Tutte le aziende</option>
       </select>
     </div>
     <div class="torte-count" id="torteCount"></div>
@@ -275,16 +278,30 @@ footer a{color:var(--brand);}
     var data = JSON.parse(document.getElementById('torte-archive-data').textContent);
     var input = document.getElementById('torteSearchInput');
     var filter = document.getElementById('torteCategoryFilter');
+    var aziendaFilter = document.getElementById('torteAziendaFilter');
     var results = document.getElementById('torteResults');
     var count = document.getElementById('torteCount');
     function escapeHtml(s){
       return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; });
     }
+    (function populateAziende(){
+      var aziende = [];
+      data.forEach(function(p){ if(p.azienda && aziende.indexOf(p.azienda) === -1) aziende.push(p.azienda); });
+      aziende.sort(function(a,b){ return a.localeCompare(b, 'it'); });
+      aziende.forEach(function(a){
+        var opt = document.createElement('option');
+        opt.value = a;
+        opt.textContent = a;
+        aziendaFilter.appendChild(opt);
+      });
+    })();
     function render(){
       var q = input.value.trim().toLowerCase();
       var cat = filter.value;
+      var azienda = aziendaFilter.value;
       var filtered = data.filter(function(p){
         if(cat && p.categoria !== cat) return false;
+        if(azienda && p.azienda !== azienda) return false;
         if(!q) return true;
         var hay = (p.azienda+' '+p.prodotto+' '+p.categoria).toLowerCase();
         return hay.indexOf(q) !== -1;
@@ -299,6 +316,7 @@ footer a{color:var(--brand);}
     }
     input.addEventListener('input', render);
     filter.addEventListener('change', render);
+    aziendaFilter.addEventListener('change', render);
     render();
   })();
   </script>
@@ -345,6 +363,18 @@ footer a{color:var(--brand);}
       <li>Lascio in abbattitore fino al completo congelamento, poi conservo la torta in un congelatore statico, non ventilato (in uno ventilato la torta perde volume).</li>
     </ul>
     <p class="hint"><strong>Due consigli pratici:</strong> invece di tre strati piatti sovrapposti uno sull'altro, spesso viene meglio creare un'isola al centro con un gusto diverso — visivamente e al taglio fa un'ottima figura. E se usi il frullatore per mescolare un aroma o un colorante nella glassa, tieni sempre la testa del frullatore ferma sul fondo del contenitore: eviti così di incorporare aria, lo stesso principio della panna montata lentamente.</p>
+  </section>
+
+  <section class="card">
+    <h2>Variante: glassa a specchio al cioccolato bianco, colorata</h2>
+    <p>Da una semplice forma in silicone vuota a una torta gelato finita, pronta da vetrina: con il procedimento a strati descritto sopra, il passaggio in più è nella finitura. Si parte dalla forma in silicone (base grezza), si passa per l'abbattimento strato dopo strato e si arriva a una torta finita con una <strong>glassa a specchio a base di cioccolato bianco, colorata</strong>, abbinata a decorazioni alimentari scelte liberamente.</p>
+    <ul>
+      <li><strong>Base della glassa:</strong> si parte da una glassa a specchio al cioccolato bianco (glucosio, gelatina/addensante, latte condensato o acqua secondo la ricetta), scaldata fino alla temperatura di utilizzo indicata dal produttore — in genere 30-35°C.</li>
+      <li><strong>Colorazione:</strong> coloranti alimentari liposolubili (gel o polvere, non a base acqua — con l'acqua la glassa "rompe" e perde lucidità), aggiunti poco alla volta e mescolati con il frullatore a immersione tenuto fermo sul fondo, per non incorporare aria.</li>
+      <li><strong>Colata sulla torta:</strong> la torta deve uscire dall'abbattitore ben fredda (-18/-20°C al cuore) e la glassa versata alla temperatura corretta — troppo calda scioglie la superficie e fa perdere definizione agli strati, troppo fredda non scorre bene e lascia righe.</li>
+      <li><strong>Decorazioni alimentari a piacere:</strong> una volta che la glassa si è assestata (pochi minuti), si aggiungono le decorazioni — fiori di zucchero, cialde, frutta disidratata, scaglie di cioccolato, foglia oro alimentare — scegliendo elementi che reggano il freddo senza sciogliersi a contatto con la glassa.</li>
+    </ul>
+    <p class="hint">Il risultato: una superficie a specchio colorata e decorazioni su misura — una finitura che valorizza il prodotto in vetrina molto più di una semplice glassatura trasparente o lucida neutra.</p>
   </section>
 
   <section class="card">
