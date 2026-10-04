@@ -524,8 +524,6 @@
   <div class="nav-primary">
     <a class="nav-confronta" href="#confrontaSection" data-i18n="navConfronta">⚖️ Confronta</a>
     <a class="nav-archivio" href="#archiveSection" data-i18n="navArchivio">📚 Archivio</a>
-    <a class="nav-taratura" href="#taraturaCard" onclick="openExtraToolsIfNeeded('taraturaCard')" data-i18n="navTaratura">🧊 Taratura vetrina</a>
-    <a class="nav-prova-ricetta" href="/calcolatore-ricetta-sorbetto" data-i18n="navProvaRicetta">🍓 Prova ricetta</a>
     <a class="nav-ricette-gelato" href="/ricette-gelato.html" data-i18n="navRicetteGelato">🍨 Ricette gelato</a>
   </div>
   <div class="nav-secondary">
@@ -3856,6 +3854,20 @@ refreshStats();
     : fromBrowser ? fromBrowser
     : domainDefault;
   setLang(initial);
+})();
+
+// Link diretti dall'esterno: /?cerca=soft#archiveSection precompila la ricerca nell'archivio
+(function(){
+  try {
+    const q = new URLSearchParams(window.location.search).get('cerca');
+    if (!q) return;
+    const el = document.getElementById('searchArchive');
+    if (!el) return;
+    el.value = q.slice(0, 80);
+    renderArchiveTable();
+    const sec = document.getElementById('archiveSection');
+    if (sec) setTimeout(() => sec.scrollIntoView(), 200);
+  } catch (e) {}
 })();
 
 // ---------- PWA: service worker + installazione ----------
