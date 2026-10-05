@@ -1,6 +1,6 @@
-// Service worker minimale: mette in cache l'intera app (è un unico file
-// autosufficiente) così funziona anche offline dopo la prima apertura.
-const CACHE_NAME = 'gelateriaingredienti-cache-v1';
+// Minimaler Service Worker: cached die gesamte App (eine einzige,
+// eigenständige Datei), damit sie nach dem ersten Öffnen auch offline funktioniert.
+const CACHE_NAME = 'eisdieleinfo-cache-v1';
 const APP_SHELL = [
   './',
   './index.html',
@@ -24,8 +24,8 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Strategia: rete prima (per avere sempre l'ultima versione quando c'è
-// connessione), con fallback alla cache quando sei offline.
+// Strategie: zuerst Netzwerk (für immer die neueste Version bei bestehender
+// Verbindung), mit Fallback auf den Cache im Offline-Modus.
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   event.respondWith(

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gelateriaingredienti.com/sitemap.xml
+Sitemap: https://eisdieleinfo.com/sitemap.xml

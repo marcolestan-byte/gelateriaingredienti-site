@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "https://www.gelateriaingredienti.com/*"
-  to = "https://gelateriaingredienti.com/:splat"
+  from = "https://www.eisdieleinfo.com/*"
+  to = "https://eisdieleinfo.com/:splat"
   status = 301
   force = true
