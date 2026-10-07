@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cacao e cioccolato per gelato: 112 prodotti a confronto</title>
+<meta name="description" content="Archivio di 112 cacao in polvere e cioccolati per gelato di 12 aziende, con ricerca e filtri rapidi per fondente, latte, bianco, gianduia e vegano.">
+<link rel="canonical" href="https://gelateriaingredienti.com/cacao-cioccolato.html">
+<style>
+:root{
+  --ink:#2b2320; --ink-soft:#6b5f58; --paper:#fffaf3; --line:#e7dccd;
+  --brand:#c0392b; --brand-soft:#f7e9df; --ok:#2e7d32; --warn:#b8860b; --bad:#c0392b;
+}
+*{box-sizing:border-box;}
+body{margin:0; font-family:"Segoe UI", system-ui, -apple-system, sans-serif; background:var(--paper); color:var(--ink); line-height:1.55;}
+.wrap{max-width:900px; margin:0 auto; padding:20px 16px 60px;}
+.top-link{display:inline-block; margin-bottom:18px; color:var(--brand); text-decoration:none; font-weight:600; font-size:0.95rem;}
+.top-link:hover{text-decoration:underline;}
+h1{font-size:1.5rem; margin:0 0 14px;}
+h2{font-size:1.15rem; margin:0 0 10px;}
+.card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; box-shadow:0 2px 10px rgba(0,0,0,0.04); margin-bottom:20px;}
+.hint{font-size:0.82rem; color:var(--ink-soft); margin-top:10px; line-height:1.45;}
+p{margin:0 0 12px;}
+ul{margin:0 0 12px; padding-left:22px;}
+li{margin-bottom:6px;}
+.company-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:14px; margin-top:10px;}
+.company-card{border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fffdfa;}
+.company-name{font-weight:800; font-size:0.98rem; margin-bottom:4px;}
+.company-meta{font-size:0.75rem; color:var(--ink-soft); margin-bottom:6px;}
+.company-usp{font-size:0.82rem;}
+.tag{display:inline-block; background:var(--brand-soft); color:var(--brand); border-radius:6px; padding:2px 8px; font-size:0.72rem; font-weight:700; margin-right:6px;}
+.news-date{font-size:0.75rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.03em; font-weight:700;}
+.hero-img{width:100%; max-height:360px; object-fit:cover; border-radius:14px; margin-bottom:18px; display:block;}
+.gallery{display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:12px; margin-top:12px;}
+.gallery figure{margin:0;}
+.gallery img{width:100%; height:220px; object-fit:cover; border-radius:10px; border:1px solid var(--line); display:block;}
+.gallery figcaption{font-size:0.75rem; color:var(--ink-soft); margin-top:4px;}
+.steps-img{width:100%; max-width:100%; height:auto; border-radius:12px; border:1px solid var(--line); display:block; margin:18px 0;}
+.quick-links{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;}
+.quick-links a{display:flex; flex-direction:column; gap:2px; background:var(--brand-soft); color:var(--brand); border-radius:10px; padding:10px 14px; font-size:0.88rem; font-weight:700; text-decoration:none; flex:1 1 160px;}
+.quick-links a:hover{text-decoration:underline;}
+.quick-links small{font-weight:400; color:var(--ink-soft); font-size:0.75rem;}
+footer{font-size:0.8rem; color:var(--ink-soft); text-align:center; margin-top:30px;}
+footer a{color:var(--brand);}
+
+.torte-search-bar{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
+.torte-search-bar input[type="text"]{flex:1 1 260px; padding:10px 12px; border:1px solid var(--line); border-radius:10px; font-size:0.92rem; font-family:inherit;}
+.torte-search-bar select{padding:10px 12px; border:1px solid var(--line); border-radius:10px; font-size:0.92rem; font-family:inherit; background:#fff;}
+.torte-count{font-size:0.8rem; color:var(--ink-soft); margin-top:10px; font-weight:700;}
+.torte-results{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:12px; margin-top:12px;}
+.torte-result-card{border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fffdfa; transition:transform 0.15s ease, box-shadow 0.15s ease;}
+.torte-result-card:hover{transform:translateY(-3px); box-shadow:0 8px 18px rgba(90,60,20,0.14);}
+.torte-pulse-dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--amarena,#B23A2E); margin-right:5px; vertical-align:middle; animation:tortePulseDot 1.5s ease-in-out infinite;}
+@keyframes tortePulseDot{0%,100%{opacity:1;} 50%{opacity:0.35;}}
+.torte-result-head{display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;}
+.torte-azienda{font-weight:800; font-size:0.9rem; color:var(--brand);}
+.torte-cat-tag{display:inline-block; background:var(--brand-soft); color:var(--brand); border-radius:6px; padding:2px 8px; font-size:0.68rem; font-weight:700; white-space:nowrap;}
+.torte-prodotto{font-weight:700; font-size:0.95rem; margin-bottom:6px;}
+.torte-field{font-size:0.78rem; color:var(--ink-soft); margin-bottom:2px; line-height:1.4;}
+.torte-field strong{color:var(--ink);}
+
+
+.pg-details{margin-top:14px}
+.pg-details>summary{cursor:pointer;font-weight:800;font-size:0.95rem;padding:12px 16px;border:1px solid var(--line,#e8dcc4);border-radius:12px;background:var(--brand-soft,#f6ece0);color:var(--brand,#b83a2e);list-style:none}
+.pg-details>summary::-webkit-details-marker{display:none}
+.pg-details>summary::after{content:' ▾';float:right}
+.pg-details[open]>summary::after{content:' ▴'}
+.pg-details[open]>summary{margin-bottom:12px}
+.torte-search-bar input,.torte-search-bar select{max-width:100%;min-width:0;box-sizing:border-box}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+.chip{border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:999px; padding:6px 12px; font-size:0.8rem; font-weight:600; cursor:pointer; font-family:inherit;}
+.chip:hover{border-color:var(--brand);}
+.chip[aria-pressed="true"]{background:var(--brand); border-color:var(--brand); color:#fff;}
+.chip small{font-weight:400; opacity:0.8; margin-left:4px;}
+.gc-stats{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 6px;}
+.gc-stat{background:var(--brand-soft); border-radius:10px; padding:8px 12px; font-size:0.8rem; color:var(--ink-soft); flex:1 1 140px;}
+.gc-stat strong{display:block; font-size:1.05rem; color:var(--brand);}
+.gc-legend{display:flex; flex-wrap:wrap; gap:12px; font-size:0.75rem; color:var(--ink-soft); margin:8px 0;}
+.gc-legend i{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; vertical-align:middle;}
+.gc-chart{margin-top:6px;}
+.gc-axis{position:relative; height:18px; margin-left:minmax(0,0); font-size:0.68rem; color:var(--ink-soft);}
+.gc-row{display:grid; grid-template-columns:minmax(110px,34%) 1fr; gap:10px; align-items:center; padding:4px 0; cursor:pointer; border-radius:6px;}
+.gc-row:hover{background:#fbf3e8;}
+.gc-label{font-size:0.76rem; line-height:1.25; overflow:hidden; text-overflow:ellipsis;}
+.gc-label b{display:block; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.gc-label span{color:var(--ink-soft); font-size:0.7rem;}
+.gc-track{position:relative; height:20px; background:linear-gradient(to right, transparent 0, transparent 100%); border-left:1px solid var(--line); border-bottom:1px dashed var(--line);}
+.gc-grid{position:absolute; top:0; bottom:0; width:1px; background:#efe5d6;}
+.gc-bar{position:absolute; top:4px; height:12px; border-radius:6px; min-width:7px; transition:left .25s ease, width .25s ease;}
+.gc-val{position:absolute; top:0; font-size:0.68rem; font-weight:700; line-height:20px; color:var(--ink); white-space:nowrap;}
+.gc-axis-wrap{display:grid; grid-template-columns:minmax(110px,34%) 1fr; gap:10px;}
+.gc-more{margin-top:10px;}
+.btn-lite{border:1px solid var(--line); background:#fff; border-radius:10px; padding:8px 14px; font-size:0.82rem; font-weight:700; cursor:pointer; font-family:inherit; color:var(--brand);}
+.btn-lite:hover{border-color:var(--brand);}
+.torte-fonte{font-size:0.72rem; margin-top:6px;}
+.torte-fonte a{color:var(--brand);}
+.pp-wrap{display:grid; gap:6px; margin-top:12px;}
+.pp-row{display:grid; grid-template-columns:minmax(120px,30%) 1fr; gap:10px; align-items:center; cursor:pointer; padding:3px 0; border-radius:6px;}
+.pp-row:hover{background:#fbf3e8;}
+.pp-row[aria-selected="true"]{background:#f7e9df;}
+.pp-name{font-size:0.8rem; font-weight:700;}
+.pp-bars{display:grid; gap:3px;}
+.pp-bar{height:12px; border-radius:6px; position:relative; min-width:2px; transition:width .25s ease;}
+.pp-bar span{position:absolute; left:calc(100% + 6px); top:-2px; font-size:0.68rem; font-weight:700; color:var(--ink); white-space:nowrap;}
+.pac{background:#c0392b;} .pod{background:#e0a526;}
+.pp-tools{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px;}
+.conv{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-top:12px;}
+.conv label{display:block; font-size:0.74rem; font-weight:700; color:var(--ink-soft); margin-bottom:4px;}
+.conv select,.conv input{width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:10px; font-size:0.9rem; font-family:inherit; background:#fff;}
+.conv-out{margin-top:12px; background:var(--brand-soft); border-radius:12px; padding:12px 14px; font-size:0.92rem;}
+.conv-out strong{color:var(--brand);}
+@media (max-width:560px){.gc-row,.gc-axis-wrap,.pp-row{grid-template-columns:1fr;} .gc-label b{white-space:normal;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cacao alcalinizzato o naturale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il cacao alcalinizzato (olandese) è più scuro e meno acido, quello naturale ha un gusto più vivo. Dove la scheda lo indica, lo trovi nel campo «Origine / Tipo»."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto cioccolato si usa per litro di miscela?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dipende dal prodotto: i dosaggi dichiarati nell'archivio vanno da poche decine a più di cento grammi per litro. Il dosaggio giusto è quello della scheda del produttore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cacao e cioccolato sono intercambiabili?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No: il cacao in polvere dà colore e gusto ma poco corpo; il cioccolato porta anche grassi (burro di cacao) e zuccheri, quindi cambia la ricetta e il bilanciamento."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <a class="top-link" href="/">← Torna al confronto prodotti</a>
+  <h1>🍫 Cacao e cioccolato per gelato</h1>
+
+  <section class="card">
+    <p>Per il gelato al cioccolato si usano cacao in polvere, paste e cioccolati dedicati, più coperture e gocce per le varianti croccanti. Cambiano per <strong>tipo</strong> (fondente, al latte, bianco, gianduia), per <strong>percentuale di cacao</strong> e di grassi, per <strong>origine</strong> (naturale o alcalinizzato) e per il <strong>dosaggio</strong> consigliato in g per litro di miscela.</p><p class="hint">Molte schede non dichiarano la percentuale di cacao né il dosaggio: in quel caso trovi il prodotto nell'archivio con «n.d.». I dati sono quelli dei produttori, da verificare sempre con il fornitore.</p>
+  </section>
+
+  <section class="card" id="pgChartCard" style="display:none">
+    <h2 id="gcTitle"></h2>
+    <div class="chips" id="gcTabs"></div>
+    <p id="gcIntro" style="margin-top:10px"></p>
+    <p class="hint" id="gcApprox">Le barre con «≈» sono approssimate: percentuali convertite con 10 g per ogni 1% (≈ g/kg) oppure dosaggi senza unità, interpretati come g/L. Controlla sempre la scheda del produttore.</p>
+    <div class="gc-stats" id="gcStats"></div>
+    <div class="gc-legend" id="gcLegend"></div>
+    <div class="gc-chart" id="gcChart"></div>
+  </section>
+
+  <section class="card" id="pgArchive">
+    <h2>🔎 Archivio prodotti</h2>
+    <p>Archivio dedicato con <strong>112 prodotti</strong> di 12 aziende tra cacao in polvere, cioccolati per gelato, coperture e gocce — stessi dati del confronto prodotti principale, ma in una pagina solo per questa categoria.</p>
+    <div class="torte-search-bar">
+      <input type="text" id="pgSearch" placeholder="Cerca per azienda, prodotto o dettaglio...">
+      <select id="pgCat"><option value="">Tutte le categorie</option><option value="Cacao Polvere">Cacao Polvere</option><option value="Cioccolato">Cioccolato</option></select>
+      <select id="pgAz"><option value="">Tutte le aziende</option></select>
+    </div>
+    <div class="hint" style="margin-top:12px">Filtri rapidi (si combinano tra loro)</div>
+    <div class="chips" id="pgChips"></div>
+    <p class="hint">I filtri rapidi cercano le parole nella scheda: sono indicativi, controlla sempre la scheda tecnica del produttore.</p>
+    <details id="pgDetails" class="pg-details"><summary>📋 Mostra l'elenco dei prodotti</summary><div class="torte-count" id="pgCount"></div>
+    <div class="torte-results" id="pgResults"></div></details>
+  </section>
+  <script type="application/json" id="page-archive-data">[{"azienda":"Bechtolina","categoria":"Cioccolato","prodotto":"Nr. 153 Schokolade (cod. 011)","fields":{"Tipo":"100% naturale","Dosaggio dichiarato":"50 g/l","Caratteristiche / posizionamento":"Ricetta originale dal 1907! Cioccolato al latte intero, cacao olandese originale, senza aromi artificiali."},"note":"Dati forniti e certificati direttamente dall'azienda produttrice.","fonte":""},{"azienda":"Bechtolina","categoria":"Cioccolato","prodotto":"Nr. 157 Schokolade Amaro (cod. 354)","fields":{"Tipo":"100% naturale","Dosaggio dichiarato":"80 g/l","Caratteristiche / posizionamento":"Il meglio della fava di cacao. Cioccolato fondente intenso."},"note":"Dati forniti e certificati direttamente dall'azienda produttrice.","fonte":""},{"azienda":"Bechtolina","categoria":"Cioccolato","prodotto":"Mousse au chocolat (cod. 316)","fields":{"Tipo":"100% naturale, senza lattosio, vegano","Dosaggio dichiarato":"50 g/l","Caratteristiche / posizionamento":"Cioccolato leggero e spumoso."},"note":"Dati forniti e certificati direttamente dall'azienda produttrice.","fonte":""},{"azienda":"Bechtolina","categoria":"Cioccolato","prodotto":"Weiße Schokolade (cod. 028)","fields":{"Tipo":"100% naturale, vegano","Dosaggio dichiarato":"50 g/l","Caratteristiche / posizionamento":"Alto contenuto di scaglie di cioccolato bianco."},"note":"Dati forniti e certificati direttamente dall'azienda produttrice.","fonte":""},{"azienda":"Bechtolina","categoria":"Cioccolato","prodotto":"Pallina D'oro (cod. 284)","fields":{"Tipo":"100% naturale, vegano","Dosaggio dichiarato":"50 g/l","Caratteristiche / posizionamento":"Combinata con pezzetti di nocciola e glassa di grasso di cacao (v. pag. 21); dà il gusto della celebre pallina dorata da banco dolciumi."},"note":"Dati forniti e certificati direttamente dall'azienda produttrice.","fonte":""},{"azienda":"Bechtolina","categoria":"Cioccolato","prodotto":"Praline Nougat (cod. 239)","fields":{"Tipo":"100% naturale, vegano","Dosaggio dichiarato":"50 g/l","Caratteristiche / posizionamento":"Fine gusto di nougat."},"note":"Dati forniti e certificati direttamente dall'azienda produttrice.","fonte":""},{"azienda":"Bechtolina","categoria":"Cioccolato","prodotto":"Bitterschokolade vegan (cod. 103)","fields":{"Tipo":"100% naturale, senza lattosio, vegano","Dosaggio dichiarato":"100 g/l","Caratteristiche / posizionamento":"Con il 43% di cacao puro; già bilanciata su base vegana."},"note":"Dati forniti e certificati direttamente dall'azienda produttrice.","fonte":""},{"azienda":"Presti","categoria":"Cacao Polvere","prodotto":"Kakao Puro 20-22","fields":{"% Grassi (burro cacao)":"Qualità 20/22","Origine / Tipo (naturale o alcalinizzato)":"Naturale, senza aromi, produzione propria","Dosaggio dichiarato":"50 g/l — confezione 2x8 kg (16 kg)"},"note":"","fonte":""},{"azienda":"Presti","categoria":"Cioccolato","prodotto":"Dark Chocolate","fields":{"% Cacao dichiarato":"Alta concentrazione (510 g/l)","Tipo (fondente/latte/bianco)":"Fondente, produzione propria","Caratteristiche / posizionamento":"Confezione 2x10 kg (20 kg)"},"note":"","fonte":""},{"azienda":"Presti","categoria":"Cioccolato","prodotto":"Schokolade","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Mix completo cioccolato, produzione propria","Caratteristiche / posizionamento":"Dosaggio 80 g/l; confezione 2x7 kg (14 kg)"},"note":"","fonte":""},{"azienda":"Aromitalia","categoria":"Cacao Polvere","prodotto":"Cacao del Gelatiere","fields":{"% Grassi (burro cacao)":"22-24%","Origine / Tipo (naturale o alcalinizzato)":"n.d.","Dosaggio dichiarato":"60 g cacao + 1 kg mix base latte + 20 g destrosio"},"note":"","fonte":"https://www.aromitalia.it/products/cacao-del-gelatiere"},{"azienda":"Aromitalia","categoria":"Cacao Polvere","prodotto":"Cacao Holland","fields":{"% Grassi (burro cacao)":"n.d.","Origine / Tipo (naturale o alcalinizzato)":"n.d.","Dosaggio dichiarato":"50-70 g + 1 kg mix base latte"},"note":"","fonte":"https://www.aromitalia.it/products/cacao-holland"},{"azienda":"Fabbri 1905","categoria":"Cacao Polvere","prodotto":"Cacao Bollo Oro","fields":{"% Grassi (burro cacao)":"22-24%","Origine / Tipo (naturale o alcalinizzato)":"Cacao olandese tostato, colore rosso bruno, solubile","Dosaggio dichiarato":"100 g + 1 L latte"},"note":"","fonte":"https://www.fabbri1905.com/prodotti-fabbri/cacao-bollo-oro.kl"},{"azienda":"Leagel","categoria":"Cioccolato","prodotto":"Box Ecuador Monorigine","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Fondente monorigine Ecuador","Caratteristiche / posizionamento":"8 buste di preparato da 1,6 kg (12,8 kg); lavorazione a caldo (80°); senza glutine, vegano"},"note":"","fonte":"https://www.leagel.com/products/gelato-vegan/"},{"azienda":"Leagel","categoria":"Cioccolato","prodotto":"Box Santo Domingo Monorigine","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Fondente monorigine Santo Domingo","Caratteristiche / posizionamento":"8 buste di preparato da 1,6 kg (12,8 kg); lavorazione a caldo (80°); senza glutine, vegano"},"note":"","fonte":"https://www.leagel.com/products/gelato-vegan/"},{"azienda":"Leagel","categoria":"Cioccolato","prodotto":"Box Ghana Monorigine","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Fondente monorigine Ghana","Caratteristiche / posizionamento":"8 buste di preparato da 1,6 kg (12,8 kg); lavorazione a caldo (80°); senza glutine, vegano"},"note":"","fonte":"https://www.leagel.com/products/gelato-vegan/"},{"azienda":"Leagel","categoria":"Cioccolato","prodotto":"Box Cioccolato Super Black","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Fondente extra scuro (Super Black)","Caratteristiche / posizionamento":"Confezione 12,8 kg; lavorazione a caldo (50°); senza glutine, vegano"},"note":"","fonte":"https://www.leagel.com/products/gelato-vegan/"},{"azienda":"Leagel","categoria":"Cioccolato","prodotto":"Copertura al Cioccolato Fondente Grand Cru","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Fondente (Grand Cru)","Caratteristiche / posizionamento":"Dosaggio a piacere; confezione 1 x 3,5 kg; lavorazione a caldo; senza glutine"},"note":"","fonte":"https://www.leagel.com/products/gelato-vegan/"},{"azienda":"Leagel","categoria":"Cioccolato","prodotto":"Pasta Fondente in barattolo","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Fondente","Caratteristiche / posizionamento":"Formato barattolo; dosaggio a piacere; confezione 6 x 1,2 kg; lavorazione a freddo; senza glutine"},"note":"","fonte":"https://www.leagel.com/products/gelato-vegan/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Cioccolato 130","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"n.d. (prodotto in polvere)","Caratteristiche / posizionamento":"Dosaggio 130 g/l; caldo e freddo; vegano, senza glutine, senza lattosio, Halal"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Cioccolato Bianco","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Bianco","Caratteristiche / posizionamento":"Pasta 100% cioccolato bianco; dosaggio 100 g/l, a freddo; senza glutine, Halal"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Cioccolato Mix Giubileo","fields":{"% Cacao dichiarato":"n.d. (cacao magro)","Tipo (fondente/latte/bianco)":"Fondente","Caratteristiche / posizionamento":"Polvere blend cacao magro; dosaggio 10%; ideale per sorbetti al cioccolato, mousse, creme; vegano, senza glutine, senza lattosio"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Cioko Black 250","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Fondente (colore scuro, sapore intenso)","Caratteristiche / posizionamento":"Base pronta all'uso; dosaggio 250 g/l; caldo e freddo; senza glutine, Halal"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Easy Chocolate Base","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"n.d.","Caratteristiche / posizionamento":"Polvere semicompleta per sorbetti e gelati; dosaggio 20%; senza glutine, senza lattosio"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Gianduiotta","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Gianduia","Caratteristiche / posizionamento":"Pasta crema gianduia; dosaggio 500 g/l; senza glutine"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Giubileo Cioccolato 250","fields":{"% Cacao dichiarato":"Alta percentuale di cioccolato fondente (esatta % n.d.)","Tipo (fondente/latte/bianco)":"Fondente","Caratteristiche / posizionamento":"Base clean label; dosaggio 25%, a caldo; senza glutine, Halal"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Il Cioccolato Bianco di Knam","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Bianco","Caratteristiche / posizionamento":"Base pura al cioccolato bianco con note di vaniglia; dosaggio 500 g/l, a caldo; senza grassi vegetali/emulsionanti aggiunti; senza glutine, Halal"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Il Cioccolato di Knam","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Blend alta qualità","Caratteristiche / posizionamento":"Base blend cioccolato alta qualità; dosaggio 500 g/l, a caldo; senza grassi vegetali, emulsionanti, aromi artificiali; senza glutine, Halal"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Comprital","categoria":"Cioccolato","prodotto":"Knam Professional","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Fondente con gocce di cioccolato","Caratteristiche / posizionamento":"Polvere pronta all'uso con cioccolato fondente e gocce; dosaggio 670 g/l, a caldo; vegano, senza glutine, senza lattosio"},"note":"","fonte":"https://comprital.com/prodotti/cioccolati/"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Cacao Polvere","prodotto":"Ariba Cacao 10/12","fields":{"% Grassi (burro cacao)":"10/12% (burro cacao)","Origine / Tipo (naturale o alcalinizzato)":"n.d.","Dosaggio dichiarato":"n.d."},"note":"Cacao pregiato per aromatizzare basi e creme, decorare dolci e realizzare gelati. Formato: bustine da 1 kg, cartone da 9 kg.","fonte":"https://www.martiniprofessional.it/p/martini-gelato/ariba-cacao/"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Cacao Polvere","prodotto":"Ariba Cacao 22/24","fields":{"% Grassi (burro cacao)":"22/24% (burro cacao)","Origine / Tipo (naturale o alcalinizzato)":"n.d.","Dosaggio dichiarato":"n.d."},"note":"Cacao pregiato per aromatizzare basi e creme, decorare dolci e realizzare gelati. Formato: bustine da 1 kg, cartone da 9 kg.","fonte":"https://www.martiniprofessional.it/p/martini-gelato/ariba-cacao/"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Cacao Polvere","prodotto":"Ariba Cacao 20/22 Rosso","fields":{"% Grassi (burro cacao)":"20/22% (burro cacao), varietà rossa","Origine / Tipo (naturale o alcalinizzato)":"n.d.","Dosaggio dichiarato":"n.d."},"note":"Cacao pregiato per aromatizzare basi e creme, decorare dolci e realizzare gelati. Formato: bustine da 1 kg, cartone da 9 kg.","fonte":"https://www.martiniprofessional.it/p/martini-gelato/ariba-cacao/"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Cacao Polvere","prodotto":"Ariba Cacao 22/24 Bruno","fields":{"% Grassi (burro cacao)":"22/24% (burro cacao), varietà bruna","Origine / Tipo (naturale o alcalinizzato)":"n.d.","Dosaggio dichiarato":"n.d."},"note":"Cacao pregiato per aromatizzare basi e creme, decorare dolci e realizzare gelati. Formato: bustine da 1 kg, cartone da 9 kg.","fonte":"https://www.martiniprofessional.it/p/martini-gelato/ariba-cacao/"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Cioccolato","prodotto":"Cacao (Basi Liquide Pastorizzate)","fields":{"% Cacao dichiarato":"n.d. (non specificato sul sito)","Tipo (fondente/latte/bianco)":"Base pastorizzata liquida al cacao, per gelati al cioccolato","Caratteristiche / posizionamento":"Linea Basi Liquide Pastorizzate Martini Gelato; pronta all'uso, a freddo."},"note":"","fonte":"https://www.martiniprofessional.it/b/martini-gelato/gelateria/basi-per-realizzare-il-gelato/basi-liquide-pastorizzate-91d728"},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Base Cacao 200 C/F","fields":{"Tipo":"Base in latte, caldo o freddo, contiene cacao","Dosaggio dichiarato":"200 g/L","Caratteristiche / posizionamento":"Contiene una miscela di pregiati cacao, utilizzabile sia a caldo che a freddo con la sola aggiunta di latte."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Armonia Ecuador Y Santo Domingo","fields":{"Tipo":"Base completa in polvere, in acqua, caldo o freddo","Dosaggio dichiarato":"1,64 kg + 2 L acqua","Caratteristiche / posizionamento":"Base completa al cioccolato fondente da cacao proveniente da Ecuador e Santo Domingo."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Cioccolato Extra Dark","fields":{"Tipo":"Base completa in polvere, in acqua, caldo o freddo","Dosaggio dichiarato":"1,60 kg + 2,3 L acqua","Caratteristiche / posizionamento":"Base completa al cioccolato fondente extra scuro."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Selezione Bianco Babbi","fields":{"Tipo":"Base completa in polvere, in acqua, caldo o freddo","Dosaggio dichiarato":"1,60 kg + 2,4 L acqua","Caratteristiche / posizionamento":"Base completa al cioccolato bianco selezionato Babbi."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Selezione Fondente Babbi","fields":{"Tipo":"Base completa in polvere, in acqua, caldo o freddo","Dosaggio dichiarato":"1,80 kg + 2,2 L acqua","Caratteristiche / posizionamento":"Base completa al cioccolato fondente selezionato Babbi."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Cacao Special","fields":{"Tipo":"Pasta caratterizzante al gusto cacao, senza lattosio, formato barattolo","Dosaggio dichiarato":"100-120 g/kg","Caratteristiche / posizionamento":"Pasta aromatizzante al gusto cioccolato, senza lattosio."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Gianduia Amara","fields":{"Tipo":"Pasta caratterizzante al gusto gianduia, senza lattosio, senza zuccheri aggiunti, formato barattolo","Dosaggio dichiarato":"80-100 g/kg","Caratteristiche / posizionamento":"Pasta aromatizzante al gusto gianduia amaro, senza lattosio e senza zuccheri aggiunti."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Gianduia Trinacria","fields":{"Tipo":"Pasta caratterizzante al gusto gianduia, senza lattosio, formato barattolo","Dosaggio dichiarato":"100-120 g/kg","Caratteristiche / posizionamento":"Pasta aromatizzante al gusto gianduia, senza lattosio."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Golosa Cioccolato Latte","fields":{"Tipo":"Crema fluida al cioccolato al latte","Dosaggio dichiarato":"q.b. (topping/variegatura)","Caratteristiche / posizionamento":"Crema fluida al gusto di cioccolato al latte per riscoprire il più classico dei dolci."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Golosa Fondente","fields":{"Tipo":"Crema fluida al cioccolato fondente, senza lattosio","Dosaggio dichiarato":"q.b. (topping/variegatura)","Caratteristiche / posizionamento":"Crema fluida dal colore scuro e intense note di cioccolato fondente, senza lattosio."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Golosa Gianduia","fields":{"Tipo":"Crema fluida al gusto gianduia","Dosaggio dichiarato":"q.b. (topping/variegatura)","Caratteristiche / posizionamento":"Crema fluida al gusto intenso di gianduia con spiccate note di nocciola tostata."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Golosa Gianduia Extra","fields":{"Tipo":"Crema fluida al gusto gianduia, vegana","Dosaggio dichiarato":"q.b. (topping/variegatura)","Caratteristiche / posizionamento":"Crema fluida fatta da nocciole tostate e cacao, gusto deciso e persistente, vegana."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Golosa Krok Cioccolato Latte","fields":{"Tipo":"Crema fluida con granella di arachidi pralinata salata","Dosaggio dichiarato":"q.b. (topping/variegatura)","Caratteristiche / posizionamento":"Contrasto tra dolce e salato, delicato e intenso, vellutato e croccante: cioccolato al latte con una sfiziosa granella di arachide pralinata salata."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Golosa Krok Gianduia","fields":{"Tipo":"Crema fluida con granella di nocciola tostata","Dosaggio dichiarato":"q.b. (topping/variegatura)","Caratteristiche / posizionamento":"Crema fluida alla gianduia con abbondante granella di nocciola tostata."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Farcicream Gianduia","fields":{"Tipo":"Farcitura anidra al gusto gianduia","Dosaggio dichiarato":"q.b. (farcitura)","Caratteristiche / posizionamento":"Farcitura anidra al gusto cacao e nocciola, struttura ferma e cremosa, ideale come ripieno per dolci da forno, pasticceria e cioccolateria."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Extra Dark & Stracciatella Fondente","fields":{"Tipo":"Copertura al cioccolato extra fondente, vegana","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Copertura extra dark con stracciatella fondente, vegana e senza glutine."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Fine (Stracciatella)","fields":{"Tipo":"Copertura stracciatella, vegana","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Copertura stracciatella fine, vegana e senza glutine."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Krok Cocco","fields":{"Tipo":"Copertura al cioccolato bianco con cocco","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Novità 2026: copertura al cioccolato bianco arricchita con cocco rapé e granella di biscotto, solidifica mantenendo una texture morbida e vellutata, ideale per stecchi, praline gelato e pasticceria fredda."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Krok Gianduia","fields":{"Tipo":"Copertura alla gianduia con granella di nocciola","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Novità 2026: copertura alla gianduia con granella di nocciola, texture morbida e vellutata con contrasto tra cremosità e croccantezza, ideale per stecchi, praline gelato e pasticceria fredda."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Krok Pistacchio","fields":{"Tipo":"Copertura al pistacchio con granella di pistacchio","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Nuova formula 2026: copertura al pistacchio con granella di pistacchio, texture morbida e vellutata con contrasto cremosità/croccantezza, ideale per stecchi, praline gelato e pasticceria fredda."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Krok Speculoos","fields":{"Tipo":"Copertura al caramello e biscotto speculoos","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Novità 2026: copertura al gusto caramello e biscotto aromatico con granella di biscotto speculoos, solidifica con texture morbida e vellutata, ideale per stecchi, praline gelato e pasticceria fredda."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura per Pinguini","fields":{"Tipo":"Copertura al cioccolato tipo \"moretti\"","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Copertura al cioccolato per la realizzazione di pinguini/moretti gelato."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Roma","fields":{"Tipo":"Copertura extra cioccolato, vegana","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Copertura al cioccolato extra, vegana e senza glutine."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Stracciatella Rustica","fields":{"Tipo":"Copertura extra-dark con granella di fave di cacao","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Copertura extra-dark con inclusioni croccanti di granella di fava di cacao tostata."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Fine - Bottiglia","fields":{"Tipo":"Copertura stracciatella in bottiglia, vegana","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Copertura stracciatella in formato bottiglia, vegana e senza glutine."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura al Latte (in bottoni)","fields":{"Tipo":"Copertura al cioccolato al latte in bottoni","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Cioccolato al latte in bottoni per copertura."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Bianca (in bottoni)","fields":{"Tipo":"Copertura al cioccolato bianco in bottoni","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Cioccolato bianco in bottoni per copertura."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Copertura Fondente (in bottoni)","fields":{"Tipo":"Copertura al cioccolato fondente in bottoni, vegana","Dosaggio dichiarato":"q.b. (copertura)","Caratteristiche / posizionamento":"Cioccolato fondente in bottoni per copertura, vegano."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cioccolato","prodotto":"Artistick Cioccolato Classico","fields":{"Tipo":"Copertura per stecchi gelato al cioccolato al latte","Dosaggio dichiarato":"q.b. (copertura stecchi)","Caratteristiche / posizionamento":"Copertura Artistick al cioccolato al latte classico per stecchi gelato."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cacao Polvere","prodotto":"Cacao Bruno 22%-24%","fields":{"Tipo":"Cacao in polvere, vegano","Dosaggio dichiarato":"q.b.","Caratteristiche / posizionamento":"Cacao in polvere bruno con il 22-24% di sostanza grassa, vegano e senza zuccheri aggiunti."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Cacao Polvere","prodotto":"Cacao Special 10%-12%","fields":{"Tipo":"Cacao in polvere, senza glutine","Dosaggio dichiarato":"q.b.","Caratteristiche / posizionamento":"Cacao in polvere con il 10-12% di sostanza grassa, senza zuccheri aggiunti."},"note":"","fonte":""},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"CIOCCOLATO EXTRA FONDENTE","fields":{"Tipo":"Semilavorato in polvere, cioccolato extra fondente senza latte","Dosaggio dichiarato":"400 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato al gusto di cioccolato extra fondente senza latte, uso a freddo. Cartone da 16 Kg (10 sacchetti da 1,6 Kg), nessun allergene dichiarato."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/cioccolato-extra-fondente/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"CIOCCOLATO FONDENTE NERO","fields":{"Tipo":"Semilavorato in polvere, cioccolato fondente","Dosaggio dichiarato":"400 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato al gusto di cioccolato fondente, uso a freddo. Cartone da 16 Kg (10 sacchetti da 1,6 Kg); contiene Latte."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/cioccolato-fondente-nero/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"CIOCCOLATO MONORIGINE CRU SAO TOME","fields":{"Tipo":"Semilavorato in polvere, cioccolato monorigine","Dosaggio dichiarato":"400 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato al cioccolato con fave di cacao selezionate provenienti dall'isola di São Tomé, uso a freddo. Cartone da 16 Kg (10 sacchetti da 1,6 Kg); contiene Latte."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/cioccolato-monorigine-cru-sao-tome/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"CIOCCOLATO MONORIGINE ECUADOR","fields":{"Tipo":"Semilavorato in polvere, cioccolato monorigine con gocce","Dosaggio dichiarato":"450 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato con gocce di cioccolato selezionate provenienti dall'Ecuador, uso a freddo. Cartone da 10,8 Kg (6 sacchetti da 1,8 Kg); contiene Latte, Soia."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/cioccolato-monorigine-ecuador/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"CIOCCOLATO MONORIGINE ECUADOR SENZA LATTE","fields":{"Tipo":"Semilavorato in polvere, cioccolato monorigine con gocce, senza latte","Dosaggio dichiarato":"450 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato con gocce di cioccolato selezionate dall'Ecuador, versione senza latte, uso a freddo. Cartone da 10,8 Kg (6 sacchetti da 1,8 Kg); contiene Soia."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/cioccolato-monorigine-ecuador-senza-latte/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"CIOCCOLATO MONORIGINE JAMAICA","fields":{"Tipo":"Semilavorato in polvere, cioccolato monorigine con gocce","Dosaggio dichiarato":"450 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato con gocce di cioccolato selezionate dalla Giamaica, uso a freddo. Cartone da 10,8 Kg (6 sacchetti da 1,8 Kg); contiene Latte, Soia."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/cioccolato-monorigine-jamaica/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"CIOCCOLATO MONORIGINE MADAGASCAR","fields":{"Tipo":"Semilavorato in polvere, cioccolato monorigine con gocce","Dosaggio dichiarato":"450 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato con gocce di cioccolato selezionate dal Madagascar, uso a freddo. Cartone da 10,8 Kg (6 sacchetti da 1,8 Kg); contiene Latte, Soia."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/cioccolato-monorigine-madagascar/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"CIOCCOLATO MONORIGINE PERÙ","fields":{"Tipo":"Semilavorato in polvere, cioccolato monorigine con gocce","Dosaggio dichiarato":"450 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato con gocce di cioccolato selezionate dal Perù, uso a freddo. Cartone da 10,8 Kg (6 sacchetti da 1,8 Kg); contiene Latte, Soia."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/cioccolato-monorigine-peru/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"GANACHE AL LATTE","fields":{"Tipo":"Semilavorato in polvere per ganache","Dosaggio dichiarato":"425 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato al gusto di ganache al cioccolato al latte, uso a freddo. Cartone da 17 Kg (10 sacchetti da 1,7 Kg); contiene Latte."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/ganache-al-latte/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"GANACHE BIANCA","fields":{"Tipo":"Semilavorato in polvere per ganache","Dosaggio dichiarato":"425 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato al gusto di ganache al cioccolato bianco, uso a freddo. Cartone da 17 Kg (10 sacchetti da 1,7 Kg); contiene Latte."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/ganache-bianca/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"GANACHE FONDENTE","fields":{"Tipo":"Semilavorato in polvere per ganache","Dosaggio dichiarato":"475 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato al gusto di ganache al cioccolato fondente, uso a freddo. Cartone da 15,2 Kg (8 sacchetti da 1,9 Kg); contiene Latte."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/ganache-fondente/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"IL CIOCCOLATO PRONTO","fields":{"Tipo":"Semilavorato in polvere, cioccolato classico","Dosaggio dichiarato":"400 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato al gusto di cioccolato classico, uso a freddo. Cartone da 16 Kg (10 sacchetti da 1,6 Kg); contiene Latte."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/il-cioccolato-pronto/"},{"azienda":"Anselli","categoria":"Cioccolato","prodotto":"PERCIOCCOLATO","fields":{"Tipo":"Semilavorato in polvere, cioccolato classico (a caldo)","Dosaggio dichiarato":"200 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per gelato al gusto di cioccolato classico, da sciogliere a caldo. Cartone da 12,5 Kg (2 sacchetti da 6,25 Kg); contiene Latte, Soia."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/cioccolato/percioccolato/"},{"azienda":"Anselli","categoria":"Cacao Polvere","prodotto":"CIOCCOLATA CALDA","fields":{"Tipo":"Semilavorato in polvere per bevanda calda al cioccolato","Dosaggio dichiarato":"285 gr/l","Caratteristiche / posizionamento":"Semilavorato in polvere per la produzione di bevande calde al gusto di cioccolata. Secchiello da 2 Kg; contiene Frumento, Latte, Uova."},"note":"","fonte":"https://anselli.it/prodotti/basi-e-semilavorati/semilavorati/cioccolata-calda/"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Pasta Gusto Cioccolato Fondente","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Fondente","Caratteristiche / posizionamento":"Gusto persistente ed intenso, per gelato al gusto cioccolato e specialità di pasticceria."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/insaporenti/paste-classiche/pasta-gusto-cioccolato-fondente"},{"azienda":"Giuso Guido","categoria":"Cacao Polvere","prodotto":"Cacao Amaro Solubile 22/24%","fields":{"% Grassi (burro cacao)":"22-24%","Origine / Tipo (naturale o alcalinizzato)":"Non specificato in pagina","Dosaggio dichiarato":"Non specificato (formato 012)"},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/insaporenti/altri-insaporenti/cacao-amaro-solubile-22-24"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cioccolato Super 120","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Miscela insaporente di cacao e cioccolato","Caratteristiche / posizionamento":"Ottima solubilizzazione, per un gelato molto cremoso."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/insaporenti/altri-insaporenti/cioccolato-super-120"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cuzco Cioccolato Bianco","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Bianco","Caratteristiche / posizionamento":"Con vero cioccolato bianco, gelato dal sapore delicato di cioccolato bianco."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/cuzco/cuzco-cioccolato-bianco"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cuzco Cioccolato e Latte","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Latte","Caratteristiche / posizionamento":"Con vero cioccolato e latte, solo aromi naturali; gelato chiaro, delicato ma di forte personalità."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/cuzco/cuzco-cioccolato-e-latte"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cuzco Cioccolato Fondente","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Fondente","Caratteristiche / posizionamento":"Con vero cioccolato fondente; gelato classico ma attuale, colore scuro, sapore marcato di cacao."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/cuzco/cuzco-cioccolato-fondente"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cuzco Cioccolato Fondente Superior","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Fondente","Caratteristiche / posizionamento":"Con vero cioccolato fondente; colore marcatamente scuro, sapore che ricorda le pregiate tavolette di cioccolato fondente."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/cuzco/cuzco-cioccolato-fondente-superior"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cuzco Cioccolato Fondente Total Noir SDL","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Fondente, senza derivati del latte aggiunti","Caratteristiche / posizionamento":"Sapore intenso, corposo e pieno."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/cuzco/cuzco-cioccolato-fondente-total-noir-sdl"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cuzco in Tazza","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Fondente (formato in tazza)","Caratteristiche / posizionamento":"Gusto cioccolato fondente, offre l'eccellenza della Linea Cuzco anche in altre stagioni dell'anno."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/linea-cuzco-in-tazza/cuzco-in-tazza"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cuzco Santo Domingo con Cioccolato Fondente SDL","fields":{"% Cacao dichiarato":"Elevata percentuale di massa di cacao (valore esatto non specificato)","Tipo (fondente/latte/bianco)":"Fondente, senza derivati del latte aggiunti","Caratteristiche / posizionamento":"Massa di cacao di sola origine Repubblica Dominicana; gusto marcato, persistente e gratificante, senza aromi; note aromatiche floreali e fruttate."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/cuzco/cuzco-santo-domingo-con-ciocc-fondente-sdl"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Cuzco São Tomé Fondente SDL","fields":{"% Cacao dichiarato":"Elevata percentuale di massa di cacao (valore esatto non specificato)","Tipo (fondente/latte/bianco)":"Fondente","Caratteristiche / posizionamento":"Vero cioccolato fondente, cacao di origine São Tomé."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/cuzco/cuzco-sao-tome-fondente-sdl"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Nazca Fondente Nero SDL Lifestyle","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Fondente/nero, senza zuccheri aggiunti","Caratteristiche / posizionamento":"Versione senza zuccheri aggiunti del Nazca Fondente SDL."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/linea-nazca/nazca-fondente-nero-sdl-lifestyle"},{"azienda":"Giuso Guido","categoria":"Cioccolato","prodotto":"Nazca Fondente Nero SDL","fields":{"% Cacao dichiarato":"Non specificato in pagina","Tipo (fondente/latte/bianco)":"Fondente/nero, in polvere, senza derivati del latte","Caratteristiche / posizionamento":"Prodotto in polvere completo, sapore intenso e corposo del cacao nero."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/linea-cuzco/linea-nazca/nazca-fondente-nero-sdl"},{"azienda":"Fabbri 1905","categoria":"Cioccolato","prodotto":"Cioccolato","fields":{"% Cacao dichiarato":"35% cacao in polvere","Tipo (fondente/latte/bianco)":"Latte (pasta aromatizzante al cioccolato al latte)","Caratteristiche / posizionamento":"Contiene grassi vegetali e soia; senza glutine, Halal Italia, Kosher Star-D; dosaggio 100-150 g/L base bianca; lattina 1,2 kg (3 per cartone, 3,6 kg)"},"note":"","fonte":"https://www.fabbri1905.com/prodotti-fabbri/cioccolato-1-2-kg.kl"},{"azienda":"Unigel","categoria":"Cioccolato","prodotto":"Cioccolato Bianco","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Cioccolato pronto, miscela in polvere","Caratteristiche / posizionamento":"Gusto cioccolato bianco con buona percentuale di cioccolato"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Unigel","categoria":"Cioccolato","prodotto":"Cioccolato Extra Fondente","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Cioccolato pronto, miscela in polvere","Caratteristiche / posizionamento":"Gelato corposo e cremoso, gusto intenso"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Unigel","categoria":"Cioccolato","prodotto":"Cioccolato Fondente","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Cioccolato pronto, miscela in polvere","Caratteristiche / posizionamento":"Note di cacao esaltate da texture piena e cremosa"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Unigel","categoria":"Cacao Polvere","prodotto":"Cacao 22/24%","fields":{"% Grassi (burro cacao)":"n.d.","Origine / Tipo (naturale o alcalinizzato)":"n.d.","Dosaggio dichiarato":"q.b."},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Unigel","categoria":"Cacao Polvere","prodotto":"Cacao Scuro 10/12%","fields":{"% Grassi (burro cacao)":"n.d.","Origine / Tipo (naturale o alcalinizzato)":"n.d.","Dosaggio dichiarato":"q.b."},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Unigel","categoria":"Cioccolato","prodotto":"Copertura Bianca","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura","Caratteristiche / posizionamento":"Copertura a base di cioccolato bianco (75%)"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/paste/"},{"azienda":"Unigel","categoria":"Cioccolato","prodotto":"Copertura Cioccolato","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura","Caratteristiche / posizionamento":"Copertura dal gusto delicato di cacao"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/paste/"},{"azienda":"Unigel","categoria":"Cioccolato","prodotto":"Copertura Dark","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura","Caratteristiche / posizionamento":"Gusto cacao e nocciole, colore molto scuro"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/paste/"},{"azienda":"Unigel","categoria":"Cioccolato","prodotto":"Copertura Fondente","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura","Caratteristiche / posizionamento":"Cioccolato extra fondente (75%), utilizzabile anche in variegatura"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/paste/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Arancio","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura colorata","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-colorate/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Bianca (vaniglia)","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura colorata","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-colorate/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Cioccolato","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura colorata","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-colorate/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Fragola","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura colorata","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-colorate/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Latte","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura colorata","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-colorate/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Limone","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura colorata","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-colorate/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Nocciola","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura colorata","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-colorate/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Pistacchio","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura colorata","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-colorate/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Maximum Bianca (vaniglia)","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura Maximum","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-maximum/"},{"azienda":"Nutman Group","categoria":"Cioccolato","prodotto":"Copertura Maximum Fondente","fields":{"% Cacao dichiarato":"n.d.","Tipo (fondente/latte/bianco)":"Copertura Maximum","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/coperture-maximum/"}]</script>
+  <script>(function(){
+  var CFG = {"cats": ["Cacao Polvere", "Cioccolato"], "pct10": false, "bare": true, "metrics": [{"key": "dose", "tab": "Dosaggio", "title": "Dosaggi a confronto", "intro": "", "unit": "g/L (≈ g/kg)", "filt": "filtrati (gli altri non hanno un dosaggio confrontabile)", "approx": true, "linear": false}], "chips": [{"key": "fondente", "kw": ["fondente", "amaro", "bitter", "zartbitter"], "label": "chipDark"}, {"key": "latte", "kw": ["cioccolato al latte", "al latte", "vollmilch", "milk"], "label": "chipMilkChoc"}, {"key": "bianco", "kw": ["bianco", "bianca", "weiß", "white"], "label": "chipWhite"}, {"key": "gianduia", "kw": ["gianduia", "gianduja"], "label": "chipGianduia"}, {"key": "naturale", "kw": ["100% naturale"], "label": "chipNatural"}, {"key": "vegano", "kw": ["vegan"], "label": "chipVegan"}, {"key": "lattosio", "kw": ["senza lattosio", "lactose", "delattosat"], "label": "chipLactose"}, {"key": "glutine", "kw": ["senza glutine"], "label": "chipGluten"}]};
+  var L = {"found": "prodotti trovati", "none": "Nessun prodotto trovato.", "more": "Mostra altri", "showall": "Mostra tutti", "showtop": "Mostra solo i primi", "fonte": "Fonte", "note": "Nota", "nochart": "Nessun prodotto con un dato confrontabile per i filtri scelti.", "st_in": "nel grafico", "st_of": "su", "st_min": "valore minimo", "st_med": "valore mediano", "st_max": "valore massimo", "vs": "vs", "conv_same": "Scegli due zuccheri diversi.", "conv_more": "più dolce", "conv_less": "meno dolce", "conv_eq": "praticamente invariata", "chipHot": "A caldo", "chipCold": "A freddo", "chipVegan": "Vegano", "chipLactose": "Senza lattosio", "chipGluten": "Senza glutine", "chipPalm": "Senza palma / grassi vegetali", "chipYogurt": "Yogurt", "chipSoft": "Soft", "chipMilk": "Con latte", "chipWater": "Con acqua", "chipBio": "Bio", "chipSDL": "Senza derivati del latte", "chipPure": "100% puro", "chipSicily": "Sicilia", "chipPiedmont": "Piemonte", "chipAmarena": "Amarena", "chipChoc": "Cioccolato", "chipBiscuit": "Biscotto", "chipNut": "Nocciola", "chipPist": "Pistacchio", "chipCaramel": "Caramello", "chipNoSugar": "Senza zuccheri aggiunti", "chipDark": "Fondente", "chipMilkChoc": "Al latte", "chipWhite": "Bianco", "chipNatural": "100% naturale", "chipGianduia": "Gianduia", "coll": "it", "dec": ",", "conv_out_tpl": "Per mantenere lo stesso PAC servono circa <strong>{gb} g</strong> di {b} al posto di {ga} g di {a}. La dolcezza (POD) passa da {poda} a {podb}: <strong>{dl}</strong>."};
+  var data = JSON.parse(document.getElementById('page-archive-data').textContent);
+  var COLORS = ['#c0392b','#e0a526','#2e7d32','#2f6f9f','#7b4f9d','#d2691e','#008b8b','#8b5a2b','#6b8e23','#b8860b','#555'];
+  var catColor = {}; CFG.cats.forEach(function(c,i){ catColor[c] = COLORS[i % COLORS.length]; });
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function num(s){ return parseFloat(String(s).replace(',', '.')); }
+  function fmt(x){ var r = Math.round(x*10)/10; if(x < 1) r = Math.round(x*100)/100; return String(r).replace('.', L.dec); }
+
+  // ---------- parser
+  function rng(a, b, approx){ var x = num(a), y = b ? num(b) : x; return {min: Math.min(x,y), max: Math.max(x,y), approx: !!approx}; }
+  var N = '(\\d+(?:[.,]\\d+)?)', SEP = '\\s*[-–/]\\s*';
+  function parseDose(p){
+    var t = (p.fields||{})['Dosaggio dichiarato']; if(!t) return null; t = String(t); var m;
+    m = t.match(new RegExp('\\(\\s*'+N+'(?:'+SEP+N+')?\\s*(?:g|gr)\\s*\\/\\s*(?:l|L|kg)'));
+    if(m) return rng(m[1], m[2]);
+    m = t.match(new RegExp(N+'\\s*kg\\s*\\+\\s*'+N+'\\s*[lL]\\b'));
+    if(m){ var v = num(m[1])*1000/num(m[2]); return {min:v, max:v, approx:false}; }
+    m = t.match(new RegExp(N+'(?:'+SEP+N+')?\\s*(?:g|gr)\\s*(?:\\/\\s*(?:l|L|kg|litro)|per\\s*(?:1\\s*)?(?:l|L|litro|kg)\\b)'));
+    if(m) return rng(m[1], m[2]);
+    m = t.match(new RegExp(N+'(?:'+SEP+N+')?\\s*x\\s*[lL]\\b'));
+    if(m) return rng(m[1], m[2]);
+    m = t.match(new RegExp('^\\s*'+N+'(?:'+SEP+N+')?\\s*%'));
+    if(m && CFG.pct10){ var r = rng(m[1], m[2], true); r.min *= 10; r.max *= 10; return r; }
+    m = t.match(new RegExp('^\\s*'+N+'(?:'+SEP+N+')?\\s*(?:g|gr)?\\s*(?:\\([^)]*\\))?\\s*$'));
+    if(m && CFG.bare) return rng(m[1], m[2], true);
+    return null;
+  }
+  function parseFat(p){
+    var t = (p.fields||{})['% Grassi'] || (p.fields||{})['% Fett']; if(!t) return null; t = String(t);
+    if(/^\s*(non specificat|n\.d\.|basso)/i.test(t)) return null;
+    var m = t.match(/(\d+)\s*%\s*\+\s*(\d+)/); if(m) return {min:num(m[1]), max:num(m[1])+num(m[2]), approx:false};
+    t = t.replace(/\([^)]*\)/g, '');
+    if(t.indexOf('%') < 0) return null;
+    var ns = (t.match(/\d+(?:[.,]\d+)?/g) || []).map(num).filter(function(x){ return x <= 100; });
+    if(!ns.length) return null;
+    return {min: Math.min.apply(null, ns), max: Math.max.apply(null, ns), approx:false};
+  }
+  function parsePct(p){
+    var t = (p.fields||{})['% Amarena / Frutto dichiarata']; if(!t) return null; t = String(t);
+    if(/^\s*(n\.d\.|non dichiarata)/i.test(t)) return null;
+    var m = t.match(new RegExp(N+'\\s*%\\s*totale'));
+    if(!m) m = t.replace(/\([^)]*\)/g, '').match(new RegExp(N+'\\s*%'));
+    if(!m) return null;
+    var v = num(m[1]); return (v > 0 && v <= 100) ? {min:v, max:v, approx:false} : null;
+  }
+  function parsePack(p){
+    var t = (p.fields||{})['Formato / Confezione'] || (p.fields||{})['Calibro / Formato']; if(!t) return null; t = String(t);
+    var m = t.match(new RegExp('\\d+\\s*[xX×]\\s*'+N+'\\s*kg'));
+    if(!m) m = t.match(new RegExp(N+'\\s*kg'));
+    if(m){ var v = num(m[1]); return v > 0 ? {min:v, max:v, approx:false} : null; }
+    m = t.match(new RegExp('\\d+\\s*[xX×]\\s*'+N+'\\s*(?:g|gr)\\b')) || t.match(new RegExp(N+'\\s*(?:g|gr)\\b'));
+    if(m){ var w = num(m[1])/1000; return (w >= 0.05 && w <= 30) ? {min:w, max:w, approx:false} : null; }
+    return null;
+  }
+  var PARSERS = {dose: parseDose, fat: parseFat, pct: parsePct, pack: parsePack};
+  var metrics = CFG.metrics, cur = metrics[0];
+  data.forEach(function(p){
+    p._vs = {}; metrics.forEach(function(m){ p._vs[m.key] = PARSERS[m.key](p); });
+    p._hay = (p.azienda+' '+p.prodotto+' '+p.categoria+' '+Object.keys(p.fields||{}).map(function(k){return p.fields[k];}).join(' ')+' '+(p.note||'')).toLowerCase();
+  });
+
+  // ---------- elementi
+  var input = document.getElementById('pgSearch'), selCat = document.getElementById('pgCat'), selAz = document.getElementById('pgAz');
+  var results = document.getElementById('pgResults'), count = document.getElementById('pgCount'), chipsBox = document.getElementById('pgChips');
+  var chartBox = document.getElementById('gcChart'), statsBox = document.getElementById('gcStats'), legend = document.getElementById('gcLegend');
+  var gcTitle = document.getElementById('gcTitle'), gcIntro = document.getElementById('gcIntro'), gcTabs = document.getElementById('gcTabs'), gcApprox = document.getElementById('gcApprox');
+  var chipState = {}; CFG.chips.forEach(function(c){ chipState[c.key] = false; });
+  var shown = 24, chartAll = false;
+
+  (function fill(){
+    var az = []; data.forEach(function(p){ if(az.indexOf(p.azienda) < 0) az.push(p.azienda); });
+    az.sort(function(a,b){ return a.localeCompare(b, L.coll); });
+    az.forEach(function(a){ var o = document.createElement('option'); o.value = a; o.textContent = a; selAz.appendChild(o); });
+  })();
+
+  function filtered(){
+    var q = input.value.trim().toLowerCase(), cat = selCat.value, az = selAz.value;
+    return data.filter(function(p){
+      if(cat && p.categoria !== cat) return false;
+      if(az && p.azienda !== az) return false;
+      if(q && p._hay.indexOf(q) < 0) return false;
+      for(var i = 0; i < CFG.chips.length; i++){
+        var c = CFG.chips[i]; if(!chipState[c.key]) continue;
+        if(!c.kw.some(function(k){ return p._hay.indexOf(k) >= 0; })) return false;
+      }
+      return true;
+    });
+  }
+  function renderChips(){
+    var base = data.filter(function(p){ return (!selCat.value || p.categoria === selCat.value) && (!selAz.value || p.azienda === selAz.value); });
+    chipsBox.innerHTML = CFG.chips.map(function(c){
+      var n = base.filter(function(p){ return c.kw.some(function(k){ return p._hay.indexOf(k) >= 0; }); }).length;
+      return '<button type="button" class="chip" data-k="'+c.key+'" aria-pressed="'+(chipState[c.key]?'true':'false')+'">'+esc(L[c.label])+'<small>'+n+'</small></button>';
+    }).join('');
+    Array.prototype.forEach.call(chipsBox.querySelectorAll('.chip'), function(b){
+      b.addEventListener('click', function(){ chipState[b.getAttribute('data-k')] = !chipState[b.getAttribute('data-k')]; shown = 24; render(); });
+    });
+  }
+
+  // ---------- grafico
+  var doms = {};
+  function domOf(m){
+    if(doms[m.key]) return doms[m.key];
+    var d;
+    if(m.linear){ d = {lo:0, hi:100, log:false, ticks:[0,20,40,60,80,100]}; }
+    else {
+      var mn = Infinity, mx = 0;
+      data.forEach(function(p){ var v = p._vs[m.key]; if(v){ mn = Math.min(mn, v.min); mx = Math.max(mx, v.max); } });
+      if(!isFinite(mn)){ mn = 1; mx = 10; }
+      var lo = Math.pow(10, Math.floor(Math.log(Math.max(mn,0.01))/Math.LN10)), hi = Math.pow(10, Math.ceil(Math.log(mx)/Math.LN10));
+      if(hi <= lo) hi = lo*10;
+      var ticks = []; for(var e = lo; e <= hi*1.0001; e *= 10){ [1,2,5].forEach(function(f){ var v = e*f; if(v >= lo && v <= hi) ticks.push(v); }); }
+      d = {lo:lo, hi:hi, log:true, ticks:ticks};
+    }
+    doms[m.key] = d; return d;
+  }
+  function renderChart(list){
+    var key = cur.key, dom = domOf(cur);
+    function pos(v){ return dom.log ? (Math.log(v/dom.lo))/(Math.log(dom.hi/dom.lo))*100 : (v - dom.lo)/(dom.hi - dom.lo)*100; }
+    gcTitle.textContent = cur.title; gcIntro.innerHTML = cur.intro; gcApprox.style.display = cur.approx ? '' : 'none';
+    if(gcTabs){ gcTabs.innerHTML = metrics.length > 1 ? metrics.map(function(m){ return '<button type="button" class="chip" data-m="'+m.key+'" aria-pressed="'+(m.key === cur.key ? 'true' : 'false')+'">'+esc(m.tab)+'</button>'; }).join('') : '';
+      Array.prototype.forEach.call(gcTabs.querySelectorAll('.chip'), function(b){ b.addEventListener('click', function(){ cur = metrics.filter(function(m){ return m.key === b.getAttribute('data-m'); })[0]; chartAll = false; renderChart(list); }); }); }
+    var rows = list.filter(function(p){ return p._vs[key]; }).sort(function(a,b){ return a._vs[key].min - b._vs[key].min || a._vs[key].max - b._vs[key].max; });
+    legend.innerHTML = CFG.cats.filter(function(c){ return rows.some(function(p){ return p.categoria === c; }); }).map(function(c){ return '<span><i style="background:'+catColor[c]+'"></i>'+esc(c)+'</span>'; }).join('');
+    if(!rows.length){ statsBox.innerHTML = ''; chartBox.innerHTML = '<p class="hint">'+esc(L.nochart)+'</p>'; return; }
+    var vals = rows.map(function(p){ return (p._vs[key].min + p._vs[key].max)/2; }).sort(function(a,b){ return a-b; });
+    var med = vals[Math.floor(vals.length/2)];
+    var lo = Math.min.apply(null, rows.map(function(p){ return p._vs[key].min; })), hi = Math.max.apply(null, rows.map(function(p){ return p._vs[key].max; }));
+    statsBox.innerHTML = '<div class="gc-stat"><strong>'+rows.length+' '+esc(L.st_in)+'</strong>'+esc(L.st_of)+' '+list.length+' '+esc(cur.filt)+'</div>'+
+      '<div class="gc-stat"><strong>'+fmt(lo)+'</strong>'+esc(L.st_min)+' ('+esc(cur.unit)+')</div>'+
+      '<div class="gc-stat"><strong>'+fmt(med)+'</strong>'+esc(L.st_med)+'</div>'+
+      '<div class="gc-stat"><strong>'+fmt(hi)+'</strong>'+esc(L.st_max)+'</div>';
+    var limit = chartAll ? rows.length : 30, vis = rows.slice(0, limit);
+    var grid = dom.ticks.map(function(t){ return '<span class="gc-grid" style="left:'+pos(t).toFixed(2)+'%"></span>'; }).join('');
+    var axis = '<div class="gc-axis-wrap"><div class="hint" style="margin:0">'+esc(cur.unit)+'</div><div class="gc-axis">'+dom.ticks.map(function(t){ return '<span style="position:absolute; left:'+pos(t).toFixed(2)+'%; transform:translateX(-50%)">'+String(t).replace('.', L.dec)+'</span>'; }).join('')+'</div></div>';
+    var out = axis + vis.map(function(p){
+      var v = p._vs[key], a = pos(v.min), b = pos(v.max), w = Math.max(b - a, 0);
+      var label = (v.approx ? '≈ ' : '') + (v.min === v.max ? fmt(v.min) : fmt(v.min)+'–'+fmt(v.max));
+      var left = Math.min(Math.max(a, 0), 98);
+      var valLeft = (a + w > 80) ? 'right:'+(100 - a - 0.5).toFixed(2)+'%' : 'left:calc('+(a + w).toFixed(2)+'% + 6px)';
+      return '<div class="gc-row" data-n="'+esc(p.prodotto)+'" title="'+esc(p.azienda+' — '+p.prodotto+': '+label+' '+cur.unit)+'">'+
+        '<div class="gc-label"><b>'+esc(p.prodotto)+'</b><span>'+esc(p.azienda)+'</span></div>'+
+        '<div class="gc-track">'+grid+'<div class="gc-bar" style="left:'+left.toFixed(2)+'%; width:'+w.toFixed(2)+'%; background:'+catColor[p.categoria]+'"></div><span class="gc-val" style="'+valLeft+'">'+esc(label)+'</span></div></div>';
+    }).join('');
+    if(rows.length > 30) out += '<div class="gc-more"><button type="button" class="btn-lite" id="gcToggle">'+esc(chartAll ? L.showtop+' 30' : L.showall+' ('+rows.length+')')+'</button></div>';
+    chartBox.innerHTML = out;
+    var tg = document.getElementById('gcToggle'); if(tg) tg.addEventListener('click', function(){ chartAll = !chartAll; renderChart(list); });
+    Array.prototype.forEach.call(chartBox.querySelectorAll('.gc-row'), function(r){
+      r.addEventListener('click', function(){ input.value = r.getAttribute('data-n'); shown = 24; render(); document.getElementById('pgArchive').scrollIntoView({behavior:'smooth', block:'start'}); });
+    });
+  }
+
+  // ---------- risultati
+  function render(){
+    renderChips();
+    var list = filtered();
+    count.innerHTML = (input.value ? '<span class="torte-pulse-dot" aria-hidden="true"></span>' : '') + list.length + ' ' + L.found;
+    var vis = list.slice(0, shown);
+    results.innerHTML = vis.map(function(p){
+      var f = Object.keys(p.fields||{}).map(function(k){ return '<div class="torte-field"><strong>'+esc(k)+':</strong> '+esc(p.fields[k])+'</div>'; }).join('');
+      var extra = (p.note ? '<div class="torte-field"><strong>'+esc(L.note)+':</strong> '+esc(p.note)+'</div>' : '') + (p.fonte ? '<div class="torte-fonte"><a href="'+esc(p.fonte)+'" target="_blank" rel="noopener noreferrer">'+esc(L.fonte)+' ↗</a></div>' : '');
+      return '<div class="torte-result-card"><div class="torte-result-head"><span class="torte-azienda">'+esc(p.azienda)+'</span><span class="torte-cat-tag">'+esc(p.categoria)+'</span></div><div class="torte-prodotto">'+esc(p.prodotto)+'</div>'+f+extra+'</div>';
+    }).join('') || '<p class="hint">'+esc(L.none)+'</p>';
+    if(list.length > shown) results.innerHTML += '<div style="grid-column:1/-1"><button type="button" class="btn-lite" id="pgMore">'+esc(L.more)+' ('+(list.length - shown)+')</button></div>';
+    var mb = document.getElementById('pgMore'); if(mb) mb.addEventListener('click', function(){ shown += 24; render(); });
+    renderChart(list);
+  }
+  input.addEventListener('input', function(){ shown = 24; render(); });
+  selCat.addEventListener('change', function(){ shown = 24; render(); });
+  selAz.addEventListener('change', function(){ shown = 24; render(); });
+  render();
+
+  // ---------- PAC/POD (solo pagina zuccheri)
+  if(CFG.sugars){
+    var pp = document.getElementById('ppWrap'), sortBy = 'pac', ref = null;
+    var S = CFG.sugars;
+    function ppRender(){
+      var arr = S.slice();
+      if(sortBy === 'pac') arr.sort(function(a,b){ return b.pac - a.pac; });
+      else if(sortBy === 'pod') arr.sort(function(a,b){ return b.pod - a.pod; });
+      else arr.sort(function(a,b){ return a.label.localeCompare(b.label, L.coll); });
+      var mx = Math.max.apply(null, S.map(function(s){ return Math.max(s.pac, s.pod); }));
+      var rs = ref ? S.filter(function(s){ return s.id === ref; })[0] : null;
+      pp.innerHTML = arr.map(function(s){
+        var cmp = rs && rs.id !== s.id ? ' · PAC '+(s.pac/rs.pac).toFixed(2).replace('.', L.dec)+'× / POD '+(s.pod/rs.pod).toFixed(2).replace('.', L.dec)+'× '+L.vs+' '+rs.label : '';
+        return '<div class="pp-row" data-id="'+s.id+'" aria-selected="'+(ref === s.id ? 'true' : 'false')+'"><div class="pp-name">'+esc(s.label)+'<div class="hint" style="margin:0">'+esc(cmp)+'</div></div>'+
+          '<div class="pp-bars"><div class="pp-bar pac" style="width:'+(s.pac/mx*88).toFixed(1)+'%"><span>PAC '+s.pac+'</span></div><div class="pp-bar pod" style="width:'+(s.pod/mx*88).toFixed(1)+'%"><span>POD '+s.pod+'</span></div></div></div>';
+      }).join('');
+      Array.prototype.forEach.call(pp.querySelectorAll('.pp-row'), function(r){ r.addEventListener('click', function(){ var id = r.getAttribute('data-id'); ref = (ref === id ? null : id); ppRender(); }); });
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-sort]'), function(b){ b.addEventListener('click', function(){ sortBy = b.getAttribute('data-sort'); ppRender(); }); });
+    ppRender();
+    var fa = document.getElementById('cvFrom'), fb = document.getElementById('cvTo'), fg = document.getElementById('cvG'), out = document.getElementById('cvOut');
+    S.forEach(function(s){ [fa, fb].forEach(function(el){ var o = document.createElement('option'); o.value = s.id; o.textContent = s.label; el.appendChild(o); }); });
+    fa.value = 'saccarosio'; fb.value = 'destrosio';
+    function conv(){
+      var a = S.filter(function(s){ return s.id === fa.value; })[0], b = S.filter(function(s){ return s.id === fb.value; })[0], g = num(fg.value);
+      if(!a || !b || !(g > 0)){ out.innerHTML = ''; return; }
+      if(a.id === b.id){ out.textContent = L.conv_same; return; }
+      var gb = g*a.pac/b.pac, poda = g*a.pod/100, podb = gb*b.pod/100, d = (podb - poda)/poda*100;
+      var dl = Math.abs(d) < 2 ? L.conv_eq : (Math.abs(Math.round(d)) + '% ' + (d > 0 ? L.conv_more : L.conv_less));
+      out.innerHTML = L.conv_out_tpl.replace('{gb}', fmt(gb)).replace('{b}', esc(b.label)).replace('{ga}', fmt(g)).replace('{a}', esc(a.label)).replace('{poda}', fmt(poda)).replace('{podb}', fmt(podb)).replace('{dl}', dl);
+    }
+    [fa, fb, fg].forEach(function(el){ el.addEventListener('input', conv); el.addEventListener('change', conv); });
+    conv();
+  }
+})();
+</script>
+  <script>(function(){var d=document.getElementById('pgDetails');if(!d)return;var o=function(){d.open=true;};['pgSearch','pgCat','pgAz'].forEach(function(i){var e=document.getElementById(i);if(e){e.addEventListener('input',o);e.addEventListener('change',o);}});var c=document.getElementById('pgChips');if(c)c.addEventListener('click',o);})();</script>
+
+  <section class="card">
+    <h2>Domande frequenti</h2>
+    <h3 style="font-size:0.98rem; margin:14px 0 4px">Cacao alcalinizzato o naturale?</h3><p>Il cacao alcalinizzato (olandese) è più scuro e meno acido, quello naturale ha un gusto più vivo. Dove la scheda lo indica, lo trovi nel campo «Origine / Tipo».</p><h3 style="font-size:0.98rem; margin:14px 0 4px">Quanto cioccolato si usa per litro di miscela?</h3><p>Dipende dal prodotto: i dosaggi dichiarati nell&#x27;archivio vanno da poche decine a più di cento grammi per litro. Il dosaggio giusto è quello della scheda del produttore.</p><h3 style="font-size:0.98rem; margin:14px 0 4px">Cacao e cioccolato sono intercambiabili?</h3><p>No: il cacao in polvere dà colore e gusto ma poco corpo; il cioccolato porta anche grassi (burro di cacao) e zuccheri, quindi cambia la ricetta e il bilanciamento.</p>
+  </section>
+
+  <section class="card">
+    <h2>Altre pagine di approfondimento</h2>
+    <p>Pagine dedicate con archivio e grafici dinamici, pensate per confrontare in fretta.</p>
+    <div class="quick-links"><a href="/basi-latte.html">🥛 Basi latte<small>Basi per gelato: dosaggi a confronto</small></a><a href="/basi-frutta.html">🍓 Basi frutta<small>Basi per sorbetti e gelati alla frutta</small></a><a href="/neutri-addensanti.html">🧂 Neutri e addensanti<small>Stabilizzanti, dosaggi a confronto</small></a><a href="/creme-paste.html">🥜 Creme e paste<small>Paste pure e composte, cremini</small></a><a href="/variegati.html">🍒 Variegati e topping<small>Amarena, frutta, creme, biscotto</small></a><a href="/gelato-soft.html">🍦 Gelato soft<small>Basi e polveri soft e frozen yogurt</small></a><a href="/zuccheri-polveri.html">🍬 Zuccheri e polveri<small>PAC/POD, latte e panna in polvere</small></a><a href="/guida-confronto-ingredienti.html">🎓 Guida al confronto<small>PAC, POD e solidi totali spiegati</small></a><a href="/calcolatore-ricetta-sorbetto">🍓 Calcolatore sorbetto<small>Bilancia PAC e POD della frutta</small></a></div>
+  </section>
+
+  <footer>Confronta Prodotti per Gelateria — piattaforma indipendente, senza sponsorizzazioni. <a href="/">Torna alla home</a>.</footer>
+</div>
+</body>
+</html>
