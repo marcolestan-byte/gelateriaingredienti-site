@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gelato soft e frozen yogurt: 70 prodotti a confronto</title>
+<meta name="description" content="Archivio di 70 prodotti di 12 aziende per gelato soft e frozen yogurt, con grafico dinamico dei dosaggi (g di polvere per litro) e filtri rapidi.">
+<link rel="canonical" href="https://gelateriaingredienti.com/gelato-soft.html">
+<style>
+:root{
+  --ink:#2b2320; --ink-soft:#6b5f58; --paper:#fffaf3; --line:#e7dccd;
+  --brand:#c0392b; --brand-soft:#f7e9df; --ok:#2e7d32; --warn:#b8860b; --bad:#c0392b;
+}
+*{box-sizing:border-box;}
+body{margin:0; font-family:"Segoe UI", system-ui, -apple-system, sans-serif; background:var(--paper); color:var(--ink); line-height:1.55;}
+.wrap{max-width:900px; margin:0 auto; padding:20px 16px 60px;}
+.top-link{display:inline-block; margin-bottom:18px; color:var(--brand); text-decoration:none; font-weight:600; font-size:0.95rem;}
+.top-link:hover{text-decoration:underline;}
+h1{font-size:1.5rem; margin:0 0 14px;}
+h2{font-size:1.15rem; margin:0 0 10px;}
+.card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; box-shadow:0 2px 10px rgba(0,0,0,0.04); margin-bottom:20px;}
+.hint{font-size:0.82rem; color:var(--ink-soft); margin-top:10px; line-height:1.45;}
+p{margin:0 0 12px;}
+ul{margin:0 0 12px; padding-left:22px;}
+li{margin-bottom:6px;}
+.company-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:14px; margin-top:10px;}
+.company-card{border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fffdfa;}
+.company-name{font-weight:800; font-size:0.98rem; margin-bottom:4px;}
+.company-meta{font-size:0.75rem; color:var(--ink-soft); margin-bottom:6px;}
+.company-usp{font-size:0.82rem;}
+.tag{display:inline-block; background:var(--brand-soft); color:var(--brand); border-radius:6px; padding:2px 8px; font-size:0.72rem; font-weight:700; margin-right:6px;}
+.news-date{font-size:0.75rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.03em; font-weight:700;}
+.hero-img{width:100%; max-height:360px; object-fit:cover; border-radius:14px; margin-bottom:18px; display:block;}
+.gallery{display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:12px; margin-top:12px;}
+.gallery figure{margin:0;}
+.gallery img{width:100%; height:220px; object-fit:cover; border-radius:10px; border:1px solid var(--line); display:block;}
+.gallery figcaption{font-size:0.75rem; color:var(--ink-soft); margin-top:4px;}
+.steps-img{width:100%; max-width:100%; height:auto; border-radius:12px; border:1px solid var(--line); display:block; margin:18px 0;}
+.quick-links{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;}
+.quick-links a{display:flex; flex-direction:column; gap:2px; background:var(--brand-soft); color:var(--brand); border-radius:10px; padding:10px 14px; font-size:0.88rem; font-weight:700; text-decoration:none; flex:1 1 160px;}
+.quick-links a:hover{text-decoration:underline;}
+.quick-links small{font-weight:400; color:var(--ink-soft); font-size:0.75rem;}
+footer{font-size:0.8rem; color:var(--ink-soft); text-align:center; margin-top:30px;}
+footer a{color:var(--brand);}
+
+.torte-search-bar{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
+.torte-search-bar input[type="text"]{flex:1 1 260px; padding:10px 12px; border:1px solid var(--line); border-radius:10px; font-size:0.92rem; font-family:inherit;}
+.torte-search-bar select{padding:10px 12px; border:1px solid var(--line); border-radius:10px; font-size:0.92rem; font-family:inherit; background:#fff;}
+.torte-count{font-size:0.8rem; color:var(--ink-soft); margin-top:10px; font-weight:700;}
+.torte-results{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:12px; margin-top:12px;}
+.torte-result-card{border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fffdfa; transition:transform 0.15s ease, box-shadow 0.15s ease;}
+.torte-result-card:hover{transform:translateY(-3px); box-shadow:0 8px 18px rgba(90,60,20,0.14);}
+.torte-pulse-dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--amarena,#B23A2E); margin-right:5px; vertical-align:middle; animation:tortePulseDot 1.5s ease-in-out infinite;}
+@keyframes tortePulseDot{0%,100%{opacity:1;} 50%{opacity:0.35;}}
+.torte-result-head{display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;}
+.torte-azienda{font-weight:800; font-size:0.9rem; color:var(--brand);}
+.torte-cat-tag{display:inline-block; background:var(--brand-soft); color:var(--brand); border-radius:6px; padding:2px 8px; font-size:0.68rem; font-weight:700; white-space:nowrap;}
+.torte-prodotto{font-weight:700; font-size:0.95rem; margin-bottom:6px;}
+.torte-field{font-size:0.78rem; color:var(--ink-soft); margin-bottom:2px; line-height:1.4;}
+.torte-field strong{color:var(--ink);}
+
+
+.torte-search-bar input,.torte-search-bar select{max-width:100%;min-width:0;box-sizing:border-box}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+.chip{border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:999px; padding:6px 12px; font-size:0.8rem; font-weight:600; cursor:pointer; font-family:inherit;}
+.chip:hover{border-color:var(--brand);}
+.chip[aria-pressed="true"]{background:var(--brand); border-color:var(--brand); color:#fff;}
+.chip small{font-weight:400; opacity:0.8; margin-left:4px;}
+.gc-stats{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 6px;}
+.gc-stat{background:var(--brand-soft); border-radius:10px; padding:8px 12px; font-size:0.8rem; color:var(--ink-soft); flex:1 1 140px;}
+.gc-stat strong{display:block; font-size:1.05rem; color:var(--brand);}
+.gc-legend{display:flex; flex-wrap:wrap; gap:12px; font-size:0.75rem; color:var(--ink-soft); margin:8px 0;}
+.gc-legend i{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; vertical-align:middle;}
+.gc-chart{margin-top:6px;}
+.gc-axis{position:relative; height:18px; margin-left:minmax(0,0); font-size:0.68rem; color:var(--ink-soft);}
+.gc-row{display:grid; grid-template-columns:minmax(110px,34%) 1fr; gap:10px; align-items:center; padding:4px 0; cursor:pointer; border-radius:6px;}
+.gc-row:hover{background:#fbf3e8;}
+.gc-label{font-size:0.76rem; line-height:1.25; overflow:hidden; text-overflow:ellipsis;}
+.gc-label b{display:block; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.gc-label span{color:var(--ink-soft); font-size:0.7rem;}
+.gc-track{position:relative; height:20px; background:linear-gradient(to right, transparent 0, transparent 100%); border-left:1px solid var(--line); border-bottom:1px dashed var(--line);}
+.gc-grid{position:absolute; top:0; bottom:0; width:1px; background:#efe5d6;}
+.gc-bar{position:absolute; top:4px; height:12px; border-radius:6px; min-width:7px; transition:left .25s ease, width .25s ease;}
+.gc-val{position:absolute; top:0; font-size:0.68rem; font-weight:700; line-height:20px; color:var(--ink); white-space:nowrap;}
+.gc-axis-wrap{display:grid; grid-template-columns:minmax(110px,34%) 1fr; gap:10px;}
+.gc-more{margin-top:10px;}
+.btn-lite{border:1px solid var(--line); background:#fff; border-radius:10px; padding:8px 14px; font-size:0.82rem; font-weight:700; cursor:pointer; font-family:inherit; color:var(--brand);}
+.btn-lite:hover{border-color:var(--brand);}
+.torte-fonte{font-size:0.72rem; margin-top:6px;}
+.torte-fonte a{color:var(--brand);}
+.pp-wrap{display:grid; gap:6px; margin-top:12px;}
+.pp-row{display:grid; grid-template-columns:minmax(120px,30%) 1fr; gap:10px; align-items:center; cursor:pointer; padding:3px 0; border-radius:6px;}
+.pp-row:hover{background:#fbf3e8;}
+.pp-row[aria-selected="true"]{background:#f7e9df;}
+.pp-name{font-size:0.8rem; font-weight:700;}
+.pp-bars{display:grid; gap:3px;}
+.pp-bar{height:12px; border-radius:6px; position:relative; min-width:2px; transition:width .25s ease;}
+.pp-bar span{position:absolute; left:calc(100% + 6px); top:-2px; font-size:0.68rem; font-weight:700; color:var(--ink); white-space:nowrap;}
+.pac{background:#c0392b;} .pod{background:#e0a526;}
+.pp-tools{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px;}
+.conv{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-top:12px;}
+.conv label{display:block; font-size:0.74rem; font-weight:700; color:var(--ink-soft); margin-bottom:4px;}
+.conv select,.conv input{width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:10px; font-size:0.9rem; font-family:inherit; background:#fff;}
+.conv-out{margin-top:12px; background:var(--brand-soft); border-radius:12px; padding:12px 14px; font-size:0.92rem;}
+.conv-out strong{color:var(--brand);}
+@media (max-width:560px){.gc-row,.gc-axis-wrap,.pp-row{grid-template-columns:1fr;} .gc-label b{white-space:normal;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Che differenza c'è tra gelato soft e gelato artigianale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il soft si prepara da una base in polvere o liquida diluita con acqua o latte e si eroga da una macchina dedicata; il gelato artigianale si manteca e si serve dalla vetrina. Sono prodotti e attrezzature diverse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come si leggono i dosaggi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quando la scheda dà grammi per litro, il grafico usa quel valore. Se riporta «1,25 kg + 3 L di latte», il valore è calcolato come grammi di polvere per litro di liquido. I mix completi senza dosaggio non compaiono nel grafico."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Il frozen yogurt si fa con la stessa macchina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In molti casi sì, ma dipende dal modello e dal prodotto: verifica sempre le indicazioni del produttore della base e della macchina."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <a class="top-link" href="/">← Torna al confronto prodotti</a>
+  <h1>🍦 Gelato soft e frozen yogurt</h1>
+
+  <section class="card">
+    <p>Il gelato soft si prepara con una polvere (o una base liquida) miscelata con acqua o latte e si eroga da una macchina dedicata. Il frozen yogurt segue lo stesso principio con basi a gusto yogurt. Qui trovi i prodotti dell'archivio per questo uso, con il dosaggio quando i produttori lo dichiarano.</p><p class="hint">Molte schede non indicano un dosaggio confrontabile (indicano un mix completo o un formato per vaschetta): in quel caso il prodotto compare nell'archivio ma non nel grafico.</p>
+  </section>
+
+  <section class="card" id="pgChartCard">
+    <h2 id="gcTitle"></h2>
+    <div class="chips" id="gcTabs"></div>
+    <p id="gcIntro" style="margin-top:10px"></p>
+    <p class="hint" id="gcApprox">Le barre con «≈» sono approssimate: percentuali convertite con 10 g per ogni 1% (≈ g/kg) oppure dosaggi senza unità, interpretati come g/L. Controlla sempre la scheda del produttore.</p>
+    <div class="gc-stats" id="gcStats"></div>
+    <div class="gc-legend" id="gcLegend"></div>
+    <div class="gc-chart" id="gcChart"></div>
+  </section>
+
+  <section class="card" id="pgArchive">
+    <h2>🔎 Archivio prodotti</h2>
+    <p>Archivio dedicato con <strong>70 prodotti</strong> di 12 aziende tra basi, polveri e preparati per gelato soft e frozen yogurt — stessi dati del confronto prodotti principale, ma in una pagina solo per questa categoria.</p>
+    <div class="torte-search-bar">
+      <input type="text" id="pgSearch" placeholder="Cerca per azienda, prodotto o dettaglio...">
+      <select id="pgCat"><option value="">Tutte le categorie</option><option value="Gelato Soft / Frozen Yogurt">Gelato Soft / Frozen Yogurt</option></select>
+      <select id="pgAz"><option value="">Tutte le aziende</option></select>
+    </div>
+    <div class="hint" style="margin-top:12px">Filtri rapidi (si combinano tra loro)</div>
+    <div class="chips" id="pgChips"></div>
+    <p class="hint">I filtri rapidi cercano le parole nella scheda: sono indicativi, controlla sempre la scheda tecnica del produttore.</p>
+    <div class="torte-count" id="pgCount"></div>
+    <div class="torte-results" id="pgResults"></div>
+  </section>
+  <script type="application/json" id="page-archive-data">[{"azienda":"Aromiosaar","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Ice Cream Powder","fields":{"Tipo":"Polvere per soft ice cream disponibile in due versioni: \"Aqua Plus\" (a base acqua) e \"Latte Plus\" (a base latte), entrambe nei gusti cacao e vaniglia","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Polvere idrosolubile per soft ice cream / gelato soft."},"note":"Produktlinie/-kategorie von der offiziellen Website des Unternehmens entnommen; technische Details (Dosierung, Produktcode) direkt beim Unternehmen zu verifizieren.","fonte":""},{"azienda":"Aromiosaar","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yogurt Powder (Classic / Premium)","fields":{"Tipo":"Polvere per frozen yogurt (versione Classic); ingredienti: zucchero, latte in polvere, yogurt in polvere, destrosio, olio vegetale idrogenato, addensanti (guar E412, carragenina E407, carbossimetilcellulosa E466, alginato di sodio E401), acido citrico E330, siero di latte in polvere, esteri di mono-digliceridi E472b, esteri del glicole propilenico E477, aroma yogurt; compatibile con tutte le macchine per soft/frozen yogurt","Dosaggio dichiarato":"Versione Classic: da miscelare con 3 L di latte parzialmente scremato per confezione, fino a completa omogeneizzazione","Caratteristiche / posizionamento":"Polvere per frozen yogurt, disponibile in versione Classic e Premium."},"note":"Produktlinie/-kategorie von der offiziellen Website des Unternehmens entnommen; technische Details (Dosierung, Produktcode) direkt beim Unternehmen zu verifizieren.","fonte":""},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Kefir","fields":{"Tipo":"Yogurt kefir","Dosaggio dichiarato":"250 g/l","Caratteristiche / posizionamento":"Prodotto a base di kefir per frozen gelato; senza glutine"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yopiù","fields":{"Tipo":"Yogurt magro","Dosaggio dichiarato":"250 g/l","Caratteristiche / posizionamento":"Senza grassi, gusto acido e pronunciato di yogurt; Halal, senza glutine"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yopiù Fragola","fields":{"Tipo":"Yogurt e fragola","Dosaggio dichiarato":"320 g/l","Caratteristiche / posizionamento":"Gusto fresco alla fragola; vegano, senza glutine, senza lattosio, VeganOK; novità 2026"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yopiù Greek","fields":{"Tipo":"Yogurt intero","Dosaggio dichiarato":"340 g/l","Caratteristiche / posizionamento":"Cremoso, compatto, consistenza gelato; Halal, senza glutine"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yopiù Lactose Free","fields":{"Tipo":"Yogurt magro senza lattosio","Dosaggio dichiarato":"375 g/l","Caratteristiche / posizionamento":"Stesso gusto del frozen yogurt classico; Halal, senza glutine, senza lattosio"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yopiù Mandarino","fields":{"Tipo":"Yogurt e mandarino","Dosaggio dichiarato":"320 g/l","Caratteristiche / posizionamento":"Note agrumate fresche; vegano, senza glutine, senza lattosio, VeganOK; novità 2026"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yopiù STV","fields":{"Tipo":"Yogurt magro con stevia","Dosaggio dichiarato":"375 g/l","Caratteristiche / posizionamento":"Ricco di fibre, senza zuccheri aggiunti, calorie ridotte; Halal, senza glutine"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yopiù W","fields":{"Tipo":"Yogurt magro","Dosaggio dichiarato":"400 g/l","Caratteristiche / posizionamento":"Pronto all'uso diluito in acqua e yogurt; Halal, senza glutine"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Comprital","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yopiu' N","fields":{"Tipo":"Yogurt magro","Dosaggio dichiarato":"250 g/l","Caratteristiche / posizionamento":"Ricetta naturale e pulita, senza grassi/emulsionanti/stabilizzanti; Halal, senza glutine"},"note":"","fonte":"https://comprital.com/prodotti/frozen-yogurt/"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Preparato Soft Fiordilatte 4kg","fields":{"Tipo":"Soft in polvere, uso a freddo","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 4 kg; pronto all'uso con sola aggiunta di acqua"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Preparato Soft Cioccolato 4kg","fields":{"Tipo":"Soft in polvere, uso a freddo","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 4 kg; pronto all'uso con sola aggiunta di acqua"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Preparato Soft Yogurt 4kg","fields":{"Tipo":"Soft in polvere, uso a freddo","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 4 kg; pronto all'uso con sola aggiunta di acqua"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Preparato Soft Pistacchio 4kg","fields":{"Tipo":"Soft in polvere, uso a freddo","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 4 kg; pronto all'uso con sola aggiunta di acqua"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Preparato Soft Fragola 4kg","fields":{"Tipo":"Soft in polvere, uso a freddo","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 4 kg; pronto all'uso con sola aggiunta di acqua"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Preparato Soft Nocciola 4kg","fields":{"Tipo":"Soft in polvere, uso a freddo","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 4 kg; pronto all'uso con sola aggiunta di acqua"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Preparato Soft Vaniglia Gialla 4kg","fields":{"Tipo":"Soft in polvere, uso a freddo","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 4 kg; pronto all'uso con sola aggiunta di acqua"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Preparato Soft Caramello 4kg","fields":{"Tipo":"Soft in polvere, uso a freddo","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 4 kg; pronto all'uso con sola aggiunta di acqua"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozenyogo 10","fields":{"Tipo":"Semilavorato in polvere per macchine soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 1,3 kg"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Semilavorato Gusto Yogurt","fields":{"Tipo":"Semilavorato gusto yogurt in polvere per macchine soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 1,2 kg"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frescobase","fields":{"Tipo":"Base in polvere per macchine soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 1,1 kg"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"Intensho (Tecnoblend)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frescolatte","fields":{"Tipo":"Semilavorato in polvere per macchine soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Confezione 1,3 kg"},"note":"","fonte":"https://www.intensho.com/collections/preparati-gelati-soft"},{"azienda":"IPSA","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Softy","fields":{"Tipo":"Base completa per gelato soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Miscelabile con acqua o latte; texture liscia, struttura stabile, resa costante"},"note":"","fonte":"https://www.ipsa.it/it/gelato-soft-e-frozen-yogurt"},{"azienda":"IPSA","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft-Yo","fields":{"Tipo":"Base completa per frozen yogurt","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Miscelabile con acqua o latte; texture liscia, struttura stabile, resa costante"},"note":"","fonte":"https://www.ipsa.it/it/gelato-soft-e-frozen-yogurt"},{"azienda":"IPSA","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Cremsoft","fields":{"Tipo":"Base completa per crema fredda in granitore","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Pensata per macchine a erogazione continua; texture liscia e struttura stabile"},"note":"","fonte":"https://www.ipsa.it/it/gelato-soft-e-frozen-yogurt"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Bianco","fields":{"Tipo":"Base per Fior di latte bianco, nota delicata di vaniglia","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Senza glutine, senza grassi idrogenati; formati: 1 L x12 pz (cod. AV34AA), 5 L x1 pz (cod. AV34DA)"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/base-soft-bianco"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Cacao","fields":{"Tipo":"Base per gelati al cioccolato","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Senza glutine, senza grassi idrogenati; formato 1 L x12 pz (cod. AV34AC)"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/base-soft-cacao"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft&Shake","fields":{"Tipo":"Base bianca gusto latte per milkshake e gelato soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Senza glutine, senza grassi idrogenati; formato 5 L x1 pz (cod. AV30NI)"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/base-softshake"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Vaniglia","fields":{"Tipo":"Base colore giallo tenue, delicata nota di vaniglia","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Senza glutine, senza grassi idrogenati; formato 1 L x12 pz (cod. AV34AF)"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/base-soft-vaniglia"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Yogurt soft","fields":{"Tipo":"Base per gelato soft allo yogurt","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Senza glutine, senza grassi idrogenati; formato 5 L x1 pz (cod. AV34DT)"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/base-yogurt-soft"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"AVENA (OraSì Gelato Avena)","fields":{"Tipo":"Base pastorizzata all'avena, da aromatizzare","Dosaggio dichiarato":"4 L per una vaschetta","Caratteristiche / posizionamento":"Senza latte, vegana, senza grassi idrogenati, halal, kosher, senza glutine; già pastorizzata, si versa direttamente nel mantecatore; formato cartone 12x1 L (cod. AV34EH)"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/avena"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Gusto Biscotto (OraSì Gelato Avena gusto biscotto)","fields":{"Tipo":"Base avena pastorizzata gusto biscotto, pronta all'uso","Dosaggio dichiarato":"4 L per una vaschetta","Caratteristiche / posizionamento":"Senza latte, vegana, senza grassi idrogenati, halal, kosher, senza glutine; formato cartone 12x1 L (cod. AV34EJ)"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/gusto-biscotto"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Gusto Caramello Salato (OraSì Gelato Avena gusto caramello salato)","fields":{"Tipo":"Base avena pastorizzata gusto caramello salato, pronta all'uso","Dosaggio dichiarato":"4 L per una vaschetta","Caratteristiche / posizionamento":"Senza latte, vegana, senza grassi idrogenati, halal, kosher, senza glutine; formato cartone 12x1 L (cod. AV34EK)"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/gusto-caramello-salato"},{"azienda":"Martini Gelato (Unigrà)","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Pastorizzata Bianca G.A.","fields":{"Tipo":"Base pastorizzata con latte e panna, gusto intenso e naturale","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Senza glutine, senza grassi idrogenati; già pastorizzata, si versa direttamente nel mantecatore; conservare in frigo 0-4°C dopo apertura; formati: 5 L x1 pz, brick 1 L, bag-in-box 5,6 kg"},"note":"","fonte":"https://www.martiniprofessional.it/p/martini-gelato/base-pastorizzata-bianca-ga"},{"azienda":"Gran Roma","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Base Soft Fiordilatte","fields":{"Tipo":"n.d.","Dosaggio dichiarato":"1,6 kg + 4 l acqua (o 3,5 l acqua + 0,5 l latte)","Caratteristiche / posizionamento":"Base completa per soft molto cremoso e stabile, gusto fiordilatte; senza glutine, contiene soia"},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Smart Soft Neutro","fields":{"Tipo":"Caldo e freddo (40-65°C; pastorizzazione 85°C)","Dosaggio dichiarato":"Non specificato in dettaglio dal produttore — preparazione con sola acqua (o latte)","Caratteristiche / posizionamento":"Ingrediente in polvere al gusto neutro per gelato soft, pensato per personalizzazione con paste grasse Babbi; senza glutine, idoneo vegano, senza zuccheri aggiunti, senza lattosio. Confezione 6x1,5 kg. Cod. 14811."},"note":"","fonte":"https://babbi.com/it/ingredienti/basi-e-stabilizzanti-per-gelateria/basi-per-gelato-soft/smart-soft-neutro"},{"azienda":"Babbi","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Lattelatte Yogurt","fields":{"Tipo":"Base completa in polvere, in latte, caldo o freddo","Dosaggio dichiarato":"1,25 kg + 3 L latte","Caratteristiche / posizionamento":"Base completa al gusto yogurt, pronta con la sola aggiunta di latte."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Lattelatte Yogurt B-Free","fields":{"Tipo":"Base completa senza zuccheri aggiunti, in latte, caldo o freddo","Dosaggio dichiarato":"1,25 kg + 3 L latte","Caratteristiche / posizionamento":"Base completa al gusto yogurt senza zuccheri aggiunti."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yogurt \"Greco\"","fields":{"Tipo":"Base completa in polvere, in latte, uso a freddo","Dosaggio dichiarato":"1,60 kg + 5 L latte","Caratteristiche / posizionamento":"Base completa per frozen yogurt in stile greco."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yogurt Mix","fields":{"Tipo":"Base completa in polvere, in latte, caldo o freddo","Dosaggio dichiarato":"1,60 kg + 6 L latte","Caratteristiche / posizionamento":"Base completa per frozen yogurt classico."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Smart Soft Cioccolato","fields":{"Tipo":"Base completa in polvere per gelato soft, in acqua, caldo o freddo","Dosaggio dichiarato":"1,50 kg + 3 L acqua","Caratteristiche / posizionamento":"Base completa per gelato soft al gusto cioccolato."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Smart Soft Vaniglia Bianca","fields":{"Tipo":"Base completa in polvere per gelato soft, in acqua, caldo o freddo","Dosaggio dichiarato":"1,50 kg + 3 L acqua","Caratteristiche / posizionamento":"Base completa per gelato soft al gusto vaniglia bianca."},"note":"","fonte":""},{"azienda":"Babbi","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Smart Soft Yogurt","fields":{"Tipo":"Base completa in polvere per gelato soft, in acqua, caldo o freddo","Dosaggio dichiarato":"1,50 kg + 3 L acqua","Caratteristiche / posizionamento":"Base completa per gelato soft al gusto yogurt."},"note":"","fonte":""},{"azienda":"Gran Roma","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Base Soft Cacao","fields":{"Tipo":"Base pronta per gelato soft gusto cacao (SKU GRZBP0103)","Dosaggio dichiarato":"Base 1,7 kg + acqua 4 l, oppure base 1,7 kg + acqua 2 l + latte 2 l; confezione 1,7 kg x 7 pezzi","Caratteristiche / posizionamento":"Molto cremoso e stabile; senza glutine, contiene soia"},"note":"","fonte":"https://granroma.com/prodotto/base-soft-cacao/"},{"azienda":"Gran Roma","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Base Soft Vaniglia","fields":{"Tipo":"Base completa per gelato soft gusto vaniglia (SKU GRZBP0147)","Dosaggio dichiarato":"Base 1,6 kg + acqua 4 l, oppure base 1,6 kg + acqua 3,5 l + latte 0,5 l; confezione 1,6 kg x 7 pezzi","Caratteristiche / posizionamento":"Gelato soft molto cremoso e stabile; senza glutine, contiene soia"},"note":"","fonte":"https://granroma.com/prodotto/base-soft-vaniglia/"},{"azienda":"Gran Roma","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Base Soft Yogurt","fields":{"Tipo":"Base pronta per gelato soft gusto yogurt (SKU GRZBP0190)","Dosaggio dichiarato":"Base 1,6 kg + acqua 5 l, oppure base 1,6 kg + acqua 4 l + yogurt magro/intero 1 l; confezione 1,6 kg x 7 pezzi","Caratteristiche / posizionamento":"Gelato soft molto cremoso e stabile; senza glutine, contiene soia"},"note":"","fonte":"https://granroma.com/prodotto/base-soft-yogurt/"},{"azienda":"Giuso Guido","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Peryo'","fields":{"Tipo":"Insaporente in polvere allo yogurt liofilizzato","Dosaggio dichiarato":"Non specificato (formato 204)","Caratteristiche / posizionamento":"Gusto piacevole, persistente e poco acido; ideale anche per sorbetti e granite; contiene vero yogurt liofilizzato, si usa a freddo."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/insaporenti/gelato-al-gusto-di-yogurt/peryo"},{"azienda":"Giuso Guido","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Peryo' Base 50","fields":{"Tipo":"Base allo yogurt liofilizzato (50 g per litro di latte)","Dosaggio dichiarato":"50 g per litro di latte","Caratteristiche / posizionamento":"Aromatizzazione delicata con nota aromatica rotonda; senza grassi, struttura asciutta e compatta."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/insaporenti/gelato-al-gusto-di-yogurt/peryo-base-50"},{"azienda":"Giuso Guido","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Peryo' Gusto Intenso","fields":{"Tipo":"Polvere insaporente allo yogurt gusto intenso","Dosaggio dichiarato":"Non specificato (formato 204)","Caratteristiche / posizionamento":"Aromatizzazione decisa e fortemente caratterizzata per chi ricerca un gusto yogurt più intenso."},"note":"","fonte":"https://www.giuso.it/it/prodotti/gelateria/insaporenti/gelato-al-gusto-di-yogurt/peryo-gusto-intenso"},{"azienda":"Unigel","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Sambogel Latte S.L.","fields":{"Tipo":"Semilavorato gelato soft, senza lattosio","Dosaggio dichiarato":"32,5%","Caratteristiche / posizionamento":"Gelato soft gusto fiordilatte, senza lattosio"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/less-is-more/"},{"azienda":"Unigel","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Sambogel Cioccolato S.L.","fields":{"Tipo":"Semilavorato gelato soft, senza lattosio","Dosaggio dichiarato":"32,5%","Caratteristiche / posizionamento":"Gelato soft al cioccolato, buona percentuale di cacao; senza aromi né coloranti"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/less-is-more/"},{"azienda":"Unigel","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Sambogel Vaniglia S.L.","fields":{"Tipo":"Semilavorato gelato soft, senza lattosio","Dosaggio dichiarato":"32,5%","Caratteristiche / posizionamento":"Gelato soft alla vaniglia, coloranti naturali"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/less-is-more/"},{"azienda":"Unigel","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Sambogel Cioccolato","fields":{"Tipo":"Sambogel, gelato soft","Dosaggio dichiarato":"26,8% (1,1 kg + 3 l latte)","Caratteristiche / posizionamento":"Gelato soft al cioccolato con buona percentuale di cacao"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Unigel","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Sambogel Latte S","fields":{"Tipo":"Sambogel, gelato soft","Dosaggio dichiarato":"25% (1 kg + 3 l latte)","Caratteristiche / posizionamento":"Gelato soft dall'amabile gusto di latte"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Unigel","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Sambogel Vaniglia","fields":{"Tipo":"Sambogel, gelato soft","Dosaggio dichiarato":"25% (1 kg + 3 l latte)","Caratteristiche / posizionamento":"Gelato soft al sapore delicato di vaniglia"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Unigel","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Sambogel Yog GR Soft","fields":{"Tipo":"Sambogel, gelato soft","Dosaggio dichiarato":"25% (1 kg + 3 l latte, oppure 1 kg + 2 l latte + 1 kg yogurt)","Caratteristiche / posizionamento":"Yogurt soft con gusto deciso e acidità bilanciata"},"note":"","fonte":"https://unigelitalia.com/categoria-prodotti/prodotti-pronti-funzionali-e-altro/"},{"azienda":"Nutman Group","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Fior di Latte","fields":{"Tipo":"Prodotto in polvere soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/prodotti-in-polvere-soft/"},{"azienda":"Nutman Group","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Frozen Yogurt","fields":{"Tipo":"Prodotto in polvere soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/prodotti-in-polvere-soft/"},{"azienda":"Nutman Group","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Yogurt","fields":{"Tipo":"Prodotto in polvere soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/prodotti-in-polvere-soft/"},{"azienda":"Nutman Group","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Yogurt Greco","fields":{"Tipo":"Prodotto in polvere soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/prodotti-in-polvere-soft/"},{"azienda":"Nutman Group","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Yogurt Special","fields":{"Tipo":"Prodotto in polvere soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"n.d."},"note":"","fonte":"https://nutman-group.com/categoria-prodotto/gelateria/prodotti-in-polvere-soft/"},{"azienda":"Gelatitalia","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Cioccolato","fields":{"Tipo":"Mix completo per gelato soft, a freddo","Dosaggio dichiarato":"Mix completo","Caratteristiche / posizionamento":"Cod. A003570. Busta 1 kg, 10 per cartone. Senza glutine."},"note":"Dati dalla pagina di categoria del sito ufficiale Gelatitalia (Granulati Italia S.p.A.); la pagina riportava «esaurito» al momento della consultazione. Verificare dosaggi e disponibilità col produttore.","fonte":"https://gelatitalia.it/it/prodotti/gelateria/soft/gelato-soft/"},{"azienda":"Gelatitalia","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Fiordilatte","fields":{"Tipo":"Mix completo per gelato soft, a freddo","Dosaggio dichiarato":"Mix completo","Caratteristiche / posizionamento":"Cod. A003579. Busta 1 kg, 10 per cartone. Senza glutine."},"note":"Dati dalla pagina di categoria del sito ufficiale Gelatitalia (Granulati Italia S.p.A.); la pagina riportava «esaurito» al momento della consultazione. Verificare dosaggi e disponibilità col produttore.","fonte":"https://gelatitalia.it/it/prodotti/gelateria/soft/gelato-soft/"},{"azienda":"Gelatitalia","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Fragola","fields":{"Tipo":"Mix completo per gelato soft, a freddo","Dosaggio dichiarato":"Mix completo","Caratteristiche / posizionamento":"Cod. A003453. Busta 1,2 kg, 10 per cartone. Senza glutine."},"note":"Dati dalla pagina di categoria del sito ufficiale Gelatitalia (Granulati Italia S.p.A.); la pagina riportava «esaurito» al momento della consultazione. Verificare dosaggi e disponibilità col produttore.","fonte":"https://gelatitalia.it/it/prodotti/gelateria/soft/gelato-soft/"},{"azienda":"Gelatitalia","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Lemoncomplet (Soft Limone)","fields":{"Tipo":"Mix completo per gelato soft, a freddo","Dosaggio dichiarato":"Mix completo","Caratteristiche / posizionamento":"Cod. A003441. Busta 1,2 kg, 10 per cartone. Senza glutine."},"note":"Dati dalla pagina di categoria del sito ufficiale Gelatitalia (Granulati Italia S.p.A.); la pagina riportava «esaurito» al momento della consultazione. Verificare dosaggi e disponibilità col produttore.","fonte":"https://gelatitalia.it/it/prodotti/gelateria/soft/gelato-soft/"},{"azienda":"Gelatitalia","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Vaniglia","fields":{"Tipo":"Mix completo per gelato soft, a freddo","Dosaggio dichiarato":"Mix completo","Caratteristiche / posizionamento":"Cod. A002956. Busta 1 kg, 10 per cartone. Senza glutine."},"note":"Dati dalla pagina di categoria del sito ufficiale Gelatitalia (Granulati Italia S.p.A.); la pagina riportava «esaurito» al momento della consultazione. Verificare dosaggi e disponibilità col produttore.","fonte":"https://gelatitalia.it/it/prodotti/gelateria/soft/gelato-soft/"},{"azienda":"Gelatitalia","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Yogurt Soft Special","fields":{"Tipo":"Mix completo per gelato soft, a freddo","Dosaggio dichiarato":"Mix completo","Caratteristiche / posizionamento":"Cod. A003587. Busta 1 kg, 10 per cartone. Senza glutine."},"note":"Dati dalla pagina di categoria del sito ufficiale Gelatitalia (Granulati Italia S.p.A.); la pagina riportava «esaurito» al momento della consultazione. Verificare dosaggi e disponibilità col produttore.","fonte":"https://gelatitalia.it/it/prodotti/gelateria/soft/gelato-soft/"},{"azienda":"Gelatitalia","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Yolive","fields":{"Tipo":"Preparato in polvere a base di yogurt arricchito di fermenti, per gelato soft","Dosaggio dichiarato":"n.d.","Caratteristiche / posizionamento":"Per un cremoso gelato soft allo yogurt con fermenti. Cod. A003601. Barattolo 1,2 kg, 8 per cartone. Senza glutine."},"note":"Dati dalla pagina di categoria del sito ufficiale Gelatitalia (Granulati Italia S.p.A.); la pagina riportava «esaurito» al momento della consultazione. Verificare dosaggi e disponibilità col produttore.","fonte":"https://gelatitalia.it/it/prodotti/gelateria/soft/gelato-soft/"},{"azienda":"Proice","categoria":"Gelato Soft / Frozen Yogurt","prodotto":"Soft Yogurt","fields":{"Tipo":"Base soft","Dosaggio dichiarato":"400 g per 1 L di latte","Caratteristiche / posizionamento":"Gusto «al top della gamma» secondo il produttore. Confezione: 5 x 2 kg."},"note":"Dati dalla pagina Basi del sito ufficiale Proice (Produttore Artigiano srl), consultata online; descrizioni e confezioni come riportate in pagina. Verificare dosaggi e ingredienti con il produttore.","fonte":"https://www.proice.it/prodotti/basi/"}]</script>
+  <script>(function(){
+  var CFG = {"cats": ["Gelato Soft / Frozen Yogurt"], "pct10": false, "bare": false, "metrics": [{"key": "dose", "tab": "Dosaggio", "title": "📊 Quanta polvere serve: dosaggi a confronto", "intro": "Ogni barra indica quanti grammi di polvere servono per litro di liquido (acqua o latte), come dichiarato dal produttore. Dove la scheda riporta «1,25 kg + 3 L di latte» il valore è calcolato dividendo i grammi per i litri. Clicca una barra per vedere la scheda.", "unit": "g di polvere per litro di liquido", "filt": "filtrati (gli altri non hanno un dosaggio confrontabile)", "approx": false, "linear": false}], "chips": [{"key": "yogurt", "kw": ["yogurt", "yoghurt", "kefir"], "label": "chipYogurt"}, {"key": "soft", "kw": ["soft"], "label": "chipSoft"}, {"key": "latte", "kw": ["latte"], "label": "chipMilk"}, {"key": "acqua", "kw": ["acqua"], "label": "chipWater"}, {"key": "vegano", "kw": ["vegan"], "label": "chipVegan"}, {"key": "lattosio", "kw": ["senza lattosio", "lactose", "delattosat"], "label": "chipLactose"}, {"key": "glutine", "kw": ["senza glutine"], "label": "chipGluten"}]};
+  var L = {"found": "prodotti trovati", "none": "Nessun prodotto trovato.", "more": "Mostra altri", "showall": "Mostra tutti", "showtop": "Mostra solo i primi", "fonte": "Fonte", "note": "Nota", "nochart": "Nessun prodotto con un dato confrontabile per i filtri scelti.", "st_in": "nel grafico", "st_of": "su", "st_min": "valore minimo", "st_med": "valore mediano", "st_max": "valore massimo", "vs": "vs", "conv_same": "Scegli due zuccheri diversi.", "conv_more": "più dolce", "conv_less": "meno dolce", "conv_eq": "praticamente invariata", "chipHot": "A caldo", "chipCold": "A freddo", "chipVegan": "Vegano", "chipLactose": "Senza lattosio", "chipGluten": "Senza glutine", "chipPalm": "Senza palma / grassi vegetali", "chipYogurt": "Yogurt", "chipSoft": "Soft", "chipMilk": "Con latte", "chipWater": "Con acqua", "chipBio": "Bio", "chipSDL": "Senza derivati del latte", "chipPure": "100% puro", "chipSicily": "Sicilia", "chipPiedmont": "Piemonte", "chipAmarena": "Amarena", "chipChoc": "Cioccolato", "chipBiscuit": "Biscotto", "chipNut": "Nocciola", "chipPist": "Pistacchio", "chipCaramel": "Caramello", "chipNoSugar": "Senza zuccheri aggiunti", "coll": "it", "dec": ",", "conv_out_tpl": "Per mantenere lo stesso PAC servono circa <strong>{gb} g</strong> di {b} al posto di {ga} g di {a}. La dolcezza (POD) passa da {poda} a {podb}: <strong>{dl}</strong>."};
+  var data = JSON.parse(document.getElementById('page-archive-data').textContent);
+  var COLORS = ['#c0392b','#e0a526','#2e7d32','#2f6f9f','#7b4f9d','#d2691e','#008b8b','#8b5a2b','#6b8e23','#b8860b','#555'];
+  var catColor = {}; CFG.cats.forEach(function(c,i){ catColor[c] = COLORS[i % COLORS.length]; });
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function num(s){ return parseFloat(String(s).replace(',', '.')); }
+  function fmt(x){ var r = Math.round(x*10)/10; if(x < 1) r = Math.round(x*100)/100; return String(r).replace('.', L.dec); }
+
+  // ---------- parser
+  function rng(a, b, approx){ var x = num(a), y = b ? num(b) : x; return {min: Math.min(x,y), max: Math.max(x,y), approx: !!approx}; }
+  var N = '(\\d+(?:[.,]\\d+)?)', SEP = '\\s*[-–/]\\s*';
+  function parseDose(p){
+    var t = (p.fields||{})['Dosaggio dichiarato']; if(!t) return null; t = String(t); var m;
+    m = t.match(new RegExp('\\(\\s*'+N+'(?:'+SEP+N+')?\\s*(?:g|gr)\\s*\\/\\s*(?:l|L|kg)'));
+    if(m) return rng(m[1], m[2]);
+    m = t.match(new RegExp(N+'\\s*kg\\s*\\+\\s*'+N+'\\s*[lL]\\b'));
+    if(m){ var v = num(m[1])*1000/num(m[2]); return {min:v, max:v, approx:false}; }
+    m = t.match(new RegExp(N+'(?:'+SEP+N+')?\\s*(?:g|gr)\\s*(?:\\/\\s*(?:l|L|kg|litro)|per\\s*(?:1\\s*)?(?:l|L|litro|kg)\\b)'));
+    if(m) return rng(m[1], m[2]);
+    m = t.match(new RegExp(N+'(?:'+SEP+N+')?\\s*x\\s*[lL]\\b'));
+    if(m) return rng(m[1], m[2]);
+    m = t.match(new RegExp('^\\s*'+N+'(?:'+SEP+N+')?\\s*%'));
+    if(m && CFG.pct10){ var r = rng(m[1], m[2], true); r.min *= 10; r.max *= 10; return r; }
+    m = t.match(new RegExp('^\\s*'+N+'(?:'+SEP+N+')?\\s*(?:g|gr)?\\s*(?:\\([^)]*\\))?\\s*$'));
+    if(m && CFG.bare) return rng(m[1], m[2], true);
+    return null;
+  }
+  function parseFat(p){
+    var t = (p.fields||{})['% Grassi'] || (p.fields||{})['% Fett']; if(!t) return null; t = String(t);
+    if(/^\s*(non specificat|n\.d\.|basso)/i.test(t)) return null;
+    var m = t.match(/(\d+)\s*%\s*\+\s*(\d+)/); if(m) return {min:num(m[1]), max:num(m[1])+num(m[2]), approx:false};
+    t = t.replace(/\([^)]*\)/g, '');
+    if(t.indexOf('%') < 0) return null;
+    var ns = (t.match(/\d+(?:[.,]\d+)?/g) || []).map(num).filter(function(x){ return x <= 100; });
+    if(!ns.length) return null;
+    return {min: Math.min.apply(null, ns), max: Math.max.apply(null, ns), approx:false};
+  }
+  function parsePct(p){
+    var t = (p.fields||{})['% Amarena / Frutto dichiarata']; if(!t) return null; t = String(t);
+    if(/^\s*(n\.d\.|non dichiarata)/i.test(t)) return null;
+    var m = t.match(new RegExp(N+'\\s*%\\s*totale'));
+    if(!m) m = t.replace(/\([^)]*\)/g, '').match(new RegExp(N+'\\s*%'));
+    if(!m) return null;
+    var v = num(m[1]); return (v > 0 && v <= 100) ? {min:v, max:v, approx:false} : null;
+  }
+  function parsePack(p){
+    var t = (p.fields||{})['Formato / Confezione'] || (p.fields||{})['Calibro / Formato']; if(!t) return null; t = String(t);
+    var m = t.match(new RegExp('\\d+\\s*[xX×]\\s*'+N+'\\s*kg'));
+    if(!m) m = t.match(new RegExp(N+'\\s*kg'));
+    if(m){ var v = num(m[1]); return v > 0 ? {min:v, max:v, approx:false} : null; }
+    m = t.match(new RegExp('\\d+\\s*[xX×]\\s*'+N+'\\s*(?:g|gr)\\b')) || t.match(new RegExp(N+'\\s*(?:g|gr)\\b'));
+    if(m){ var w = num(m[1])/1000; return (w >= 0.05 && w <= 30) ? {min:w, max:w, approx:false} : null; }
+    return null;
+  }
+  var PARSERS = {dose: parseDose, fat: parseFat, pct: parsePct, pack: parsePack};
+  var metrics = CFG.metrics, cur = metrics[0];
+  data.forEach(function(p){
+    p._vs = {}; metrics.forEach(function(m){ p._vs[m.key] = PARSERS[m.key](p); });
+    p._hay = (p.azienda+' '+p.prodotto+' '+p.categoria+' '+Object.keys(p.fields||{}).map(function(k){return p.fields[k];}).join(' ')+' '+(p.note||'')).toLowerCase();
+  });
+
+  // ---------- elementi
+  var input = document.getElementById('pgSearch'), selCat = document.getElementById('pgCat'), selAz = document.getElementById('pgAz');
+  var results = document.getElementById('pgResults'), count = document.getElementById('pgCount'), chipsBox = document.getElementById('pgChips');
+  var chartBox = document.getElementById('gcChart'), statsBox = document.getElementById('gcStats'), legend = document.getElementById('gcLegend');
+  var gcTitle = document.getElementById('gcTitle'), gcIntro = document.getElementById('gcIntro'), gcTabs = document.getElementById('gcTabs'), gcApprox = document.getElementById('gcApprox');
+  var chipState = {}; CFG.chips.forEach(function(c){ chipState[c.key] = false; });
+  var shown = 24, chartAll = false;
+
+  (function fill(){
+    var az = []; data.forEach(function(p){ if(az.indexOf(p.azienda) < 0) az.push(p.azienda); });
+    az.sort(function(a,b){ return a.localeCompare(b, L.coll); });
+    az.forEach(function(a){ var o = document.createElement('option'); o.value = a; o.textContent = a; selAz.appendChild(o); });
+  })();
+
+  function filtered(){
+    var q = input.value.trim().toLowerCase(), cat = selCat.value, az = selAz.value;
+    return data.filter(function(p){
+      if(cat && p.categoria !== cat) return false;
+      if(az && p.azienda !== az) return false;
+      if(q && p._hay.indexOf(q) < 0) return false;
+      for(var i = 0; i < CFG.chips.length; i++){
+        var c = CFG.chips[i]; if(!chipState[c.key]) continue;
+        if(!c.kw.some(function(k){ return p._hay.indexOf(k) >= 0; })) return false;
+      }
+      return true;
+    });
+  }
+  function renderChips(){
+    var base = data.filter(function(p){ return (!selCat.value || p.categoria === selCat.value) && (!selAz.value || p.azienda === selAz.value); });
+    chipsBox.innerHTML = CFG.chips.map(function(c){
+      var n = base.filter(function(p){ return c.kw.some(function(k){ return p._hay.indexOf(k) >= 0; }); }).length;
+      return '<button type="button" class="chip" data-k="'+c.key+'" aria-pressed="'+(chipState[c.key]?'true':'false')+'">'+esc(L[c.label])+'<small>'+n+'</small></button>';
+    }).join('');
+    Array.prototype.forEach.call(chipsBox.querySelectorAll('.chip'), function(b){
+      b.addEventListener('click', function(){ chipState[b.getAttribute('data-k')] = !chipState[b.getAttribute('data-k')]; shown = 24; render(); });
+    });
+  }
+
+  // ---------- grafico
+  var doms = {};
+  function domOf(m){
+    if(doms[m.key]) return doms[m.key];
+    var d;
+    if(m.linear){ d = {lo:0, hi:100, log:false, ticks:[0,20,40,60,80,100]}; }
+    else {
+      var mn = Infinity, mx = 0;
+      data.forEach(function(p){ var v = p._vs[m.key]; if(v){ mn = Math.min(mn, v.min); mx = Math.max(mx, v.max); } });
+      if(!isFinite(mn)){ mn = 1; mx = 10; }
+      var lo = Math.pow(10, Math.floor(Math.log(Math.max(mn,0.01))/Math.LN10)), hi = Math.pow(10, Math.ceil(Math.log(mx)/Math.LN10));
+      if(hi <= lo) hi = lo*10;
+      var ticks = []; for(var e = lo; e <= hi*1.0001; e *= 10){ [1,2,5].forEach(function(f){ var v = e*f; if(v >= lo && v <= hi) ticks.push(v); }); }
+      d = {lo:lo, hi:hi, log:true, ticks:ticks};
+    }
+    doms[m.key] = d; return d;
+  }
+  function renderChart(list){
+    var key = cur.key, dom = domOf(cur);
+    function pos(v){ return dom.log ? (Math.log(v/dom.lo))/(Math.log(dom.hi/dom.lo))*100 : (v - dom.lo)/(dom.hi - dom.lo)*100; }
+    gcTitle.textContent = cur.title; gcIntro.innerHTML = cur.intro; gcApprox.style.display = cur.approx ? '' : 'none';
+    if(gcTabs){ gcTabs.innerHTML = metrics.length > 1 ? metrics.map(function(m){ return '<button type="button" class="chip" data-m="'+m.key+'" aria-pressed="'+(m.key === cur.key ? 'true' : 'false')+'">'+esc(m.tab)+'</button>'; }).join('') : '';
+      Array.prototype.forEach.call(gcTabs.querySelectorAll('.chip'), function(b){ b.addEventListener('click', function(){ cur = metrics.filter(function(m){ return m.key === b.getAttribute('data-m'); })[0]; chartAll = false; renderChart(list); }); }); }
+    var rows = list.filter(function(p){ return p._vs[key]; }).sort(function(a,b){ return a._vs[key].min - b._vs[key].min || a._vs[key].max - b._vs[key].max; });
+    legend.innerHTML = CFG.cats.filter(function(c){ return rows.some(function(p){ return p.categoria === c; }); }).map(function(c){ return '<span><i style="background:'+catColor[c]+'"></i>'+esc(c)+'</span>'; }).join('');
+    if(!rows.length){ statsBox.innerHTML = ''; chartBox.innerHTML = '<p class="hint">'+esc(L.nochart)+'</p>'; return; }
+    var vals = rows.map(function(p){ return (p._vs[key].min + p._vs[key].max)/2; }).sort(function(a,b){ return a-b; });
+    var med = vals[Math.floor(vals.length/2)];
+    var lo = Math.min.apply(null, rows.map(function(p){ return p._vs[key].min; })), hi = Math.max.apply(null, rows.map(function(p){ return p._vs[key].max; }));
+    statsBox.innerHTML = '<div class="gc-stat"><strong>'+rows.length+' '+esc(L.st_in)+'</strong>'+esc(L.st_of)+' '+list.length+' '+esc(cur.filt)+'</div>'+
+      '<div class="gc-stat"><strong>'+fmt(lo)+'</strong>'+esc(L.st_min)+' ('+esc(cur.unit)+')</div>'+
+      '<div class="gc-stat"><strong>'+fmt(med)+'</strong>'+esc(L.st_med)+'</div>'+
+      '<div class="gc-stat"><strong>'+fmt(hi)+'</strong>'+esc(L.st_max)+'</div>';
+    var limit = chartAll ? rows.length : 30, vis = rows.slice(0, limit);
+    var grid = dom.ticks.map(function(t){ return '<span class="gc-grid" style="left:'+pos(t).toFixed(2)+'%"></span>'; }).join('');
+    var axis = '<div class="gc-axis-wrap"><div class="hint" style="margin:0">'+esc(cur.unit)+'</div><div class="gc-axis">'+dom.ticks.map(function(t){ return '<span style="position:absolute; left:'+pos(t).toFixed(2)+'%; transform:translateX(-50%)">'+String(t).replace('.', L.dec)+'</span>'; }).join('')+'</div></div>';
+    var out = axis + vis.map(function(p){
+      var v = p._vs[key], a = pos(v.min), b = pos(v.max), w = Math.max(b - a, 0);
+      var label = (v.approx ? '≈ ' : '') + (v.min === v.max ? fmt(v.min) : fmt(v.min)+'–'+fmt(v.max));
+      var left = Math.min(Math.max(a, 0), 98);
+      var valLeft = (a + w > 80) ? 'right:'+(100 - a - 0.5).toFixed(2)+'%' : 'left:calc('+(a + w).toFixed(2)+'% + 6px)';
+      return '<div class="gc-row" data-n="'+esc(p.prodotto)+'" title="'+esc(p.azienda+' — '+p.prodotto+': '+label+' '+cur.unit)+'">'+
+        '<div class="gc-label"><b>'+esc(p.prodotto)+'</b><span>'+esc(p.azienda)+'</span></div>'+
+        '<div class="gc-track">'+grid+'<div class="gc-bar" style="left:'+left.toFixed(2)+'%; width:'+w.toFixed(2)+'%; background:'+catColor[p.categoria]+'"></div><span class="gc-val" style="'+valLeft+'">'+esc(label)+'</span></div></div>';
+    }).join('');
+    if(rows.length > 30) out += '<div class="gc-more"><button type="button" class="btn-lite" id="gcToggle">'+esc(chartAll ? L.showtop+' 30' : L.showall+' ('+rows.length+')')+'</button></div>';
+    chartBox.innerHTML = out;
+    var tg = document.getElementById('gcToggle'); if(tg) tg.addEventListener('click', function(){ chartAll = !chartAll; renderChart(list); });
+    Array.prototype.forEach.call(chartBox.querySelectorAll('.gc-row'), function(r){
+      r.addEventListener('click', function(){ input.value = r.getAttribute('data-n'); shown = 24; render(); document.getElementById('pgArchive').scrollIntoView({behavior:'smooth', block:'start'}); });
+    });
+  }
+
+  // ---------- risultati
+  function render(){
+    renderChips();
+    var list = filtered();
+    count.innerHTML = (input.value ? '<span class="torte-pulse-dot" aria-hidden="true"></span>' : '') + list.length + ' ' + L.found;
+    var vis = list.slice(0, shown);
+    results.innerHTML = vis.map(function(p){
+      var f = Object.keys(p.fields||{}).map(function(k){ return '<div class="torte-field"><strong>'+esc(k)+':</strong> '+esc(p.fields[k])+'</div>'; }).join('');
+      var extra = (p.note ? '<div class="torte-field"><strong>'+esc(L.note)+':</strong> '+esc(p.note)+'</div>' : '') + (p.fonte ? '<div class="torte-fonte"><a href="'+esc(p.fonte)+'" target="_blank" rel="noopener noreferrer">'+esc(L.fonte)+' ↗</a></div>' : '');
+      return '<div class="torte-result-card"><div class="torte-result-head"><span class="torte-azienda">'+esc(p.azienda)+'</span><span class="torte-cat-tag">'+esc(p.categoria)+'</span></div><div class="torte-prodotto">'+esc(p.prodotto)+'</div>'+f+extra+'</div>';
+    }).join('') || '<p class="hint">'+esc(L.none)+'</p>';
+    if(list.length > shown) results.innerHTML += '<div style="grid-column:1/-1"><button type="button" class="btn-lite" id="pgMore">'+esc(L.more)+' ('+(list.length - shown)+')</button></div>';
+    var mb = document.getElementById('pgMore'); if(mb) mb.addEventListener('click', function(){ shown += 24; render(); });
+    renderChart(list);
+  }
+  input.addEventListener('input', function(){ shown = 24; render(); });
+  selCat.addEventListener('change', function(){ shown = 24; render(); });
+  selAz.addEventListener('change', function(){ shown = 24; render(); });
+  render();
+
+  // ---------- PAC/POD (solo pagina zuccheri)
+  if(CFG.sugars){
+    var pp = document.getElementById('ppWrap'), sortBy = 'pac', ref = null;
+    var S = CFG.sugars;
+    function ppRender(){
+      var arr = S.slice();
+      if(sortBy === 'pac') arr.sort(function(a,b){ return b.pac - a.pac; });
+      else if(sortBy === 'pod') arr.sort(function(a,b){ return b.pod - a.pod; });
+      else arr.sort(function(a,b){ return a.label.localeCompare(b.label, L.coll); });
+      var mx = Math.max.apply(null, S.map(function(s){ return Math.max(s.pac, s.pod); }));
+      var rs = ref ? S.filter(function(s){ return s.id === ref; })[0] : null;
+      pp.innerHTML = arr.map(function(s){
+        var cmp = rs && rs.id !== s.id ? ' · PAC '+(s.pac/rs.pac).toFixed(2).replace('.', L.dec)+'× / POD '+(s.pod/rs.pod).toFixed(2).replace('.', L.dec)+'× '+L.vs+' '+rs.label : '';
+        return '<div class="pp-row" data-id="'+s.id+'" aria-selected="'+(ref === s.id ? 'true' : 'false')+'"><div class="pp-name">'+esc(s.label)+'<div class="hint" style="margin:0">'+esc(cmp)+'</div></div>'+
+          '<div class="pp-bars"><div class="pp-bar pac" style="width:'+(s.pac/mx*88).toFixed(1)+'%"><span>PAC '+s.pac+'</span></div><div class="pp-bar pod" style="width:'+(s.pod/mx*88).toFixed(1)+'%"><span>POD '+s.pod+'</span></div></div></div>';
+      }).join('');
+      Array.prototype.forEach.call(pp.querySelectorAll('.pp-row'), function(r){ r.addEventListener('click', function(){ var id = r.getAttribute('data-id'); ref = (ref === id ? null : id); ppRender(); }); });
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-sort]'), function(b){ b.addEventListener('click', function(){ sortBy = b.getAttribute('data-sort'); ppRender(); }); });
+    ppRender();
+    var fa = document.getElementById('cvFrom'), fb = document.getElementById('cvTo'), fg = document.getElementById('cvG'), out = document.getElementById('cvOut');
+    S.forEach(function(s){ [fa, fb].forEach(function(el){ var o = document.createElement('option'); o.value = s.id; o.textContent = s.label; el.appendChild(o); }); });
+    fa.value = 'saccarosio'; fb.value = 'destrosio';
+    function conv(){
+      var a = S.filter(function(s){ return s.id === fa.value; })[0], b = S.filter(function(s){ return s.id === fb.value; })[0], g = num(fg.value);
+      if(!a || !b || !(g > 0)){ out.innerHTML = ''; return; }
+      if(a.id === b.id){ out.textContent = L.conv_same; return; }
+      var gb = g*a.pac/b.pac, poda = g*a.pod/100, podb = gb*b.pod/100, d = (podb - poda)/poda*100;
+      var dl = Math.abs(d) < 2 ? L.conv_eq : (Math.abs(Math.round(d)) + '% ' + (d > 0 ? L.conv_more : L.conv_less));
+      out.innerHTML = L.conv_out_tpl.replace('{gb}', fmt(gb)).replace('{b}', esc(b.label)).replace('{ga}', fmt(g)).replace('{a}', esc(a.label)).replace('{poda}', fmt(poda)).replace('{podb}', fmt(podb)).replace('{dl}', dl);
+    }
+    [fa, fb, fg].forEach(function(el){ el.addEventListener('input', conv); el.addEventListener('change', conv); });
+    conv();
+  }
+})();
+</script>
+
+  <section class="card">
+    <h2>Domande frequenti</h2>
+    <h3 style="font-size:0.98rem; margin:14px 0 4px">Che differenza c&#x27;è tra gelato soft e gelato artigianale?</h3><p>Il soft si prepara da una base in polvere o liquida diluita con acqua o latte e si eroga da una macchina dedicata; il gelato artigianale si manteca e si serve dalla vetrina. Sono prodotti e attrezzature diverse.</p><h3 style="font-size:0.98rem; margin:14px 0 4px">Come si leggono i dosaggi?</h3><p>Quando la scheda dà grammi per litro, il grafico usa quel valore. Se riporta «1,25 kg + 3 L di latte», il valore è calcolato come grammi di polvere per litro di liquido. I mix completi senza dosaggio non compaiono nel grafico.</p><h3 style="font-size:0.98rem; margin:14px 0 4px">Il frozen yogurt si fa con la stessa macchina?</h3><p>In molti casi sì, ma dipende dal modello e dal prodotto: verifica sempre le indicazioni del produttore della base e della macchina.</p>
+  </section>
+
+  <section class="card">
+    <h2>Altre pagine di approfondimento</h2>
+    <p>Pagine dedicate con archivio e grafici dinamici, pensate per confrontare in fretta.</p>
+    <div class="quick-links"><a href="/basi-latte.html">🥛 Basi latte<small>Basi per gelato: dosaggi a confronto</small></a><a href="/basi-frutta.html">🍓 Basi frutta<small>Basi per sorbetti e gelati alla frutta</small></a><a href="/neutri-addensanti.html">🧂 Neutri e addensanti<small>Stabilizzanti, dosaggi a confronto</small></a><a href="/creme-paste.html">🥜 Creme e paste<small>Paste pure e composte, cremini</small></a><a href="/variegati.html">🍒 Variegati e topping<small>Amarena, frutta, creme, biscotto</small></a><a href="/zuccheri-polveri.html">🍬 Zuccheri e polveri<small>PAC/POD, latte e panna in polvere</small></a><a href="/guida-confronto-ingredienti.html">🎓 Guida al confronto<small>PAC, POD e solidi totali spiegati</small></a><a href="/calcolatore-ricetta-sorbetto">🍓 Calcolatore sorbetto<small>Bilancia PAC e POD della frutta</small></a></div>
+  </section>
+
+  <footer>Confronta Prodotti per Gelateria — piattaforma indipendente, senza sponsorizzazioni. <a href="/">Torna alla home</a>.</footer>
+</div>
+</body>
+</html>
