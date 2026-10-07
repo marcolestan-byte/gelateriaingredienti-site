@@ -251,4 +251,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://gelateriaingredienti.com/torta-gelato-matrimonio.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-matrimonio-tre-piani-cuori-rose.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-matrimonio-giglio-pasta-di-zucchero.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>
