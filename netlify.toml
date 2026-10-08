@@ -3,3 +3,15 @@
   to = "https://gelateriaingredienti.com/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://gelatoinfo.app/*"
+  to = "https://gelateriaingredienti.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.gelatoinfo.app/*"
+  to = "https://gelateriaingredienti.com/:splat"
+  status = 301
+  force = true
