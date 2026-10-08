@@ -262,4 +262,15 @@
       <image:loc>https://gelateriaingredienti.com/torta-gelato-matrimonio-giglio-pasta-di-zucchero.jpg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://gelateriaingredienti.com/torta-gelato-dimensioni.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-rettangolare-cuore-rosa-sposi-1.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gelateriaingredienti.com/torta-gelato-rettangolare-cuore-rosa-sposi-2.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>
