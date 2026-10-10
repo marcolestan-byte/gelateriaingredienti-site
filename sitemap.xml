@@ -273,4 +273,9 @@
       <image:loc>https://gelateriaingredienti.com/torta-gelato-rettangolare-cuore-rosa-sposi-2.jpg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://gelateriaingredienti.com/packaging-gelateria.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

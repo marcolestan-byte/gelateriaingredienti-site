@@ -339,8 +339,6 @@
   .azienda-link{ cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
   .azienda-link:hover{ opacity: 0.75; }
   .azienda-name{ font-weight: 750; }
-  .azienda-featured-badge{ display:inline-block; margin-left:6px; padding:1px 7px; border-radius:6px; background:#f7e9df; color:#c0392b; border:1px solid #c0392b; font-size:0.68rem; font-weight:800; white-space:nowrap; vertical-align:middle; }
-  tr.row-featured td{ background:#fdf1ea; }
   .azienda-logo{ width:18px; height:18px; object-fit:contain; vertical-align:middle; margin-right:6px; border-radius:4px; background:#fff; border:1px solid rgba(0,0,0,0.08); padding:1px; }
   .azienda-avatar{ display:inline-block; width:10px; height:10px; border-radius:50%; vertical-align:middle; margin-right:6px; flex-shrink:0; }
   .azienda-video-link{ display:inline-flex; align-items:center; justify-content:center; margin-left:6px; font-size:0.72rem; text-decoration:none; vertical-align:middle; opacity:0.85; }
@@ -1252,7 +1250,6 @@ const I18N = {
     navSpeciali: "🧪 Prodotti speciali",
     navScatole: "📦 Scatole torte",
     navPackaging: "🥤 Packaging gelato",
-    featuredBadge: "⭐ In evidenza",
     navGrossisti: "🚚 Grossisti",
     navNewsletter: "📬 Newsletter",
     navGuida: "🎓 Guida",
@@ -1640,7 +1637,6 @@ const I18N = {
     navSpeciali: "🧪 Spezialprodukte",
     navScatole: "📦 Kartons für Torten",
     navPackaging: "🥤 Eisverpackungen",
-    featuredBadge: "⭐ Hervorgehoben",
     navGrossisti: "🚚 Großhändler",
     navNewsletter: "📬 Newsletter",
     navGuida: "🎓 Leitfaden",
@@ -2027,7 +2023,6 @@ const I18N = {
     navSpeciali: "🧪 Special products",
     navScatole: "📦 Cake boxes",
     navPackaging: "🥤 Gelato packaging",
-    featuredBadge: "⭐ Featured",
     navGrossisti: "🚚 Wholesalers",
     navNewsletter: "📬 Newsletter",
     navGuida: "🎓 Guide",
@@ -2414,7 +2409,6 @@ const I18N = {
     navSpeciali: "🧪 Productos especiales",
     navScatole: "📦 Cajas para tartas",
     navPackaging: "🥤 Envases para helado",
-    featuredBadge: "⭐ Destacado",
     navGrossisti: "🚚 Mayoristas",
     navNewsletter: "📬 Newsletter",
     navGuida: "🎓 Guía",
@@ -3014,18 +3008,15 @@ function aziendaColorFor(azienda){
   const hue = hash % 360;
   return `hsl(${hue}, 55%, 34%)`;
 }
-const FEATURED_AZIENDE = ["Aromitalia", "Elenka", "Fructital", "Disìo"];
-function aziendaIsFeatured(azienda){ return FEATURED_AZIENDE.indexOf(azienda) >= 0; }
 function aziendaCellHtml(azienda){
-  const featBadge = aziendaIsFeatured(azienda) ? `<span class="azienda-featured-badge">${t('featuredBadge')}</span>` : '';
   const url = AZIENDA_WEBSITES[azienda];
   const color = aziendaColorFor(azienda);
   const avatarImg = `<span class="azienda-avatar" style="background:${color}"></span>`;
   const videoIcon = videoIconHtml(azienda);
   if(url){
-    return `${avatarImg}<a class="azienda-name azienda-link" style="color:${color}" href="${escAttr(url)}" target="_blank" rel="noopener" title="${t('doppioClicSito')}">${azienda}</a>${featBadge}${videoIcon}`;
+    return `${avatarImg}<a class="azienda-name azienda-link" style="color:${color}" href="${escAttr(url)}" target="_blank" rel="noopener" title="${t('doppioClicSito')}">${azienda}</a>${videoIcon}`;
   }
-  return `${avatarImg}<span class="azienda-name" style="color:${color}">${azienda}</span>${featBadge}${videoIcon}`;
+  return `${avatarImg}<span class="azienda-name" style="color:${color}">${azienda}</span>${videoIcon}`;
 }
 
 const SCHEMA = RAW.schema; // { categoria: [campo1, campo2, ...] }
@@ -3290,7 +3281,7 @@ function renderArchiveTable(){
       return `<td>${val || '<span class="empty-val">—</span>'}</td>`;
     }).join('');
     const campioneCell = `<button type="button" class="btn small btn-campione" data-azienda="${escAttr(e.azienda)}" data-prodotto="${escAttr(e.prodotto)}" data-categoria="${escAttr(e.categoria)}">ℹ️ ${t('btnRichiediCampione')}</button>`;
-    return `<tr${aziendaIsFeatured(e.azienda) ? ' class="row-featured"' : ''}>
+    return `<tr>
       <td>${aziendaCellHtml(e.azienda)}</td>
       <td>${catIconSvg(e.categoria)} ${e.categoria}</td>
       <td>${e.prodotto}</td>
