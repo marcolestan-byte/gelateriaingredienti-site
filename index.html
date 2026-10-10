@@ -339,6 +339,8 @@
   .azienda-link{ cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
   .azienda-link:hover{ opacity: 0.75; }
   .azienda-name{ font-weight: 750; }
+  .azienda-featured-badge{ display:inline-block; margin-left:6px; padding:1px 7px; border-radius:6px; background:#f7e9df; color:#c0392b; border:1px solid #c0392b; font-size:0.68rem; font-weight:800; white-space:nowrap; vertical-align:middle; }
+  tr.row-featured td{ background:#fdf1ea; }
   .azienda-logo{ width:18px; height:18px; object-fit:contain; vertical-align:middle; margin-right:6px; border-radius:4px; background:#fff; border:1px solid rgba(0,0,0,0.08); padding:1px; }
   .azienda-avatar{ display:inline-block; width:10px; height:10px; border-radius:50%; vertical-align:middle; margin-right:6px; flex-shrink:0; }
   .azienda-video-link{ display:inline-flex; align-items:center; justify-content:center; margin-left:6px; font-size:0.72rem; text-decoration:none; vertical-align:middle; opacity:0.85; }
@@ -540,6 +542,7 @@
     <a class='nav-cat' href='/cacao-cioccolato.html'>🍫 Cacao e cioccolato</a>
     <a class='nav-ghiaccioli' data-i18n='navGhiaccioli' href='/ghiaccioli.html'>🍧 Ghiaccioli</a>
     <a class='nav-aziende' data-i18n='navAziende' href='/aziende.html'>🏢 Aziende</a>
+    <a class='nav-notizie' data-i18n='navRivista' href='https://www.gelatoartigianale.it/' target='_blank' rel='noopener'>📖 Rivista Gelato Artigianale</a>
     <a class='nav-notizie' href='/notizie.html'><span data-i18n="navNotizie">📰 Notizie</span><span class="nav-badge" aria-hidden="true"></span></a>
     <a class='nav-guida' data-i18n='navGuida' href='/guida-confronto-ingredienti.html'>🎓 Guida</a>
     <a class='nav-speciali' data-i18n='navSpeciali' href='/prodotti-speciali.html'>🧪 Prodotti speciali</a>
@@ -1029,6 +1032,7 @@
   <div class="footer-links">
     <span><span data-i18n="contatti">✉️ Contatti:</span> <a class="footer-highlight" href="mailto:marcolestan@gelateriaingredienti.com">marcolestan@gelateriaingredienti.com</a></span>
     <a class="footer-instagram" href="https://www.instagram.com/gelateriaingredienti/" target="_blank" rel="noopener" data-i18n="instagramLink">📷 Seguici su Instagram</a>
+    <a class="footer-highlight" href="https://www.gelatoartigianale.it/" target="_blank" rel="noopener" data-i18n="magazineLink">📖 Rivista di settore: Gelato Artigianale</a>
     <a href="#" class="footer-highlight" id="btnFeedback" data-i18n="feedbackLink">💬 Lascia un feedback</a>
     <a href="#" class="privacy-link" data-i18n="footerPrivacyLink">Informativa privacy</a>
   </div>
@@ -1250,6 +1254,7 @@ const I18N = {
     navSpeciali: "🧪 Prodotti speciali",
     navScatole: "📦 Scatole torte",
     navPackaging: "🥤 Packaging gelato",
+    featuredBadge: "⭐ In evidenza",
     navGrossisti: "🚚 Grossisti",
     navNewsletter: "📬 Newsletter",
     navGuida: "🎓 Guida",
@@ -1376,6 +1381,8 @@ const I18N = {
     newsletterText: "Iscriviti per ricevere aggiornamenti su nuovi prodotti, fornitori e novità del settore gelato artigianale.",
     contatti: "✉️ Contatti:",
     instagramLink: "📷 Seguici su Instagram",
+    magazineLink: "📖 Rivista di settore: Gelato Artigianale",
+    navRivista: "📖 Rivista Gelato Artigianale",
     equipmentSiteLink: "🧊 Confronto attrezzature gelateria — gelateriaattrezzature.com",
     equipmentSiteBadge: "(sito in costruzione)",
     sisterDeSiteLink: "🇩🇪 Eissorten-Zutatenvergleich (Deutsch) — eisdieleinfo.com",
@@ -1637,6 +1644,7 @@ const I18N = {
     navSpeciali: "🧪 Spezialprodukte",
     navScatole: "📦 Kartons für Torten",
     navPackaging: "🥤 Eisverpackungen",
+    featuredBadge: "⭐ Hervorgehoben",
     navGrossisti: "🚚 Großhändler",
     navNewsletter: "📬 Newsletter",
     navGuida: "🎓 Leitfaden",
@@ -1763,6 +1771,8 @@ const I18N = {
     newsletterText: "Melde dich an, um Updates zu neuen Produkten, Lieferanten und Neuigkeiten aus der Welt des handwerklichen Eises zu erhalten.",
     contatti: "✉️ Kontakt:",
     instagramLink: "📷 Folge uns auf Instagram",
+    magazineLink: "📖 Fachzeitschrift (Italien): Gelato Artigianale",
+    navRivista: "📖 Zeitschrift Gelato Artigianale",
     equipmentSiteLink: "🧊 Eismaschinen-Vergleich — gelateriaattrezzature.com",
     equipmentSiteBadge: "(Website im Aufbau)",
     sisterDeSiteLink: "🇩🇪 Eissorten-Zutatenvergleich (Deutsch) — eisdieleinfo.com",
@@ -2023,6 +2033,7 @@ const I18N = {
     navSpeciali: "🧪 Special products",
     navScatole: "📦 Cake boxes",
     navPackaging: "🥤 Gelato packaging",
+    featuredBadge: "⭐ Featured",
     navGrossisti: "🚚 Wholesalers",
     navNewsletter: "📬 Newsletter",
     navGuida: "🎓 Guide",
@@ -2149,6 +2160,8 @@ const I18N = {
     newsletterText: "Sign up to receive updates on new products, suppliers and news from the world of artisan gelato.",
     contatti: "✉️ Contact:",
     instagramLink: "📷 Follow us on Instagram",
+    magazineLink: "📖 Trade magazine (Italy): Gelato Artigianale",
+    navRivista: "📖 Magazine Gelato Artigianale",
     equipmentSiteLink: "🧊 Gelato equipment comparison — gelateriaattrezzature.com",
     equipmentSiteBadge: "(site under construction)",
     sisterDeSiteLink: "🇩🇪 German ice-cream ingredients comparison — eisdieleinfo.com",
@@ -2409,6 +2422,7 @@ const I18N = {
     navSpeciali: "🧪 Productos especiales",
     navScatole: "📦 Cajas para tartas",
     navPackaging: "🥤 Envases para helado",
+    featuredBadge: "⭐ Destacado",
     navGrossisti: "🚚 Mayoristas",
     navNewsletter: "📬 Newsletter",
     navGuida: "🎓 Guía",
@@ -2535,6 +2549,8 @@ const I18N = {
     newsletterText: "Regístrate para recibir actualizaciones sobre nuevos productos, proveedores y novedades del mundo del helado artesanal.",
     contatti: "✉️ Contacto:",
     instagramLink: "📷 Síguenos en Instagram",
+    magazineLink: "📖 Revista del sector (Italia): Gelato Artigianale",
+    navRivista: "📖 Revista Gelato Artigianale",
     equipmentSiteLink: "🧊 Comparativa de equipamiento para heladería — gelateriaattrezzature.com",
     equipmentSiteBadge: "(sitio en construcción)",
     sisterDeSiteLink: "🇩🇪 Comparador de ingredientes para heladería (alemán) — eisdieleinfo.com",
@@ -3008,15 +3024,18 @@ function aziendaColorFor(azienda){
   const hue = hash % 360;
   return `hsl(${hue}, 55%, 34%)`;
 }
+const FEATURED_AZIENDE = ["Aromitalia", "Elenka", "Fructital", "Disìo"];
+function aziendaIsFeatured(azienda){ return FEATURED_AZIENDE.indexOf(azienda) >= 0; }
 function aziendaCellHtml(azienda){
+  const featBadge = aziendaIsFeatured(azienda) ? `<span class="azienda-featured-badge">${t('featuredBadge')}</span>` : '';
   const url = AZIENDA_WEBSITES[azienda];
   const color = aziendaColorFor(azienda);
   const avatarImg = `<span class="azienda-avatar" style="background:${color}"></span>`;
   const videoIcon = videoIconHtml(azienda);
   if(url){
-    return `${avatarImg}<a class="azienda-name azienda-link" style="color:${color}" href="${escAttr(url)}" target="_blank" rel="noopener" title="${t('doppioClicSito')}">${azienda}</a>${videoIcon}`;
+    return `${avatarImg}<a class="azienda-name azienda-link" style="color:${color}" href="${escAttr(url)}" target="_blank" rel="noopener" title="${t('doppioClicSito')}">${azienda}</a>${featBadge}${videoIcon}`;
   }
-  return `${avatarImg}<span class="azienda-name" style="color:${color}">${azienda}</span>${videoIcon}`;
+  return `${avatarImg}<span class="azienda-name" style="color:${color}">${azienda}</span>${featBadge}${videoIcon}`;
 }
 
 const SCHEMA = RAW.schema; // { categoria: [campo1, campo2, ...] }
@@ -3281,7 +3300,7 @@ function renderArchiveTable(){
       return `<td>${val || '<span class="empty-val">—</span>'}</td>`;
     }).join('');
     const campioneCell = `<button type="button" class="btn small btn-campione" data-azienda="${escAttr(e.azienda)}" data-prodotto="${escAttr(e.prodotto)}" data-categoria="${escAttr(e.categoria)}">ℹ️ ${t('btnRichiediCampione')}</button>`;
-    return `<tr>
+    return `<tr${aziendaIsFeatured(e.azienda) ? ' class="row-featured"' : ''}>
       <td>${aziendaCellHtml(e.azienda)}</td>
       <td>${catIconSvg(e.categoria)} ${e.categoria}</td>
       <td>${e.prodotto}</td>
