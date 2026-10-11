@@ -3027,7 +3027,7 @@ function aziendaColorFor(azienda){
 const FEATURED_AZIENDE = ["Aromitalia", "Elenka", "Fructital", "Disìo"];
 function aziendaIsFeatured(azienda){ return FEATURED_AZIENDE.indexOf(azienda) >= 0; }
 function aziendaCellHtml(azienda){
-  const featBadge = aziendaIsFeatured(azienda) ? `<span class="azienda-featured-badge">${t('featuredBadge')}</span>` : '';
+  const featBadge = '';
   const url = AZIENDA_WEBSITES[azienda];
   const color = aziendaColorFor(azienda);
   const avatarImg = `<span class="azienda-avatar" style="background:${color}"></span>`;

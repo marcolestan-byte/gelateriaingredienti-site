@@ -363,7 +363,7 @@ footer a{color:var(--brand);}
     results.innerHTML = vis.map(function(p){
       var f = Object.keys(p.fields||{}).map(function(k){ return '<div class="torte-field"><strong>'+esc(k)+':</strong> '+esc(p.fields[k])+'</div>'; }).join('');
       var extra = (p.note ? '<div class="torte-field"><strong>'+esc(L.note)+':</strong> '+esc(p.note)+'</div>' : '') + (p.fonte ? '<div class="torte-fonte"><a href="'+esc(p.fonte)+'" target="_blank" rel="noopener noreferrer">'+esc(L.fonte)+' ↗</a></div>' : '');
-      return '<div class="torte-result-card'+(isFeat(p.azienda)?' featured':'')+'"><div class="torte-result-head"><span class="torte-azienda">'+esc(p.azienda)+'</span>'+(isFeat(p.azienda)?'<span class="feat-badge">'+FEAT_LABEL+'</span>':'')+'<span class="torte-cat-tag">'+esc(p.categoria)+'</span></div><div class="torte-prodotto">'+esc(p.prodotto)+'</div>'+f+extra+'</div>';
+      return '<div class="torte-result-card'+(isFeat(p.azienda)?' featured':'')+'"><div class="torte-result-head"><span class="torte-azienda">'+esc(p.azienda)+'</span>'+'<span class="torte-cat-tag">'+esc(p.categoria)+'</span></div><div class="torte-prodotto">'+esc(p.prodotto)+'</div>'+f+extra+'</div>';
     }).join('') || '<p class="hint">'+esc(L.none)+'</p>';
     if(list.length > shown) results.innerHTML += '<div style="grid-column:1/-1"><button type="button" class="btn-lite" id="pgMore">'+esc(L.more)+' ('+(list.length - shown)+')</button></div>';
     var mb = document.getElementById('pgMore'); if(mb) mb.addEventListener('click', function(){ shown += 24; render(); });
