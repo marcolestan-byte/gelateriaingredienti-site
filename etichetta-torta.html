@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etichetta per torte gelato da stampare (PDF gratis)</title>
+<meta name="description" content="Crea e stampa gratis l'etichetta per le tue torte gelato: nome, ingredienti, allergeni, conservazione e produttore. Salvala in PDF o stampala su foglio A4.">
+<link rel="canonical" href="https://gelateriaingredienti.com/etichetta-torta.html">
+<meta property="og:title" content="Etichetta per torte gelato da stampare (PDF gratis)">
+<meta property="og:description" content="Crea e stampa gratis l'etichetta per le tue torte gelato: nome, ingredienti, allergeni, conservazione e produttore. Salvala in PDF o stampala su foglio A4.">
+<meta property="og:url" content="https://gelateriaingredienti.com/etichetta-torta.html">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --ink:#2b2320; --ink-soft:#6b5f58; --paper:#fffaf3; --line:#e7dccd;
+  --brand:#c0392b; --brand-soft:#f7e9df; --ok:#2e7d32; --warn:#b8860b;
+}
+*{box-sizing:border-box;}
+body{margin:0; font-family:"Segoe UI", system-ui, -apple-system, sans-serif; background:var(--paper); color:var(--ink); line-height:1.55;}
+.wrap{max-width:900px; margin:0 auto; padding:20px 16px 60px;}
+.top-link{display:inline-block; margin-bottom:18px; color:var(--brand); text-decoration:none; font-weight:600; font-size:0.95rem;}
+.top-link:hover{text-decoration:underline;}
+h1{font-size:1.5rem; margin:0 0 10px;}
+h2{font-size:1.15rem; margin:0 0 12px;}
+.lead{margin:0 0 18px; color:var(--ink-soft);}
+.card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; box-shadow:0 2px 10px rgba(0,0,0,0.04); margin-bottom:20px;}
+.hint{font-size:0.82rem; color:var(--ink-soft); margin-top:6px; line-height:1.45;}
+p{margin:0 0 12px;} a{color:var(--brand);}
+.grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.grid .full{grid-column:1/-1;}
+@media (max-width:640px){ .grid{grid-template-columns:1fr;} .card{padding:16px;} }
+.field label.lbl{display:block; font-weight:700; font-size:0.88rem; margin-bottom:4px;}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=number],select,textarea{
+  width:100%; font:inherit; font-size:0.95rem; padding:9px 11px; border:1px solid var(--line); border-radius:9px; background:#fffdfa; color:var(--ink);}
+textarea{min-height:92px; resize:vertical;}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--brand); outline-offset:1px;}
+.chk-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:6px 14px; margin-top:4px;}
+label.chk{display:flex; gap:8px; align-items:flex-start; font-size:0.9rem; cursor:pointer;}
+label.chk input{margin-top:4px; flex:none;}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; background:var(--brand); color:#fff; border:0; border-radius:10px; padding:11px 20px; font:inherit; font-weight:700; font-size:0.97rem; cursor:pointer;}
+.btn:hover{filter:brightness(1.08);}
+.btn:disabled{opacity:.55; cursor:not-allowed;}
+.btn.ghost{background:var(--brand-soft); color:var(--brand);}
+.msg{font-size:0.88rem; margin-top:10px; min-height:1.2em;}
+.msg.err{color:var(--brand);} .msg.ok{color:var(--ok);} .msg.warn{color:var(--warn);}
+.or{text-align:center; font-size:0.85rem; color:var(--ink-soft); align-self:center;}
+.gate-grid{display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:end;}
+@media (max-width:640px){ .gate-grid{grid-template-columns:1fr;} .or{text-align:left;} }
+.preview-box{background:#f3ece2; border:1px solid var(--line); border-radius:12px; padding:18px; overflow-x:auto; text-align:center;}
+
+/* ===== Etichetta ===== */
+.label{display:inline-block; text-align:left; width:105mm; height:140mm; border:1.5px dashed #8a7f77; padding:6mm; background:#fff; color:#000; overflow:hidden; font-family:Arial, Helvetica, sans-serif; position:relative; vertical-align:top;}
+.label.h70{height:70mm; padding:4mm 5mm;}
+.label .lb-name{font-size:17pt; font-weight:800; line-height:1.15; margin:0 0 3mm; padding-bottom:2mm; border-bottom:1.2px solid #000; word-break:break-word;}
+.label.h70 .lb-name{font-size:12.5pt; margin-bottom:1.6mm; padding-bottom:1.2mm;}
+.label .lb-sec{font-size:10.5pt; line-height:1.3; margin:0 0 2.2mm; word-break:break-word;}
+.label.h70 .lb-sec{font-size:6.6pt; line-height:1.18; margin-bottom:1mm;}
+.label .lb-sec b.t{text-transform:uppercase; font-size:.78em; letter-spacing:.04em; display:block; color:#333;}
+.label .lb-all{font-weight:800; text-transform:uppercase;}
+.label .lb-ph{color:#aaa; font-style:italic;}
+.label .lb-foot{position:absolute; left:6mm; right:6mm; bottom:5mm; font-size:8.6pt; line-height:1.3; border-top:1px solid #000; padding-top:2mm;}
+.label.h70 .lb-foot{left:5mm; right:5mm; bottom:3mm; font-size:6.2pt; padding-top:1mm;}
+.label .lb-foot .row{display:flex; flex-wrap:wrap; gap:0 4mm;}
+.label .lb-foot .row span b{font-weight:700;}
+.label .lb-body{max-height:calc(100% - 0mm);}
+#printArea{display:none;}
+
+/* ===== Footer, modal ===== */
+.related-links{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;}
+.related-links a{display:inline-block; background:var(--brand-soft); color:var(--brand); border-radius:8px; padding:6px 12px; font-size:0.82rem; font-weight:700; text-decoration:none;}
+.related-links a:hover{text-decoration:underline;}
+footer{font-size:0.8rem; color:var(--ink-soft); text-align:center; margin-top:30px;}
+footer a{color:var(--brand);}
+.modal-overlay{display:none; position:fixed; inset:0; background:rgba(58,46,34,.55); z-index:2000; align-items:center; justify-content:center; padding:16px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#fff; border-radius:14px; padding:24px; max-width:600px; width:100%; max-height:90vh; overflow-y:auto; position:relative; font-size:0.9rem;}
+.modal-box h2{margin:0 30px 12px 0;}
+.modal-close{position:absolute; top:12px; right:12px; background:var(--brand-soft); border:1px solid var(--line); width:30px; height:30px; border-radius:50%; font-size:1rem; line-height:1; cursor:pointer; color:var(--ink-soft);}
+[hidden]{display:none !important;}
+
+@page{ size:A4; margin:0; }
+@media print{
+  html,body{background:#fff !important;}
+  .wrap,.modal-overlay{display:none !important;}
+  #printArea{display:block;}
+  .sheet{width:210mm; height:296.5mm; padding-top:8.2mm; page-break-after:always; break-after:page; display:grid; grid-template-columns:105mm 105mm; align-content:start; overflow:hidden;}
+  .sheet:last-child{page-break-after:auto; break-after:auto;}
+  .sheet.l4{grid-auto-rows:140mm;} .sheet.l8{grid-auto-rows:70mm;}
+  .sheet .label{display:block; width:105mm; border:1px dashed #666; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .sheet .label.h70{height:70mm;} .sheet .label{height:140mm;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="top-link" href="/">← Torna al confronto prodotti</a>
+  <h1>🏷️ Etichetta per torte gelato</h1>
+  <p class="lead">Compila i campi, controlla l'anteprima e stampa le etichette (oppure salvale in PDF dal menu di stampa). Prima di stampare ti chiediamo la tua email o il tuo telefono.</p>
+
+  <section class="card">
+    <h2>1. Compila l'etichetta</h2>
+    <form id="labelForm" onsubmit="return false" autocomplete="off">
+      <div class="grid">
+        <div class="field full"><label class="lbl" for="f_name">Nome della torta *</label><input type="text" id="f_name" maxlength="90" placeholder="Es. Torta gelato pistacchio e nocciola"></div>
+        <div class="field full"><label class="lbl" for="f_ing">Ingredienti *</label><textarea id="f_ing" maxlength="900" placeholder="In ordine decrescente di peso. Es. latte, panna, zucchero, *pistacchi* (12%), …"></textarea><div class="hint">Metti tra asterischi le parole da evidenziare in grassetto, per esempio *latte*, *uova*, *pistacchi*.</div></div>
+        <div class="field full"><span class="lbl" style="display:block;font-weight:700;font-size:.88rem;">Allergeni presenti (i 14 dell'elenco europeo)</span>
+          <div class="chk-grid" id="allGrid">
+<label class="chk"><input type="checkbox" name="all" value="0"> Cereali contenenti glutine</label>
+<label class="chk"><input type="checkbox" name="all" value="1"> Crostacei</label>
+<label class="chk"><input type="checkbox" name="all" value="2"> Uova</label>
+<label class="chk"><input type="checkbox" name="all" value="3"> Pesce</label>
+<label class="chk"><input type="checkbox" name="all" value="4"> Arachidi</label>
+<label class="chk"><input type="checkbox" name="all" value="5"> Soia</label>
+<label class="chk"><input type="checkbox" name="all" value="6"> Latte</label>
+<label class="chk"><input type="checkbox" name="all" value="7"> Frutta a guscio</label>
+<label class="chk"><input type="checkbox" name="all" value="8"> Sedano</label>
+<label class="chk"><input type="checkbox" name="all" value="9"> Senape</label>
+<label class="chk"><input type="checkbox" name="all" value="10"> Sesamo</label>
+<label class="chk"><input type="checkbox" name="all" value="11"> Anidride solforosa e solfiti</label>
+<label class="chk"><input type="checkbox" name="all" value="12"> Lupini</label>
+<label class="chk"><input type="checkbox" name="all" value="13"> Molluschi</label>
+          </div>
+        </div>
+        <div class="field full"><label class="lbl" for="f_traces">Può contenere tracce di (facoltativo)</label><input type="text" id="f_traces" maxlength="120" placeholder="Es. frutta a guscio, uova"></div>
+        <div class="field"><label class="lbl" for="f_stor">Conservazione</label><input type="text" id="f_stor" maxlength="80" value="Conservare a −18 °C"></div>
+        <div class="field"><label class="lbl" for="f_net">Peso netto</label><input type="text" id="f_net" maxlength="30" placeholder="Es. 1,2 kg"></div>
+        <div class="field"><label class="lbl" for="f_pd">Prodotta il</label><input type="date" id="f_pd"></div>
+        <div class="field"><label class="lbl" for="f_ed">Da consumare entro</label><input type="date" id="f_ed"></div>
+        <div class="field"><label class="lbl" for="f_lot">Lotto (facoltativo)</label><input type="text" id="f_lot" maxlength="30"></div>
+        <div class="field"><label class="lbl" for="f_prod">Produttore (nome e indirizzo) *</label><input type="text" id="f_prod" maxlength="140" placeholder="Es. Gelateria Rossi, Via Roma 1, 00100 Roma"></div>
+        <div class="field"><label class="lbl" for="f_layout">Formato di stampa</label><select id="f_layout">
+<option value="0">4 etichette per foglio A4 (105 × 140 mm)</option>
+<option value="1">8 etichette per foglio A4 (105 × 70 mm)</option>
+        </select></div>
+        <div class="field"><label class="lbl" for="f_copies">Numero di etichette</label><input type="number" id="f_copies" min="1" max="200" value="4"></div>
+      </div>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Anteprima</h2>
+    <div class="preview-box"><div id="previewMount"></div></div>
+    <div class="msg warn" id="previewWarn" role="status"></div>
+    <div class="hint">Anteprima di una etichetta. Nella stampa le etichette hanno una cornice tratteggiata che aiuta a ritagliarle.</div>
+  </section>
+
+  <section class="card" id="gateCard">
+    <h2>2. Lascia email o telefono per stampare</h2>
+    <p>Per stampare o salvare il PDF scrivi la tua email oppure il tuo telefono (basta uno dei due). Lo strumento resta gratuito.</p>
+    <form id="gateForm" name="etichetta-torta" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="etichetta-torta">
+      <input type="hidden" name="lingua" value="it">
+      <p hidden><label>Non compilare: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="gate-grid">
+        <div class="field"><label class="lbl" for="g_email">Email</label><input type="email" id="g_email" name="email" autocomplete="email" placeholder="nome@esempio.it"></div>
+        <div class="or">oppure</div>
+        <div class="field"><label class="lbl" for="g_tel">Telefono</label><input type="tel" id="g_tel" name="telefono" autocomplete="tel" placeholder="+39 …"></div>
+      </div>
+      <div style="margin-top:14px;">
+        <label class="chk"><input type="checkbox" id="g_priv" name="privacy" value="si" required> <span>Ho letto e accetto l'<a href="#" id="privacyLink">informativa privacy</a> (obbligatorio) *</span></label>
+        <label class="chk" style="margin-top:8px;"><input type="checkbox" name="novita" value="si"> <span>Voglio ricevere novità del portale (facoltativo)</span></label>
+      </div>
+      <div style="margin-top:14px;"><button type="submit" class="btn" id="gateBtn">Sblocca la stampa</button></div>
+      <div class="msg" id="gateMsg" role="status"></div>
+    </form>
+  </section>
+
+  <section class="card" id="printCard">
+    <button type="button" class="btn" id="printBtn" disabled>🖨️ Stampa / Salva PDF</button>
+    <div class="msg" id="printMsg" role="status">Prima inserisci email o telefono qui sopra.</div>
+    <div class="hint">Nella finestra di stampa scegli «Salva come PDF» come stampante per ottenere il file, oppure la tua stampante. Imposta margini «Nessuno» o «Predefiniti» e scala 100%.</div>
+  </section>
+
+  <section class="card">
+    <h2>Prima di usarla</h2>
+    <p class="hint" style="margin-top:0;font-size:.9rem;">Questo è un modello indicativo, non una consulenza legale. Le informazioni obbligatorie sull'etichetta dipendono dal tipo di vendita (sfusa, preimballata) e dalle regole del tuo Paese e del tuo Comune o ASL. Le informazioni sugli allergeni vanno sempre fornite al consumatore, anche per i prodotti non preimballati (Reg. UE 1169/2011). Verifica i contenuti con il tuo consulente alimentare.</p>
+  </section>
+
+  <section class="card">
+    <h2>Altre sezioni</h2>
+    <div class="related-links">
+<a href="/torte-gelato.html">🎂 Guida torte gelato</a>
+<a href="/scatole-torte.html">📦 Scatole torte</a>
+<a href="/decorazioni-torte.html">🎀 Decorazioni</a>
+<a href="/aziende.html">🏢 Aziende</a>
+    </div>
+  </section>
+
+  <footer>Confronta Prodotti per Gelateria — piattaforma indipendente, senza sponsorizzazioni. <a href="/">Torna alla home</a>.<span class="disclaimer" style="display:block;margin-top:6px;font-size:.9em;">Il portale riunisce in un’unica ricerca ciò di cui la gelateria ha bisogno, con link diretti alle aziende produttrici. Avviso: i dati contenuti in questo portale sono riportati solo a scopo di conoscenza. Il confronto è puramente teorico e si basa sui dati rilasciati dalle aziende o disponibili sul web. Non sono indicati costi né altri parametri economici.</span></footer>
+</div>
+
+<div id="printArea" aria-hidden="true"></div>
+
+<div class="modal-overlay" id="privOverlay" role="dialog" aria-modal="true" aria-labelledby="privTitle">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="privClose" aria-label="Chiudi">✕</button>
+    <h2 id="privTitle">🔒 Informativa sulla privacy</h2>
+    <p><strong>Titolare del trattamento:</strong> Marco Lestan, contattabile all'indirizzo <a href="mailto:marcolestan@gelateriaingredienti.com">marcolestan@gelateriaingredienti.com</a>.</p>
+<p><strong>Dati raccolti:</strong> l'indirizzo email o il numero di telefono (a tua scelta) che inserisci in questa pagina. I contenuti dell'etichetta (nome della torta, ingredienti, produttore) restano nel tuo browser e non vengono inviati.</p>
+<p><strong>Finalità:</strong> consentirti l'uso gratuito dello strumento di stampa e, solo se spunti la casella facoltativa, inviarti novità del portale.</p>
+<p><strong>Base giuridica:</strong> esecuzione del servizio richiesto (art. 6, par. 1, lett. b, GDPR) e, per le novità, il tuo consenso (art. 6, par. 1, lett. a, GDPR), che puoi revocare in ogni momento.</p>
+<p><strong>Destinatari e trasferimento dei dati:</strong> il modulo è gestito tecnicamente tramite Netlify, Inc., fornitore del servizio di hosting del sito, che agisce come responsabile del trattamento. Il trattamento può avvenire anche su server situati negli Stati Uniti, con garanzie adeguate.</p>
+<p><strong>Conservazione:</strong> l'email o il telefono è conservato finché utilizzi il servizio o fino alla tua richiesta di cancellazione.</p>
+<p><strong>Diritti dell'interessato:</strong> puoi richiedere in ogni momento accesso, rettifica, cancellazione o limitazione del trattamento scrivendo all'indirizzo sopra indicato, e hai diritto di proporre reclamo al Garante per la protezione dei dati personali.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var T = {"lb_ing": "Ingredienti", "lb_all": "Allergeni", "lb_traces": "Può contenere tracce di", "lb_stor": "Conservazione", "lb_net": "Peso netto", "lb_prod_date": "Prodotta il", "lb_exp": "Da consumare entro", "lb_lot": "Lotto", "lb_prod": "Produttore", "empty_name": "Nome della torta", "empty_ing": "Elenco ingredienti…", "warn_all": "Controlla gli allergeni: non ne hai selezionato nessuno.", "warn_over": "Il testo è troppo lungo per questo formato: scegli 4 etichette per foglio o accorcia gli ingredienti.", "need": "Compila almeno nome della torta, ingredienti e produttore.", "gate_sending": "Invio…", "gate_btn": "Sblocca la stampa", "gate_err": "Invio non riuscito, riprova tra poco.", "gate_contact": "Inserisci almeno un'email valida o un numero di telefono.", "gate_ok": "✔ Contatto ricevuto, grazie. Ora puoi stampare.", "allergens": ["Cereali contenenti glutine", "Crostacei", "Uova", "Pesce", "Arachidi", "Soia", "Latte", "Frutta a guscio", "Sedano", "Senape", "Sesamo", "Anidride solforosa e solfiti", "Lupini", "Molluschi"], "locale": "it-IT", "lang": "it"};
+  var $ = function(id){ return document.getElementById(id); };
+  var unlocked = false;
+  var KEY = 'etichetta_torta_ok';
+  try { if (sessionStorage.getItem(KEY) === '1') unlocked = true; } catch(e){}
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function bold(s){ return esc(s).replace(/\*([^*\n]+)\*/g, '<strong>$1</strong>'); }
+  function fmtDate(v){
+    if(!v) return '';
+    var p = v.split('-'); if(p.length !== 3) return v;
+    try { return new Date(+p[0], +p[1]-1, +p[2]).toLocaleDateString(T.locale, {day:'2-digit', month:'2-digit', year:'numeric'}); }
+    catch(e){ return p[2]+'/'+p[1]+'/'+p[0]; }
+  }
+  function data(){
+    var all = [];
+    var boxes = document.querySelectorAll('#allGrid input[type=checkbox]');
+    for (var i=0;i<boxes.length;i++) if (boxes[i].checked) all.push(T.allergens[i]);
+    return {
+      name: $('f_name').value.trim(), ing: $('f_ing').value.trim(), all: all,
+      traces: $('f_traces').value.trim(), stor: $('f_stor').value.trim(), net: $('f_net').value.trim(),
+      pd: fmtDate($('f_pd').value), ed: fmtDate($('f_ed').value), lot: $('f_lot').value.trim(),
+      prod: $('f_prod').value.trim(), layout: $('f_layout').value
+    };
+  }
+  function labelHTML(d, preview){
+    var h70 = d.layout === '1';
+    var h = '<div class="label' + (h70 ? ' h70' : '') + '">';
+    h += '<div class="lb-name">' + (d.name ? esc(d.name) : '<span class="lb-ph">' + esc(T.empty_name) + '</span>') + '</div>';
+    h += '<div class="lb-body">';
+    h += '<div class="lb-sec"><b class="t">' + esc(T.lb_ing) + '</b>' + (d.ing ? bold(d.ing) : '<span class="lb-ph">' + esc(T.empty_ing) + '</span>') + '</div>';
+    if (d.all.length) h += '<div class="lb-sec"><b class="t">' + esc(T.lb_all) + '</b><span class="lb-all">' + esc(d.all.join(', ')) + '</span></div>';
+    if (d.traces) h += '<div class="lb-sec"><b class="t">' + esc(T.lb_traces) + '</b>' + esc(d.traces) + '</div>';
+    if (d.stor) h += '<div class="lb-sec"><b class="t">' + esc(T.lb_stor) + '</b>' + esc(d.stor) + '</div>';
+    h += '</div>';
+    h += '<div class="lb-foot"><div class="row">';
+    if (d.net) h += '<span><b>' + esc(T.lb_net) + ':</b> ' + esc(d.net) + '</span>';
+    if (d.pd) h += '<span><b>' + esc(T.lb_prod_date) + ':</b> ' + esc(d.pd) + '</span>';
+    if (d.ed) h += '<span><b>' + esc(T.lb_exp) + ':</b> ' + esc(d.ed) + '</span>';
+    if (d.lot) h += '<span><b>' + esc(T.lb_lot) + ':</b> ' + esc(d.lot) + '</span>';
+    h += '</div>';
+    if (d.prod) h += '<div><b>' + esc(T.lb_prod) + ':</b> ' + esc(d.prod) + '</div>';
+    h += '</div></div>';
+    return h;
+  }
+  function overflows(){
+    var lab = document.querySelector('#previewMount .label');
+    if (!lab) return false;
+    var body = lab.querySelector('.lb-body'), foot = lab.querySelector('.lb-foot'), name = lab.querySelector('.lb-name');
+    var bottom = body.getBoundingClientRect().bottom, top = foot.getBoundingClientRect().top;
+    return bottom > top + 1 || lab.scrollHeight > lab.clientHeight + 1;
+  }
+  function renderPreview(){
+    var d = data();
+    $('previewMount').innerHTML = labelHTML(d, true);
+    var w = [];
+    if (d.all.length === 0) w.push(T.warn_all);
+    if (overflows()) w.push(T.warn_over);
+    $('previewWarn').textContent = w.join(' ');
+  }
+  var inputs = document.querySelectorAll('#labelForm input, #labelForm textarea, #labelForm select');
+  for (var i=0;i<inputs.length;i++){ inputs[i].addEventListener('input', renderPreview); inputs[i].addEventListener('change', renderPreview); }
+
+  function setUnlocked(){
+    unlocked = true;
+    try { sessionStorage.setItem(KEY, '1'); } catch(e){}
+    $('printBtn').disabled = false;
+    $('printMsg').textContent = '';
+    $('gateCard').style.display = 'none';
+  }
+  if (unlocked) setUnlocked();
+
+  // Gate: email OR phone (at least one)
+  function validContact(){
+    var em = $('g_email').value.trim(), tel = $('g_tel').value.trim();
+    var okMail = em && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em);
+    var digits = tel.replace(/\D/g, '');
+    var okTel = tel && /^[+\d][\d\s().\/-]*$/.test(tel) && digits.length >= 6 && digits.length <= 16;
+    if (em && !okMail && !okTel) return false;
+    if (tel && !okTel && !okMail) return false;
+    return !!(okMail || okTel);
+  }
+  $('gateForm').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var msg = $('gateMsg'); msg.className = 'msg'; msg.textContent = '';
+    if (!validContact()){ msg.className = 'msg err'; msg.textContent = T.gate_contact; return; }
+    if (!$('g_priv').checked){ $('g_priv').focus(); $('g_priv').reportValidity && $('g_priv').reportValidity(); return; }
+    var btn = $('gateBtn'); btn.disabled = true; btn.textContent = T.gate_sending;
+    var body = new URLSearchParams(new FormData($('gateForm'))).toString();
+    fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: body })
+      .then(function(r){ if (!r.ok) throw new Error('http ' + r.status); msg.className = 'msg ok'; msg.textContent = T.gate_ok; setUnlocked(); })
+      .catch(function(){ msg.className = 'msg err'; msg.textContent = T.gate_err; })
+      .then(function(){ btn.disabled = false; btn.textContent = T.gate_btn; });
+  });
+
+  // Print
+  function buildSheets(){
+    var d = data();
+    var per = d.layout === '1' ? 8 : 4;
+    var n = Math.max(1, Math.min(200, parseInt($('f_copies').value, 10) || per));
+    var sheets = Math.ceil(n / per), lab = labelHTML(d, false), out = '';
+    for (var s=0; s<sheets; s++){
+      out += '<div class="sheet ' + (per === 8 ? 'l8' : 'l4') + '">';
+      for (var k=0; k<per; k++){ if (s*per + k < n) out += lab; else out += '<div></div>'; }
+      out += '</div>';
+    }
+    $('printArea').innerHTML = out;
+  }
+  $('printBtn').addEventListener('click', function(){
+    if (!unlocked) return;
+    var d = data(), m = $('printMsg');
+    if (!d.name || !d.ing || !d.prod){ m.className = 'msg err'; m.textContent = T.need; return; }
+    m.className = 'msg'; m.textContent = '';
+    buildSheets();
+    window.print();
+  });
+
+  // Privacy modal
+  var ov = $('privOverlay');
+  document.addEventListener('click', function(e){
+    if (e.target && e.target.id === 'privacyLink'){ e.preventDefault(); ov.classList.add('open'); }
+  });
+  $('privClose').addEventListener('click', function(){ ov.classList.remove('open'); });
+  ov.addEventListener('click', function(e){ if (e.target === ov) ov.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') ov.classList.remove('open'); });
+
+  renderPreview();
+})();
+</script>
+</body>
+</html>
