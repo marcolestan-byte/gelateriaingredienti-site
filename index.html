@@ -399,6 +399,21 @@
   .tar-head{ overflow:hidden; }
   .tar-head-img{ float:right; width:130px; max-width:34%; height:auto; border-radius:9px; border:1px solid var(--line); margin:0 0 10px 14px; }
   .rc-img{ width:100%; max-width:640px; height:auto; border-radius:12px; border:1px solid var(--line); display:block; margin:0 0 16px; }
+  /* banner animato (solo transform/opacity; si ferma con "riduci movimento") */
+  .rc-anim{ width:100%; max-width:640px; border-radius:12px; border:1px solid var(--line); overflow:hidden; margin:0 0 16px; }
+  .rc-pan{ position:relative; transform-origin:62% 45%; animation:rcZoom 18s ease-in-out infinite alternate; }
+  .rc-anim .rc-img{ border:0; border-radius:0; margin:0; max-width:none; }
+  .rc-glare{ position:absolute; inset:0; clip-path:polygon(9.1% 0.6%,54.4% 8.2%,54.4% 53%,8.4% 59.1%); pointer-events:none; overflow:hidden; }
+  .rc-glare::after{ content:""; position:absolute; top:-10%; bottom:-10%; left:-40%; width:30%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent); transform:skewX(-14deg); animation:rcGlare 7s ease-in-out infinite; }
+  .rc-btn{ position:absolute; left:36.5%; top:48%; width:7.4%; height:5.1%; border-radius:20px; pointer-events:none; animation:rcBtn 2.6s ease-out infinite; }
+  .rc-lcd{ position:absolute; border-radius:3px; background:rgba(130,205,255,.55); box-shadow:0 0 6px 2px rgba(110,195,255,.55); pointer-events:none; animation:rcLcd 3.2s ease-in-out infinite; }
+  .rc-lcd.a{ left:30.5%; top:76.3%; width:4.7%; height:3.5%; }
+  .rc-lcd.b{ left:63.8%; top:61%; width:2.3%; height:3.1%; animation-delay:1.4s; }
+  @keyframes rcZoom{ from{ transform:scale(1) } to{ transform:scale(1.06) } }
+  @keyframes rcGlare{ 0%,55%{ left:-40% } 100%{ left:120% } }
+  @keyframes rcBtn{ 0%{ box-shadow:0 0 0 0 rgba(201,160,70,.65) } 70%,100%{ box-shadow:0 0 0 12px rgba(201,160,70,0) } }
+  @keyframes rcLcd{ 0%,100%{ opacity:0 } 50%{ opacity:.8 } }
+  @media (prefers-reduced-motion:reduce){ .rc-pan,.rc-glare::after,.rc-btn,.rc-lcd{ animation:none !important } .rc-glare{ display:none } }
   .result-panel{ border-radius:12px; padding:16px; margin-top:6px; border:1.5px solid var(--line); background:var(--cream); }
   .result-panel.ok{ border-color: var(--pistachio); background:#EEF3E5; }
   .result-panel.low{ border-color: var(--amarena); background:#FBEAE7; }
@@ -668,7 +683,10 @@
 
   <!-- OTTIMIZZA LA TUA RICETTA GRATIS -->
   <section class="card" id="ottimizzaRicettaCard">
-    <img class="rc-img" src="ottimizza-ricetta-banner.jpg" alt="Scrivici la marca e il tipo di base o neutro che usi: ti aiutiamo gratuitamente a ottimizzare la tua ricetta con un consiglio su misura">
+    <div class="rc-anim"><div class="rc-pan">
+      <img class="rc-img" src="ottimizza-ricetta-banner.jpg" alt="Scrivici la marca e il tipo di base o neutro che usi: ti aiutiamo gratuitamente a ottimizzare la tua ricetta con un consiglio su misura">
+      <span class="rc-glare" aria-hidden="true"></span><span class="rc-btn" aria-hidden="true"></span><span class="rc-lcd a" aria-hidden="true"></span><span class="rc-lcd b" aria-hidden="true"></span>
+    </div></div>
     <h2 data-i18n="rcTitle">🎯 Ottimizziamo la tua ricetta gratis</h2>
     <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:-6px;" data-i18n="rcIntro">
       Scrivici quale base usi (marca e tipo) e ti aiutiamo a ottimizzare la ricetta per il tuo prodotto — senza nessun costo. Se vuoi, indicaci anche quali altri ingredienti usi: ci aiuta a darti un consiglio più preciso, ma non è obbligatorio — per noi conta soprattutto sapere la base.
@@ -3030,7 +3048,7 @@ function aziendaColorFor(azienda){
   const hue = hash % 360;
   return `hsl(${hue}, 55%, 34%)`;
 }
-const FEATURED_AZIENDE = ["Aromitalia", "Bechtolina", "Elenka", "Fructital", "Disìo", "Comprital", "Agrimontana", "Presti", "Leagel", "Gran Roma"];
+const FEATURED_AZIENDE = ["Aromitalia", "Bechtolina", "Elenka", "Fructital", "Disìo", "Comprital"];
 function aziendaIsFeatured(azienda){ return FEATURED_AZIENDE.indexOf(azienda) >= 0; }
 function aziendaCellHtml(azienda){
   const featBadge = '';
