@@ -530,7 +530,6 @@
     <a class="nav-ricette-gelato" href="/ricette-gelato.html" data-i18n="navRicetteGelato">🍨 Ricette gelato</a>
   </div>
   <div class="nav-secondary">
-    <a class="nav-documenti" href="#documentiCard" onclick="openExtraToolsIfNeeded('documentiCard')" data-i18n="navDocumenti">🧼 Igiene e pulizia</a>
     <a class='nav-chisono' data-i18n='navChiSiamo' href='/chi-sono.html'>👤 Chi sono</a>
     <a class='nav-cat' href='/basi-latte.html'>🥛 Basi latte</a>
     <a class='nav-cat' href='/basi-frutta.html'>🍓 Basi frutta</a>
@@ -872,127 +871,7 @@
 
   </section>
 
-  <!-- DOCUMENTI UTILI -->
-  <section class="card" id="documentiCard">
-    <h2 data-i18n="docTitle">📄 Regole di igiene per la produzione di gelato</h2>
-    <p class="hint" style="margin-top:0;" data-i18n="docHint">Regole per la prevenzione dei batteri nella produzione di gelato artigianale — disponibile in italiano e in tedesco.</p>
-    <div class="actions-row">
-      <button class="btn outline" id="btnDocIT" onclick="toggleDocPanel('it')">📄 Apri in italiano</button>
-      <button class="btn outline" id="btnDocDE" onclick="toggleDocPanel('de')">📄 Auf Deutsch öffnen</button>
-    </div>
 
-    <div class="doc-panel" id="docPanelIT">
-      <h3>1. Utilizzare materie prime sicure</h3>
-      <ul>
-        <li>Acquistare latte, panna, uova e altri ingredienti solo da fornitori certificati.</li>
-        <li>Controllare regolarmente le date di scadenza e le condizioni di conservazione.</li>
-        <li>Non utilizzare ingredienti deteriorati o confezioni danneggiate.</li>
-      </ul>
-      <h3>2. Corretta pastorizzazione della miscela</h3>
-      <ul>
-        <li>Rispettare i tempi e le temperature di pastorizzazione prescritti.</li>
-        <li>La pastorizzazione riduce notevolmente la carica batterica ed è uno dei passaggi più importanti.</li>
-      </ul>
-      <h3>3. Raffreddamento rapido</h3>
-      <ul>
-        <li>Raffreddare rapidamente la miscela a circa 4 °C dopo la pastorizzazione.</li>
-        <li>Evitare che il prodotto rimanga a lungo nella fascia di temperatura tra 5 °C e 60 °C.</li>
-      </ul>
-      <h3>4. Rispettare la catena del freddo</h3>
-      <ul>
-        <li>Conservare sempre le miscele e il gelato finito alle temperature prescritte.</li>
-        <li>Controllare e documentare regolarmente le temperature.</li>
-      </ul>
-      <h3>5. Igiene personale del personale</h3>
-      <ul>
-        <li>Lavarsi le mani regolarmente e accuratamente.</li>
-        <li>Indossare abiti da lavoro puliti e copricapo.</li>
-        <li>Il personale malato non deve lavorare a contatto con gli alimenti.</li>
-      </ul>
-      <h3>6. Pulizia e disinfezione delle attrezzature</h3>
-      <ul>
-        <li>Pulire e disinfettare quotidianamente le attrezzature.</li>
-        <li>Rispettare i piani di pulizia HACCP.</li>
-      </ul>
-      <h3>7. Evitare la contaminazione crociata</h3>
-      <ul>
-        <li>Tenere separati gli ingredienti crudi dai prodotti pronti al consumo.</li>
-        <li>Utilizzare utensili separati.</li>
-        <li>Conservare separatamente gli allergeni.</li>
-      </ul>
-      <h3>8. Controllare la qualità dell'acqua</h3>
-      <ul>
-        <li>Utilizzare esclusivamente acqua potabile.</li>
-        <li>Effettuare la manutenzione regolare di tubazioni e filtri.</li>
-      </ul>
-      <h3>9. Effettuare controlli microbiologici</h3>
-      <ul>
-        <li>Analisi di laboratorio periodiche su gelato, superfici, attrezzature e acqua.</li>
-      </ul>
-      <h3>10. Applicare il sistema HACCP</h3>
-      <ul>
-        <li>Monitorare i punti critici di controllo.</li>
-        <li>Documentare temperature, pulizie e controlli.</li>
-        <li>Formare regolarmente il personale.</li>
-      </ul>
-    </div>
-
-    <div class="doc-panel" id="docPanelDE">
-      <h3>1. Sichere Rohstoffe verwenden</h3>
-      <ul>
-        <li>Milch, Sahne, Eier und andere Zutaten nur von zertifizierten Lieferanten beziehen.</li>
-        <li>Verfallsdaten und Lagerbedingungen regelmäßig kontrollieren.</li>
-        <li>Keine verdorbenen Zutaten oder beschädigten Verpackungen verwenden.</li>
-      </ul>
-      <h3>2. Korrekte Pasteurisierung der Eismischung</h3>
-      <ul>
-        <li>Die vorgeschriebenen Pasteurisierungszeiten und -temperaturen einhalten.</li>
-        <li>Die Pasteurisierung reduziert die Keimbelastung erheblich und ist einer der wichtigsten Schritte.</li>
-      </ul>
-      <h3>3. Schnelles Abkühlen</h3>
-      <ul>
-        <li>Die Mischung nach der Pasteurisierung schnell auf etwa 4 °C herunterkühlen.</li>
-        <li>Vermeiden, dass das Produkt längere Zeit im Temperaturbereich zwischen 5 °C und 60 °C bleibt.</li>
-      </ul>
-      <h3>4. Kühlkette einhalten</h3>
-      <ul>
-        <li>Eismischungen und fertiges Speiseeis stets bei den vorgeschriebenen Temperaturen lagern.</li>
-        <li>Temperaturen regelmäßig kontrollieren und dokumentieren.</li>
-      </ul>
-      <h3>5. Persönliche Hygiene des Personals</h3>
-      <ul>
-        <li>Hände regelmäßig und gründlich waschen.</li>
-        <li>Saubere Arbeitskleidung und Kopfbedeckung tragen.</li>
-        <li>Erkrankte Mitarbeiter dürfen nicht mit Lebensmitteln arbeiten.</li>
-      </ul>
-      <h3>6. Reinigung und Desinfektion der Geräte</h3>
-      <ul>
-        <li>Geräte täglich reinigen und desinfizieren.</li>
-        <li>HACCP-Reinigungspläne einhalten.</li>
-      </ul>
-      <h3>7. Kreuzkontamination vermeiden</h3>
-      <ul>
-        <li>Rohe Zutaten von verzehrfertigen Produkten getrennt halten.</li>
-        <li>Separate Utensilien verwenden.</li>
-        <li>Allergene getrennt lagern.</li>
-      </ul>
-      <h3>8. Wasserqualität kontrollieren</h3>
-      <ul>
-        <li>Ausschließlich Trinkwasser verwenden.</li>
-        <li>Leitungen und Filter regelmäßig warten.</li>
-      </ul>
-      <h3>9. Mikrobiologische Kontrollen durchführen</h3>
-      <ul>
-        <li>Regelmäßige Laboruntersuchungen von Speiseeis, Oberflächen, Geräten und Wasser.</li>
-      </ul>
-      <h3>10. HACCP-System anwenden</h3>
-      <ul>
-        <li>Kritische Kontrollpunkte überwachen.</li>
-        <li>Temperaturen, Reinigungen und Kontrollen dokumentieren.</li>
-        <li>Mitarbeiter regelmäßig schulen.</li>
-      </ul>
-    </div>
-  </section>
 
   </div>
 
@@ -1240,7 +1119,7 @@ const I18N = {
     navProvaRicetta: "🍓 Prova ricetta",
     navRicetteGelato: "🍨 Ricette gelato",
     navArchivio: "📚 Archivio",
-    navDocumenti: "🧼 Igiene e pulizia",
+    navDocumenti: "📄 Documenti",
     navChiSiamo: "👤 Chi sono",
     navTorteGelato: "🎂 Torte gelato",
     navGhiaccioli: "🍧 Ghiaccioli",
@@ -1632,7 +1511,7 @@ const I18N = {
     navProvaRicetta: "🍓 Rezept testen",
     navRicetteGelato: "🍨 Eisrezepte",
     navArchivio: "📚 Archiv",
-    navDocumenti: "🧼 Hygiene und Reinigung",
+    navDocumenti: "📄 Dokumente",
     navChiSiamo: "👤 Über mich",
     navTorteGelato: "🎂 Eistorten",
     navGhiaccioli: "🍧 Eis am Stiel",
@@ -2023,7 +1902,7 @@ const I18N = {
     navProvaRicetta: "🍓 Try a recipe",
     navRicetteGelato: "🍨 Gelato recipes",
     navArchivio: "📚 Archive",
-    navDocumenti: "🧼 Hygiene and cleaning",
+    navDocumenti: "📄 Documents",
     navChiSiamo: "👤 About me",
     navTorteGelato: "🎂 Ice cream cakes",
     navGhiaccioli: "🍧 Ice pops",
@@ -2414,7 +2293,7 @@ const I18N = {
     navProvaRicetta: "🍓 Prueba tu receta",
     navRicetteGelato: "🍨 Recetas de gelato",
     navArchivio: "📚 Archivo",
-    navDocumenti: "🧼 Higiene y limpieza",
+    navDocumenti: "📄 Documentos",
     navChiSiamo: "👤 Sobre mí",
     navTorteGelato: "🎂 Tartas heladas",
     navGhiaccioli: "🍧 Helados de palo",

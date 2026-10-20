@@ -41,6 +41,16 @@ li{margin-bottom:6px;}
 .related-links a:hover{text-decoration:underline;}
 footer{font-size:0.8rem; color:var(--ink-soft); text-align:center; margin-top:30px;}
 footer a{color:var(--brand);}
+.actions-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; align-items:center;}
+.btn{display:inline-flex; align-items:center; gap:6px; border-radius:10px; font-weight:700; font-size:0.9rem; cursor:pointer; padding:10px 18px; font-family:inherit;}
+.btn.outline{background:transparent; color:var(--brand); border:1.5px solid var(--brand);}
+.btn.outline:hover{background:var(--brand-soft);}
+.doc-panel{display:none; margin-top:16px; background:#fffdfa; border-radius:12px; padding:16px 18px; border:1px solid var(--line);}
+.doc-panel.open{display:block;}
+.doc-panel h3{font-size:0.95rem; color:var(--brand); margin:14px 0 4px;}
+.doc-panel h3:first-child{margin-top:0;}
+.doc-panel ul{margin:4px 0 0; padding-left:20px;}
+.doc-panel li{font-size:0.85rem; line-height:1.5; margin-bottom:2px;}
 </style>
 </head>
 <body>
@@ -63,6 +73,143 @@ footer a{color:var(--brand);}
     <ul>
       <li><b>KRA Desinfektions-Reiniger</b> — Krä. Disinfettante-detergente concentrato per macchine per gelato soft e distributori automatici di panna; flacone da 1 litro con tappo dosatore. Il sito non indica il produttore. <a href="https://it.krae-shop.com/products/kra-desinfektions-reiniger-1-flasche" target="_blank" rel="noopener">🌐 krae-shop.com</a></li>
     </ul>
+  </section>
+
+  <section class="card">
+    <h2>Igiene in laboratorio: piccoli accorgimenti, poco costosi, per evitare batteri inutili</h2>
+    <p><small>12 settembre 2026</small></p>
+    <p>Non serve sempre attrezzatura professionale costosa per tenere sotto controllo l'igiene del banco e del laboratorio: alcuni accessori economici, reperibili in un qualsiasi negozio di bricolage (Bricoman, Leroy Merlin) o Baumarkt (Bauhaus, Hornbach, OBI), fanno una differenza concreta nel ridurre i punti in cui i batteri possono annidarsi.</p>
+    <ul>
+      <li><b>Spazzole e scovolini in silicone alimentare:</b> a differenza delle spugne, non trattengono umidità né residui organici tra le setole e si sanificano più facilmente — utili per pulire angoli di mantecatori, pescanti e ugelli dove si accumula residuo di miscela.</li>
+      <li><b>Panni in microfibra colorati per zona:</b> un colore per il banco vetrina, uno per i piani di lavoro, uno per i pavimenti evita di spargere per errore contaminazione da una zona "sporca" a una zona a contatto diretto con il prodotto — un sistema usato in molte cucine professionali che costa pochi euro.</li>
+      <li><b>Spruzzino dedicato per il sanificante, etichettato e mai riutilizzato per altri liquidi:</b> garantisce una diluizione costante del prodotto invece di versarlo a occhio, ed evita che tracce di detergenti diversi si mescolino.</li>
+      <li><b>Strisce reattive per il controllo della concentrazione del sanificante (le stesse usate per piscine o acqua potabile):</b> pochi centesimi l'una, permettono di verificare che la soluzione sia davvero efficace e non troppo diluita per l'uso quotidiano.</li>
+      <li><b>Tappetini antiscivolo drenanti davanti al mantecatore e al pozzetto:</b> oltre a prevenire cadute, evitano ristagni d'acqua sul pavimento — un ambiente umido e tiepido è tra i più favorevoli alla proliferazione batterica.</li>
+      <li><b>Bomboletta di aria compressa:</b> per asciugare rapidamente ugelli, valvole e parti smontabili difficili da raggiungere con un panno: l'umidità residua nei punti nascosti è spesso la causa di odori e contaminazioni che sembrano inspiegabili.</li>
+      <li><b>Spatole e utensili in silicone o plastica alimentare al posto del legno:</b> il legno è poroso e trattiene umidità e residui anche dopo il lavaggio, mentre silicone e plastiche alimentari si sanificano a fondo e si controllano visivamente più facilmente per eventuali danni.</li>
+    </ul>
+    <p>Nessuno di questi accessori sostituisce un piano di sanificazione strutturato (HACCP), ma un investimento di poche decine di euro in strumenti giusti riduce di molto le occasioni in cui la contaminazione nasce da un dettaglio pratico trascurato, non da una vera mancanza di attenzione.</p>
+  </section>
+
+    <section class="card" id="regole-igiene">
+    <h2>📄 Regole di igiene per la produzione di gelato</h2>
+    <p class="hint" style="margin-top:0;">Regole per la prevenzione dei batteri nella produzione di gelato artigianale — disponibile in italiano e in tedesco.</p>
+    <div class="actions-row">
+      <button class="btn outline" id="btnDocIT" onclick="toggleDocPanel('it')">📄 Apri in italiano</button>
+      <button class="btn outline" id="btnDocDE" onclick="toggleDocPanel('de')">📄 Auf Deutsch öffnen</button>
+    </div>
+
+    <div class="doc-panel" id="docPanelIT">
+      <h3>1. Utilizzare materie prime sicure</h3>
+      <ul>
+        <li>Acquistare latte, panna, uova e altri ingredienti solo da fornitori certificati.</li>
+        <li>Controllare regolarmente le date di scadenza e le condizioni di conservazione.</li>
+        <li>Non utilizzare ingredienti deteriorati o confezioni danneggiate.</li>
+      </ul>
+      <h3>2. Corretta pastorizzazione della miscela</h3>
+      <ul>
+        <li>Rispettare i tempi e le temperature di pastorizzazione prescritti.</li>
+        <li>La pastorizzazione riduce notevolmente la carica batterica ed è uno dei passaggi più importanti.</li>
+      </ul>
+      <h3>3. Raffreddamento rapido</h3>
+      <ul>
+        <li>Raffreddare rapidamente la miscela a circa 4 °C dopo la pastorizzazione.</li>
+        <li>Evitare che il prodotto rimanga a lungo nella fascia di temperatura tra 5 °C e 60 °C.</li>
+      </ul>
+      <h3>4. Rispettare la catena del freddo</h3>
+      <ul>
+        <li>Conservare sempre le miscele e il gelato finito alle temperature prescritte.</li>
+        <li>Controllare e documentare regolarmente le temperature.</li>
+      </ul>
+      <h3>5. Igiene personale del personale</h3>
+      <ul>
+        <li>Lavarsi le mani regolarmente e accuratamente.</li>
+        <li>Indossare abiti da lavoro puliti e copricapo.</li>
+        <li>Il personale malato non deve lavorare a contatto con gli alimenti.</li>
+      </ul>
+      <h3>6. Pulizia e disinfezione delle attrezzature</h3>
+      <ul>
+        <li>Pulire e disinfettare quotidianamente le attrezzature.</li>
+        <li>Rispettare i piani di pulizia HACCP.</li>
+      </ul>
+      <h3>7. Evitare la contaminazione crociata</h3>
+      <ul>
+        <li>Tenere separati gli ingredienti crudi dai prodotti pronti al consumo.</li>
+        <li>Utilizzare utensili separati.</li>
+        <li>Conservare separatamente gli allergeni.</li>
+      </ul>
+      <h3>8. Controllare la qualità dell'acqua</h3>
+      <ul>
+        <li>Utilizzare esclusivamente acqua potabile.</li>
+        <li>Effettuare la manutenzione regolare di tubazioni e filtri.</li>
+      </ul>
+      <h3>9. Effettuare controlli microbiologici</h3>
+      <ul>
+        <li>Analisi di laboratorio periodiche su gelato, superfici, attrezzature e acqua.</li>
+      </ul>
+      <h3>10. Applicare il sistema HACCP</h3>
+      <ul>
+        <li>Monitorare i punti critici di controllo.</li>
+        <li>Documentare temperature, pulizie e controlli.</li>
+        <li>Formare regolarmente il personale.</li>
+      </ul>
+    </div>
+
+    <div class="doc-panel" id="docPanelDE">
+      <h3>1. Sichere Rohstoffe verwenden</h3>
+      <ul>
+        <li>Milch, Sahne, Eier und andere Zutaten nur von zertifizierten Lieferanten beziehen.</li>
+        <li>Verfallsdaten und Lagerbedingungen regelmäßig kontrollieren.</li>
+        <li>Keine verdorbenen Zutaten oder beschädigten Verpackungen verwenden.</li>
+      </ul>
+      <h3>2. Korrekte Pasteurisierung der Eismischung</h3>
+      <ul>
+        <li>Die vorgeschriebenen Pasteurisierungszeiten und -temperaturen einhalten.</li>
+        <li>Die Pasteurisierung reduziert die Keimbelastung erheblich und ist einer der wichtigsten Schritte.</li>
+      </ul>
+      <h3>3. Schnelles Abkühlen</h3>
+      <ul>
+        <li>Die Mischung nach der Pasteurisierung schnell auf etwa 4 °C herunterkühlen.</li>
+        <li>Vermeiden, dass das Produkt längere Zeit im Temperaturbereich zwischen 5 °C und 60 °C bleibt.</li>
+      </ul>
+      <h3>4. Kühlkette einhalten</h3>
+      <ul>
+        <li>Eismischungen und fertiges Speiseeis stets bei den vorgeschriebenen Temperaturen lagern.</li>
+        <li>Temperaturen regelmäßig kontrollieren und dokumentieren.</li>
+      </ul>
+      <h3>5. Persönliche Hygiene des Personals</h3>
+      <ul>
+        <li>Hände regelmäßig und gründlich waschen.</li>
+        <li>Saubere Arbeitskleidung und Kopfbedeckung tragen.</li>
+        <li>Erkrankte Mitarbeiter dürfen nicht mit Lebensmitteln arbeiten.</li>
+      </ul>
+      <h3>6. Reinigung und Desinfektion der Geräte</h3>
+      <ul>
+        <li>Geräte täglich reinigen und desinfizieren.</li>
+        <li>HACCP-Reinigungspläne einhalten.</li>
+      </ul>
+      <h3>7. Kreuzkontamination vermeiden</h3>
+      <ul>
+        <li>Rohe Zutaten von verzehrfertigen Produkten getrennt halten.</li>
+        <li>Separate Utensilien verwenden.</li>
+        <li>Allergene getrennt lagern.</li>
+      </ul>
+      <h3>8. Wasserqualität kontrollieren</h3>
+      <ul>
+        <li>Ausschließlich Trinkwasser verwenden.</li>
+        <li>Leitungen und Filter regelmäßig warten.</li>
+      </ul>
+      <h3>9. Mikrobiologische Kontrollen durchführen</h3>
+      <ul>
+        <li>Regelmäßige Laboruntersuchungen von Speiseeis, Oberflächen, Geräten und Wasser.</li>
+      </ul>
+      <h3>10. HACCP-System anwenden</h3>
+      <ul>
+        <li>Kritische Kontrollpunkte überwachen.</li>
+        <li>Temperaturen, Reinigungen und Kontrollen dokumentieren.</li>
+        <li>Mitarbeiter regelmäßig schulen.</li>
+      </ul>
+    </div>
   </section>
 
   <section class="card">
@@ -124,5 +271,13 @@ footer a{color:var(--brand);}
   <footer>Confronta Prodotti per Gelateria — piattaforma indipendente, senza sponsorizzazioni. <a href="/">Torna alla home</a>.<span class="disclaimer" style="display:block;margin-top:6px;font-size:.9em;">Il portale riunisce in un’unica ricerca ciò di cui la gelateria ha bisogno, con link diretti alle aziende produttrici. Avviso: i dati contenuti in questo portale sono riportati solo a scopo di conoscenza. Il confronto è puramente teorico e si basa sui dati rilasciati dalle aziende o disponibili sul web. Non sono indicati costi né altri parametri economici.</span><p class="copyright-line" style="margin:12px 0 0;font-size:.85em;text-align:center;">© 2026 Marco Lestan, tutti i diritti riservati · <a href="/condizioni-d-uso.html">Condizioni d'uso</a></p>
 </footer>
 </div>
+<script>
+function toggleDocPanel(lang){
+  var panel=document.getElementById(lang==='it'?'docPanelIT':'docPanelDE');
+  var other=document.getElementById(lang==='it'?'docPanelDE':'docPanelIT');
+  if(other) other.classList.remove('open');
+  if(panel){ panel.classList.toggle('open'); if(panel.classList.contains('open')) panel.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+}
+</script>
 </body>
 </html>
