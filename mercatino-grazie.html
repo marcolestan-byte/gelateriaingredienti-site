@@ -7,6 +7,14 @@
 <meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://gelateriaingredienti.com/mercatino-grazie.html">
 <style>
+.flow{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:22px;padding:0;margin:14px 0 8px;counter-reset:f}
+.flow li{position:relative;background:#fffdfa;border:2px solid var(--line);border-radius:12px;padding:12px 12px 14px;margin:0;font-size:0.86rem;line-height:1.4}
+.flow li:not(:last-child)::after{content:'\2192';position:absolute;right:-19px;top:50%;transform:translateY(-50%);color:var(--brand);font-weight:900;font-size:1.2rem}
+.flow .n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:0.85rem;margin-bottom:6px}
+.flow .who{display:block;font-weight:800;font-size:0.9rem;margin-bottom:4px}
+.flow .a0 .who{color:#2e7d32}.flow .a1 .who{color:var(--brand)}.flow .a2 .who{color:#1f5fa8}.flow .a3 .who{color:#6b4aa0}
+.demo{margin-top:auto;font-size:0.8rem;color:var(--ink-soft);background:#f1e8dc;border-radius:8px;padding:8px 10px;text-align:center}
+@media(max-width:760px){.flow{grid-template-columns:1fr;gap:26px}.flow li:not(:last-child)::after{content:'\2193';right:auto;left:50%;top:auto;bottom:-24px;transform:translateX(-50%)}}
 :root{--ink:#2b2320; --ink-soft:#6b5f58; --paper:#fffaf3; --line:#e7dccd;--brand:#c0392b; --brand-soft:#f7e9df; --ok:#2e7d32;}
 *{box-sizing:border-box;}
 body{margin:0; font-family:"Segoe UI", system-ui, -apple-system, sans-serif; background:var(--paper); color:var(--ink); line-height:1.55;}
