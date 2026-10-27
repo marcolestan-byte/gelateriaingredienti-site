@@ -169,6 +169,27 @@
     .header-photo{ display:none; }
   }
 
+  /* Intestazione desktop: sfondo azzurro e immagine GelatoInfo.app (telefono invariato) */
+  @media (min-width: 861px){
+    header.top{ background: linear-gradient(135deg, #3FA9E6 0%, #1D6FB0 100%); }
+    header.top .brand-sub{ color:#FFF3C9; }
+    .header-photo{
+      left:auto; width:46%;
+      background-image:url(header-gelatoinfo.jpg);
+      background-size:cover; background-position:center;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 16%, #000 36%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 16%, #000 36%);
+    }
+    header.top .lang-btn{ background:rgba(15,60,110,0.55); border-color:rgba(255,255,255,0.7); color:#fff; }
+    header.top .lang-btn.active{ background:#fff; color:#1D6FB0; }
+    .quick-nav{ background:#1D6FB0 !important; }
+    .nav-primary a{ color:#1D5F96 !important; }
+    .nav-badge{ border-color:#1D6FB0 !important; }
+  }
+  @media (min-width: 861px) and (max-width: 1099px){
+    .header-photo{ background-image:none !important; }
+  }
+
   .page-grid{ display:grid; grid-template-columns:auto minmax(0,1020px) auto; justify-content:center; align-items:start; gap:14px; padding:18px 14px 0; }
   .page-grid > main{ margin:0; max-width:none; padding:0; min-width:0; }
   .side-rail{ display:flex; flex-direction:column; gap:6px; position:sticky; top:70px; z-index:1; }
