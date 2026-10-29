@@ -126,7 +126,7 @@ const I18N = {
     notePh: "Note di test diretto, contatti, condizioni di fornitura…",
     aggiungiAllArchivio: "Aggiungi all'archivio",
     taraturaTitle: "🧊 Taratura ricetta (vetrina)",
-    taraturaIntro: 'Nata dal vecchio <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (oggi dedicato alla vetrina gelato): posizione/meteo → temperatura vetrina → ricetta con ingredienti → calcolo PAC/POD. I coefficienti degli zuccheri sotto sono presi da fonti pubbliche di gelato-scienza (vedi note in fondo); i valori di correzione per temperatura e la curva PAC/vetrina sono <strong>di partenza, da tarare con le tue prove dirette</strong> — esattamente come il foglio "da compilare" del sito originale.',
+    taraturaIntro: 'Nata dal vecchio <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (oggi dedicato alla vetrina gelato): posizione/meteo → temperatura vetrina → ricetta con ingredienti → calcolo PAC/POD. I coefficienti degli zuccheri sotto sono presi da fonti pubbliche di gelato-scienza (vedi note in fondo); i valori di correzione per temperatura e la curva PAC/vetrina sono <strong>di partenza, da tarare con le tue prove dirette</strong> — esattamente come il foglio "da compilare" del sito originale.',
     tarStepA: "Posizione &amp; temperatura esterna",
     btnGeo: "📍 Rileva posizione e meteo",
     geoStatusDefault: "Usa il GPS del dispositivo + Open-Meteo (gratuito) per leggere la temperatura esterna attuale. In alternativa inseriscila a mano qui sotto.",
@@ -163,7 +163,7 @@ const I18N = {
     btnEsportaTaratura: "⬇️ Esporta ricetta + curva (JSON)",
     btnImporta: "⬆️ Importa (JSON)",
     postazioniTitle: "🧭 Gestione mantecatori &amp; vetrine",
-    postazioniIntro: 'Nata dal vecchio <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (oggi dedicato alla vetrina gelato): un colpo d\'occhio su cosa c\'è in ogni mantecatore/vetrina in questo momento — gusto, PAC, temperatura e stato. È un registro manuale (tu aggiorni i dati), non un collegamento diretto alle macchine.',
+    postazioniIntro: 'Nata dal vecchio <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (oggi dedicato alla vetrina gelato): un colpo d\'occhio su cosa c\'è in ogni mantecatore/vetrina in questo momento — gusto, PAC, temperatura e stato. È un registro manuale (tu aggiorni i dati), non un collegamento diretto alle macchine.',
     nuovaPostazione: "➕ Nuova postazione",
     nomePostazione: "Nome postazione *",
     tipo: "Tipo",
@@ -195,7 +195,7 @@ const I18N = {
     mapSiteLink: "🗺️ Mappa delle gelaterie in Germania e Austria, con accessibilità in carrozzina — rollmatemobil.com",
     equipmentSiteLink: "🧊 Confronto attrezzature gelateria — gelateriaattrezzature.com",
     equipmentSiteBadge: "(sito in costruzione)",
-    sisterDeSiteLink: "🇩🇪 Eissorten-Zutatenvergleich (Deutsch) — eisdieleinfo.com",
+    sisterItSiteLink: "🇮🇹 Confronto ingredienti gelato (italiano) — gelateriaingredienti.com",
     legalStrong: '© <span id="copyYear"></span> Tutti i diritti riservati.',
     legalText: "Contenuti conformi alla normativa europea vigente (incl. Regolamento UE 2016/679 – GDPR). Il presente portale ha finalità esclusivamente informativa e consultiva: non è consentito alcun uso commerciale, riproduzione, distribuzione o sfruttamento dei contenuti senza autorizzazione scritta del titolare.",
     disclaimerText: "Il portale riunisce in un’unica ricerca ciò di cui la gelateria ha bisogno, con link diretti alle aziende produttrici. Avviso: i dati contenuti in questo portale sono riportati solo a scopo di conoscenza. Il confronto è puramente teorico e si basa sui dati rilasciati dalle aziende o disponibili sul web. Non sono indicati costi né altri parametri economici.",
@@ -526,7 +526,7 @@ const I18N = {
     notePh: "Notizen zu direkten Tests, Kontakten, Lieferbedingungen…",
     aggiungiAllArchivio: "Zum Archiv hinzufügen",
     taraturaTitle: "🧊 Rezept-Kalibrierung (Vitrine)",
-    taraturaIntro: 'Entstanden aus der früheren Seite <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (heute der Eisvitrine gewidmet): Standort/Wetter → Vitrinentemperatur → Rezept mit Zutaten → PAC/POD-Berechnung. Die Zuckerkoeffizienten unten stammen aus öffentlichen Quellen der Eiswissenschaft (siehe Hinweise unten); die Temperaturkorrekturwerte und die PAC/Vitrinen-Kurve sind <strong>Ausgangswerte, die du mit deinen eigenen Tests kalibrieren musst</strong> — genau wie das "auszufüllende" Blatt der Originalseite.',
+    taraturaIntro: 'Entstanden aus der früheren Seite <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (heute der Eisvitrine gewidmet): Standort/Wetter → Vitrinentemperatur → Rezept mit Zutaten → PAC/POD-Berechnung. Die Zuckerkoeffizienten unten stammen aus öffentlichen Quellen der Eiswissenschaft (siehe Hinweise unten); die Temperaturkorrekturwerte und die PAC/Vitrinen-Kurve sind <strong>Ausgangswerte, die du mit deinen eigenen Tests kalibrieren musst</strong> — genau wie das "auszufüllende" Blatt der Originalseite.',
     tarStepA: "Standort &amp; Außentemperatur",
     btnGeo: "📍 Standort und Wetter erkennen",
     geoStatusDefault: "Nutzt das GPS des Geräts + Open-Meteo (kostenlos), um die aktuelle Außentemperatur abzulesen. Alternativ hier unten manuell eingeben.",
@@ -563,7 +563,7 @@ const I18N = {
     btnEsportaTaratura: "⬇️ Rezept + Kurve exportieren (JSON)",
     btnImporta: "⬆️ Importieren (JSON)",
     postazioniTitle: "🧭 Verwaltung Rührmaschinen &amp; Vitrinen",
-    postazioniIntro: 'Entstanden aus der früheren Seite <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (heute der Eisvitrine gewidmet): ein Überblick darüber, was gerade in jeder Rührmaschine/Vitrine ist — Sorte, PAC, Temperatur und Status. Es ist ein manuelles Register (du aktualisierst die Daten), keine direkte Verbindung zu den Maschinen.',
+    postazioniIntro: 'Entstanden aus der früheren Seite <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (heute der Eisvitrine gewidmet): ein Überblick darüber, was gerade in jeder Rührmaschine/Vitrine ist — Sorte, PAC, Temperatur und Status. Es ist ein manuelles Register (du aktualisierst die Daten), keine direkte Verbindung zu den Maschinen.',
     nuovaPostazione: "➕ Neue Station",
     nomePostazione: "Stationsname *",
     tipo: "Typ",
@@ -595,7 +595,7 @@ const I18N = {
     mapSiteLink: "🗺️ Karte der Eisdielen in Deutschland und Österreich, mit Rollstuhl-Infos — rollmatemobil.com",
     equipmentSiteLink: "🧊 Eismaschinen-Vergleich — gelateriaattrezzature.com",
     equipmentSiteBadge: "(Website im Aufbau)",
-    sisterDeSiteLink: "🇩🇪 Eissorten-Zutatenvergleich (Deutsch) — eisdieleinfo.com",
+    sisterItSiteLink: "🇮🇹 Eissorten-Zutatenvergleich (Italienisch) — gelateriaingredienti.com",
     legalStrong: '© <span id="copyYear"></span> Alle Rechte vorbehalten.',
     legalText: "Inhalte gemäß geltendem EU-Recht (einschl. Verordnung (EU) 2016/679 – DSGVO). Dieses Portal dient ausschließlich zu Informations- und Beratungszwecken: Jede kommerzielle Nutzung, Vervielfältigung, Verbreitung oder Verwertung der Inhalte ohne schriftliche Genehmigung des Inhabers ist untersagt.",
     disclaimerText: "Das Portal bündelt in einer einzigen Suche alles, was die Eisdiele braucht, mit direkten Links zu den Herstellern. Hinweis: Die auf diesem Portal enthaltenen Daten dienen ausschließlich der Information. Der Vergleich ist rein theoretisch und beruht auf den von den Unternehmen veröffentlichten bzw. im Web verfügbaren Daten. Es werden weder Kosten noch andere wirtschaftliche Parameter angegeben.",
@@ -925,7 +925,7 @@ const I18N = {
     notePh: "Notes from direct testing, contacts, supply conditions…",
     aggiungiAllArchivio: "Add to archive",
     taraturaTitle: "🧊 Recipe calibration (display case)",
-    taraturaIntro: 'Born from the former <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (now dedicated to the gelato display case): position/weather → display case temperature → recipe with ingredients → PAC/POD calculation. The sugar coefficients below come from public gelato-science sources (see notes at the bottom); the temperature correction values and the PAC/display-case curve are <strong>starting points, to be calibrated with your own direct tests</strong> — exactly like the "to be filled in" sheet from the original site.',
+    taraturaIntro: 'Born from the former <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (now dedicated to the gelato display case): position/weather → display case temperature → recipe with ingredients → PAC/POD calculation. The sugar coefficients below come from public gelato-science sources (see notes at the bottom); the temperature correction values and the PAC/display-case curve are <strong>starting points, to be calibrated with your own direct tests</strong> — exactly like the "to be filled in" sheet from the original site.',
     tarStepA: "Location &amp; outside temperature",
     btnGeo: "📍 Detect location and weather",
     geoStatusDefault: "Use the device's GPS + Open-Meteo (free) to read the current outside temperature. Alternatively enter it manually below.",
@@ -962,7 +962,7 @@ const I18N = {
     btnEsportaTaratura: "⬇️ Export recipe + curve (JSON)",
     btnImporta: "⬆️ Import (JSON)",
     postazioniTitle: "🧭 Batch freezer &amp; display case management",
-    postazioniIntro: 'Born from the former <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (now dedicated to the gelato display case): an at-a-glance view of what\'s currently in each batch freezer/display case — flavor, PAC, temperature and status. It\'s a manual log (you update the data), not a direct connection to the machines.',
+    postazioniIntro: 'Born from the former <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (now dedicated to the gelato display case): an at-a-glance view of what\'s currently in each batch freezer/display case — flavor, PAC, temperature and status. It\'s a manual log (you update the data), not a direct connection to the machines.',
     nuovaPostazione: "➕ New station",
     nomePostazione: "Station name *",
     tipo: "Type",
@@ -994,7 +994,7 @@ const I18N = {
     mapSiteLink: "🗺️ Map of ice cream parlours in Germany and Austria, with wheelchair access info — rollmatemobil.com",
     equipmentSiteLink: "🧊 Gelato equipment comparison — gelateriaattrezzature.com",
     equipmentSiteBadge: "(site under construction)",
-    sisterDeSiteLink: "🇩🇪 German ice-cream ingredients comparison — eisdieleinfo.com",
+    sisterItSiteLink: "🇮🇹 Italian gelato ingredients comparison — gelateriaingredienti.com",
     legalStrong: '© <span id="copyYear"></span> All rights reserved.',
     legalText: "Content compliant with applicable European regulations (incl. EU Regulation 2016/679 – GDPR). This portal is for informational and reference purposes only: no commercial use, reproduction, distribution or exploitation of the content is permitted without the written authorization of the owner.",
     disclaimerText: "The portal brings together, in a single search, everything an ice cream shop needs, with direct links to the manufacturers. Notice: the data on this portal is provided for informational purposes only. The comparison is purely theoretical and is based on data released by the companies or available on the web. No costs or other economic parameters are included.",
@@ -1324,7 +1324,7 @@ const I18N = {
     notePh: "Notas de pruebas directas, contactos, condiciones de suministro…",
     aggiungiAllArchivio: "Añadir al archivo",
     taraturaTitle: "🧊 Calibración de receta (vitrina)",
-    taraturaIntro: 'Nacida del antiguo <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (hoy dedicado a la vitrina de helados): posición/clima → temperatura vitrina → receta con ingredientes → cálculo PAC/POD. Los coeficientes de los azúcares de abajo proceden de fuentes públicas de gelato-science (ver notas al final); los valores de corrección por temperatura y la curva PAC/vitrina son <strong>puntos de partida, a calibrar con tus propias pruebas directas</strong> — exactamente como la hoja "a rellenar" del sitio original.',
+    taraturaIntro: 'Nacida del antiguo <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (hoy dedicado a la vitrina de helados): posición/clima → temperatura vitrina → receta con ingredientes → cálculo PAC/POD. Los coeficientes de los azúcares de abajo proceden de fuentes públicas de gelato-science (ver notas al final); los valores de corrección por temperatura y la curva PAC/vitrina son <strong>puntos de partida, a calibrar con tus propias pruebas directas</strong> — exactamente como la hoja "a rellenar" del sitio original.',
     tarStepA: "Posición &amp; temperatura exterior",
     btnGeo: "📍 Detectar posición y clima",
     geoStatusDefault: "Usa el GPS del dispositivo + Open-Meteo (gratuito) para leer la temperatura exterior actual. Alternativamente, introdúcela a mano aquí abajo.",
@@ -1361,7 +1361,7 @@ const I18N = {
     btnEsportaTaratura: "⬇️ Exportar receta + curva (JSON)",
     btnImporta: "⬆️ Importar (JSON)",
     postazioniTitle: "🧭 Gestión de mantecadores &amp; vitrinas",
-    postazioniIntro: 'Nacida del antiguo <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (hoy dedicado a la vitrina de helados): un vistazo rápido a lo que hay en cada mantecador/vitrina en este momento — sabor, PAC, temperatura y estado. Es un registro manual (tú actualizas los datos), no una conexión directa a las máquinas.',
+    postazioniIntro: 'Nacida del antiguo <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (hoy dedicado a la vitrina de helados): un vistazo rápido a lo que hay en cada mantecador/vitrina en este momento — sabor, PAC, temperatura y estado. Es un registro manual (tú actualizas los datos), no una conexión directa a las máquinas.',
     nuovaPostazione: "➕ Nueva estación",
     nomePostazione: "Nombre de la estación *",
     tipo: "Tipo",
@@ -1393,7 +1393,7 @@ const I18N = {
     mapSiteLink: "🗺️ Mapa de heladerías en Alemania y Austria, con accesibilidad en silla de ruedas — rollmatemobil.com",
     equipmentSiteLink: "🧊 Comparativa de equipamiento para heladería — gelateriaattrezzature.com",
     equipmentSiteBadge: "(sitio en construcción)",
-    sisterDeSiteLink: "🇩🇪 Comparador de ingredientes para heladería (alemán) — eisdieleinfo.com",
+    sisterItSiteLink: "🇮🇹 Comparador de ingredientes de helado (italiano) — gelateriaingredienti.com",
     legalStrong: '© <span id="copyYear"></span> Todos los derechos reservados.',
     legalText: "Contenidos conformes con la normativa europea vigente (incl. Reglamento UE 2016/679 – RGPD). Este portal tiene finalidad exclusivamente informativa y de consulta: no está permitido ningún uso comercial, reproducción, distribución o explotación de los contenidos sin autorización escrita del titular.",
     disclaimerText: "El portal reúne en una sola búsqueda todo lo que necesita la heladería, con enlaces directos a las empresas fabricantes. Aviso: los datos de este portal se ofrecen únicamente con fines informativos. La comparación es puramente teórica y se basa en los datos publicados por las empresas o disponibles en la web. No se indican costes ni otros parámetros económicos.",
@@ -1610,12 +1610,12 @@ function translateStatic(){
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.getAttribute('data-i18n')); });
   document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.getAttribute('data-i18n-html')); });
   document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.setAttribute('placeholder', t(el.getAttribute('data-i18n-ph'))); });
-  const titleByLang = { it: 'Confronta Prodotti per Gelateria', de: 'Confronto Ingredienti Gelateria: Basi, Paste e Semilavorati a Confronto', en: 'Compare Gelato Products', es: 'Compara Productos para Heladería' };
+  const titleByLang = { it: 'Confronta Prodotti per Gelateria', de: 'Eisdielen Zutatenvergleich: Basen, Pasten und Halbfertigprodukte im Vergleich', en: 'Compare Gelato Products', es: 'Compara Productos para Heladería' };
   document.title = titleByLang[LANG] || titleByLang.it;
   const metaDesc = document.querySelector('meta[name="description"]');
   const descByLang = {
     it: 'Strumento per confrontare ingredienti, fornitori e parametri tecnici per gelateria',
-    de: 'Confronto gratuito degli ingredienti per gelaterie, senza registrazione: confronta basi, paste e semilavorati di diversi produttori — PAC, POD, sostanza secca e prezzi indicativi, fianco a fianco.',
+    de: 'Kostenloser Zutatenvergleich für Eisdielen ohne Registrierung: Vergleiche Basen, Pasten und Halbfertigprodukte verschiedener Hersteller — PAC, POD, Trockenmasse und Richtpreise, direkt nebeneinander.',
     en: 'Tool to compare ingredients, suppliers and technical parameters for gelato shops',
     es: 'Herramienta para comparar ingredientes, proveedores y parámetros técnicos para heladerías',
   };
@@ -1626,12 +1626,8 @@ function translateStatic(){
 }
 let currentYear = 2026;
 function setLang(lang){
-  LANG = (lang === 'de' || lang === 'en' || lang === 'es') ? lang : 'it';
+  LANG = 'de';
   try { localStorage.setItem('preferredLang', LANG); } catch (e) {}
-  document.getElementById('btnLangIT').classList.toggle('active', LANG === 'it');
-  document.getElementById('btnLangDE').classList.toggle('active', LANG === 'de');
-  document.getElementById('btnLangEN').classList.toggle('active', LANG === 'en');
-  document.getElementById('btnLangES').classList.toggle('active', LANG === 'es');
   translateStatic();
   const resultCard = document.getElementById('resultCard');
   const wasCompareVisible = resultCard && resultCard.style.display !== 'none';
@@ -1683,10 +1679,8 @@ function openSection(id){
 }
 window.openSection = openSection;
 
-function toggleDocPanel(lang){
-  const panel = document.getElementById(lang === 'it' ? 'docPanelIT' : 'docPanelDE');
-  const other = document.getElementById(lang === 'it' ? 'docPanelDE' : 'docPanelIT');
-  if (other) other.classList.remove('open');
+function toggleDocPanel(){
+  const panel = document.getElementById('docPanelDE');
   if (panel) panel.classList.toggle('open');
   if (panel && panel.classList.contains('open')) panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
 }
@@ -1916,7 +1910,7 @@ const CATEGORY_ICONS = {
   "Basi Semifreddi": "🍨",
   "Glassa": "✨",
   "Cioccolato": "🍫",
-  "Decorazioni Torte": "🎂",
+  "Tortendekor": "🎂",
   "Coloranti": "🎨",
   "Addensanti e Stabilizzanti": "🧪",
   "Paste Frutta Secca Mista": "🥜",
@@ -1933,7 +1927,7 @@ const CATEGORY_ICONS = {
 };
 function catIcon(cat){ return CATEGORY_ICONS[cat] || '📋'; }
 
-const CATEGORY_ICON_IDS = {"Basi Latte": "ic-basi-latte", "Basi Frutta": "ic-basi-frutta", "Paste Pistacchio": "ic-pistacchio", "Paste Nocciola": "ic-nocciola", "Variegati Biscotto-Oreo": "ic-cookie", "Variegati Amarena": "ic-amarena", "Basi Vegane": "ic-vegan", "Basi Senza Lattosio": "ic-no-lactose", "Paste Vaniglia / Estratti": "ic-vaniglia", "Pasta Biscotto": "ic-biscotto", "Pasta Caramello": "ic-caramello", "Pasta Noce": "ic-noce", "Pasta Cioccolato Bianco": "ic-choc-bianco", "Cacao Polvere": "ic-cacao", "Basi Semifreddi": "ic-semifreddi", "Glassa": "ic-glassa", "Cioccolato": "ic-cioccolato", "Coloranti": "ic-coloranti", "Addensanti e Stabilizzanti": "ic-addensanti", "Paste Frutta Secca Mista": "ic-frutta-secca", "Paste Aromatizzate Varie": "ic-aromatizzate", "Toppings e Variegati": "ic-toppings", "Gelato Soft / Frozen Yogurt": "ic-soft", "Contenitori per Torte": "ic-box", "Decorazione Torte": "ic-cake", "Purea di Frutta": "ic-purea", "Frutta Congelata": "ic-frozen", "Basi Pronte Speedy": "ic-speedy", "Zucchero": "ic-zucchero", "Destrosio": "ic-destrosio", "Glucosio": "ic-glucosio", "Fruttosio": "ic-fruttosio", "Panna in Polvere": "ic-panna-polvere", "Latte Magro in Polvere": "ic-latte-magro", "Latte Intero in Polvere": "ic-latte-intero", "Maltodestrine": "ic-maltodestrine", "Inulina": "ic-inulina", "Fibre": "ic-fibre", "Cremini da Banco": "ic-cremini-banco"};
+const CATEGORY_ICON_IDS = {"Basi Latte": "ic-basi-latte", "Basi Frutta": "ic-basi-frutta", "Paste Pistacchio": "ic-pistacchio", "Paste Nocciola": "ic-nocciola", "Variegati Biscotto-Oreo": "ic-cookie", "Variegati Amarena": "ic-amarena", "Basi Vegane": "ic-vegan", "Basi Senza Lattosio": "ic-no-lactose", "Paste Vaniglia / Estratti": "ic-vaniglia", "Pasta Biscotto": "ic-biscotto", "Pasta Caramello": "ic-caramello", "Pasta Noce": "ic-noce", "Pasta Cioccolato Bianco": "ic-choc-bianco", "Cacao Polvere": "ic-cacao", "Basi Semifreddi": "ic-semifreddi", "Glassa": "ic-glassa", "Cioccolato": "ic-cioccolato", "Coloranti": "ic-coloranti", "Addensanti e Stabilizzanti": "ic-addensanti", "Paste Frutta Secca Mista": "ic-frutta-secca", "Paste Aromatizzate Varie": "ic-aromatizzate", "Toppings e Variegati": "ic-toppings", "Gelato Soft / Frozen Yogurt": "ic-soft", "Contenitori per Torte": "ic-box", "Decorazione Torte": "ic-cake", "Purea di Frutta": "ic-purea", "Frutta Congelata": "ic-frozen", "Basi Pronte Speedy": "ic-speedy", "Zucker": "ic-zucchero", "Traubenzucker (Dextrose)": "ic-destrosio", "Glukosesirup": "ic-glucosio", "Fruktose": "ic-fruttosio", "Sahnepulver": "ic-panna-polvere", "Magermilchpulver": "ic-latte-magro", "Vollmilchpulver": "ic-latte-intero", "Maltodextrine": "ic-maltodestrine", "Inulin": "ic-inulina", "Ballaststoffe": "ic-fibre", "Cremini da Banco": "ic-cremini-banco"};
 function catIconSvg(cat){
   const id = CATEGORY_ICON_IDS[cat] || 'ic-default';
   return `<svg class="cat-icon" aria-hidden="true"><use href="#${id}"></use></svg>`;
@@ -2725,20 +2719,8 @@ renderArchiveTable();
 renderAziende();
 refreshStats();
 (function initLang(){
-  const supported = ['it','de','en','es'];
-  let fromUrl = null;
-  try { fromUrl = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
-  let stored = null;
-  try { stored = localStorage.getItem('preferredLang'); } catch (e) {}
-  const rawBrowserLangs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
-  const browserLangs = rawBrowserLangs.map(l => (l || '').slice(0,2).toLowerCase());
-  const fromBrowser = browserLangs.find(l => supported.includes(l));
-  const domainDefault = 'it'; // gelateriaingredienti.com: lingua di riferimento del brand
-  const initial = (fromUrl && supported.includes(fromUrl)) ? fromUrl
-    : (stored && supported.includes(stored)) ? stored
-    : fromBrowser ? fromBrowser
-    : domainDefault;
-  setLang(initial);
+  // eisdieleinfo.com: sito solo in tedesco, nessuna altra lingua selezionabile
+  setLang('de');
 })();
 
 // Link diretti dall'esterno: /?cerca=soft#archiveSection precompila la ricerca nell'archivio
