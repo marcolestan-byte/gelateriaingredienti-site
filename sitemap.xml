@@ -148,6 +148,7 @@
   </url>
   <url>
     <loc>https://gelateriaingredienti.com/guida-scelte-ricetta.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -310,11 +311,19 @@
   </url>
   <url>
     <loc>https://gelateriaingredienti.com/io-sono-il-gelato.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://gelateriaingredienti.com/lavoro.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gelateriaingredienti.com/giornale-del-gelato.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
