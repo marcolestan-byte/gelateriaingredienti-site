@@ -29,7 +29,11 @@
     bothModes: 'Im Datenblatt prüfen, ob das Produkt kalt oder warm verarbeitet wird.',
     milk: 'Vollmilch (3,5 % Fett)', cream: 'Sahne (35 % Fett)', smp: 'Magermilchpulver', suc: 'Saccharose', dex: 'Dextrose',
     water: 'Wasser', fruit: 'Fruchtmark / Fruchtpüree', prod: 'Produkt',
-    typeCream: 'Milch- bzw. Cremeeis (Basis)', typeSorb: 'Fruchteis / Sorbet'
+    typeCream: 'Milch- bzw. Cremeeis (Basis)', typeSorb: 'Fruchteis / Sorbet',
+    typeComplete: 'Komplettbasis (nur Flüssigkeit nötig)', typeVegan: 'Pflanzliches Eis (vegane Basis)',
+    doseL: 'Dosierung (g pro Liter Flüssigkeit)', doseApproxL: 'Einheit nicht angegeben, als g/L gelesen. Im Datenblatt prüfen.', vfat: 'Pflanzliches Fett (z. B. Kokos)', liquid: 'Wasser oder Milch (laut Datenblatt)',
+    noComp: 'Komplettbasis: Die Zusammensetzung hängt vom Rezept des Herstellers ab und wird nicht berechnet. Bitte dem Datenblatt folgen.',
+    highDose: 'Hohe Dosierung: Ein Teil von Zucker und Fett kann schon in der Basis stecken. Datenblatt prüfen und Zucker und Sahne entsprechend senken.'
   } : {
     btn: '📖 Ricetta consigliata', video: '▶ Video del produttore', close: 'Chiudi',
     title: 'Ricetta tipo', warnT: 'Ricetta orientativa',
@@ -45,7 +49,11 @@
     bothModes: 'Verifica sulla scheda se il prodotto si usa a caldo o a freddo.',
     milk: 'Latte intero (3,5% grassi)', cream: 'Panna (35% grassi)', smp: 'Latte scremato in polvere', suc: 'Saccarosio', dex: 'Destrosio',
     water: 'Acqua', fruit: 'Polpa / purea di frutta', prod: 'Prodotto',
-    typeCream: 'Gelato al latte / alla crema (base)', typeSorb: 'Gelato alla frutta / sorbetto'
+    typeCream: 'Gelato al latte / alla crema (base)', typeSorb: 'Gelato alla frutta / sorbetto',
+    typeComplete: 'Base completa (basta il liquido)', typeVegan: 'Gelato vegetale (base vegana)',
+    doseL: 'Dosaggio (g per litro di liquido)', doseApproxL: 'Unità non indicata, letta come g/L. Verifica sulla scheda.', vfat: 'Grasso vegetale (es. cocco)', liquid: 'Acqua o latte (secondo la scheda)',
+    noComp: 'Base completa: la composizione dipende dalla ricetta del produttore e non viene calcolata. Segui la scheda.',
+    highDose: 'Dosaggio alto: parte dello zucchero e dei grassi può essere già nella base. Controlla la scheda e riduci zucchero e panna di conseguenza.'
   };
 
   var STEPS = DE ? {
@@ -60,6 +68,18 @@
       'Das Produkt trocken mit etwa der 5- bis 10-fachen Menge Zucker aus dem Rezept vermischen.',
       'Bereits pasteurisierte Milch und Sahne (oder H-Milch) verwenden. Die Mischung mit dem Stabmixer einarbeiten, bis alles gelöst ist.',
       'Laut Datenblatt ruhen lassen (meist einige Stunden im Kühlschrank bei 4 °C).',
+      'Frieren (mantecare) und bei der vorgesehenen Temperatur lagern.'
+    ],
+    complete: [
+      'Wasser oder Milch (laut Datenblatt) bei Raumtemperatur oder lauwarm vorlegen.',
+      'Die Basis unter Rühren einrieseln lassen oder mit dem Stabmixer einarbeiten, bis alles ohne Klumpen gelöst ist.',
+      'Ist laut Datenblatt Erhitzen vorgesehen, gemäß Hygieneplan (HACCP) pasteurisieren; bei Kaltverfahren wie angegeben ruhen lassen (meist einige Stunden bei 4 °C).',
+      'Frieren (mantecare) und bei der vorgesehenen Temperatur lagern.'
+    ],
+    vegan: [
+      'Wasser auf etwa 40 °C erwärmen. Zucker, Dextrose und das Produkt trocken vormischen und unter Rühren einarbeiten.',
+      'Das pflanzliche Fett (flüssig oder geschmolzen) zugeben und mit dem Stabmixer emulgieren.',
+      'Gemäß Datenblatt und Hygieneplan (HACCP) pasteurisieren, schnell auf 4 °C abkühlen und einige Stunden reifen lassen.',
       'Frieren (mantecare) und bei der vorgesehenen Temperatur lagern.'
     ],
     sorb: [
@@ -80,6 +100,18 @@
       'Mescola a secco il prodotto con 5–10 volte il suo peso di zucchero preso dalla ricetta.',
       'Usa latte e panna già pasteurizzati (o UHT). Incorpora la miscela con il frullatore a immersione fino a scioglierla bene.',
       'Lascia riposare come indicato dalla scheda (di solito alcune ore in frigorifero a 4 °C).',
+      'Manteca e conserva alla temperatura prevista.'
+    ],
+    complete: [
+      'Versa acqua o latte (secondo la scheda) a temperatura ambiente o tiepido.',
+      'Aggiungi la base a pioggia mescolando, oppure con il frullatore a immersione, fino a scioglierla senza grumi.',
+      'Se la scheda prevede il caldo, pastorizza secondo il tuo piano igienico (HACCP); a freddo lascia riposare come indicato (di solito alcune ore a 4 °C).',
+      'Manteca e conserva alla temperatura prevista.'
+    ],
+    vegan: [
+      'Scalda l’acqua a circa 40 °C. Mescola a secco zucchero, destrosio e prodotto, poi incorporali mescolando.',
+      'Aggiungi il grasso vegetale (liquido o fuso) ed emulsiona con il frullatore a immersione.',
+      'Pastorizza secondo la scheda e il tuo piano igienico (HACCP), raffredda in fretta a 4 °C e lascia maturare alcune ore.',
       'Manteca e conserva alla temperatura prevista.'
     ],
     sorb: [
@@ -119,6 +151,8 @@
     if (m) return rng(m[1], m[2]);
     m = t.match(new RegExp(N + '(?:' + SEP + N + ')?\\s*(?:g|gr)\\s*(?:\\/\\s*(?:l|L|kg|litro)|per\\s*(?:1\\s*)?(?:l|L|litro|kg)\\b)'));
     if (m) return rng(m[1], m[2]);
+    m = t.match(new RegExp(N + '\\s*(?:g|gr)\\s*(?:di\\s*)?(?:prodotto|base|produkt)\\s*\\+\\s*1\\s*(?:l|L)\\b'));
+    if (m) return rng(m[1]);
     m = t.match(new RegExp('^\\s*' + N + '(?:' + SEP + N + ')?\\s*%'));
     if (m) { var r = rng(m[1], m[2], true); r.min *= 10; r.max *= 10; return r; }
     m = t.match(new RegExp('^\\s*' + N + '(?:' + SEP + N + ')?\\s*(?:g|gr)?\\s*(?:\\([^)]*\\))?\\s*$'));
@@ -132,6 +166,15 @@
     if (/sorbett|sorbet/.test(h)) return 'sorb';
     if (/frutta|fruit|frucht|acid|säure/.test(h2) && !/crem|latte|panna|milch|sahne/.test(h2)) return 'sorb';
     return 'cream';
+  }
+  /* tipo di ricetta: per le basi latte distingue basi complete, vegane, a basso dosaggio */
+  function kindOf(p) {
+    var base = typeOf(p);
+    if (!/^basi|^basen|^bases/i.test(p.categoria || '')) return base;
+    var h = hayOf(p) + ' ' + String(p.categoria || '').toLowerCase(), D = parseDose(p);
+    if (/complet|vollst|pronta|fertig/.test(h) || (D && D.min > 200)) return 'complete';
+    if (/vegan|pflanzlich/.test(h)) return 'vegan';
+    return base;
   }
   function modeOf(p) {
     var h = hayOf(p), hot = /a caldo|\bcaldo\b|warm|heiß/.test(h), cold = /a freddo|\bfreddo\b|kalt/.test(h);
@@ -155,6 +198,19 @@
       o.solids = (fat + snf + suc + dex * 0.92 + D) / 10;
       o.pac = suc + dex * 1.9 + lac;
       o.liquid = milk;
+    } else if (type === 'complete') {
+      var sc = 1000 / (1000 + D);
+      rows = [['liquid', 1000 * sc], ['prod', D * sc]];
+      o.liquid = 1000 * sc; o.noComp = true;
+    } else if (type === 'vegan') {
+      var vf = 60; suc = 140; dex = 40;
+      var wv = 1000 - vf - suc - dex - D;
+      rows = [['water', wv], ['vfat', vf], ['suc', suc], ['dex', dex], ['prod', D]];
+      o.fat = vf / 10;
+      o.sug = (suc + dex * 0.92) / 10;
+      o.solids = (vf + suc + dex * 0.92 + D) / 10;
+      o.pac = suc + dex * 1.9;
+      o.liquid = wv;
     } else {
       fruit = 350; suc = 200; dex = 45;
       var water = 1000 - fruit - suc - dex - D;
@@ -217,28 +273,30 @@
 
   function open(p, trigger) {
     lastFocus = trigger; if (ov) close();
-    var type = typeOf(p), mode = modeOf(p), dose = parseDose(p), vid = VIDEOS[p.azienda + '|' + p.prodotto] || VIDEOS[p.azienda];
-    var def = dose ? Math.round((dose.min + dose.max) / 2 * 10) / 10 : 5;
-    var doseTxt = dose ? (dose.min === dose.max ? fmt(dose.min) : fmt(dose.min) + '–' + fmt(dose.max)) + ' g/kg' : '';
-    var steps = type === 'sorb' ? STEPS.sorb : (mode === 'cold' ? STEPS.cold : STEPS.hot);
+    var type = kindOf(p), mode = modeOf(p), dose = parseDose(p), vid = VIDEOS[p.azienda + '|' + p.prodotto] || VIDEOS[p.azienda];
+    var def = dose ? Math.round((dose.min + dose.max) / 2 * 10) / 10 : (type === 'complete' ? 300 : (/^basi|^basen|^bases/i.test(p.categoria || '') ? (type === 'vegan' ? 100 : 50) : 5));
+    var doseTxt = dose ? (dose.min === dose.max ? fmt(dose.min) : fmt(dose.min) + '–' + fmt(dose.max)) + (type === 'complete' ? ' g/L' : ' g/kg') : '';
+    var steps = (type === 'sorb' || type === 'complete' || type === 'vegan') ? STEPS[type] : (mode === 'cold' ? STEPS.cold : STEPS.hot);
+    var typeLbl = { sorb: T.typeSorb, cream: T.typeCream, complete: T.typeComplete, vegan: T.typeVegan }[type];
     var vegan = /vegan|senza lattosio|laktosefrei|lactose/i.test(hayOf(p));
 
     ov = document.createElement('div'); ov.className = 'rt-ov';
     ov.innerHTML =
       '<div class="rt-box" role="dialog" aria-modal="true" aria-labelledby="rt-t">' +
       '<div class="rt-head"><div><h3 id="rt-t">' + esc(T.title) + ': ' + esc(p.prodotto) + '</h3>' +
-      '<p class="rt-sub">' + esc(p.azienda) + ' · ' + esc(type === 'sorb' ? T.typeSorb : T.typeCream) + '</p></div>' +
+      '<p class="rt-sub">' + esc(p.azienda) + ' · ' + esc(typeLbl) + '</p></div>' +
       '<button type="button" class="rt-x" id="rt-close">' + esc(T.close) + ' ✕</button></div>' +
       '<div class="rt-warn"><strong>' + esc(T.warnT) + '.</strong> ' + T.warn + '</div>' +
       '<div class="rt-ctl">' +
       '<div><label for="rt-kg">' + esc(T.batch) + '</label><input id="rt-kg" type="number" inputmode="decimal" min="0.1" step="0.1" value="1"></div>' +
-      '<div><label for="rt-dose">' + esc(T.dose) + '</label><input id="rt-dose" type="number" inputmode="decimal" min="0" step="0.1" value="' + def + '">' +
-      '<p class="rt-note">' + (dose ? esc(T.doseSheet) + ': ' + esc(doseTxt) + (dose.approx ? '. ' + esc(T.doseApprox) : '') : esc(T.doseNone)) + '</p></div>' +
+      '<div><label for="rt-dose">' + esc(type === 'complete' ? T.doseL : T.dose) + '</label><input id="rt-dose" type="number" inputmode="decimal" min="0" step="0.1" value="' + def + '">' +
+      '<p class="rt-note">' + (dose ? esc(T.doseSheet) + ': ' + esc(doseTxt) + (dose.approx ? '. ' + esc(type === 'complete' ? T.doseApproxL : T.doseApprox) : '') : esc(T.doseNone)) + '</p></div>' +
       '</div>' +
       '<div id="rt-out" aria-live="polite"></div>' +
       '<h4>' + esc(T.proc) + '</h4><ol>' + steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>' +
       (mode === 'both' || mode === 'unk' ? '<p class="rt-note">' + esc(T.bothModes) + '</p>' : '') +
-      (vegan ? '<p class="rt-note">' + esc(T.vegan) + '</p>' : '') +
+      (vegan && type !== 'vegan' ? '<p class="rt-note">' + esc(T.vegan) + '</p>' : '') +
+      (type === 'cream' && dose && dose.min > 100 ? '<p class="rt-note">' + esc(T.highDose) + '</p>' : '') +
       (vid ? '<a class="rt-vid" href="' + esc(vid.url) + '" target="_blank" rel="noopener noreferrer">' + esc(T.video) + (vid.title ? ': ' + esc(vid.title) : '') + ' ↗</a>' : '') +
       '<p class="rt-foot">' + esc(T.foot) + '</p></div>';
     document.body.appendChild(ov); document.body.style.overflow = 'hidden';
@@ -252,11 +310,13 @@
       if (r.liquid < 0) { out.innerHTML = '<p class="rt-err">' + esc(T.neg) + '</p>'; return; }
       var tb = '<h4>' + esc(T.ing) + ' (' + fmt(kg, 2) + ' kg)</h4><table class="rt-tab"><tbody>' +
         r.rows.map(function (x) {
-          var g = x[1] * kg, label = x[0] === 'prod' ? T.prod + ': ' + p.prodotto : T[x[0]];
+          var g = x[1] * kg, label = x[0] === 'prod' ? T.prod + ': ' + p.prodotto : (x[0] === 'liquid' && /acqua|wasser/i.test(hayOf(p)) ? T.water : T[x[0]]);
           return '<tr' + (x[0] === 'prod' ? ' class="rt-p"' : '') + '><td>' + esc(label) + '</td><td>' + fmt(g, g < 10 ? 1 : 0) + ' ' + T.g + '</td></tr>';
         }).join('') + '</tbody></table>';
+      if (r.noComp) { out.innerHTML = tb + '<p class="rt-note">' + esc(T.noComp) + '</p>'; return; }
       var cp = '<h4>' + esc(T.comp) + '</h4><table class="rt-tab"><tbody>' +
         (type === 'cream' ? '<tr><td>' + esc(T.fat) + '</td><td>' + fmt(r.fat, 1) + ' %</td></tr><tr><td>' + esc(T.snf) + '</td><td>' + fmt(r.snf, 1) + ' %</td></tr>' : '') +
+        (type === 'vegan' ? '<tr><td>' + esc(T.fat) + '</td><td>' + fmt(r.fat, 1) + ' %</td></tr>' : '') +
         '<tr><td>' + esc(T.sug) + '</td><td>' + fmt(r.sug, 1) + ' %</td></tr>' +
         '<tr><td>' + esc(T.solids) + '</td><td>' + fmt(r.solids, 1) + ' %</td></tr>' +
         '<tr><td>' + esc(T.pac) + '</td><td>≈ ' + fmt(r.pac, 0) + '</td></tr></tbody></table>';
