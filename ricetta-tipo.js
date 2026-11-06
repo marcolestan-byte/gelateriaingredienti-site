@@ -31,7 +31,10 @@
     water: 'Wasser', fruit: 'Fruchtmark / Fruchtpüree', prod: 'Produkt',
     typeCream: 'Milch- bzw. Cremeeis (Basis)', typeSorb: 'Fruchteis / Sorbet',
     typeComplete: 'Komplettbasis (nur Flüssigkeit nötig)', typeVegan: 'Pflanzliches Eis (vegane Basis)',
-    doseL: 'Dosierung (g pro Liter Flüssigkeit)', doseApproxL: 'Einheit nicht angegeben, als g/L gelesen. Im Datenblatt prüfen.', vfat: 'Pflanzliches Fett (z. B. Kokos)', liquid: 'Wasser oder Milch (laut Datenblatt)',
+    doseL: 'Dosierung (g pro Liter Flüssigkeit)', doseApproxL: 'Einheit nicht angegeben, als g/L gelesen. Im Datenblatt prüfen.',
+    paste: 'Paste', typePaste: 'Eis mit Paste (Milch-/Cremebasis + Paste)', typeSyrup: 'Sorbet mit Sirup (Sirup + Fruchtmark)', sy: 'Sirup',
+    noCompPaste: 'Die Paste bringt eigenes Fett und eigenen Zucker mit: Die Zusammensetzung der fertigen Mischung hängt von der Paste ab und wird nicht berechnet. Sahne und Zucker im Rezept nach Datenblatt anpassen.',
+    noCompSyrup: 'Der Sirup enthält bereits Zucker und Stabilisator: Die Zusammensetzung wird nicht berechnet. Bitte dem Datenblatt folgen.', vfat: 'Pflanzliches Fett (z. B. Kokos)', liquid: 'Wasser oder Milch (laut Datenblatt)',
     noComp: 'Komplettbasis: Die Zusammensetzung hängt vom Rezept des Herstellers ab und wird nicht berechnet. Bitte dem Datenblatt folgen.',
     highDose: 'Hohe Dosierung: Ein Teil von Zucker und Fett kann schon in der Basis stecken. Datenblatt prüfen und Zucker und Sahne entsprechend senken.'
   } : {
@@ -51,7 +54,10 @@
     water: 'Acqua', fruit: 'Polpa / purea di frutta', prod: 'Prodotto',
     typeCream: 'Gelato al latte / alla crema (base)', typeSorb: 'Gelato alla frutta / sorbetto',
     typeComplete: 'Base completa (basta il liquido)', typeVegan: 'Gelato vegetale (base vegana)',
-    doseL: 'Dosaggio (g per litro di liquido)', doseApproxL: 'Unità non indicata, letta come g/L. Verifica sulla scheda.', vfat: 'Grasso vegetale (es. cocco)', liquid: 'Acqua o latte (secondo la scheda)',
+    doseL: 'Dosaggio (g per litro di liquido)', doseApproxL: 'Unità non indicata, letta come g/L. Verifica sulla scheda.',
+    paste: 'Pasta', typePaste: 'Gelato con pasta (base latte/crema + pasta)', typeSyrup: 'Sorbetto con sciroppo (sciroppo + polpa di frutta)', sy: 'Sciroppo',
+    noCompPaste: 'La pasta porta con sé grassi e zuccheri propri: la composizione della miscela finale dipende dalla pasta e non viene calcolata. Adatta panna e zucchero secondo la scheda.',
+    noCompSyrup: 'Lo sciroppo contiene già zuccheri e stabilizzante: la composizione non viene calcolata. Segui la scheda.', vfat: 'Grasso vegetale (es. cocco)', liquid: 'Acqua o latte (secondo la scheda)',
     noComp: 'Base completa: la composizione dipende dalla ricetta del produttore e non viene calcolata. Segui la scheda.',
     highDose: 'Dosaggio alto: parte dello zucchero e dei grassi può essere già nella base. Controlla la scheda e riduci zucchero e panna di conseguenza.'
   };
@@ -69,6 +75,17 @@
       'Bereits pasteurisierte Milch und Sahne (oder H-Milch) verwenden. Die Mischung mit dem Stabmixer einarbeiten, bis alles gelöst ist.',
       'Laut Datenblatt ruhen lassen (meist einige Stunden im Kühlschrank bei 4 °C).',
       'Frieren (mantecare) und bei der vorgesehenen Temperatur lagern.'
+    ],
+    paste: [
+      'Die weiße Basis zubereiten: Milch und Sahne auf etwa 40–45 °C erwärmen, Magermilchpulver, Dextrose und Zucker unter Rühren einarbeiten.',
+      'Gemäß Hygieneplan (HACCP) pasteurisieren, zum Beispiel 85 °C für 15–30 s oder 65 °C für 30 min, schnell auf 4 °C abkühlen.',
+      'Die Paste mit etwas abgekühlter Mischung glattrühren und dann mit dem Stabmixer in die gesamte Mischung einarbeiten.',
+      'Einige Stunden bei 4 °C reifen lassen, dann frieren (mantecare) und bei der vorgesehenen Temperatur lagern.'
+    ],
+    syrup: [
+      'Den Sirup in einen Behälter geben und, falls im Datenblatt vorgesehen, mit Wasser auf die angegebene Konzentration bringen.',
+      'Das Fruchtmark unterrühren (bei säurehaltiger Frucht auf Säurebeständigkeit des Produkts achten).',
+      'Laut Datenblatt kurz ruhen lassen, dann frieren (mantecare) und bei der vorgesehenen Temperatur lagern.'
     ],
     complete: [
       'Wasser oder Milch (laut Datenblatt) bei Raumtemperatur oder lauwarm vorlegen.',
@@ -101,6 +118,17 @@
       'Usa latte e panna già pasteurizzati (o UHT). Incorpora la miscela con il frullatore a immersione fino a scioglierla bene.',
       'Lascia riposare come indicato dalla scheda (di solito alcune ore in frigorifero a 4 °C).',
       'Manteca e conserva alla temperatura prevista.'
+    ],
+    paste: [
+      'Prepara la base bianca: scalda latte e panna a circa 40–45 °C, aggiungi latte in polvere, destrosio e zucchero mescolando.',
+      'Pastorizza secondo il tuo piano igienico (HACCP), per esempio 85 °C per 15–30 secondi oppure 65 °C per 30 minuti, poi raffredda in fretta a 4 °C.',
+      'Stempera la pasta con un po’ di miscela fredda, poi incorporala a tutta la miscela con il frullatore a immersione.',
+      'Lascia maturare alcune ore a 4 °C, poi manteca e conserva alla temperatura prevista.'
+    ],
+    syrup: [
+      'Versa lo sciroppo in un contenitore e, se la scheda lo prevede, portalo alla concentrazione indicata con acqua.',
+      'Aggiungi la polpa di frutta mescolando (con frutta acida controlla che il prodotto sia indicato per ambienti acidi).',
+      'Lascia riposare come indicato dalla scheda, poi manteca e conserva alla temperatura prevista.'
     ],
     complete: [
       'Versa acqua o latte (secondo la scheda) a temperatura ambiente o tiepido.',
@@ -147,6 +175,7 @@
   function rng(a, b, approx) { var x = num(a), y = b ? num(b) : x; return { min: Math.min(x, y), max: Math.max(x, y), approx: !!approx }; }
   function parseDose(p) {
     var t = field(p, /dosagg|dosier/i); if (!t) return null; var m;
+    if (/^\s*n\.?\s*d\./i.test(t)) return null;
     m = t.match(new RegExp('\\(\\s*' + N + '(?:' + SEP + N + ')?\\s*(?:g|gr)\\s*\\/\\s*(?:l|L|kg)'));
     if (m) return rng(m[1], m[2]);
     m = t.match(new RegExp(N + '(?:' + SEP + N + ')?\\s*(?:g|gr)\\s*(?:\\/\\s*(?:l|L|kg|litro)|per\\s*(?:1\\s*)?(?:l|L|litro|kg)\\b)'));
@@ -169,9 +198,11 @@
   }
   /* tipo di ricetta: per le basi latte distingue basi complete, vegane, a basso dosaggio */
   function kindOf(p) {
-    var base = typeOf(p);
-    if (!/^basi|^basen|^bases/i.test(p.categoria || '')) return base;
-    var h = hayOf(p) + ' ' + String(p.categoria || '').toLowerCase(), D = parseDose(p);
+    var base = typeOf(p), cat = String(p.categoria || ''), D = parseDose(p);
+    var h = hayOf(p) + ' ' + cat.toLowerCase();
+    if (/^past[ae]\b|^pasten/i.test(cat)) return /sorbett|sorbet/.test(h) ? 'sorb' : 'paste';
+    if (!/^basi|^basen|^bases|^fruchtbasen/i.test(cat)) return base;
+    if (/frutta|frucht/i.test(cat)) return (D && D.min > 200) ? 'syrup' : base;
     if (/complet|vollst|pronta|fertig/.test(h) || (D && D.min > 200)) return 'complete';
     if (/vegan|pflanzlich/.test(h)) return 'vegan';
     return base;
@@ -186,7 +217,7 @@
   /* ---- calcolo (per 1000 g di miscela) ---- */
   function calc(type, D) {
     var rows, o = {}, cream, smp, suc, dex, fruit;
-    if (type === 'cream') {
+    if (type === 'cream' || type === 'paste') {
       cream = 130; smp = 30; suc = 150; dex = 40;
       var milk = 1000 - cream - smp - suc - dex - D;
       rows = [['milk', milk], ['cream', cream], ['smp', smp], ['suc', suc], ['dex', dex], ['prod', D]];
@@ -198,10 +229,15 @@
       o.solids = (fat + snf + suc + dex * 0.92 + D) / 10;
       o.pac = suc + dex * 1.9 + lac;
       o.liquid = milk;
+      if (type === 'paste') o.noComp = true;
     } else if (type === 'complete') {
       var sc = 1000 / (1000 + D);
       rows = [['liquid', 1000 * sc], ['prod', D * sc]];
       o.liquid = 1000 * sc; o.noComp = true;
+    } else if (type === 'syrup') {
+      var fr = 350, wsy = 1000 - fr - D;
+      rows = [['fruit', fr], ['prod', D], ['water', wsy]];
+      o.liquid = wsy; o.noComp = true;
     } else if (type === 'vegan') {
       var vf = 60; suc = 140; dex = 40;
       var wv = 1000 - vf - suc - dex - D;
@@ -274,10 +310,10 @@
   function open(p, trigger) {
     lastFocus = trigger; if (ov) close();
     var type = kindOf(p), mode = modeOf(p), dose = parseDose(p), vid = VIDEOS[p.azienda + '|' + p.prodotto] || VIDEOS[p.azienda];
-    var def = dose ? Math.round((dose.min + dose.max) / 2 * 10) / 10 : (type === 'complete' ? 300 : (/^basi|^basen|^bases/i.test(p.categoria || '') ? (type === 'vegan' ? 100 : 50) : 5));
+    var def = dose ? Math.round((dose.min + dose.max) / 2 * 10) / 10 : (type === 'complete' ? 300 : (type === 'paste' ? 80 : (type === 'syrup' ? 250 : (/^basi|^basen|^bases/i.test(p.categoria || '') ? (type === 'vegan' ? 100 : 50) : 5))));
     var doseTxt = dose ? (dose.min === dose.max ? fmt(dose.min) : fmt(dose.min) + '–' + fmt(dose.max)) + (type === 'complete' ? ' g/L' : ' g/kg') : '';
-    var steps = (type === 'sorb' || type === 'complete' || type === 'vegan') ? STEPS[type] : (mode === 'cold' ? STEPS.cold : STEPS.hot);
-    var typeLbl = { sorb: T.typeSorb, cream: T.typeCream, complete: T.typeComplete, vegan: T.typeVegan }[type];
+    var steps = (type === 'sorb' || type === 'complete' || type === 'vegan' || type === 'paste' || type === 'syrup') ? STEPS[type] : (mode === 'cold' ? STEPS.cold : STEPS.hot);
+    var typeLbl = { sorb: T.typeSorb, cream: T.typeCream, complete: T.typeComplete, vegan: T.typeVegan, paste: T.typePaste, syrup: T.typeSyrup }[type];
     var vegan = /vegan|senza lattosio|laktosefrei|lactose/i.test(hayOf(p));
 
     ov = document.createElement('div'); ov.className = 'rt-ov';
@@ -310,10 +346,10 @@
       if (r.liquid < 0) { out.innerHTML = '<p class="rt-err">' + esc(T.neg) + '</p>'; return; }
       var tb = '<h4>' + esc(T.ing) + ' (' + fmt(kg, 2) + ' kg)</h4><table class="rt-tab"><tbody>' +
         r.rows.map(function (x) {
-          var g = x[1] * kg, label = x[0] === 'prod' ? T.prod + ': ' + p.prodotto : (x[0] === 'liquid' && /acqua|wasser/i.test(hayOf(p)) ? T.water : T[x[0]]);
+          var g = x[1] * kg, label = x[0] === 'prod' ? (type === 'paste' ? T.paste : type === 'syrup' ? T.sy : T.prod) + ': ' + p.prodotto : (x[0] === 'liquid' && /acqua|wasser/i.test(hayOf(p)) ? T.water : T[x[0]]);
           return '<tr' + (x[0] === 'prod' ? ' class="rt-p"' : '') + '><td>' + esc(label) + '</td><td>' + fmt(g, g < 10 ? 1 : 0) + ' ' + T.g + '</td></tr>';
         }).join('') + '</tbody></table>';
-      if (r.noComp) { out.innerHTML = tb + '<p class="rt-note">' + esc(T.noComp) + '</p>'; return; }
+      if (r.noComp) { out.innerHTML = tb + '<p class="rt-note">' + esc(type === 'paste' ? T.noCompPaste : type === 'syrup' ? T.noCompSyrup : T.noComp) + '</p>'; return; }
       var cp = '<h4>' + esc(T.comp) + '</h4><table class="rt-tab"><tbody>' +
         (type === 'cream' ? '<tr><td>' + esc(T.fat) + '</td><td>' + fmt(r.fat, 1) + ' %</td></tr><tr><td>' + esc(T.snf) + '</td><td>' + fmt(r.snf, 1) + ' %</td></tr>' : '') +
         (type === 'vegan' ? '<tr><td>' + esc(T.fat) + '</td><td>' + fmt(r.fat, 1) + ' %</td></tr>' : '') +
@@ -333,7 +369,7 @@
     Array.prototype.forEach.call(results.querySelectorAll('.torte-result-card'), function (c) {
       if (c.querySelector('.rt-actions')) return;
       var a = c.querySelector('.torte-azienda'), n = c.querySelector('.torte-prodotto'); if (!a || !n) return;
-      var p = byKey[a.textContent + '|' + n.textContent]; if (!p || p.categoria === 'Proteine') return;
+      var p = byKey[a.textContent + '|' + n.textContent]; if (!p || p.categoria === 'Proteine' || /^cremini/i.test(p.categoria || '')) return;
       var box = document.createElement('div'); box.className = 'rt-actions';
       var b = document.createElement('button'); b.type = 'button'; b.className = 'btn-lite'; b.textContent = T.btn;
       b.addEventListener('click', function () { open(p, b); });
