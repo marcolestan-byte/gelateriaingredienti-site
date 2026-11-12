@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,follow">
-<title>Calcolatore ricetta sorbetto alla frutta — Confronta Prodotti per Gelateria</title>
-<meta name="description" content="Calcolatore gratuito di bilanciamento PAC/POD per sorbetti alla frutta: inserisci frutta e saccarosio, destrosio e acqua si calcolano da soli per centrare il target.">
+<title>Ricetta gelato e condizioni ambientali — Confronta Prodotti per Gelateria</title>
+<meta name="description" content="Calcolatore gratuito: ricetta del gelato o del sorbetto in grammi, tarata su temperatura vetrina, temperatura del conservatore, temperatura e umidità del locale.">
 <style>
 :root{
   --ink:#2b2320; --ink-soft:#6b5f58; --paper:#fffaf3; --line:#e7dccd;
@@ -42,49 +42,55 @@ h1{font-size:1.4rem; margin:0 0 6px;}
 footer{font-size:0.8rem; color:var(--ink-soft); text-align:center; margin-top:30px;}
 footer a{color:var(--brand);}
 </style>
+<style>
+.sec-h{font-size:1.05rem; margin:22px 0 4px; color:var(--brand);}
+table.rec{width:100%; border-collapse:collapse; margin-top:12px; font-size:0.92rem;}
+table.rec th, table.rec td{padding:8px 10px; border-bottom:1px solid var(--line); text-align:left;}
+table.rec th{font-size:0.75rem; text-transform:uppercase; color:var(--ink-soft);}
+table.rec td.n, table.rec th.n{text-align:right; font-variant-numeric:tabular-nums;}
+table.rec tr.tot td{font-weight:800; border-top:2px solid var(--line);}
+.adv{margin:8px 0 0; padding-left:18px; font-size:0.9rem;}
+.adv li{margin-bottom:6px;}
+.adv li.w{color:#8a5a00;}
+.adv li.b{color:var(--bad);}
+.adv li.g{color:var(--ok);}
+.chk-hide{display:none !important;}
+</style>
 </head>
 <body>
 <div class="wrap">
-  <a class="top-link" href="/">← Torna al confronto prodotti</a>
-  <h1>🍓 Calcolatore ricetta sorbetto alla frutta</h1>
-  <p class="hint" style="margin-top:0;">Questo strumento è stato spostato qui in una pagina dedicata. Se stai cercando come farti ottimizzare la ricetta gratuitamente da noi, <a href="/#ottimizzaRicettaCard">torna alla home e usa il modulo "Ottimizziamo la tua ricetta gratis"</a>.</p>
+  <a class="top-link" href="/ricette-gelato.html">← Torna a Ricette gelato</a>
+  <h1>🌡️ Ricetta gelato e condizioni ambientali</h1>
+  <p class="hint" style="margin-top:0;">Inserisci le condizioni del tuo locale: il calcolatore bilancia gli zuccheri (PAC/POD) in modo che il gelato resti della consistenza giusta alla temperatura della vetrina, controlla come si comporta nel conservatore e ti avvisa se l’umidità crea problemi. Tutti i valori sono <strong>punti di partenza da tarare con le tue prove</strong>: verifica sempre con un termometro e un rifrattometro.</p>
 
-  <section class="card" id="provaRicettaCard">
-    <img class="calc-img" src="calcolatore-sorbetto-banner.jpg" alt="Il potere del bilanciamento istantaneo: frutta e saccarosio inseriti nel calcolatore, destrosio e acqua calcolati automaticamente per centrare il target PAC e ottenere un sorbetto perfettamente bilanciato">
-    <h2 style="margin-top:0;">Calcolatore di bilanciamento (fai-da-te)</h2>
-    <p style="font-size:0.85rem; color:var(--ink-soft);">
-      Calcolatore di bilanciamento per sorbetti alla frutta — indipendente dalla temperatura vetrina. Inserisci Frutta e Saccarosio: Destrosio e Acqua si calcolano da soli per centrare il Target PAC. Puoi scegliere tra Neutro frutta (stabilizzante, dose fissa ~5 g/kg, senza zuccheri) oppure Base frutta (pasta zuccherina, dose tipica 50-100 g/kg secondo il prodotto): con la Base i valori PAC/POD non sono più 0 e vanno inseriti dalla scheda tecnica del tuo prodotto — una dose troppo alta rende il gelato opaco e poco vendibile, resta nel range dichiarato dal produttore. Il POD che risulta è comunque una conseguenza della ricetta, non sempre centrabile insieme al PAC.
-    </p>
-
+  <section class="card" id="ambCard">
+    <h2 class="sec-h" style="margin-top:0;">1 · Condizioni ambientali</h2>
     <div class="form-grid">
-      <div class="field"><label>Totale ricetta (g)</label><input type="number" step="1" min="1" id="prTotale" value="1000"></div>
-      <div class="field"><label>Frutta scelta</label><select id="prFruttaScelta"></select></div>
-      <div class="field"><label>Frutta (g)</label><input type="number" step="1" min="0" id="prFruttaG" value="300"></div>
-      <div class="field"><label>Saccarosio (g)</label><input type="number" step="1" min="0" id="prSaccarosio" value="260"></div>
-      <div class="field"><label>Glucosio DE32 (g) — facoltativo</label><input type="number" step="1" min="0" id="prGlucosio" value="0"></div>
-      <div class="field"><label>Inulina (g) — facoltativo</label><input type="number" step="1" min="0" id="prInulina" value="0"></div>
-      <div class="field"><label>Prodotto di supporto</label>
-        <select id="prTipoSupporto">
-          <option value="neutro">Neutro frutta (stabilizzante, ~5 g/kg)</option>
-          <option value="base">Base frutta (pasta zuccherina, 50-100 g/kg)</option>
-        </select>
-      </div>
-      <div class="field">
-        <label id="prDoseNeutroLabel">Dose neutro frutta (g per kg di miscela)</label>
-        <input type="number" step="0.1" min="0" id="prDoseNeutro" value="5">
-        <div id="prDosePresetWrap" style="display:none; gap:6px; margin-top:6px;">
-          <button type="button" class="btn small outline" id="prDose50">50 g/kg</button>
-          <button type="button" class="btn small outline" id="prDose100">100 g/kg</button>
-        </div>
-      </div>
-      <div class="field" id="prBasePacWrap" style="display:none;"><label>PAC base frutta (per 100g)</label><input type="number" step="0.1" id="prBasePac" value="30"></div>
-      <div class="field" id="prBasePodWrap" style="display:none;"><label>POD base frutta (per 100g)</label><input type="number" step="0.1" id="prBasePod" value="55"></div>
-      <div class="field"><label>Target PAC (%)</label><input type="number" step="0.1" id="prTargetPac" value="30"></div>
+      <div class="field"><label>Prodotto</label><select id="aTipo"><option value="crema">Gelato alla crema</option><option value="sorbetto">Sorbetto alla frutta</option></select></div>
+      <div class="field"><label>Totale ricetta (g)</label><input type="number" step="10" min="100" id="aTot" value="1000"></div>
+      <div class="field"><label>Temperatura vetrina (°C)</label><input type="number" step="0.5" id="aTvet" value="-13"></div>
+      <div class="field"><label>Temperatura conservatore / cella (°C)</label><input type="number" step="0.5" id="aTcons" value="-18"></div>
+      <div class="field"><label>Temperatura del locale (°C)</label><input type="number" step="0.5" id="aTloc" value="24"></div>
+      <div class="field"><label>Umidità relativa del locale (%)</label><input type="number" step="1" min="0" max="100" id="aRh" value="55"></div>
     </div>
-    <div class="hint">I valori PAC/POD usati sono valori medi da tabelle nutrizionali — se il tuo frutto non è elencato, i coefficienti restano a 0 (approssimazione grezza): usa un rifrattometro per un valore reale.</div>
-    <div class="hint" id="prBaseHint" style="display:none;">30/55 sono valori di esempio: sostituiscili con il PAC/POD dichiarati nella scheda tecnica della tua base frutta. La dose (50 o 100 g/kg) dipende dalla concentrazione del prodotto — verifica sempre l'etichetta: una dose troppo alta rispetto a quella dichiarata rende il gelato opaco e invendibile.</div>
+    <div style="margin-top:12px;"><button type="button" class="btn small outline" id="aMeteo">📍 Rileva meteo della mia posizione</button> <span class="hint" id="aMeteoSt"></span></div>
+    <div class="hint">Valori tipici: vetrina da −12 a −14 °C, conservatore da −18 a −20 °C. Il locale caldo e umido scalda la superficie del gelato e favorisce condensa e cristalli.</div>
 
-    <div id="prRisultatoBox" style="margin-top:14px;"></div>
+    <h2 class="sec-h">2 · La ricetta</h2>
+    <div class="form-grid">
+      <div class="field cremaOnly"><label>Panna fresca 35% (% sul totale)</label><input type="number" step="1" min="0" id="aPanna" value="10"></div>
+      <div class="field cremaOnly"><label>Latte in polvere scremato (g per kg)</label><input type="number" step="1" min="0" id="aSmp" value="45"></div>
+      <div class="field sorbOnly"><label>Frutta</label><select id="aFrutta"></select></div>
+      <div class="field sorbOnly"><label>Frutta (% sul totale)</label><input type="number" step="1" min="0" max="90" id="aFruttaPc" value="30"></div>
+      <div class="field sorbOnly altroOnly"><label>PAC della frutta (per 100 g)</label><input type="number" step="0.1" id="aCpac" value="12"></div>
+      <div class="field sorbOnly altroOnly"><label>POD della frutta (per 100 g)</label><input type="number" step="0.1" id="aCpod" value="8"></div>
+      <div class="field sorbOnly altroOnly"><label>Acqua nella frutta (%)</label><input type="number" step="1" min="0" max="100" id="aCacq" value="85"></div>
+      <div class="field"><label>Stabilizzante / neutro (g per kg, dose base)</label><input type="number" step="0.5" min="0" id="aStab" value="4"></div>
+      <div class="field"><label>Quota di destrosio sugli zuccheri aggiunti (%)</label><input type="number" step="5" min="0" max="100" id="aDex" value="30"></div>
+    </div>
+
+    <h2 class="sec-h">3 · Risultato</h2>
+    <div id="aOut"></div>
   </section>
 
   <footer>
@@ -94,140 +100,176 @@ footer a{color:var(--brand);}
 </div>
 
 <script>
-const STR = {
-  prDoseNeutro: "Dose neutro frutta (g per kg di miscela)",
-  prDoseBase: "Dose base frutta (g per kg di miscela)",
-  verdictNessunIngrediente: "Aggiungi ingredienti alla ricetta per vedere il risultato.",
-  prResDestrosio: "Destrosio calcolato (g)",
-  prResAcqua: "Acqua calcolata (g)",
-  prResNeutro: "Neutro frutta (g)",
-  prResBase: "Base frutta (g)",
-  prResPac: "PAC assoluto ottenuto (%)",
-  prResPod: "POD assoluto ottenuto (%)",
-  targetPrefix: "target",
-  prResPodNote: "conseguenza della ricetta, non impostabile a piacere",
-  prResBrix: "Brix stimato (°Bx)",
-  prResBrixNote: "stima approssimativa — per il valore reale usa un rifrattometro",
-  prPodOk: "✅ dentro il range consigliato per il sorbetto alla frutta (28–35)",
-  prPodOut: "⚠️ fuori dal range consigliato (28–35) — prova ad aumentare il Saccarosio (farà scendere il Destrosio necessario) o cambia frutta",
-  prFeasibleWarn: "⚠️ Attenzione: quantità negativa — riduci frutta/saccarosio/glucosio/inulina oppure aumenta il totale ricetta",
+const STR = {"lang": "it", "title": "Ricetta gelato e condizioni ambientali — Confronta Prodotti per Gelateria", "desc": "Calcolatore gratuito: ricetta del gelato o del sorbetto in grammi, tarata su temperatura vetrina, temperatura del conservatore, temperatura e umidità del locale.", "back": "← Torna al confronto prodotti", "hub": "← Torna a Ricette gelato", "hubhref": "/ricette-gelato.html", "h1": "🌡️ Ricetta gelato e condizioni ambientali", "intro": "Inserisci le condizioni del tuo locale: il calcolatore bilancia gli zuccheri (PAC/POD) in modo che il gelato resti della consistenza giusta alla temperatura della vetrina, controlla come si comporta nel conservatore e ti avvisa se l’umidità crea problemi. Tutti i valori sono <strong>punti di partenza da tarare con le tue prove</strong>: verifica sempre con un termometro e un rifrattometro.", "sec_cond": "1 · Condizioni ambientali", "sec_rec": "2 · La ricetta", "sec_res": "3 · Risultato", "f_tipo": "Prodotto", "o_crema": "Gelato alla crema", "o_sorb": "Sorbetto alla frutta", "f_tot": "Totale ricetta (g)", "f_tvet": "Temperatura vetrina (°C)", "f_tcons": "Temperatura conservatore / cella (°C)", "f_tloc": "Temperatura del locale (°C)", "f_umid": "Umidità relativa del locale (%)", "btn_meteo": "📍 Rileva meteo della mia posizione", "meteo_wait": "Rilevo la posizione…", "meteo_ok": "Meteo esterno rilevato: {t} °C, umidità {u} %. Sono valori esterni: correggili con quelli del tuo locale.", "meteo_no": "Il browser non supporta la geolocalizzazione.", "meteo_err": "Meteo non disponibile in questo momento.", "meteo_deny": "Permesso di posizione negato.", "f_panna": "Panna fresca 35% (% sul totale)", "f_smp": "Latte in polvere scremato (g per kg)", "f_stab": "Stabilizzante / neutro (g per kg, dose base)", "f_dex": "Quota di destrosio sugli zuccheri aggiunti (%)", "f_frutta": "Frutta", "f_fruttapc": "Frutta (% sul totale)", "f_cpac": "PAC della frutta (per 100 g)", "f_cpod": "POD della frutta (per 100 g)", "f_cacq": "Acqua nella frutta (%)", "hint_cond": "Valori tipici: vetrina da −12 a −14 °C, conservatore da −18 a −20 °C. Il locale caldo e umido scalda la superficie del gelato e favorisce condensa e cristalli.", "th_ing": "Ingrediente", "th_g": "Grammi", "th_pc": "%", "i_latte": "Latte intero fresco", "i_panna": "Panna fresca 35%", "i_smp": "Latte scremato in polvere", "i_sacc": "Saccarosio", "i_dex": "Destrosio", "i_stab": "Stabilizzante / neutro", "i_frutta": "Frutta", "i_acqua": "Acqua", "i_tot": "Totale", "r_pac": "PAC ottenuto", "r_pod": "POD ottenuto", "r_sec": "Estratto secco (%)", "r_fat": "Grassi (%)", "r_tf": "Punto di congelamento stimato", "r_ice_v": "Acqua congelata in vetrina", "r_ice_e": "Acqua congelata (superficie, con locale caldo)", "r_ice_c": "Acqua congelata in conservatore", "r_tvet_eff": "Temperatura efficace in vetrina", "r_dew": "Punto di rugiada del locale", "r_stab": "Dose stabilizzante usata", "tgt": "target", "tgt_pac": "PAC richiesto da vetrina e acqua della ricetta", "rng_pod": "intervallo consigliato", "rng_solids": "intervallo indicativo", "ok_pod": "✅ POD dentro l’intervallo consigliato", "out_pod": "⚠️ POD fuori intervallo consigliato: prova a cambiare la quota di destrosio o la dose di panna/frutta.", "ok_solids": "✅ Estratto secco dentro l’intervallo indicativo", "out_solids": "⚠️ Estratto secco fuori dall’intervallo indicativo (vedi consigli sotto).", "solids_low": "Estratto secco basso: il gelato sarà acquoso e con cristalli. Aumenta latte in polvere o stabilizzante (crema) o frutta (sorbetto).", "solids_high": "Estratto secco alto: il gelato sarà pesante e poco fresco. Riduci latte in polvere o panna.", "infeasible": "⚠️ Ricetta non realizzabile con questi valori: la somma degli ingredienti supera il totale. Riduci panna, latte in polvere, frutta o stabilizzante.", "adv_title": "Consigli sulle condizioni ambientali", "a_vet_warm": "La vetrina è più calda di −11 °C: il gelato risulterà morbido e meno stabile. Se puoi, abbassa la temperatura di esercizio.", "a_vet_cold": "La vetrina è più fredda di −16 °C: il gelato si serve duro; la ricetta è stata ammorbidita (PAC più alto) ma valuta di alzare un po’ la temperatura.", "a_vet_ok": "Temperatura vetrina nell’intervallo tipico (−11 / −16 °C).", "a_cons_warm": "Il conservatore è più caldo della vetrina: il gelato si ammorbidisce prima del servizio e i cristalli crescono (ricristallizzazione). Porta il conservatore almeno alla temperatura della vetrina.", "a_cons_mid": "Conservatore sopra −15 °C: attenzione alla ricristallizzazione sulla lunga conservazione; consuma i prodotti in pochi giorni.", "a_cons_hard": "Al conservatore il gelato è molto duro ({f} % di acqua congelata): lascialo ammorbidire (temperare) alla temperatura di servizio prima di prelevarlo.", "a_cons_ok": "Conservatore adeguato: il gelato si lascia temperare facilmente verso la vetrina.", "a_room_hot": "Locale caldo ({t} °C): la superficie nella vetrina si scalda di circa {d} °C e il gelato si ammorbidisce; per questo la ricetta è stata resa un po’ più dura (PAC più basso).", "a_rh_low": "Umidità bassa o media: nessun problema particolare.", "a_rh_mid": "Umidità medio-alta ({u} %): controlla la condensa sul vetro e tieni chiusi i contenitori.", "a_rh_high": "Umidità alta ({u} %): rischio di condensa sulle superfici fredde e di cristalli di ghiaccio in superficie. Lo stabilizzante è stato aumentato del 20 % e conviene preferire saccarosio al destrosio (più igroscopico).", "a_dew": "Punto di rugiada {d} °C: sulle superfici più fredde di questa temperatura (vetro, bordi, pareti) si forma condensa.", "a_both": "Locale caldo e umido: copri sempre i contenitori, riduci le aperture e fai ruotare il gelato in vetrina più spesso.", "disclaimer_calc": "Metodo: il PAC richiesto è calcolato in modo che a temperatura di vetrina circa l’82 % dell’acqua sia congelata (stima da abbassamento crioscopico). I coefficienti di correzione per locale caldo e umidità sono valori di partenza da tarare con le tue prove dirette.", "copy_btn": "Copia la ricetta", "copied": "Ricetta copiata.", "footer1": "Confronta Prodotti per Gelateria — piattaforma indipendente, senza sponsorizzazioni.", "footer_home": "Torna alla home", "discl": "Il portale riunisce in un’unica ricerca ciò di cui la gelateria ha bisogno, con link diretti alle aziende produttrici. Avviso: i dati contenuti in questo portale sono riportati solo a scopo di conoscenza. Il confronto è puramente teorico e si basa sui dati rilasciati dalle aziende o disponibili sul web. Non sono indicati costi né altri parametri economici.", "copyr": "© 2026 Marco Lestan, tutti i diritti riservati", "terms": "Condizioni d'uso", "termshref": "/condizioni-d-uso.html", "unit_c": "°C"};
+const FRUTTA_DB = [{"nome": "Fragola", "pac": 10.1, "pod": 6.4, "h2o": 0.91}, {"nome": "Lampone", "pac": 12.4, "pod": 7.8, "h2o": 0.86}, {"nome": "Mirtillo", "pac": 9.7, "pod": 6.1, "h2o": 0.84}, {"nome": "Limone", "pac": 4.4, "pod": 2.8, "h2o": 0.9}, {"nome": "Arancia", "pac": 14.8, "pod": 9.4, "h2o": 0.87}, {"nome": "Mandarino", "pac": 33.4, "pod": 21.1, "h2o": 0.88}, {"nome": "Mela", "pac": 19.0, "pod": 12.0, "h2o": 0.86}, {"nome": "Pera", "pac": 16.7, "pod": 10.6, "h2o": 0.84}, {"nome": "Pesca", "pac": 11.0, "pod": 7.0, "h2o": 0.89}, {"nome": "Albicocca", "pac": 12.9, "pod": 8.2, "h2o": 0.86}, {"nome": "Banana", "pac": 24.3, "pod": 15.4, "h2o": 0.75}, {"nome": "Mango", "pac": 23.9, "pod": 15.1, "h2o": 0.83}, {"nome": "Ananas", "pac": 19.0, "pod": 12.0, "h2o": 0.86}, {"nome": "Uva", "pac": 29.6, "pod": 18.7, "h2o": 0.81}, {"nome": "Melone", "pac": 14.1, "pod": 8.9, "h2o": 0.9}, {"nome": "Anguria / Cocomero", "pac": 7.0, "pod": 4.4, "h2o": 0.92}, {"nome": "Cocco fresco", "pac": 17.9, "pod": 11.3, "h2o": 0.47}, {"nome": "Succo di frutta 100% (media generica)", "pac": 27.6, "pod": 17.4, "h2o": 0.88}, {"nome": "Altro frutto (inserisci tu i valori)", "pac": 0, "pod": 0, "h2o": 0.85}];
+function t(k){ return STR[k] !== undefined ? STR[k] : k; }
+function fmt(s, o){ return s.replace(/\{(\w+)\}/g, (m,k)=> (o[k]!==undefined?o[k]:m)); }
+
+// Coefficienti (per 100 g di ingrediente; saccarosio = 100). Valori di partenza.
+const C = {
+  latte:{pac:4.7, pod:0.8, h2o:.875, ss:.125, fat:.036},
+  panna:{pac:3.0, pod:0.5, h2o:.58,  ss:.42,  fat:.35},
+  smp:  {pac:52,  pod:8.3, h2o:.035, ss:.965, fat:.008},
+  sacc: {pac:100, pod:100, h2o:0,    ss:1,    fat:0},
+  dex:  {pac:190, pod:70,  h2o:0,    ss:1,    fat:0},
+  stab: {pac:0,   pod:0,   h2o:0,    ss:1,    fat:0},
 };
-function t(k){ return STR[k] || k; }
+const KF = 0.82;          // frazione di acqua congelata a temperatura di vetrina (sorbetto: 0.815)
+const KCRIO = 1.86;       // costante crioscopica dell'acqua (°C·kg/mol)
+const MW_SUC = 342;       // massa molare saccarosio
+const ROOM_REF = 22;      // sopra questa temperatura il locale scalda la superficie
+const ROOM_COEF = 0.12;   // °C di riscaldamento superficiale per °C sopra ROOM_REF (da tarare)
+const RH_HIGH = 65;       // umidità "alta"
+const STAB_HUM = 0.20;    // +20% stabilizzante con umidità alta
 
-const FRUTTA_DB = [
-  { nome: "Fragola", pac: 10.1, pod: 6.4 },
-  { nome: "Lampone", pac: 12.4, pod: 7.8 },
-  { nome: "Mirtillo", pac: 9.7, pod: 6.1 },
-  { nome: "Limone", pac: 4.4, pod: 2.8 },
-  { nome: "Arancia", pac: 14.8, pod: 9.4 },
-  { nome: "Mandarino", pac: 33.4, pod: 21.1 },
-  { nome: "Mela", pac: 19.0, pod: 12.0 },
-  { nome: "Pera", pac: 16.7, pod: 10.6 },
-  { nome: "Pesca", pac: 11.0, pod: 7.0 },
-  { nome: "Albicocca", pac: 12.9, pod: 8.2 },
-  { nome: "Banana", pac: 24.3, pod: 15.4 },
-  { nome: "Mango", pac: 23.9, pod: 15.1 },
-  { nome: "Ananas", pac: 19.0, pod: 12.0 },
-  { nome: "Uva", pac: 29.6, pod: 18.7 },
-  { nome: "Melone", pac: 14.1, pod: 8.9 },
-  { nome: "Anguria / Cocomero", pac: 7.0, pod: 4.4 },
-  { nome: "Cocco fresco", pac: 17.9, pod: 11.3 },
-  { nome: "Succo di frutta 100% (media generica — varia per frutto, verifica col tuo)", pac: 27.6, pod: 17.4 },
-  { nome: "Altro frutto non elencato (inserisci tu i valori)", pac: 0, pod: 0 },
-];
-
-const TARGET_RANGES = {
-  crema:    { pacMin: 25, pacMax: 27, podMin: 15, podMax: 19, label: "Gelato alla crema" },
-  sorbetto: { pacMin: 29, pacMax: 31, podMin: 28, podMax: 35, label: "Sorbetto alla frutta" },
-};
-
-const PR_GLUCOSIO_PAC = 54.15, PR_GLUCOSIO_POD = 22.5;
-const PR_INULINA_PAC = 25, PR_INULINA_POD = 10;
-const PR_NEUTRO_PAC = 0, PR_NEUTRO_POD = 0;
-
-function prPopolaFruttaSelect(){
-  const sel = document.getElementById('prFruttaScelta');
-  if(!sel) return;
-  const current = sel.value;
-  sel.innerHTML = FRUTTA_DB.map(f => `<option value="${f.nome}">${f.nome}</option>`).join('');
-  if(current && FRUTTA_DB.some(f => f.nome === current)) sel.value = current;
+function num(id, d){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? d : v; }
+function dewPoint(T, RH){
+  if(!(RH > 0)) return null;
+  const a=17.62, b=243.12, g = Math.log(RH/100) + a*T/(b+T);
+  return b*g/(a-g);
 }
 
-function prSyncTipoSupporto(){
-  const tipo = document.getElementById('prTipoSupporto').value;
-  const isBase = tipo === 'base';
-  document.getElementById('prBasePacWrap').style.display = isBase ? '' : 'none';
-  document.getElementById('prBasePodWrap').style.display = isBase ? '' : 'none';
-  document.getElementById('prDosePresetWrap').style.display = isBase ? 'flex' : 'none';
-  document.getElementById('prBaseHint').style.display = isBase ? '' : 'none';
-  document.getElementById('prDoseNeutroLabel').textContent = t(isBase ? 'prDoseBase' : 'prDoseNeutro');
-  const doseInput = document.getElementById('prDoseNeutro');
-  if(doseInput.dataset.lastTipo !== tipo){
-    doseInput.value = isBase ? 50 : 5;
-    doseInput.dataset.lastTipo = tipo;
-  }
+function popolaFrutta(){
+  const sel = document.getElementById('aFrutta');
+  sel.innerHTML = FRUTTA_DB.map((f,i)=>`<option value="${i}">${f.nome}</option>`).join('');
 }
 
-function prCalcola(){
-  const box = document.getElementById('prRisultatoBox');
-  if(!box) return;
-  const totale = parseFloat(document.getElementById('prTotale').value) || 0;
-  const fruttaNome = document.getElementById('prFruttaScelta').value;
-  const frutta = FRUTTA_DB.find(f => f.nome === fruttaNome) || { pac: 0, pod: 0 };
-  const fruttaG = parseFloat(document.getElementById('prFruttaG').value) || 0;
-  const saccG = parseFloat(document.getElementById('prSaccarosio').value) || 0;
-  const glucG = parseFloat(document.getElementById('prGlucosio').value) || 0;
-  const inulinaG = parseFloat(document.getElementById('prInulina').value) || 0;
-  const doseNeutro = parseFloat(document.getElementById('prDoseNeutro').value) || 0;
-  const targetPac = parseFloat(document.getElementById('prTargetPac').value) || 0;
-  const tipoSupporto = document.getElementById('prTipoSupporto').value;
-  const isBase = tipoSupporto === 'base';
-  const neutroPac = isBase ? (parseFloat(document.getElementById('prBasePac').value) || 0) : PR_NEUTRO_PAC;
-  const neutroPod = isBase ? (parseFloat(document.getElementById('prBasePod').value) || 0) : PR_NEUTRO_POD;
+function calcola(){
+  const tipo = document.getElementById('aTipo').value;
+  const isCrema = tipo === 'crema';
+  document.querySelectorAll('.cremaOnly').forEach(e=>e.classList.toggle('chk-hide', !isCrema));
+  document.querySelectorAll('.sorbOnly').forEach(e=>e.classList.toggle('chk-hide', isCrema));
+  const fIdx = parseInt(document.getElementById('aFrutta').value,10) || 0;
+  const isAltro = !isCrema && fIdx === FRUTTA_DB.length-1;
+  document.querySelectorAll('.altroOnly').forEach(e=>e.classList.toggle('chk-hide', isCrema || !isAltro));
 
-  if(totale <= 0){
-    box.innerHTML = `<div class="result-panel"><div class="verdict">${t('verdictNessunIngrediente')}</div></div>`;
-    return;
+  const tot = Math.max(100, num('aTot',1000));
+  const Tvet = num('aTvet',-13), Tcons = num('aTcons',-18), Tloc = num('aTloc',24), RH = Math.min(100, Math.max(0, num('aRh',55)));
+  const dexShare = Math.min(1, Math.max(0, num('aDex',30)/100));
+  let stabDose = Math.max(0, num('aStab', isCrema?4:5));
+  const humHigh = RH >= RH_HIGH;
+  const stabUsed = stabDose * (humHigh ? (1+STAB_HUM) : 1);
+  const stabG = stabUsed * tot/1000;
+
+  // temperatura efficace in vetrina: il locale caldo scalda la superficie
+  const dRoom = Math.max(0, Tloc - ROOM_REF) * ROOM_COEF;
+  const Teff = Tvet + dRoom;                       // più caldo (meno negativo)
+  const absTeff = Math.max(1, Math.abs(Teff));
+  const f = isCrema ? KF : 0.815;
+  const mixPac = (1-dexShare)*C.sacc.pac + dexShare*C.dex.pac;
+  const mixPod = (1-dexShare)*C.sacc.pod + dexShare*C.dex.pod;
+
+  let g = {}, A = 0.2*tot, fruitG=0, fr=null;
+  if(isCrema){
+    const pannaG = tot*Math.max(0,num('aPanna',10))/100, smpG = tot*0/1 + Math.max(0,num('aSmp',45))*tot/1000;
+    g.panna=pannaG; g.smp=smpG; g.stab=stabG;
+    for(let i=0;i<40;i++){
+      g.latte = tot - pannaG - smpG - stabG - A;
+      const W = g.latte*C.latte.h2o + pannaG*C.panna.h2o + smpG*C.smp.h2o;
+      const w100 = W/tot*100;
+      const pacReq = (absTeff*(1-f)/KCRIO)*MW_SUC*w100/1000;
+      const fixedPac = g.latte*C.latte.pac + pannaG*C.panna.pac + smpG*C.smp.pac;
+      const nA = (pacReq*tot - fixedPac)/mixPac;
+      A = 0.5*A + 0.5*Math.max(0,nA);
+    }
+  } else {
+    fr = FRUTTA_DB[fIdx];
+    if(isAltro) fr = {nome:fr.nome, pac:num('aCpac',12), pod:num('aCpod',8), h2o:Math.min(1,Math.max(0,num('aCacq',85)/100))};
+    fruitG = tot*Math.max(0,num('aFruttaPc',30))/100;
+    g.frutta = fruitG; g.stab = stabG;
+    for(let i=0;i<40;i++){
+      g.acqua = tot - fruitG - stabG - A;
+      const W = fruitG*fr.h2o + Math.max(0,g.acqua);
+      const w100 = W/tot*100;
+      const pacReq = (absTeff*(1-f)/KCRIO)*MW_SUC*w100/1000;
+      const nA = (pacReq*tot - fruitG*fr.pac)/mixPac;
+      A = 0.5*A + 0.5*Math.max(0,nA);
+    }
   }
+  g.sacc = A*(1-dexShare); g.dex = A*dexShare;
+  if(isCrema) g.latte = tot - g.panna - g.smp - g.stab - A; else g.acqua = tot - fruitG - g.stab - A;
+  const feasible = (isCrema ? g.latte : g.acqua) >= 0;
 
-  const neutroG = doseNeutro * totale / 1000;
-  const destrosioG = (targetPac*totale - fruttaG*frutta.pac - saccG*100 - glucG*PR_GLUCOSIO_PAC - inulinaG*PR_INULINA_PAC - neutroG*neutroPac) / 190;
-  const acquaG = totale - fruttaG - saccG - glucG - inulinaG - destrosioG - neutroG;
+  // metriche
+  const ing = isCrema ? ['latte','panna','smp','sacc','dex','stab'] : ['frutta','sacc','dex','stab','acqua'];
+  const co = (k)=> k==='frutta' ? {pac:fr.pac,pod:fr.pod,h2o:fr.h2o,ss:1-fr.h2o,fat:0} : (k==='acqua' ? {pac:0,pod:0,h2o:1,ss:0,fat:0} : C[k]);
+  let pac=0,pod=0,W=0,ss=0,fat=0;
+  ing.forEach(k=>{const c=co(k), q=Math.max(0,g[k]||0); pac+=q*c.pac; pod+=q*c.pod; W+=q*c.h2o; ss+=q*c.ss; fat+=q*c.fat;});
+  pac/=tot; pod/=tot; const w100=W/tot*100, ssP=ss/tot*100, fatP=fat/tot*100;
+  const Tf = -KCRIO*(pac/MW_SUC)/(Math.max(1,w100)/1000);           // °C (negativo)
+  const ice = (T)=> T < Tf ? (1 - Tf/T) : 0;
+  const iceV = ice(Tvet), iceE = ice(Teff), iceC = ice(Tcons);
+  const dew = dewPoint(Tloc, RH);
 
-  const pacCalc = (fruttaG*frutta.pac + saccG*100 + glucG*PR_GLUCOSIO_PAC + inulinaG*PR_INULINA_PAC + destrosioG*190 + neutroG*neutroPac) / totale;
-  const podCalc = (fruttaG*frutta.pod + saccG*100 + glucG*PR_GLUCOSIO_POD + inulinaG*PR_INULINA_POD + destrosioG*70 + neutroG*neutroPod) / totale;
-  const brix = (saccG + glucG + inulinaG + destrosioG + fruttaG*frutta.pod/120 + neutroG*neutroPod/120) / totale * 100;
+  const podR = isCrema ? [15,19] : [24,30], ssR = isCrema ? [34,40] : [28,36];
+  const podOk = pod>=podR[0] && pod<=podR[1], ssOk = ssP>=ssR[0] && ssP<=ssR[1];
 
-  const target = TARGET_RANGES.sorbetto;
-  const podOk = podCalc >= target.podMin && podCalc <= target.podMax;
-  const feasible = destrosioG >= 0 && acquaG >= 0;
-  const stato = !feasible ? 'low' : (podOk ? 'ok' : 'high');
+  // consigli
+  const adv = [];
+  if(Tvet > -11) adv.push(['w', t('a_vet_warm')]); else if(Tvet < -16) adv.push(['w', t('a_vet_cold')]); else adv.push(['g', t('a_vet_ok')]);
+  if(Tcons > Tvet) adv.push(['b', t('a_cons_warm')]); else if(Tcons > -15) adv.push(['w', t('a_cons_mid')]);
+  else if(iceC > 0.90) adv.push(['w', fmt(t('a_cons_hard'), {f:(iceC*100).toFixed(0)})]); else adv.push(['g', t('a_cons_ok')]);
+  if(dRoom > 0.3) adv.push(['w', fmt(t('a_room_hot'), {t:Tloc, d:dRoom.toFixed(1)})]);
+  if(humHigh) adv.push(['b', fmt(t('a_rh_high'), {u:RH})]); else if(RH >= 60) adv.push(['w', fmt(t('a_rh_mid'), {u:RH})]); else adv.push(['g', t('a_rh_low')]);
+  if(dew !== null) adv.push([dew > 8 ? 'w':'g', fmt(t('a_dew'), {d:dew.toFixed(1)})]);
+  if(Tloc >= 28 && humHigh) adv.push(['b', t('a_both')]);
+  if(!ssOk) adv.push(['w', ssP < ssR[0] ? t('solids_low') : t('solids_high')]);
 
-  box.innerHTML = `
+  // tabella
+  const names = {latte:t('i_latte'),panna:t('i_panna'),smp:t('i_smp'),sacc:t('i_sacc'),dex:t('i_dex'),stab:t('i_stab'),frutta:t('i_frutta')+' ('+(fr?fr.nome:'')+')',acqua:t('i_acqua')};
+  const rows = ing.map(k=>`<tr><td>${names[k]}</td><td class="n">${Math.max(0,g[k]).toFixed(0)} g</td><td class="n">${(Math.max(0,g[k])/tot*100).toFixed(1)} %</td></tr>`).join('');
+  window.__rec = ing.map(k=>`${names[k]}: ${Math.max(0,g[k]).toFixed(0)} g`).join('\n') + `\n${t('i_tot')}: ${tot.toFixed(0)} g`;
+
+  const stato = !feasible ? 'low' : ((podOk && ssOk) ? 'ok' : 'high');
+  const sub = (tx)=>`<div class="rt-sub">${tx}</div>`;
+  document.getElementById('aOut').innerHTML = !feasible ? `<div class="result-panel low"><div class="verdict">${t('infeasible')}</div></div>` : `
     <div class="result-panel ${stato}">
-      <div class="result-grid">
-        <div class="result-tile"><div class="rt-label">${t('prResDestrosio')}</div><div class="rt-value">${destrosioG.toFixed(0)} g</div></div>
-        <div class="result-tile"><div class="rt-label">${t('prResAcqua')}</div><div class="rt-value">${acquaG.toFixed(0)} g</div></div>
-        <div class="result-tile"><div class="rt-label">${t(isBase ? 'prResBase' : 'prResNeutro')}</div><div class="rt-value">${neutroG.toFixed(0)} g</div></div>
-        <div class="result-tile"><div class="rt-label">${t('prResPac')}</div><div class="rt-value">${pacCalc.toFixed(2)}</div><div class="rt-sub">${t('targetPrefix')}: ${targetPac.toFixed(1)}</div></div>
-        <div class="result-tile"><div class="rt-label">${t('prResPod')}</div><div class="rt-value">${podCalc.toFixed(2)}</div><div class="rt-sub">${t('prResPodNote')} (${target.podMin}–${target.podMax})</div></div>
-        <div class="result-tile"><div class="rt-label">${t('prResBrix')}</div><div class="rt-value">${brix.toFixed(1)}</div><div class="rt-sub">${t('prResBrixNote')}</div></div>
+      <table class="rec"><thead><tr><th>${t('th_ing')}</th><th class="n">${t('th_g')}</th><th class="n">${t('th_pc')}</th></tr></thead><tbody>${rows}
+        <tr class="tot"><td>${t('i_tot')}</td><td class="n">${tot.toFixed(0)} g</td><td class="n">100 %</td></tr></tbody></table>
+      <div style="margin-top:10px;"><button type="button" class="btn small outline" id="aCopy">${t('copy_btn')}</button> <span class="hint" id="aCopied"></span></div>
+      <div class="result-grid" style="margin-top:14px;">
+        <div class="result-tile"><div class="rt-label">${t('r_pac')}</div><div class="rt-value">${pac.toFixed(1)}</div>${sub(t('tgt_pac'))}</div>
+        <div class="result-tile"><div class="rt-label">${t('r_pod')}</div><div class="rt-value">${pod.toFixed(1)}</div>${sub(t('rng_pod')+': '+podR[0]+'–'+podR[1])}</div>
+        <div class="result-tile"><div class="rt-label">${t('r_sec')}</div><div class="rt-value">${ssP.toFixed(1)}</div>${sub(t('rng_solids')+': '+ssR[0]+'–'+ssR[1])}</div>
+        <div class="result-tile"><div class="rt-label">${t('r_tf')}</div><div class="rt-value">${Tf.toFixed(1)} °C</div>${isCrema?sub(t('r_fat')+': '+fatP.toFixed(1)+' %'):''}</div>
+        <div class="result-tile"><div class="rt-label">${t('r_ice_v')}</div><div class="rt-value">${(iceV*100).toFixed(0)} %</div>${sub(Tvet+' °C')}</div>
+        <div class="result-tile"><div class="rt-label">${t('r_ice_c')}</div><div class="rt-value">${(iceC*100).toFixed(0)} %</div>${sub(Tcons+' °C')}</div>
+        <div class="result-tile"><div class="rt-label">${t('r_tvet_eff')}</div><div class="rt-value">${Teff.toFixed(1)} °C</div>${sub(t('r_ice_e')+': '+(iceE*100).toFixed(0)+' %')}</div>
+        <div class="result-tile"><div class="rt-label">${t('r_dew')}</div><div class="rt-value">${dew===null?'—':dew.toFixed(1)+' °C'}</div>${sub(Tloc+' °C · '+RH+' %')}</div>
+        <div class="result-tile"><div class="rt-label">${t('r_stab')}</div><div class="rt-value">${stabUsed.toFixed(1)} g/kg</div>${humHigh?sub('+20 %'):''}</div>
       </div>
-      <div class="verdict">${feasible ? (podOk ? t('prPodOk') : t('prPodOut')) : t('prFeasibleWarn')}</div>
-    </div>`;
+      <div class="verdict">${podOk ? t('ok_pod') : t('out_pod')}<br>${ssOk ? t('ok_solids') : t('out_solids')}</div>
+    </div>
+    <h2 class="sec-h">${t('adv_title')}</h2>
+    <ul class="adv">${adv.map(a=>`<li class="${a[0]}">${a[1]}</li>`).join('')}</ul>
+    <div class="hint">${t('disclaimer_calc')}</div>`;
+  const cb = document.getElementById('aCopy');
+  if(cb) cb.addEventListener('click', ()=>{ try{ navigator.clipboard.writeText(window.__rec); document.getElementById('aCopied').textContent = t('copied'); }catch(e){} });
 }
 
-prPopolaFruttaSelect();
-prSyncTipoSupporto();
-prCalcola();
-document.getElementById('prTipoSupporto').addEventListener('change', () => { prSyncTipoSupporto(); prCalcola(); });
-document.getElementById('prDose50').addEventListener('click', () => { document.getElementById('prDoseNeutro').value = 50; prCalcola(); });
-document.getElementById('prDose100').addEventListener('click', () => { document.getElementById('prDoseNeutro').value = 100; prCalcola(); });
-['prTotale','prFruttaScelta','prFruttaG','prSaccarosio','prGlucosio','prInulina','prDoseNeutro','prTargetPac','prBasePac','prBasePod'].forEach(id => {
-  const el = document.getElementById(id);
-  el.addEventListener('input', prCalcola);
-  el.addEventListener('change', prCalcola);
+popolaFrutta();
+['aTipo','aTot','aTvet','aTcons','aTloc','aRh','aPanna','aSmp','aFrutta','aFruttaPc','aCpac','aCpod','aCacq','aStab','aDex'].forEach(id=>{
+  const el = document.getElementById(id); el.addEventListener('input', calcola); el.addEventListener('change', calcola);
 });
+document.getElementById('aTipo').addEventListener('change', ()=>{ const c = document.getElementById('aTipo').value==='crema'; document.getElementById('aStab').value = c ? 4 : 5; document.getElementById('aDex').value = c ? 30 : 10; document.getElementById('aFruttaPc').value = 50; calcola(); });
+document.getElementById('aMeteo').addEventListener('click', ()=>{
+  const st = document.getElementById('aMeteoSt');
+  if(!navigator.geolocation){ st.textContent = t('meteo_no'); return; }
+  st.textContent = t('meteo_wait');
+  navigator.geolocation.getCurrentPosition(async (pos)=>{
+    try{
+      const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&current=temperature_2m,relative_humidity_2m`);
+      const d = await r.json(), c = d && d.current;
+      if(c && typeof c.temperature_2m === 'number'){
+        document.getElementById('aTloc').value = c.temperature_2m;
+        if(typeof c.relative_humidity_2m === 'number') document.getElementById('aRh').value = Math.round(c.relative_humidity_2m);
+        st.textContent = fmt(t('meteo_ok'), {t:c.temperature_2m, u:Math.round(c.relative_humidity_2m)});
+        calcola();
+      } else st.textContent = t('meteo_err');
+    }catch(e){ st.textContent = t('meteo_err'); }
+  }, ()=>{ st.textContent = t('meteo_deny'); });
+});
+calcola();
 </script>
 <script src="/cerca-siti.js" defer></script>
 </body>
