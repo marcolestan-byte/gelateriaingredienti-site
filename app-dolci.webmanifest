@@ -4,7 +4,7 @@
  "short_name": "Dolci",
  "description": "Ricette di tiramisù e dolci da affiancare al gelato in vetrina.",
  "start_url": "/app-dolci.html",
- "scope": "/",
+ "scope": "/app-dolci",
  "display": "standalone",
  "background_color": "#fffaf3",
  "theme_color": "#5c3520",

@@ -4,7 +4,7 @@
  "short_name": "Ricetta",
  "description": "Calcola la ricetta del gelato in base a vetrina, temperatura e umidità.",
  "start_url": "/app-ricetta.html",
- "scope": "/",
+ "scope": "/app-ricetta",
  "display": "standalone",
  "background_color": "#fffaf3",
  "theme_color": "#c2563a",

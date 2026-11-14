@@ -4,7 +4,7 @@
  "short_name": "Mercatino",
  "description": "Mercatino dei prodotti per gelateria e annunci di lavoro.",
  "start_url": "/app-mercatino.html",
- "scope": "/",
+ "scope": "/app-mercatino",
  "display": "standalone",
  "background_color": "#fffaf3",
  "theme_color": "#3C7DB0",
