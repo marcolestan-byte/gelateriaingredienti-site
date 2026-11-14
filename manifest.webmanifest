@@ -1,13 +1,13 @@
 {
- "id": "/app/mercatino/",
- "name": "Mercatino e Lavoro",
- "short_name": "Mercatino",
- "description": "Mercatino dei prodotti per gelateria e annunci di lavoro.",
- "start_url": "/app/mercatino/",
- "scope": "/app/mercatino/",
+ "id": "/app/dolci/",
+ "name": "Dolci e Tiramisù",
+ "short_name": "Dolci",
+ "description": "Ricette di tiramisù e dolci da affiancare al gelato in vetrina.",
+ "start_url": "/app/dolci/",
+ "scope": "/app/dolci/",
  "display": "standalone",
  "background_color": "#fffaf3",
- "theme_color": "#3C7DB0",
+ "theme_color": "#5c3520",
  "lang": "it",
  "icons": [
   {
