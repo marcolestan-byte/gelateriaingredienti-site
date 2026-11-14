@@ -1,132 +1,21 @@
-<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dolci e Tiramisù</title><meta name="description" content="Ricette di tiramisù e dolci da affiancare al gelato in vetrina."><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#5c3520"><link rel="apple-touch-icon" href="icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><style>
-:root{--ink:#3b2a20;--soft:#7a6455;--paper:#fffaf3;--brand:#c2563a;--brand-soft:#fbe9e2;--line:#ecdfd2;}
-*{box-sizing:border-box}
-body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:0 auto;padding:14px 16px}
-.brand{font-weight:700;letter-spacing:.02em;color:var(--ink);text-decoration:none}
-.lang a{color:var(--brand);text-decoration:none;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:4px 14px;background:#fff}
-nav.menu{max-width:1000px;margin:0 auto;padding:0 16px 10px;display:flex;flex-wrap:wrap;gap:8px}
-nav.menu a{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:20px;padding:5px 14px;font-size:.95rem}
-nav.menu a.on{background:var(--brand);border-color:var(--brand);color:#fff}
-.hero{max-width:1000px;margin:0 auto;padding:0 16px}
-.hero img{display:block;width:100%;height:auto;border-radius:14px}
-main{max-width:760px;margin:0 auto;padding:28px 16px 8px}
-h1{font-size:2.1rem;line-height:1.2;margin:0 0 12px}
-.lead{font-size:1.2rem;margin:0 0 12px}
-h2{font-size:1.3rem;margin:34px 0 10px;padding-top:6px}
-h3{font-size:1.05rem;margin:0 0 4px;color:var(--brand)}
-ul.topics{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-ul.topics li{background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:8px;padding:10px 14px}
-ul.topics li a{color:var(--ink);text-decoration:none;display:block}
-ul.topics li a:hover{color:var(--brand)}
-ul.plain{margin:8px 0 12px;padding-left:22px}
-ul.plain li{margin:4px 0}
-.cards{display:grid;gap:12px;margin:12px 0}
-.card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:8px;padding:12px 16px}
-.card p{margin:0}
-.note{margin:18px 0;padding:14px 18px;background:var(--brand-soft);border-radius:10px}
-.note p{margin:0}
-.src{font-size:.9rem;color:var(--soft);margin-top:6px}
-.src a{color:var(--brand)}
-.close{margin:26px 0 0;padding:16px 18px;background:var(--brand-soft);border-radius:10px}
-.pages{margin-top:30px}
-.links{margin-top:26px}
-.links a{display:block;color:var(--brand);margin:4px 0}
-footer{max-width:1000px;margin:28px auto 0;padding:18px 16px 28px;border-top:1px solid var(--line);color:var(--soft);font-size:.9rem}
-main p a,main li a,.card p a,.note a{color:var(--brand)}
-.fig{margin:14px 0}.fig img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}.fig figcaption{font-size:.85rem;color:var(--soft);margin-top:4px}
-h3.sub{margin:22px 0 6px}ol.steps{margin:8px 0 12px;padding-left:24px}ol.steps li{margin:6px 0}.idea{margin:20px 0}.idea ul{margin:6px 0}
-.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}.gal .fig{margin:0}.gal .fig img{max-width:480px;margin:0 auto}.gal h3{margin:8px 0 2px;font-size:1rem}.gal p{margin:0 0 4px;font-size:.92rem}@media(max-width:640px){.gal{grid-template-columns:1fr}}
-@media(max-width:640px){ul.topics{grid-template-columns:1fr}h1{font-size:1.7rem}}
-
-.dl{margin:12px 0 22px}
-.dl .dlbtn{display:none;background:var(--brand);color:#fff;border:0;border-radius:24px;padding:10px 20px;font:inherit;font-weight:600;cursor:pointer}
-.js .dl .dlbtn{display:inline-block}
-.js .dl form{display:none}.js .dl.open form{display:block}
-.dl form{margin-top:10px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:8px;padding:14px 16px}
-.dl label{display:block;font-size:.95rem;margin:6px 0}
-.dl input[type=email]{display:block;width:100%;max-width:380px;margin-top:4px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;font:inherit}
-.dl .chk{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;color:var(--soft)}
-.dl .chk input{margin-top:4px}
-.dl .go{margin-top:8px;background:var(--brand);color:#fff;border:0;border-radius:24px;padding:9px 20px;font:inherit;font-weight:600;cursor:pointer}
-.dl .msg{margin:8px 0 0;font-weight:600}.dl .msg a{color:var(--brand)}
-.dl .hp{display:none}
-.social{margin:26px 0 0}.social a{color:var(--brand);font-weight:600}
-.what{font-size:.9rem;color:var(--soft);margin:4px 0 0}
-.gl{margin:10px 0 14px;padding:8px 14px;border-radius:8px;font-size:.95rem;border-left:6px solid}
-.gl strong{text-transform:uppercase;letter-spacing:.02em}
-.gl.yes{background:#fde2d8;border-color:#c2563a;color:#6e2410}
-.gl.no{background:#e3f3e3;border-color:#3f8f55;color:#1b4d29}
-.gl.var{background:#fff3cd;border-color:#d9a400;color:#5e4500}
-.glt{display:inline-block;font-size:.8rem;font-weight:700;padding:1px 9px;border-radius:12px;margin-left:6px;vertical-align:1px}
-.glt.yes{background:#fde2d8;color:#6e2410;border:1px solid #c2563a}.glt.no{background:#e3f3e3;color:#1b4d29;border:1px solid #3f8f55}.glt.var{background:#fff3cd;color:#5e4500;border:1px solid #d9a400}
-table.tbl{border-collapse:collapse;width:100%;margin:10px 0 16px;background:#fff;font-size:.95rem}
-table.tbl th,table.tbl td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-table.tbl th{background:var(--brand-soft)}
-.fn{font-size:.88rem;color:var(--soft);margin:6px 0 14px}
-
-.nv{margin:14px 0 6px;padding:14px 18px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px}
-.nvh{margin:0 0 8px;font-weight:700}
-.nvbtn{font:inherit;font-weight:600;color:#fff;background:var(--brand);border:0;border-radius:24px;padding:10px 22px;cursor:pointer}
-.nvbtn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-.nvn{font-size:.85rem;color:var(--soft);margin:8px 0 0}
-.nv iframe{display:block;width:100%;max-width:340px;aspect-ratio:9/16;border:0;border-radius:12px;background:#000}
-</style>
-<style>.apphead{background:#5c3520;color:#fff;padding:14px 16px;font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:10px}.apphead img{border-radius:8px}</style></head>
-<body><div class="apphead"><img src="icon-192.png" width="32" height="32" alt="">Dolci e Tiramisù</div>
-<main>
-<h1>Dolci gelato: tiramisù e torte</h1>
-<p>Accanto al gelato in vetrina si possono proporre dolci da servire o da portare a casa: il tiramisù e le torte gelato.</p>
-<h2>Tiramisù artigianale</h2>
-<p class="gl yes">🌾 <strong>Contiene glutine</strong> — savoiardi (frumento). Per una versione senza glutine servono savoiardi senza glutine e nessun contatto con ingredienti con glutine.</p>
-<p>Savoiardi inzuppati nel caffè, crema al mascarpone vellutata e una generosa spolverata di cacao amaro in superficie. Si prepara in due formati.</p>
-<div class="cards"><div class="card"><h3>Monoporzione (per 1 persona)</h3><p>Una pratica e raffinata vaschetta trasparente individuale, perfetta per gustare tutti gli strati cremosi del tiramisù artigianale. Vedi anche la pagina <a href="https://bilanciamentovetrina.com/monoporzioni-gelato.html">Monoporzioni</a>.</p></div><div class="card"><h3>Formato famiglia (per 4 persone)</h3><p>Una vaschetta rettangolare più ampia, ideale per quattro porzioni, che mantiene intatta la stratificazione perfetta del dolce e si presta benissimo a essere portata a tavola per un&#x27;occasione conviviale.</p></div></div>
-<figure class="fig"><img src="tiramisu-formato-famiglia.jpg" alt="Tiramisù artigianale in una vaschetta rettangolare su un bancone di gelateria" width="1200" height="655" loading="lazy"><figcaption>Immagine illustrativa creata con l&#x27;intelligenza artificiale: non è una foto del prodotto reale.</figcaption></figure>
-<div class="note"><p>Latte, glutine e, a seconda della ricetta, uova sono allergeni da controllare ingrediente per ingrediente e da indicare al cliente: vedi la pagina <a href="https://bilanciamentovetrina.com/etichette-allergeni.html">Gusti e allergeni</a>.</p></div>
-<h2>Tiramisù al caramello salato con salsa di frutti di bosco</h2>
-<p class="gl yes">🌾 <strong>Contiene glutine</strong> — savoiardi (frumento).</p>
-<p>Il caramello salato dà una dolcezza avvolgente, bilanciata dall'acidità fresca dei frutti di bosco. Ingredienti per una teglia da 6-8 porzioni.</p>
-<figure class="fig"><img src="tiramisu-caramello-frutti-di-bosco.jpg" alt="Dolce con savoiardi, nastro rosso e frutti di bosco freschi e surgelati sopra" width="452" height="678" loading="lazy" style="max-width:360px;margin:0 auto"><figcaption>Immagine di esempio: non è una foto di questa ricetta.</figcaption></figure>
-<h3 class="sub">Crema al mascarpone e caramello</h3><ul class="plain"><li>Mascarpone: 500 g</li><li>Uova: 4 tuorli (freschissimi, montati, oppure pastorizzati)</li><li>Zucchero: 100 g</li><li>Caramello salato: 120 g (un po' nella crema, il resto per la decorazione a strati)</li></ul><h3 class="sub">Bagna e salsa ai frutti di bosco</h3><ul class="plain"><li>Frutti di bosco, freschi o surgelati: 300 g</li><li>Zucchero a velo: 30 g</li><li>Succo di limone: qualche goccia</li><li>Acqua o sciroppo leggero: q.b. per allungare la salsa e preparare la bagna dei savoiardi</li></ul><h3 class="sub">Struttura</h3><ul class="plain"><li>Savoiardi: 250-300 g</li><li>Frutti di bosco freschi: q.b. per la decorazione finale</li></ul><h3 class="sub">Preparazione</h3><ol class="steps"><li><strong>Salsa ai frutti di bosco.</strong> In un pentolino unisci i frutti di bosco con lo zucchero a velo e il succo di limone. Cuoci a fuoco medio per 5-7 minuti, finché rilasciano il succo e si ammorbidiscono. Frulla metà del composto e filtralo con un colino per eliminare i semini, ottenendo una coulis liscia. L'altra metà lasciala con i pezzi di frutta interi.</li><li><strong>Bagna.</strong> Diluisci una parte della coulis con un po' di acqua tiepida (o un goccio di liquore fruttato, se gradito) per bagnare i savoiardi.</li><li><strong>Crema.</strong> Monta i tuorli con lo zucchero fino a ottenere un composto chiaro e spumoso. Aggiungi il mascarpone poco alla volta, lavorando con le fruste a bassa velocità. Incorpora delicatamente il caramello salato, regolando la quantità in base alla dolcezza desiderata.</li><li><strong>Assemblaggio.</strong> Fai un primo strato di savoiardi bagnati velocemente nella bagna ai frutti di bosco. Copri con uno strato generoso di crema. Aggiungi qua e là un cucchiaio di salsa con i frutti interi, per un contrasto fresco e acidulo. Ripeti con un secondo strato di savoiardi, crema e un altro giro di caramello colato a filo.</li><li><strong>Riposo e decorazione.</strong> Metti in frigorifero a rassodare per almeno 4 ore (l'ideale è il giorno dopo). Prima di servire decora con abbondanti frutti di bosco freschi e un ultimo filo di caramello.</li></ol>
-<div class="note"><p>Per la vendita al pubblico usa tuorli pastorizzati. Latte, glutine e uova sono allergeni da indicare al cliente: vedi la pagina <a href="https://bilanciamentovetrina.com/etichette-allergeni.html">Gusti e allergeni</a>.</p></div>
-<h2>Tiramisù al pistacchio con arancia caramellata</h2>
-<p class="gl yes">🌾 <strong>Contiene glutine</strong> — savoiardi (frumento).</p>
-<p>La cremosità del pistacchio incontra il profumo degli agrumi e la nota croccante e caramellata dell'arancia. Ingredienti per 6-8 porzioni; si può servire in pirofila o in bicchieri monoporzione.</p>
-<figure class="fig"><img src="tiramisu-pistacchio-arancia.jpg" alt="Tiramisù al pistacchio in un bicchiere di vetro, con fetta d'arancia caramellata, menta e pistacchi" width="1200" height="655" loading="lazy"><figcaption>Immagine illustrativa: non è una foto del prodotto reale.</figcaption></figure>
-<h3 class="sub">Crema al mascarpone e pistacchio</h3><ul class="plain"><li>Mascarpone: 500 g</li><li>Pasta pura di pistacchio (senza zucchero) o crema spalmabile al pistacchio: 120 g</li><li>Tuorli d'uovo (freschissimi o pastorizzati): 4</li><li>Zucchero: 90 g</li><li>Panna fresca da montare (facoltativa, per una crema ancora più soffice): 100 ml</li></ul><h3 class="sub">Arance caramellate e bagna</h3><ul class="plain"><li>Arance biologiche: 2 grandi (succo e scorza)</li><li>Zucchero di canna: 80 g</li><li>Burro: 15 g</li><li>Acqua: 100 ml</li><li>Liquore all'arancia (Cointreau, Grand Marnier o Triple Sec, facoltativo): 2 cucchiai</li></ul><h3 class="sub">Struttura e decorazione</h3><ul class="plain"><li>Savoiardi: 250-300 g</li><li>Granella di pistacchio: q.b.</li><li>Pistacchi interi sgusciati: q.b.</li></ul><h3 class="sub">1. Arance caramellate e bagna</h3><ol class="steps"><li><strong>Fettine e scorza.</strong> Lava bene le arance. Taglia mezza arancia a fettine sottili (serviranno per la decorazione finale). Dalla restante arancia ricava la scorza a listarelle sottili, solo la parte arancione, e spremine il succo.</li><li><strong>Caramello.</strong> In una padella antiaderente sciogli lo zucchero di canna con il burro e 2 cucchiai d'acqua a fuoco dolce, finché si forma un caramello dorato.</li><li><strong>Arance nel caramello.</strong> Disponi le fettine e le listarelle di scorza nel caramello. Cuoci 3-4 minuti, girando le fettine con delicatezza, finché diventano lucide e morbide. Prelevale e tienile da parte su carta forno.</li><li><strong>Bagna.</strong> Nella stessa padella, con il caramello rimasto, versa il succo d'arancia e l'acqua (ed eventualmente il liquore). Fai sobbollire a fuoco basso per 2-3 minuti, finché sciogli i residui di caramello e ottieni uno sciroppo profumato. Spegni e lascia raffreddare.</li></ol><h3 class="sub">2. Crema al mascarpone e pistacchio</h3><ol class="steps"><li><strong>Tuorli.</strong> Lavora i tuorli con lo zucchero con le fruste elettriche fino a ottenere un composto chiaro e spumoso.</li><li><strong>Mascarpone e pistacchio.</strong> Unisci il mascarpone poco alla volta, a bassa velocità. Incorpora la pasta o la crema di pistacchio e amalgama bene.</li><li><strong>Panna (facoltativa).</strong> Monta la panna ben fredda e incorporala delicatamente dal basso verso l'alto, per una crema più aerata.</li></ol><h3 class="sub">3. Assemblaggio</h3><ol class="steps"><li><strong>Primo strato.</strong> Bagna rapidamente i savoiardi nella bagna all'arancia e caramello e disponili sul fondo di una pirofila o di bicchieri monoporzione.</li><li><strong>Crema.</strong> Stendi metà della crema al pistacchio sui savoiardi e spolverizza con un po' di granella di pistacchio e qualche goccia di sciroppo all'arancia.</li><li><strong>Secondo strato.</strong> Ripeti con altri savoiardi bagnati e completa con la crema rimasta.</li></ol><h3 class="sub">4. Riposo e decorazione</h3><ol class="steps"><li><strong>Riposo.</strong> Copri con pellicola e lascia riposare in frigorifero almeno 4 ore (l'ideale è tutta la notte, per far amalgamare gli aromi).</li><li><strong>Decorazione.</strong> Prima di servire, guarnisci con abbondante granella di pistacchio, le fettine di arancia caramellata, le scorzette lucide e qualche pistacchio intero.</li></ol>
-<div class="note"><p>Per la vendita al pubblico usa tuorli pastorizzati. Latte, glutine, uova e frutta a guscio (pistacchio) sono allergeni da indicare al cliente, e così l'eventuale liquore: vedi la pagina <a href="https://bilanciamentovetrina.com/etichette-allergeni.html">Gusti e allergeni</a>.</p></div>
-<h2>Tiramisù invernale: pistacchio, arancia e gianduia</h2>
-<p class="gl yes">🌾 <strong>Contiene glutine</strong> — biscotti tipo Pavesini (frumento).</p>
-<p>Un tiramisù senza caffè e senza uova crude, pensato per l'inverno: crema di mascarpone al pistacchio, biscotti bagnati all'arancia e una doppia copertura di cioccolato bianco e gianduia con arachidi. Ingredienti per uno stampo da 6-8 porzioni.</p>
-<figure class="fig"><img src="tiramisu-invernale.jpg" alt="Tiramisù invernale in pirofila di vetro con crema al pistacchio, gianduia e arachidi, accanto a mezza arancia" width="1200" height="670" loading="lazy"><figcaption>Immagine generata con IA: non è una foto del prodotto reale.</figcaption></figure>
-<h3 class="sub">Crema al mascarpone e pistacchio</h3><ul class="plain"><li>Mascarpone: 500 g</li><li>Panna da montare: 120 g</li><li>Zucchero a velo: 40 g</li><li>Crema di pistacchio: a piacere (indicativo 80-100 g)</li></ul><h3 class="sub">Bagna all'arancia</h3><ul class="plain"><li>Succo d'arancia: indicativo 200 ml</li><li>Crema di arancia: a piacere (indicativo 50 g)</li></ul><h3 class="sub">Struttura e copertura</h3><ul class="plain"><li>Biscotti tipo Pavesini: indicativo 200 g</li><li>Cioccolato bianco: indicativo 100 g</li><li>Crema di gianduia: indicativo 150 g</li><li>Arachidi a pezzetti: indicativo 40 g</li></ul><h3 class="sub">Preparazione</h3><ol class="steps"><li><strong>Panna.</strong> Monta la panna con lo zucchero a velo.</li><li><strong>Crema.</strong> Amalgama al mascarpone la crema di pistacchio, a piacere, poi unisci delicatamente la panna montata.</li><li><strong>Bagna.</strong> In una ciotola mescola il succo d'arancia con la crema di arancia, a piacere.</li><li><strong>Strati.</strong> Inzuppa velocemente i biscotti nell'arancia e stendili nello stampo, poi copri con uno strato di crema. Ripeti per altri due strati.</li><li><strong>Riposo.</strong> Metti il tiramisù in frigorifero a rassodare. Nel frattempo sciogli il cioccolato bianco e mescola la gianduia con le arachidi a pezzetti.</li><li><strong>Copertura.</strong> Versa sul tiramisù uno strato sottile di cioccolato bianco e lascialo rapprendere. Completa con uno strato sottile di gianduia e arachidi.</li><li><strong>Conservazione.</strong> Conserva in frigorifero.</li></ol>
-<div class="note"><p>Latte, glutine, uova (biscotti), arachidi, frutta a guscio (pistacchio, nocciole nella gianduia) ed eventuale soia (lecitina nel cioccolato) sono allergeni da indicare al cliente: verifica sempre le etichette dei prodotti usati e vedi la pagina <a href="https://bilanciamentovetrina.com/etichette-allergeni.html">Gusti e allergeni</a>.</p></div>
-<h2>Come è fatta una torta gelato</h2>
-<p class="gl var">🌾 <strong>Glutine da verificare</strong> — dipende dalla base e dagli inserti: biscotto, pan di spagna, wafer e croccanti contengono glutine. Scrivi sempre sulla torta se contiene glutine o no.</p>
-<p>Una torta gelato è una composizione: ogni parte ha una funzione, e il risultato dipende da come le parti si incontrano.</p>
-<div class="cards"><div class="card"><h3>Base</h3><p>Può essere un disco di biscotto, di pan di spagna o di altro tipo: sostiene la torta e ne definisce il carattere.</p></div><div class="card"><h3>Strati di gelato</h3><p>Uno o più gusti, composti in strati o in forme diverse a seconda dello stampo.</p></div><div class="card"><h3>Inserti e variegature</h3><p>Salse, creme, croccanti o frutta tra gli strati danno contrasto di gusto e di consistenza.</p></div><div class="card"><h3>Copertura e decorazione</h3><p>Glasse, panna, cioccolato, frutta: è la parte che il cliente vede per prima.</p></div></div>
-<figure class="fig"><img src="torte-gelato-vetrina.jpg" alt="Vetrina refrigerata di una gelateria con torte gelato di gusti e decorazioni diversi" width="1024" height="559" loading="lazy"><figcaption>Immagine illustrativa creata con l&#x27;intelligenza artificiale: non è una foto del prodotto reale.</figcaption></figure>
-<h2>Idee di pasticceria da affiancare in vetrina</h2>
-<p class="gl var">🌾 <strong>Glutine da verificare</strong> — le tartellette contengono glutine (frolla); per gli entremet dipende da basi e biscotti.</p>
-<p>Non sono dolci al gelato: sono tartellette ed entremets da pasticceria, da preparare in anticipo e tenere in vetrina refrigerata accanto al gelato. Quattro idee per variare l'offerta:</p>
-<ul class="plain"><li><strong>Tartellette ai frutti di bosco:</strong> guscio di frolla scuro, cremoso alla frutta e frutti di bosco freschi in superficie.</li><li><strong>Tartellette a forma di mela:</strong> frolla con mela e crema, rifinite con una glassa rossa lucida.</li><li><strong>Entremet al pistacchio:</strong> dolce a strati con pistacchio e un frutto rosso, adatto al periodo natalizio.</li><li><strong>Entremet a forma di rosa:</strong> dolce a strati con vaniglia e frutto rosso, rifinito con un rivestimento vellutato rosso.</li></ul>
-<div class="note"><p>Latte, glutine, frutta a guscio (mandorle, pistacchio) e uova sono allergeni da controllare ingrediente per ingrediente e da indicare al cliente: vedi la pagina <a href="https://bilanciamentovetrina.com/etichette-allergeni.html">Gusti e allergeni</a>.</p></div>
-<div class="note"><p>Altri spaghetti gelato e dessert al cucchiaio, con le ricette in PDF, sul sito: <a href="https://bilanciamentovetrina.com/dolci-gelato.html">bilanciamentovetrina.com</a></p></div>
-</main>
-<footer style="max-width:760px;margin:20px auto;padding:0 16px 90px;color:#7a6455;font-size:.9rem">© 2026 Marco Lestan · <a href="https://gelatoinfo.app">gelatoinfo.app</a></footer>
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mercatino e Lavoro</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#3C7DB0"><link rel="apple-touch-icon" href="icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<style>html,body{margin:0;height:100%;font-family:system-ui,sans-serif;background:#fffaf3}nav{display:flex;position:sticky;top:0;background:#3C7DB0;}nav button{flex:1;border:0;background:none;color:#fff;font:600 16px system-ui;padding:14px 8px;cursor:pointer;opacity:.7;border-bottom:4px solid transparent}nav button.on{opacity:1;border-bottom-color:#ffd84a}iframe{display:block;width:100%;height:calc(100% - 52px);border:0}</style></head>
+<body><nav><button class="on" data-src="/mercatino.html">🛒 Mercatino</button><button data-src="/lavoro.html">💼 Lavoro</button></nav>
+<iframe id="fr" src="/mercatino.html" title="Mercatino e Lavoro"></iframe>
+<script>document.querySelectorAll('nav button').forEach(function(b){b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.getElementById('fr').src=b.dataset.src}});</script>
 <div id="instBar" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;background:#fff;border:1px solid #ecdfd2;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.15);padding:12px 14px;font:15px/1.4 system-ui,sans-serif;color:#3b2a20;align-items:center;gap:10px">
 <img src="icon-192.png" alt="" width="40" height="40" style="border-radius:10px;flex:none"><span id="instTxt" style="flex:1"></span>
-<button id="instBtn" style="display:none;border:0;border-radius:20px;padding:9px 16px;background:#5c3520;color:#fff;font:inherit;font-weight:700;cursor:pointer">📲 Installa l'app</button>
+<button id="instBtn" style="display:none;border:0;border-radius:20px;padding:9px 16px;background:#3C7DB0;color:#fff;font:inherit;font-weight:700;cursor:pointer">📲 Installa l'app</button>
 <button id="instX" aria-label="Chiudi" style="border:0;background:none;font-size:22px;cursor:pointer;color:#7a6455">×</button></div>
 <script>
 (function(){
  if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js',{scope:'./'}).catch(function(){});
  var bar=document.getElementById('instBar'),btn=document.getElementById('instBtn'),txt=document.getElementById('instTxt'),dp=null;
  var standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
- var shut=false;try{shut=localStorage.getItem('inst-x-dolci')==='1'}catch(e){}
+ var shut=false;try{shut=localStorage.getItem('inst-x-mercatino')==='1'}catch(e){}
  if(standalone||shut)return;
- document.getElementById('instX').onclick=function(){bar.style.display='none';try{localStorage.setItem('inst-x-dolci','1')}catch(e){}};
- window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;txt.textContent="Dolci e Tiramis\u00f9";btn.style.display='inline-block';bar.style.display='flex'});
+ document.getElementById('instX').onclick=function(){bar.style.display='none';try{localStorage.setItem('inst-x-mercatino','1')}catch(e){}};
+ window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;txt.textContent="Mercatino e Lavoro";btn.style.display='inline-block';bar.style.display='flex'});
  btn.onclick=function(){if(!dp)return;dp.prompt();dp.userChoice.then(function(){bar.style.display='none';dp=null})};
  if(/iphone|ipad|ipod/i.test(navigator.userAgent)){txt.innerHTML="Su iPhone: tocca <b>Condividi</b> e poi <b>\u00abAggiungi alla schermata Home\u00bb</b>.";bar.style.display='flex'}
 })();
