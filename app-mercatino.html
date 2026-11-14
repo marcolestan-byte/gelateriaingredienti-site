@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mercatino e Lavoro</title><link rel="manifest" href="/app-mercatino.webmanifest"><meta name="theme-color" content="#3C7DB0"><link rel="apple-touch-icon" href="/app-mercatino-180.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<style>html,body{margin:0;height:100%;font-family:system-ui,sans-serif;background:#fffaf3}nav{display:flex;position:sticky;top:0;background:#3C7DB0;}nav button{flex:1;border:0;background:none;color:#fff;font:600 16px system-ui;padding:14px 8px;cursor:pointer;opacity:.7;border-bottom:4px solid transparent}nav button.on{opacity:1;border-bottom-color:#ffd84a}iframe{display:block;width:100%;height:calc(100% - 52px);border:0}</style></head>
+<body><nav><button class="on" data-src="/mercatino.html">🛒 Mercatino</button><button data-src="/lavoro.html">💼 Lavoro</button></nav>
+<iframe id="fr" src="/mercatino.html" title="Mercatino e Lavoro"></iframe>
+<script>document.querySelectorAll('nav button').forEach(function(b){b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.getElementById('fr').src=b.dataset.src}});</script>
+<div id="instBar" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;background:#fff;border:1px solid #ecdfd2;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.15);padding:12px 14px;font:15px/1.4 system-ui,sans-serif;color:#3b2a20;align-items:center;gap:10px">
+<img src="/app-mercatino-192.png" alt="" width="40" height="40" style="border-radius:10px;flex:none"><span id="instTxt" style="flex:1"></span>
+<button id="instBtn" style="display:none;border:0;border-radius:20px;padding:9px 16px;background:#3C7DB0;color:#fff;font:inherit;font-weight:700;cursor:pointer">📲 Installa l'app</button>
+<button id="instX" aria-label="Chiudi" style="border:0;background:none;font-size:22px;cursor:pointer;color:#7a6455">×</button></div>
+<script>
+(function(){
+ var bar=document.getElementById('instBar'),btn=document.getElementById('instBtn'),txt=document.getElementById('instTxt'),dp=null;
+ var standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+ var shut=false;try{shut=localStorage.getItem('inst-x-mercatino')==='1'}catch(e){}
+ if(standalone||shut)return;
+ document.getElementById('instX').onclick=function(){bar.style.display='none';try{localStorage.setItem('inst-x-mercatino','1')}catch(e){}};
+ window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;txt.textContent="Mercatino e Lavoro";btn.style.display='inline-block';bar.style.display='flex'});
+ btn.onclick=function(){if(!dp)return;dp.prompt();dp.userChoice.then(function(){bar.style.display='none';dp=null})};
+ if(/iphone|ipad|ipod/i.test(navigator.userAgent)){txt.innerHTML="Su iPhone: tocca <b>Condividi</b> e poi <b>\u00abAggiungi alla schermata Home\u00bb</b>.";bar.style.display='flex'}
+})();
+</script></body></html>
