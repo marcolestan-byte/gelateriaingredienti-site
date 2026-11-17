@@ -1743,6 +1743,7 @@ const AZIENDA_WEBSITES = {
   "Aromitalia": "https://www.aromitalia.it/",
   "Babbi": "https://babbi.com/it",
   "Bechtolina": "https://www.bechtolina.com/",
+  "Galiceanu Naturprodukte": "https://www.galiceanu-naturprodukte.eu/",
   "Comprital": "https://www.comprital.com/",
   "Cresco": "https://www.cresco.it/",
   "Disaronno Ingredients": "https://disaronnoingredients.it/",
@@ -1898,7 +1899,7 @@ function aziendaColorFor(azienda){
   const hue = hash % 360;
   return `hsl(${hue}, 55%, 34%)`;
 }
-const FEATURED_AZIENDE = ["Aromitalia", "Bechtolina", "Elenka", "Fructital", "Disìo", "Comprital", "Agrimontana", "Presti", "Leagel", "Gran Roma", "Fabbri 1905", "MEC3", "Mec3", "Lebrì Nut", "Diversey (Solenis)"];
+const FEATURED_AZIENDE = ["Aromitalia", "Bechtolina", "Galiceanu Naturprodukte", "Elenka", "Fructital", "Disìo", "Comprital", "Agrimontana", "Presti", "Leagel", "Gran Roma", "Fabbri 1905", "MEC3", "Mec3", "Lebrì Nut", "Diversey (Solenis)"];
 function aziendaIsFeatured(azienda){ return FEATURED_AZIENDE.indexOf(azienda) >= 0; }
 function aziendaCellHtml(azienda){
   const featBadge = '';
