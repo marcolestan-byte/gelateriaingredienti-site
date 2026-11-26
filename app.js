@@ -63,6 +63,34 @@ const I18N = {
     navMercatino: "🔄 Mercatino",
     archiveExpand: "⛶ Ingrandisci",
     archiveCollapse: "✕ Chiudi",
+    homeTrust: "✔ Gratuito · ✔ Nessun prezzo · ✔ Nessuna vendita · ✔ Nessuna registrazione",
+    catNote_vegane: "Basi senza ingredienti di origine animale, per gelati e sorbetti vegani.",
+    catNote_senzalattosio: "Basi senza lattosio, per chi non può consumare latte e derivati.",
+    catNote_basifrutta: "Basi per sorbetti e gelati alla frutta: danno struttura alla frutta o alla purea che si aggiunge.",
+    catNote_baselatte: "Basi per gelati al latte e alla crema: in genere contengono già zuccheri, latte in polvere e stabilizzanti; si aggiungono acqua o latte e le paste.",
+    catNote_neutri: "Preparati che stabilizzano e danno corpo al gelato senza aggiungere gusto: si usano con latte, zuccheri e paste o frutta.",
+    catNote_addensanti: "Ingredienti che legano l'acqua e danno struttura e cremosità al gelato; si usano in piccole dosi.",
+    catNote_paste: "Concentrati di gusto (nocciola, pistacchio, vaniglia e altri) da aggiungere alla base o alla miscela bianca.",
+    catNote_variegati: "Salse e creme dense da inserire a strati nel gelato o da usare per guarnire.",
+    catNote_cioccolato: "Cioccolato e cacao per i gusti al cioccolato, in polvere, scaglie o paste.",
+    catNote_zuccheri: "Zuccheri e dolcificanti che regolano dolcezza, punto di congelamento e consistenza del gelato.",
+    catNote_fibre: "Fibre solubili usate per dare corpo e ridurre gli zuccheri nelle ricette.",
+    catNote_polveri: "Latte e panna in polvere: portano sostanza secca e grassi alla miscela.",
+    catNote_frutta: "Frutta in purea o candita per sorbetti, gelati e decorazioni.",
+    catNote_soft: "Miscele per gelato soft e frozen yogurt, da usare nelle macchine ad erogazione.",
+    catNote_cremini: "Prodotti per preparare cremini e dolci gelato da banco.",
+    catNote_proteine: "Prodotti ricchi di proteine per gelati proteici.",
+    catNote_decorazioni: "Decorazioni per torte gelato e coppe.",
+    catNote_yogurt: "Prodotti a base di yogurt o ricotta per gusti freschi.",
+    catNote_coloranti: "Coloranti alimentari per dare colore a gelati, glasse e decorazioni.",
+    gsKicker: "🍨 Campagna 2027",
+    gsTitle: "Gelato sicuro per tutti",
+    gsAlt: "Io mangio un gelato sicuro!",
+    gsText: "Allergie e intolleranze non devono togliere il piacere del gelato. Cerca nell'archivio i prodotti senza glutine o senza lattosio e, se hai una gelateria, scarica il manifesto da appendere in vetrina: invita i clienti a chiedere.",
+    gsBtnGlutine: "🌾 Prodotti senza glutine",
+    gsBtnLattosio: "🥛 Prodotti senza lattosio",
+    gsBtnPoster: "⬇️ Scarica il manifesto",
+    gsNote: "L'informazione sugli allergeni resta obbligatoria per legge: il manifesto è un invito a chiedere, non una garanzia. I dati dell'archivio vanno verificati con il produttore.",
     navGuida: "🎓 Guida",
     navScelte: "🧭 Come scegliere",
     navIoGelato: "🍨 Io sono il gelato",
@@ -134,7 +162,7 @@ const I18N = {
     notePh: "Note di test diretto, contatti, condizioni di fornitura…",
     aggiungiAllArchivio: "Aggiungi all'archivio",
     taraturaTitle: "🧊 Taratura ricetta (vetrina)",
-    taraturaIntro: 'Nata dal vecchio <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (oggi dedicato alla vetrina gelato): posizione/meteo → temperatura vetrina → ricetta con ingredienti → calcolo PAC/POD. I coefficienti degli zuccheri sotto sono presi da fonti pubbliche di gelato-scienza (vedi note in fondo); i valori di correzione per temperatura e la curva PAC/vetrina sono <strong>di partenza, da tarare con le tue prove dirette</strong> — esattamente come il foglio "da compilare" del sito originale.',
+    taraturaIntro: 'Nata dal vecchio <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (oggi dedicato alla vetrina gelato): posizione/meteo → temperatura vetrina → ricetta con ingredienti → calcolo PAC/POD. I coefficienti degli zuccheri sotto sono presi da fonti pubbliche di gelato-scienza (vedi note in fondo); i valori di correzione per temperatura e la curva PAC/vetrina sono <strong>di partenza, da tarare con le tue prove dirette</strong> — esattamente come il foglio "da compilare" del sito originale.',
     tarStepA: "Posizione &amp; temperatura esterna",
     btnGeo: "📍 Rileva posizione e meteo",
     geoStatusDefault: "Usa il GPS del dispositivo + Open-Meteo (gratuito) per leggere la temperatura esterna attuale. In alternativa inseriscila a mano qui sotto.",
@@ -171,7 +199,7 @@ const I18N = {
     btnEsportaTaratura: "⬇️ Esporta ricetta + curva (JSON)",
     btnImporta: "⬆️ Importa (JSON)",
     postazioniTitle: "🧭 Gestione mantecatori &amp; vetrine",
-    postazioniIntro: 'Nata dal vecchio <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (oggi dedicato alla vetrina gelato): un colpo d\'occhio su cosa c\'è in ogni mantecatore/vetrina in questo momento — gusto, PAC, temperatura e stato. È un registro manuale (tu aggiorni i dati), non un collegamento diretto alle macchine.',
+    postazioniIntro: 'Nata dal vecchio <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (oggi dedicato alla vetrina gelato): un colpo d\'occhio su cosa c\'è in ogni mantecatore/vetrina in questo momento — gusto, PAC, temperatura e stato. È un registro manuale (tu aggiorni i dati), non un collegamento diretto alle macchine.',
     nuovaPostazione: "➕ Nuova postazione",
     nomePostazione: "Nome postazione *",
     tipo: "Tipo",
@@ -203,7 +231,7 @@ const I18N = {
     mapSiteLink: "🗺️ Mappa delle gelaterie in Germania e Austria, con accessibilità in carrozzina — rollmatemobil.com",
     equipmentSiteLink: "🧊 Confronto attrezzature gelateria — gelateriaattrezzature.com",
     equipmentSiteBadge: "(sito in costruzione)",
-    sisterDeSiteLink: "🇩🇪 Eissorten-Zutatenvergleich (Deutsch) — eisdieleinfo.com",
+    sisterItSiteLink: "🇮🇹 Confronto ingredienti gelato (italiano) — gelateriaingredienti.com",
     legalStrong: '© <span id="copyYear"></span> Tutti i diritti riservati.',
     legalText: "Contenuti conformi alla normativa europea vigente (incl. Regolamento UE 2016/679 – GDPR). Il presente portale ha finalità esclusivamente informativa e consultiva: non è consentito alcun uso commerciale, riproduzione, distribuzione o sfruttamento dei contenuti senza autorizzazione scritta del titolare.",
     disclaimerText: "Il portale riunisce in un’unica ricerca ciò di cui la gelateria ha bisogno, con link diretti alle aziende produttrici. Avviso: i dati contenuti in questo portale sono riportati solo a scopo di conoscenza. Il confronto è puramente teorico e si basa sui dati rilasciati dalle aziende o disponibili sul web. Non sono indicati costi né altri parametri economici.",
@@ -471,6 +499,34 @@ const I18N = {
     navMercatino: "🔄 Börse",
     archiveExpand: "⛶ Vergrößern",
     archiveCollapse: "✕ Schließen",
+    homeTrust: "✔ Kostenlos · ✔ Keine Preise · ✔ Kein Verkauf · ✔ Keine Registrierung",
+    catNote_vegane: "Basen ohne tierische Zutaten, für vegane Eis- und Sorbetsorten.",
+    catNote_senzalattosio: "Laktosefreie Basen für alle, die Milchzucker nicht vertragen.",
+    catNote_basifrutta: "Basen für Sorbets und Fruchteis: geben der zugesetzten Frucht oder dem Püree Struktur.",
+    catNote_baselatte: "Basen für Milch- und Cremeeis: enthalten meist schon Zucker, Milchpulver und Stabilisatoren; man gibt Wasser oder Milch und die Pasten dazu.",
+    catNote_neutri: "Zubereitungen, die das Eis stabilisieren und Körper geben, ohne Geschmack hinzuzufügen: man nutzt sie mit Milch, Zucker und Pasten oder Frucht.",
+    catNote_addensanti: "Zutaten, die Wasser binden und dem Eis Struktur und Cremigkeit geben; sie werden in kleinen Mengen eingesetzt.",
+    catNote_paste: "Geschmackskonzentrate (Haselnuss, Pistazie, Vanille und andere) für die Basis oder die weiße Mischung.",
+    catNote_variegati: "Dicke Soßen und Cremes, die man schichtweise ins Eis gibt oder zum Garnieren nutzt.",
+    catNote_cioccolato: "Schokolade und Kakao für Schokoladensorten, als Pulver, Flocken oder Pasten.",
+    catNote_zuccheri: "Zucker und Süßungsmittel, die Süße, Gefrierpunkt und Konsistenz des Eises steuern.",
+    catNote_fibre: "Lösliche Ballaststoffe, die Körper geben und den Zuckeranteil in Rezepten senken helfen.",
+    catNote_polveri: "Milch- und Sahnepulver: liefern Trockenmasse und Fett für die Mischung.",
+    catNote_frutta: "Fruchtpüree oder kandierte Früchte für Sorbets, Eis und Dekoration.",
+    catNote_soft: "Mischungen für Softeis und Frozen Yogurt für Eismaschinen mit Ausgabe.",
+    catNote_cremini: "Produkte für Cremini und Eisdesserts aus der Theke.",
+    catNote_proteine: "Proteinreiche Produkte für Protein-Eis.",
+    catNote_decorazioni: "Dekorationen für Eistorten und Eisbecher.",
+    catNote_yogurt: "Produkte auf Joghurt- oder Ricottabasis für frische Sorten.",
+    catNote_coloranti: "Lebensmittelfarben für Eis, Glasuren und Dekoration.",
+    gsKicker: "🍨 Kampagne 2027",
+    gsTitle: "Sicheres Eis für alle",
+    gsAlt: "Ich esse ein sicheres Eis!",
+    gsText: "Allergien und Unverträglichkeiten sollen den Eisgenuss nicht nehmen. Suche im Archiv nach glutenfreien oder laktosefreien Produkten – und wenn du eine Eisdiele hast, lade das Plakat herunter und häng es ins Schaufenster: Es lädt Gäste ein, nachzufragen.",
+    gsBtnGlutine: "🌾 Glutenfreie Produkte",
+    gsBtnLattosio: "🥛 Laktosefreie Produkte",
+    gsBtnPoster: "⬇️ Plakat herunterladen",
+    gsNote: "Die Allergeninformation bleibt gesetzlich Pflicht: Das Plakat ist eine Einladung zum Nachfragen, keine Garantie. Die Angaben im Archiv sollten beim Hersteller überprüft werden.",
     navGuida: "🎓 Leitfaden",
     navScelte: "🧭 Entscheidungshilfe",
     navIoGelato: "🍨 Ich bin das Eis",
@@ -542,7 +598,7 @@ const I18N = {
     notePh: "Notizen zu direkten Tests, Kontakten, Lieferbedingungen…",
     aggiungiAllArchivio: "Zum Archiv hinzufügen",
     taraturaTitle: "🧊 Rezept-Kalibrierung (Vitrine)",
-    taraturaIntro: 'Entstanden aus der früheren Seite <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (heute der Eisvitrine gewidmet): Standort/Wetter → Vitrinentemperatur → Rezept mit Zutaten → PAC/POD-Berechnung. Die Zuckerkoeffizienten unten stammen aus öffentlichen Quellen der Eiswissenschaft (siehe Hinweise unten); die Temperaturkorrekturwerte und die PAC/Vitrinen-Kurve sind <strong>Ausgangswerte, die du mit deinen eigenen Tests kalibrieren musst</strong> — genau wie das "auszufüllende" Blatt der Originalseite.',
+    taraturaIntro: 'Entstanden aus der früheren Seite <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (heute der Eisvitrine gewidmet): Standort/Wetter → Vitrinentemperatur → Rezept mit Zutaten → PAC/POD-Berechnung. Die Zuckerkoeffizienten unten stammen aus öffentlichen Quellen der Eiswissenschaft (siehe Hinweise unten); die Temperaturkorrekturwerte und die PAC/Vitrinen-Kurve sind <strong>Ausgangswerte, die du mit deinen eigenen Tests kalibrieren musst</strong> — genau wie das "auszufüllende" Blatt der Originalseite.',
     tarStepA: "Standort &amp; Außentemperatur",
     btnGeo: "📍 Standort und Wetter erkennen",
     geoStatusDefault: "Nutzt das GPS des Geräts + Open-Meteo (kostenlos), um die aktuelle Außentemperatur abzulesen. Alternativ hier unten manuell eingeben.",
@@ -579,7 +635,7 @@ const I18N = {
     btnEsportaTaratura: "⬇️ Rezept + Kurve exportieren (JSON)",
     btnImporta: "⬆️ Importieren (JSON)",
     postazioniTitle: "🧭 Verwaltung Rührmaschinen &amp; Vitrinen",
-    postazioniIntro: 'Entstanden aus der früheren Seite <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (heute der Eisvitrine gewidmet): ein Überblick darüber, was gerade in jeder Rührmaschine/Vitrine ist — Sorte, PAC, Temperatur und Status. Es ist ein manuelles Register (du aktualisierst die Daten), keine direkte Verbindung zu den Maschinen.',
+    postazioniIntro: 'Entstanden aus der früheren Seite <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (heute der Eisvitrine gewidmet): ein Überblick darüber, was gerade in jeder Rührmaschine/Vitrine ist — Sorte, PAC, Temperatur und Status. Es ist ein manuelles Register (du aktualisierst die Daten), keine direkte Verbindung zu den Maschinen.',
     nuovaPostazione: "➕ Neue Station",
     nomePostazione: "Stationsname *",
     tipo: "Typ",
@@ -611,7 +667,7 @@ const I18N = {
     mapSiteLink: "🗺️ Karte der Eisdielen in Deutschland und Österreich, mit Rollstuhl-Infos — rollmatemobil.com",
     equipmentSiteLink: "🧊 Eismaschinen-Vergleich — gelateriaattrezzature.com",
     equipmentSiteBadge: "(Website im Aufbau)",
-    sisterDeSiteLink: "🇩🇪 Eissorten-Zutatenvergleich (Deutsch) — eisdieleinfo.com",
+    sisterItSiteLink: "🇮🇹 Eissorten-Zutatenvergleich (Italienisch) — gelateriaingredienti.com",
     legalStrong: '© <span id="copyYear"></span> Alle Rechte vorbehalten.',
     legalText: "Inhalte gemäß geltendem EU-Recht (einschl. Verordnung (EU) 2016/679 – DSGVO). Dieses Portal dient ausschließlich zu Informations- und Beratungszwecken: Jede kommerzielle Nutzung, Vervielfältigung, Verbreitung oder Verwertung der Inhalte ohne schriftliche Genehmigung des Inhabers ist untersagt.",
     disclaimerText: "Das Portal bündelt in einer einzigen Suche alles, was die Eisdiele braucht, mit direkten Links zu den Herstellern. Hinweis: Die auf diesem Portal enthaltenen Daten dienen ausschließlich der Information. Der Vergleich ist rein theoretisch und beruht auf den von den Unternehmen veröffentlichten bzw. im Web verfügbaren Daten. Es werden weder Kosten noch andere wirtschaftliche Parameter angegeben.",
@@ -878,6 +934,34 @@ const I18N = {
     navMercatino: "🔄 Marketplace",
     archiveExpand: "⛶ Enlarge",
     archiveCollapse: "✕ Close",
+    homeTrust: "✔ Free · ✔ No prices · ✔ Nothing for sale · ✔ No sign-up",
+    catNote_vegane: "Bases with no animal-derived ingredients, for vegan gelato and sorbets.",
+    catNote_senzalattosio: "Lactose-free bases for people who cannot have milk sugar.",
+    catNote_basifrutta: "Bases for sorbets and fruit gelato: they give structure to the fruit or purée you add.",
+    catNote_baselatte: "Bases for milk and cream gelato: they usually already contain sugars, milk powder and stabilisers; you add water or milk and the flavour pastes.",
+    catNote_neutri: "Preparations that stabilise gelato and give it body without adding flavour: used with milk, sugars and pastes or fruit.",
+    catNote_addensanti: "Ingredients that bind water and give gelato structure and creaminess; used in small doses.",
+    catNote_paste: "Flavour concentrates (hazelnut, pistachio, vanilla and more) to add to the base or the white mix.",
+    catNote_variegati: "Thick sauces and creams to ripple through gelato or use as toppings.",
+    catNote_cioccolato: "Chocolate and cocoa for chocolate flavours, as powder, flakes or pastes.",
+    catNote_zuccheri: "Sugars and sweeteners that control sweetness, freezing point and texture of gelato.",
+    catNote_fibre: "Soluble fibres used to add body and help reduce sugars in recipes.",
+    catNote_polveri: "Milk and cream powders: they bring solids and fat to the mix.",
+    catNote_frutta: "Fruit purée or candied fruit for sorbets, gelato and decoration.",
+    catNote_soft: "Mixes for soft-serve and frozen yogurt, for dispensing machines.",
+    catNote_cremini: "Products for making cremini and counter-display ice cream desserts.",
+    catNote_proteine: "High-protein products for protein gelato.",
+    catNote_decorazioni: "Decorations for gelato cakes and sundaes.",
+    catNote_yogurt: "Yogurt or ricotta-based products for fresh flavours.",
+    catNote_coloranti: "Food colourings for gelato, glazes and decoration.",
+    gsKicker: "🍨 Campaign 2027",
+    gsTitle: "Safe gelato for everyone",
+    gsAlt: "I eat safe gelato!",
+    gsText: "Allergies and intolerances shouldn't take the joy out of gelato. Search the archive for gluten-free or lactose-free products and, if you run a gelateria, download the poster for your shop window: it invites customers to ask.",
+    gsBtnGlutine: "🌾 Gluten-free products",
+    gsBtnLattosio: "🥛 Lactose-free products",
+    gsBtnPoster: "⬇️ Download the poster",
+    gsNote: "Allergen information remains a legal requirement: the poster is an invitation to ask, not a guarantee. Archive data should be checked with the manufacturer.",
     navGuida: "🎓 Guide",
     navScelte: "🧭 How to choose",
     navIoGelato: "🍨 I am the ice cream",
@@ -949,7 +1033,7 @@ const I18N = {
     notePh: "Notes from direct testing, contacts, supply conditions…",
     aggiungiAllArchivio: "Add to archive",
     taraturaTitle: "🧊 Recipe calibration (display case)",
-    taraturaIntro: 'Born from the former <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (now dedicated to the gelato display case): position/weather → display case temperature → recipe with ingredients → PAC/POD calculation. The sugar coefficients below come from public gelato-science sources (see notes at the bottom); the temperature correction values and the PAC/display-case curve are <strong>starting points, to be calibrated with your own direct tests</strong> — exactly like the "to be filled in" sheet from the original site.',
+    taraturaIntro: 'Born from the former <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (now dedicated to the gelato display case): position/weather → display case temperature → recipe with ingredients → PAC/POD calculation. The sugar coefficients below come from public gelato-science sources (see notes at the bottom); the temperature correction values and the PAC/display-case curve are <strong>starting points, to be calibrated with your own direct tests</strong> — exactly like the "to be filled in" sheet from the original site.',
     tarStepA: "Location &amp; outside temperature",
     btnGeo: "📍 Detect location and weather",
     geoStatusDefault: "Use the device's GPS + Open-Meteo (free) to read the current outside temperature. Alternatively enter it manually below.",
@@ -986,7 +1070,7 @@ const I18N = {
     btnEsportaTaratura: "⬇️ Export recipe + curve (JSON)",
     btnImporta: "⬆️ Import (JSON)",
     postazioniTitle: "🧭 Batch freezer &amp; display case management",
-    postazioniIntro: 'Born from the former <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (now dedicated to the gelato display case): an at-a-glance view of what\'s currently in each batch freezer/display case — flavor, PAC, temperature and status. It\'s a manual log (you update the data), not a direct connection to the machines.',
+    postazioniIntro: 'Born from the former <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (now dedicated to the gelato display case): an at-a-glance view of what\'s currently in each batch freezer/display case — flavor, PAC, temperature and status. It\'s a manual log (you update the data), not a direct connection to the machines.',
     nuovaPostazione: "➕ New station",
     nomePostazione: "Station name *",
     tipo: "Type",
@@ -1018,7 +1102,7 @@ const I18N = {
     mapSiteLink: "🗺️ Map of ice cream parlours in Germany and Austria, with wheelchair access info — rollmatemobil.com",
     equipmentSiteLink: "🧊 Gelato equipment comparison — gelateriaattrezzature.com",
     equipmentSiteBadge: "(site under construction)",
-    sisterDeSiteLink: "🇩🇪 German ice-cream ingredients comparison — eisdieleinfo.com",
+    sisterItSiteLink: "🇮🇹 Italian gelato ingredients comparison — gelateriaingredienti.com",
     legalStrong: '© <span id="copyYear"></span> All rights reserved.',
     legalText: "Content compliant with applicable European regulations (incl. EU Regulation 2016/679 – GDPR). This portal is for informational and reference purposes only: no commercial use, reproduction, distribution or exploitation of the content is permitted without the written authorization of the owner.",
     disclaimerText: "The portal brings together, in a single search, everything an ice cream shop needs, with direct links to the manufacturers. Notice: the data on this portal is provided for informational purposes only. The comparison is purely theoretical and is based on data released by the companies or available on the web. No costs or other economic parameters are included.",
@@ -1285,6 +1369,34 @@ const I18N = {
     navMercatino: "🔄 Mercadillo",
     archiveExpand: "⛶ Ampliar",
     archiveCollapse: "✕ Cerrar",
+    homeTrust: "✔ Gratis · ✔ Sin precios · ✔ Sin venta · ✔ Sin registro",
+    catNote_vegane: "Bases sin ingredientes de origen animal, para helados y sorbetes veganos.",
+    catNote_senzalattosio: "Bases sin lactosa para quien no tolera el azúcar de la leche.",
+    catNote_basifrutta: "Bases para sorbetes y helados de fruta: dan estructura a la fruta o al puré que se añade.",
+    catNote_baselatte: "Bases para helados de leche y crema: suelen llevar ya azúcares, leche en polvo y estabilizantes; se añade agua o leche y las pastas.",
+    catNote_neutri: "Preparados que estabilizan el helado y le dan cuerpo sin añadir sabor: se usan con leche, azúcares y pastas o fruta.",
+    catNote_addensanti: "Ingredientes que ligan el agua y dan estructura y cremosidad al helado; se usan en dosis pequeñas.",
+    catNote_paste: "Concentrados de sabor (avellana, pistacho, vainilla y otros) para añadir a la base o a la mezcla blanca.",
+    catNote_variegati: "Salsas y cremas densas para intercalar en el helado o usar como cobertura.",
+    catNote_cioccolato: "Chocolate y cacao para los sabores de chocolate, en polvo, escamas o pastas.",
+    catNote_zuccheri: "Azúcares y edulcorantes que regulan el dulzor, el punto de congelación y la textura del helado.",
+    catNote_fibre: "Fibras solubles que dan cuerpo y ayudan a reducir los azúcares en las recetas.",
+    catNote_polveri: "Leche y nata en polvo: aportan sólidos y grasa a la mezcla.",
+    catNote_frutta: "Puré de fruta o fruta confitada para sorbetes, helados y decoración.",
+    catNote_soft: "Mezclas para helado soft y frozen yogurt, para máquinas dispensadoras.",
+    catNote_cremini: "Productos para preparar cremini y postres helados de mostrador.",
+    catNote_proteine: "Productos ricos en proteínas para helados proteicos.",
+    catNote_decorazioni: "Decoraciones para tartas heladas y copas.",
+    catNote_yogurt: "Productos a base de yogur o ricotta para sabores frescos.",
+    catNote_coloranti: "Colorantes alimentarios para helados, glaseados y decoración.",
+    gsKicker: "🍨 Campaña 2027",
+    gsTitle: "Helado seguro para todos",
+    gsAlt: "¡Yo como helado seguro!",
+    gsText: "Las alergias y las intolerancias no deben quitar el placer del helado. Busca en el archivo productos sin gluten o sin lactosa y, si tienes una heladería, descarga el cartel para tu escaparate: invita a los clientes a preguntar.",
+    gsBtnGlutine: "🌾 Productos sin gluten",
+    gsBtnLattosio: "🥛 Productos sin lactosa",
+    gsBtnPoster: "⬇️ Descargar el cartel",
+    gsNote: "La información sobre alérgenos sigue siendo obligatoria por ley: el cartel es una invitación a preguntar, no una garantía. Los datos del archivo deben comprobarse con el fabricante.",
     navGuida: "🎓 Guía",
     navScelte: "🧭 Cómo elegir",
     navIoGelato: "🍨 Soy el helado",
@@ -1356,7 +1468,7 @@ const I18N = {
     notePh: "Notas de pruebas directas, contactos, condiciones de suministro…",
     aggiungiAllArchivio: "Añadir al archivo",
     taraturaTitle: "🧊 Calibración de receta (vitrina)",
-    taraturaIntro: 'Nacida del antiguo <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (hoy dedicado a la vitrina de helados): posición/clima → temperatura vitrina → receta con ingredientes → cálculo PAC/POD. Los coeficientes de los azúcares de abajo proceden de fuentes públicas de gelato-science (ver notas al final); los valores de corrección por temperatura y la curva PAC/vitrina son <strong>puntos de partida, a calibrar con tus propias pruebas directas</strong> — exactamente como la hoja "a rellenar" del sitio original.',
+    taraturaIntro: 'Nacida del antiguo <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (hoy dedicado a la vitrina de helados): posición/clima → temperatura vitrina → receta con ingredientes → cálculo PAC/POD. Los coeficientes de los azúcares de abajo proceden de fuentes públicas de gelato-science (ver notas al final); los valores de corrección por temperatura y la curva PAC/vitrina son <strong>puntos de partida, a calibrar con tus propias pruebas directas</strong> — exactamente como la hoja "a rellenar" del sitio original.',
     tarStepA: "Posición &amp; temperatura exterior",
     btnGeo: "📍 Detectar posición y clima",
     geoStatusDefault: "Usa el GPS del dispositivo + Open-Meteo (gratuito) para leer la temperatura exterior actual. Alternativamente, introdúcela a mano aquí abajo.",
@@ -1393,7 +1505,7 @@ const I18N = {
     btnEsportaTaratura: "⬇️ Exportar receta + curva (JSON)",
     btnImporta: "⬆️ Importar (JSON)",
     postazioniTitle: "🧭 Gestión de mantecadores &amp; vitrinas",
-    postazioniIntro: 'Nacida del antiguo <a class="source-link" href="https://bilanciamentovetrina.com/" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (hoy dedicado a la vitrina de helados): un vistazo rápido a lo que hay en cada mantecador/vitrina en este momento — sabor, PAC, temperatura y estado. Es un registro manual (tú actualizas los datos), no una conexión directa a las máquinas.',
+    postazioniIntro: 'Nacida del antiguo <a class="source-link" href="https://bilanciamentovetrina.com/de.html" target="_blank" rel="noopener">bilanciamentovetrina.com</a> (hoy dedicado a la vitrina de helados): un vistazo rápido a lo que hay en cada mantecador/vitrina en este momento — sabor, PAC, temperatura y estado. Es un registro manual (tú actualizas los datos), no una conexión directa a las máquinas.',
     nuovaPostazione: "➕ Nueva estación",
     nomePostazione: "Nombre de la estación *",
     tipo: "Tipo",
@@ -1425,7 +1537,7 @@ const I18N = {
     mapSiteLink: "🗺️ Mapa de heladerías en Alemania y Austria, con accesibilidad en silla de ruedas — rollmatemobil.com",
     equipmentSiteLink: "🧊 Comparativa de equipamiento para heladería — gelateriaattrezzature.com",
     equipmentSiteBadge: "(sitio en construcción)",
-    sisterDeSiteLink: "🇩🇪 Comparador de ingredientes para heladería (alemán) — eisdieleinfo.com",
+    sisterItSiteLink: "🇮🇹 Comparador de ingredientes de helado (italiano) — gelateriaingredienti.com",
     legalStrong: '© <span id="copyYear"></span> Todos los derechos reservados.',
     legalText: "Contenidos conformes con la normativa europea vigente (incl. Reglamento UE 2016/679 – RGPD). Este portal tiene finalidad exclusivamente informativa y de consulta: no está permitido ningún uso comercial, reproducción, distribución o explotación de los contenidos sin autorización escrita del titular.",
     disclaimerText: "El portal reúne en una sola búsqueda todo lo que necesita la heladería, con enlaces directos a las empresas fabricantes. Aviso: los datos de este portal se ofrecen únicamente con fines informativos. La comparación es puramente teórica y se basa en los datos publicados por las empresas o disponibles en la web. No se indican costes ni otros parámetros económicos.",
@@ -1642,12 +1754,12 @@ function translateStatic(){
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.getAttribute('data-i18n')); });
   document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.getAttribute('data-i18n-html')); });
   document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.setAttribute('placeholder', t(el.getAttribute('data-i18n-ph'))); });
-  const titleByLang = { it: 'Confronta Prodotti per Gelateria', de: 'Confronto Ingredienti Gelateria: Basi, Paste e Semilavorati a Confronto', en: 'Compare Gelato Products', es: 'Compara Productos para Heladería' };
+  const titleByLang = { it: 'Confronta Prodotti per Gelateria', de: 'Eisdielen Zutatenvergleich: Basen, Pasten und Halbfertigprodukte im Vergleich', en: 'Compare Gelato Products', es: 'Compara Productos para Heladería' };
   document.title = titleByLang[LANG] || titleByLang.it;
   const metaDesc = document.querySelector('meta[name="description"]');
   const descByLang = {
     it: 'Strumento per confrontare ingredienti, fornitori e parametri tecnici per gelateria',
-    de: 'Confronto gratuito degli ingredienti per gelaterie, senza registrazione: confronta basi, paste e semilavorati di diversi produttori — PAC, POD, sostanza secca e prezzi indicativi, fianco a fianco.',
+    de: 'Kostenloser Zutatenvergleich für Eisdielen ohne Registrierung: Vergleiche Basen, Pasten und Halbfertigprodukte verschiedener Hersteller — PAC, POD, Trockenmasse und Richtpreise, direkt nebeneinander.',
     en: 'Tool to compare ingredients, suppliers and technical parameters for gelato shops',
     es: 'Herramienta para comparar ingredientes, proveedores y parámetros técnicos para heladerías',
   };
@@ -1658,12 +1770,8 @@ function translateStatic(){
 }
 let currentYear = 2026;
 function setLang(lang){
-  LANG = (lang === 'de' || lang === 'en' || lang === 'es') ? lang : 'it';
+  LANG = 'de';
   try { localStorage.setItem('preferredLang', LANG); } catch (e) {}
-  document.getElementById('btnLangIT').classList.toggle('active', LANG === 'it');
-  document.getElementById('btnLangDE').classList.toggle('active', LANG === 'de');
-  document.getElementById('btnLangEN').classList.toggle('active', LANG === 'en');
-  document.getElementById('btnLangES').classList.toggle('active', LANG === 'es');
   translateStatic();
   const resultCard = document.getElementById('resultCard');
   const wasCompareVisible = resultCard && resultCard.style.display !== 'none';
@@ -1715,10 +1823,8 @@ function openSection(id){
 }
 window.openSection = openSection;
 
-function toggleDocPanel(lang){
-  const panel = document.getElementById(lang === 'it' ? 'docPanelIT' : 'docPanelDE');
-  const other = document.getElementById(lang === 'it' ? 'docPanelDE' : 'docPanelIT');
-  if (other) other.classList.remove('open');
+function toggleDocPanel(){
+  const panel = document.getElementById('docPanelDE');
   if (panel) panel.classList.toggle('open');
   if (panel && panel.classList.contains('open')) panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
 }
@@ -1949,7 +2055,7 @@ const CATEGORY_ICONS = {
   "Basi Semifreddi": "🍨",
   "Glassa": "✨",
   "Cioccolato": "🍫",
-  "Decorazioni Torte": "🎂",
+  "Tortendekor": "🎂",
   "Coloranti": "🎨",
   "Addensanti e Stabilizzanti": "🧪",
   "Paste Frutta Secca Mista": "🥜",
@@ -1966,7 +2072,7 @@ const CATEGORY_ICONS = {
 };
 function catIcon(cat){ return CATEGORY_ICONS[cat] || '📋'; }
 
-const CATEGORY_ICON_IDS = {"Basi Latte": "ic-basi-latte", "Basi Frutta": "ic-basi-frutta", "Paste Pistacchio": "ic-pistacchio", "Paste Nocciola": "ic-nocciola", "Variegati Biscotto-Oreo": "ic-cookie", "Variegati Amarena": "ic-amarena", "Basi Vegane": "ic-vegan", "Basi Senza Lattosio": "ic-no-lactose", "Paste Vaniglia / Estratti": "ic-vaniglia", "Pasta Biscotto": "ic-biscotto", "Pasta Caramello": "ic-caramello", "Pasta Noce": "ic-noce", "Pasta Cioccolato Bianco": "ic-choc-bianco", "Cacao Polvere": "ic-cacao", "Basi Semifreddi": "ic-semifreddi", "Glassa": "ic-glassa", "Cioccolato": "ic-cioccolato", "Coloranti": "ic-coloranti", "Addensanti e Stabilizzanti": "ic-addensanti", "Paste Frutta Secca Mista": "ic-frutta-secca", "Paste Aromatizzate Varie": "ic-aromatizzate", "Toppings e Variegati": "ic-toppings", "Gelato Soft / Frozen Yogurt": "ic-soft", "Contenitori per Torte": "ic-box", "Decorazione Torte": "ic-cake", "Purea di Frutta": "ic-purea", "Frutta Congelata": "ic-frozen", "Basi Pronte Speedy": "ic-speedy", "Zucchero": "ic-zucchero", "Destrosio": "ic-destrosio", "Glucosio": "ic-glucosio", "Fruttosio": "ic-fruttosio", "Panna in Polvere": "ic-panna-polvere", "Latte Magro in Polvere": "ic-latte-magro", "Latte Intero in Polvere": "ic-latte-intero", "Maltodestrine": "ic-maltodestrine", "Inulina": "ic-inulina", "Fibre": "ic-fibre", "Cremini da Banco": "ic-cremini-banco"};
+const CATEGORY_ICON_IDS = {"Basi Latte": "ic-basi-latte", "Basi Frutta": "ic-basi-frutta", "Paste Pistacchio": "ic-pistacchio", "Paste Nocciola": "ic-nocciola", "Variegati Biscotto-Oreo": "ic-cookie", "Variegati Amarena": "ic-amarena", "Basi Vegane": "ic-vegan", "Basi Senza Lattosio": "ic-no-lactose", "Paste Vaniglia / Estratti": "ic-vaniglia", "Pasta Biscotto": "ic-biscotto", "Pasta Caramello": "ic-caramello", "Pasta Noce": "ic-noce", "Pasta Cioccolato Bianco": "ic-choc-bianco", "Cacao Polvere": "ic-cacao", "Basi Semifreddi": "ic-semifreddi", "Glassa": "ic-glassa", "Cioccolato": "ic-cioccolato", "Coloranti": "ic-coloranti", "Addensanti e Stabilizzanti": "ic-addensanti", "Paste Frutta Secca Mista": "ic-frutta-secca", "Paste Aromatizzate Varie": "ic-aromatizzate", "Toppings e Variegati": "ic-toppings", "Gelato Soft / Frozen Yogurt": "ic-soft", "Contenitori per Torte": "ic-box", "Decorazione Torte": "ic-cake", "Purea di Frutta": "ic-purea", "Frutta Congelata": "ic-frozen", "Basi Pronte Speedy": "ic-speedy", "Zucker": "ic-zucchero", "Traubenzucker (Dextrose)": "ic-destrosio", "Glukosesirup": "ic-glucosio", "Fruktose": "ic-fruttosio", "Sahnepulver": "ic-panna-polvere", "Magermilchpulver": "ic-latte-magro", "Vollmilchpulver": "ic-latte-intero", "Maltodextrine": "ic-maltodestrine", "Inulin": "ic-inulina", "Ballaststoffe": "ic-fibre", "Cremini da Banco": "ic-cremini-banco"};
 function catIconSvg(cat){
   const id = CATEGORY_ICON_IDS[cat] || 'ic-default';
   return `<svg class="cat-icon" aria-hidden="true"><use href="#${id}"></use></svg>`;
@@ -2162,6 +2268,7 @@ function renderArchiveTable(){
   const search = document.getElementById('searchArchive').value.trim().toLowerCase();
   const catFilter = document.getElementById('filterArchiveCategoria').value;
   const extraFilters = activeExtraFilters();
+  updateCatNote(catFilter);
   let rows = archivio.slice();
   if(catFilter) rows = rows.filter(e=>e.categoria===catFilter);
   if(extraFilters.length) rows = rows.filter(e => extraFilters.every(k => e.attributi && e.attributi[k]));
@@ -2758,20 +2865,8 @@ renderArchiveTable();
 renderAziende();
 refreshStats();
 (function initLang(){
-  const supported = ['it','de','en','es'];
-  let fromUrl = null;
-  try { fromUrl = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
-  let stored = null;
-  try { stored = localStorage.getItem('preferredLang'); } catch (e) {}
-  const rawBrowserLangs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
-  const browserLangs = rawBrowserLangs.map(l => (l || '').slice(0,2).toLowerCase());
-  const fromBrowser = browserLangs.find(l => supported.includes(l));
-  const domainDefault = 'it'; // gelateriaingredienti.com: lingua di riferimento del brand
-  const initial = (fromUrl && supported.includes(fromUrl)) ? fromUrl
-    : (stored && supported.includes(stored)) ? stored
-    : fromBrowser ? fromBrowser
-    : domainDefault;
-  setLang(initial);
+  // eisdieleinfo.com: sito solo in tedesco, nessuna altra lingua selezionabile
+  setLang('de');
 })();
 
 // Link diretti dall'esterno: /?cerca=soft#archiveSection precompila la ricerca nell'archivio
@@ -3159,4 +3254,83 @@ window.addEventListener('appinstalled', () => {
   btn.addEventListener('click',()=>set(!sec.classList.contains('archive-full')));
   document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&sec.classList.contains('archive-full')) set(false); });
   window.addEventListener('resize',()=>{ if(window.innerWidth<768&&sec.classList.contains('archive-full')) set(false); });
+})();
+
+
+/* Spiegazione categoria + conteggi filtri ingredienti */
+function catNoteKey(c){
+  if(!c) return '';
+  if(/vegan/i.test(c)) return 'vegane';
+  if(/senza lattosio/i.test(c)) return 'senzalattosio';
+  if(/^Basi Frutta/i.test(c)) return 'basifrutta';
+  if(/^Basi/i.test(c)) return 'baselatte';
+  if(/^Neutri/i.test(c)) return 'neutri';
+  if(/Addensanti/i.test(c)) return 'addensanti';
+  if(/^Past[ae]/i.test(c)) return 'paste';
+  if(/Variegati|Topping/i.test(c)) return 'variegati';
+  if(/Cioccolato|Cacao/i.test(c)) return 'cioccolato';
+  if(/^(Zucchero|Destrosio|Glucosio|Fruttosio|Maltodestrine|Zucker|Traubenzucker|Glukosesirup|Fruktose|Maltodextrine)/i.test(c)) return 'zuccheri';
+  if(/^(Inulina|Fibre|Inulin|Ballaststoffe)/i.test(c)) return 'fibre';
+  if(/in Polvere|pulver$/i.test(c)) return 'polveri';
+  if(/Purea di Frutta|Frutta Candita|Frutta Congelata/i.test(c)) return 'frutta';
+  if(/Soft|Frozen/i.test(c)) return 'soft';
+  if(/Cremini/i.test(c)) return 'cremini';
+  if(/^Proteine/i.test(c)) return 'proteine';
+  if(/Decorazioni|Tortendekor/i.test(c)) return 'decorazioni';
+  if(/Yogurt|Ricotta/i.test(c)) return 'yogurt';
+  if(/Coloranti/i.test(c)) return 'coloranti';
+  return '';
+}
+function updateCatNote(c){
+  const box = document.getElementById('archiveCatNote');
+  if(!box) return;
+  const k = catNoteKey(c);
+  if(k){ box.textContent = 'ℹ️ ' + t('catNote_'+k); box.style.display = 'block'; }
+  else { box.textContent = ''; box.style.display = 'none'; }
+}
+(function(){
+  try{
+    document.querySelectorAll('.extraFilterChk').forEach(chk=>{
+      const k = chk.dataset.attr;
+      const n = archivio.filter(e=>e.attributi && e.attributi[k]).length;
+      const lab = chk.closest('label');
+      if(n===0 && lab){ lab.style.display='none'; return; }
+      if(lab && !lab.querySelector('.xf-count')){
+        const sp = document.createElement('span'); sp.className='xf-count'; sp.textContent=' ('+n+')'; lab.appendChild(sp);
+      }
+    });
+    const det = document.getElementById('extraFiltersDetails'); if(det) det.open = true;
+  }catch(e){}
+  updateCatNote(document.getElementById('filterArchiveCategoria').value);
+})();
+
+
+/* Campagna 2027: Io mangio un gelato sicuro */
+const GS_LANGS = ['it','de','en','es'];
+function gsLang(){ return GS_LANGS.indexOf(LANG) >= 0 ? LANG : 'it'; }
+function updateGs(){
+  const l = gsLang();
+  const img = document.getElementById('gsImg');
+  if(img){
+    img.onerror = function(){ this.onerror = null; this.src = 'gelato-sicuro-2027-de.webp'; };
+    img.src = 'gelato-sicuro-2027-' + l + '.webp';
+    img.alt = t('gsAlt');
+  }
+  const dl = document.getElementById('gsBtnPoster');
+  if(dl) dl.href = 'manifesto-gelato-sicuro-' + l + '.jpg';
+}
+function gsApply(attr){
+  document.querySelectorAll('.extraFilterChk').forEach(c=>{ c.checked = (c.dataset.attr === attr); });
+  const sa = document.getElementById('searchArchive'); if(sa) sa.value = '';
+  const cat = document.getElementById('filterArchiveCategoria'); if(cat) cat.value = '';
+  renderArchiveTable();
+  const sec = document.getElementById('archiveSection'); if(sec) sec.scrollIntoView({behavior:'smooth', block:'start'});
+}
+(function(){
+  const g = document.getElementById('gsBtnGlutine'), la = document.getElementById('gsBtnLattosio');
+  if(g) g.addEventListener('click', ()=>gsApply('glutine'));
+  if(la) la.addEventListener('click', ()=>gsApply('lattosio'));
+  const _setLang = setLang;
+  setLang = function(l){ _setLang(l); updateGs(); };
+  updateGs();
 })();
