@@ -61,6 +61,8 @@ const I18N = {
     navGrossisti: "🚚 Grossisti",
     navNewsletter: "📬 Newsletter",
     navMercatino: "🔄 Mercatino",
+    archiveExpand: "⛶ Ingrandisci",
+    archiveCollapse: "✕ Chiudi",
     navGuida: "🎓 Guida",
     navScelte: "🧭 Come scegliere",
     navIoGelato: "🍨 Io sono il gelato",
@@ -467,6 +469,8 @@ const I18N = {
     navGrossisti: "🚚 Großhändler",
     navNewsletter: "📬 Newsletter",
     navMercatino: "🔄 Börse",
+    archiveExpand: "⛶ Vergrößern",
+    archiveCollapse: "✕ Schließen",
     navGuida: "🎓 Leitfaden",
     navScelte: "🧭 Entscheidungshilfe",
     navIoGelato: "🍨 Ich bin das Eis",
@@ -872,6 +876,8 @@ const I18N = {
     navGrossisti: "🚚 Wholesalers",
     navNewsletter: "📬 Newsletter",
     navMercatino: "🔄 Marketplace",
+    archiveExpand: "⛶ Enlarge",
+    archiveCollapse: "✕ Close",
     navGuida: "🎓 Guide",
     navScelte: "🧭 How to choose",
     navIoGelato: "🍨 I am the ice cream",
@@ -1277,6 +1283,8 @@ const I18N = {
     navGrossisti: "🚚 Mayoristas",
     navNewsletter: "📬 Newsletter",
     navMercatino: "🔄 Mercadillo",
+    archiveExpand: "⛶ Ampliar",
+    archiveCollapse: "✕ Cerrar",
     navGuida: "🎓 Guía",
     navScelte: "🧭 Cómo elegir",
     navIoGelato: "🍨 Soy el helado",
@@ -2839,6 +2847,7 @@ window.addEventListener('appinstalled', () => {
   const form = document.getElementById('joinForm');
   const btnOpen = document.getElementById('btnJoinUs');
   const btnClose = document.getElementById('joinModalClose');
+  if (!overlay || !form || !btnOpen || !btnClose) return;
 
   function openModal(){ overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeModal(){ overlay.classList.remove('open'); document.body.style.overflow = ''; }
@@ -3132,4 +3141,22 @@ window.addEventListener('appinstalled', () => {
   // comunque tutto dopo un breve ritardo, cosi il contenuto non resta mai
   // invisibile.
   setTimeout(revealAll, 1500);
+})();
+
+
+/* Archivio: vista ingrandita (solo PC/tablet) */
+(function(){
+  const sec=document.getElementById('archiveSection');
+  const btn=document.getElementById('btnArchiveExpand');
+  if(!sec||!btn) return;
+  const lblE=btn.querySelector('.ax-open'), lblC=btn.querySelector('.ax-close');
+  function set(on){
+    sec.classList.toggle('archive-full',on);
+    document.body.style.overflow=on?'hidden':'';
+    if(lblE) lblE.hidden=on; if(lblC) lblC.hidden=!on;
+    if(on) sec.scrollTop=0;
+  }
+  btn.addEventListener('click',()=>set(!sec.classList.contains('archive-full')));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&sec.classList.contains('archive-full')) set(false); });
+  window.addEventListener('resize',()=>{ if(window.innerWidth<768&&sec.classList.contains('archive-full')) set(false); });
 })();

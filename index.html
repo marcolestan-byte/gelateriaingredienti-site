@@ -527,6 +527,16 @@
   }
   
   .cat-icon{width:20px;height:20px;vertical-align:-5px;margin-right:6px;flex:none;}
+
+  .archive-expand-btn{ display:none; }
+  @media (min-width:768px){
+    .archive-expand-btn{ display:inline-block; float:right; margin-top:-2px; }
+    #archiveSection.archive-full{ position:fixed; inset:0; z-index:9000; margin:0; max-width:none; width:auto; border-radius:0; overflow-y:auto; padding:22px 36px; background:var(--white); }
+    #archiveSection.archive-full .archive-scroll{ max-height:calc(100vh - 270px) !important; }
+    #archiveSection.archive-full table.archive-table{ font-size:0.92rem; }
+    #archiveSection.archive-full table.archive-table th{ font-size:0.72rem; }
+    #archiveSection.archive-full table.archive-table th, #archiveSection.archive-full table.archive-table td{ padding:10px 12px; }
+  }
   </style>
 <style id="hdr-links-css">
 .hdr-links{display:flex;flex-direction:column;align-items:center;gap:8px;margin:12px 0}
@@ -580,10 +590,8 @@
     <a class="hl-nina" id="hlNina" href="https://ninastories.app/#it" target="_blank" rel="noopener" data-i18n="hdrNina">🎬 Storie di Nina</a>
   </nav>
   <div class="header-ctas">
-    <button id="btnJoinUs" class="btn-join" type="button" data-i18n="btnJoinUs">🤝 Unisciti a noi</button>
     <a class="btn-join nav-torte-cta" data-i18n="navTorteGelato" href="/torte-gelato.html" style="text-decoration:none;">🎂 Torte gelato</a>
     <a class="btn-join nav-scelte-cta" data-i18n="navScelte" href="/guida-scelte-ricetta.html" style="text-decoration:none;">🧭 Come scegliere</a>
-    <a class="btn-join nav-iosono-cta" data-i18n="navIoGelato" href="/io-sono-il-gelato.html" style="text-decoration:none;">🍨 Io sono il gelato</a>
     <a class="btn-join nav-lavoro-cta" data-i18n="navLavoro" href="/lavoro.html" style="text-decoration:none;">💼 Lavoro</a>
     <a class="btn-join nav-lavoro-cta" data-i18n="navApp" href="/app.html" style="text-decoration:none;">📲 Le app</a>
     <button id="btnInstall" class="btn-install" style="display:none;" data-i18n="btnInstall">📲 Installa come app</button>
@@ -598,7 +606,6 @@
     <a class="nav-archivio" href="#archiveSection" data-i18n="navArchivio">📚 Archivio</a>
     <a class="nav-ricette-gelato" href="/ricette-gelato.html" data-i18n="navRicetteGelato">🍨 Ricette gelato</a>
     <a class='nav-aziende' data-i18n='navAziende' href='/aziende.html'>🏢 Aziende</a>
-    <a class='nav-mercatino' data-i18n='navMercatino' href='/mercatino.html'>🔄 Mercatino</a>
     <a class='nav-chisono' data-i18n='navChiSiamo' href='/chi-sono.html'>👤 Chi sono</a>
     <a class='nav-notizie' data-i18n='navRivista' href='https://www.gelatoartigianale.it/' target='_blank' rel='noopener'>📖 Rivista Gelato Artigianale</a>
     <a class="nav-newsletter" href="#" data-i18n="navNewsletter">📬 Newsletter</a>
@@ -674,6 +681,7 @@
 
   <!-- ARCHIVE -->
   <section class="card" id="archiveSection">
+    <button type="button" class="btn small outline archive-expand-btn" id="btnArchiveExpand"><span class="ax-open" data-i18n="archiveExpand">⛶ Ingrandisci</span><span class="ax-close" data-i18n="archiveCollapse" hidden>✕ Chiudi</span></button>
     <h2 data-i18n="archiveTitle">📚 Archivio prodotti</h2>
     <div class="archive-toolbar">
       <div class="field"><label data-i18n="cerca">Cerca</label><div style="display:flex; gap:8px;"><input type="text" id="searchArchive" placeholder="Azienda, prodotto, dettagli…" data-i18n-ph="cercaPh" style="flex:1;"><button type="button" class="btn small" id="btnCercaArchivio" data-i18n="cercaBtn">🔍 Cerca</button></div></div>
@@ -699,7 +707,7 @@
       </div>
       <p class="extra-filters-note" data-i18n="extraFiltersNote">Un prodotto senza spunta non significa che l'ingrediente sia confermato assente/presente — significa solo che non è stato ancora verificato.</p>
     </details>
-    <div style="overflow-x:auto; max-height: 420px; overflow-y:auto; border:1px solid var(--line); border-radius:10px;">
+    <div class="archive-scroll" style="overflow-x:auto; max-height: 420px; overflow-y:auto; border:1px solid var(--line); border-radius:10px;">
       <table class="archive-table" id="archiveTable">
         <thead><tr id="archiveHeadRow"></tr></thead>
         <tbody id="archiveTbody"></tbody>
@@ -738,58 +746,6 @@
     <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:-6px;" data-i18n="rcIntro">
       Scrivici quale base usi (marca e tipo) e ti aiutiamo a ottimizzare la ricetta per il tuo prodotto — senza nessun costo. Se vuoi, indicaci anche quali altri ingredienti usi: ci aiuta a darti un consiglio più preciso, ma non è obbligatorio — per noi conta soprattutto sapere la base.
     </p>
-    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:4px;" data-i18n="rcAltText">
-      Puoi anche inviarci solo i dati della base o del neutro che usi: ti suggeriamo noi una ricetta completa.
-    </p>
-
-    <form id="rcForm" method="POST" name="ottimizza-ricetta" data-netlify="true" netlify-honeypot="rc-bot-field">
-      <input type="hidden" name="form-name" value="ottimizza-ricetta" />
-      <p style="position:absolute; left:-9999px;" aria-hidden="true">
-        <label>Non compilare questo campo: <input name="rc-bot-field" tabindex="-1" autocomplete="off" /></label>
-      </p>
-      <div class="form-grid">
-        <div class="field" style="grid-column:1/-1;">
-          <label for="rcBase" data-i18n="rcLabelBase">Marca e tipo di base *</label>
-          <input type="text" id="rcBase" name="base" required data-i18n-ph="rcBasePh" placeholder="Es. Aromitalia DBF Master 50 classic tuttovegetale C/F" />
-        </div>
-        <div class="field">
-          <label for="rcEmail" data-i18n="rcLabelEmail">Email di contatto *</label>
-          <input type="email" id="rcEmail" name="email" required />
-        </div>
-        <div class="field">
-          <label for="rcNome" data-i18n="rcLabelNome">Nome (facoltativo)</label>
-          <input type="text" id="rcNome" name="nome" />
-        </div>
-      </div>
-
-      <div class="field" style="margin-top:14px;">
-        <label data-i18n="rcIngredientiLabel">Quali di questi usi? (facoltativo — il resto è indifferente)</label>
-        <div class="extra-filters-grid">
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Destrosio"> <span data-i18n="rcIngDestrosio">Destrosio</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Glucosio"> <span data-i18n="rcIngGlucosio">Glucosio</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Zucchero invertito"> <span data-i18n="rcIngZuccheroInvertito">Zucchero invertito</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Maltodestrine"> <span data-i18n="rcIngMaltodestrine">Maltodestrine</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Emulsionanti"> <span data-i18n="rcIngEmulsionanti">Emulsionanti</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Fruttosio"> <span data-i18n="rcIngFruttosio">Fruttosio</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Latte fresco pastorizzato o latte intero"> <span data-i18n="rcIngLatte">Latte fresco pastorizzato o latte intero</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Latte grasso in polvere"> <span data-i18n="rcIngLatteGrassoPolvere">Latte grasso in polvere</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Latte magro in polvere"> <span data-i18n="rcIngLatteMagroPolvere">Latte magro in polvere</span></label>
-          <label class="extra-filter-chip"><input type="checkbox" name="ingredienti" value="Panna spray in polvere (aggiustatore di cremosità)"> <span data-i18n="rcIngPannaSpray">Panna spray in polvere (aggiustatore di cremosità)</span></label>
-        </div>
-      </div>
-
-      <div class="field" style="margin-top:10px;">
-        <label for="rcNote" data-i18n="rcLabelNote">Note aggiuntive (facoltativo)</label>
-        <textarea id="rcNote" name="note" rows="2" data-i18n-ph="rcNotePh" placeholder="Altri dettagli utili sulla tua ricetta o produzione…"></textarea>
-      </div>
-
-      <div class="field" style="display:flex; align-items:flex-start; gap:8px; margin-top:10px;">
-        <input type="checkbox" id="rcPrivacy" name="privacy_accettata" required style="width:auto; margin-top:3px;" />
-        <label for="rcPrivacy" style="text-transform:none; font-weight:400; font-size:0.8rem; margin:0;" data-i18n-html="rcPrivacyLabel">Ho letto e accetto l'<a href="#" class="privacy-link">informativa privacy</a> (obbligatorio) *</label>
-      </div>
-
-      <div class="actions-row"><button type="submit" class="btn" data-i18n="rcSubmit">Invia richiesta</button></div>
-    </form>
 
     <p class="hint" data-i18n-html="rcOrEmail">Preferisci scriverci direttamente? Scrivici a <a href="mailto:marcolestan@gelateriaingredienti.com">marcolestan@gelateriaingredienti.com</a>.</p>
     <p class="hint" data-i18n-html="rcOrCalc">Vuoi comunque provare tu stesso il calcolatore di bilanciamento sorbetti? <a href="/calcolatore-ricetta-sorbetto">Aprilo in una pagina dedicata →</a></p>
@@ -1008,44 +964,6 @@
 <p class="copyright-line" style="margin:12px 0 0;font-size:.85em;text-align:center;">© 2026 Marco Lestan, tutti i diritti riservati · <a href="/condizioni-d-uso.html">Condizioni d'uso</a></p>
 </footer>
 
-<div class="modal-overlay" id="joinModalOverlay">
-  <div class="modal-box">
-    <button type="button" class="modal-close" id="joinModalClose" aria-label="Chiudi">✕</button>
-    <h2 data-i18n="joinTitle">🤝 Unisciti a noi</h2>
-    <p class="modal-sub" data-i18n="joinSubtitle">Sei un'azienda produttrice o un grossista? Inserisci i tuoi prodotti nel portale — è gratuito e richiede due minuti.</p>
-    <form id='joinForm' method='POST' name='unisciti-a-noi' data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="unisciti-a-noi" />
-      <p style="position:absolute; left:-9999px;" aria-hidden="true">
-        <label>Non compilare questo campo: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-      </p>
-      <div class="field">
-        <label for="joinAzienda" data-i18n="joinLabelAzienda">Nome azienda *</label>
-        <input type="text" id="joinAzienda" name="azienda" required />
-      </div>
-      <div class="field">
-        <label for="joinEmail" data-i18n="joinLabelEmail">Email di contatto *</label>
-        <input type="email" id="joinEmail" name="email" required />
-      </div>
-      <div class="field">
-        <label for="joinTipo" data-i18n="joinLabelTipo">Siete</label>
-        <select id="joinTipo" name="tipo">
-          <option value="Azienda produttrice" data-i18n="joinTipoAzienda">Azienda produttrice</option>
-          <option value="Grossista/Distributore" data-i18n="joinTipoGrossista">Grossista o distributore</option>
-          <option value="Altro" data-i18n="joinTipoAltro">Altro</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="joinMessaggio" data-i18n="joinLabelMessaggio">Messaggio (facoltativo)</label>
-        <textarea id="joinMessaggio" name="messaggio" rows="3" data-i18n-ph="joinMessaggioPh" placeholder="Prodotti che vorreste inserire, schede tecniche disponibili…"></textarea>
-      </div>
-      <div class="field" style="display:flex; align-items:flex-start; gap:8px;">
-        <input type="checkbox" id="joinPrivacy" name="privacy_accettata" required style="width:auto; margin-top:3px;" />
-        <label for="joinPrivacy" style="text-transform:none; font-weight:400; font-size:0.8rem; margin:0;" data-i18n-html="joinPrivacyLabel">Ho letto e accetto l'<a href="#" class="privacy-link">informativa privacy</a> (obbligatorio) *</label>
-      </div>
-      <button type="submit" class="btn" data-i18n="joinSubmit">Invia richiesta</button>
-    </form>
-  </div>
-</div>
 
 <div class="modal-overlay" id="feedbackModalOverlay">
   <div class="modal-box">
@@ -1159,7 +1077,7 @@
 <div class="toast" id="toast"></div>
 
 <script defer src="archive-data.js?v=b633b8ca"></script>
-<script defer src="app.js?v=ec84e17b"></script>
+<script defer src="app.js?v=383138bf"></script>
 
 
 <script src="/cerca-siti.js" defer></script>
