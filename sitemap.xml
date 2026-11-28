@@ -323,4 +323,10 @@
     <priority>0.6</priority>
   </url>
   <url><loc>https://gelateriaingredienti.com/ricette-speciali.html</loc></url>
+  <url>
+    <loc>https://gelateriaingredienti.com/ricetta-gelato-calcolatore.html</loc>
+    <lastmod>2026-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
